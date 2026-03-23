@@ -13,6 +13,7 @@ This repo generates daily X/Twitter post drafts for @octavicristea.
 - For each project in `config/projects.md`, use web search to check its GitHub repo for recent commits. Never clone repos into this workspace.
 - Search the web for trending dev/AI/startup topics each run.
 - Check `sources/raw-ideas.md` for manual ideas I've added.
+- After searching for trending topics, append today's findings to `sources/trending-log.md` with a `## YYYY-MM-DD` date header before drafting. This builds a history of what was trending over time.
 
 ## Drafting rules
 - Save drafts to `drafts/YYYY-MM-DD.md`.
