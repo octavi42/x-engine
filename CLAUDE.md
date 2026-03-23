@@ -2,6 +2,9 @@
 
 This repo generates daily X/Twitter post drafts for @octavicristea.
 
+## Branch
+- Always work on the `main` branch. Never create or push to `master`.
+
 ## Skills
 - The x-writing skill is installed at `.claude/skills/x-writing/` — never reinstall it during runs.
 
