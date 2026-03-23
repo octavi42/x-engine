@@ -19,3 +19,7 @@ sources/trending-log.md — auto-populated trending topics
 drafts/              — daily draft files
 posted/archive.md    — published posts + engagement tracking
 ```
+
+---
+
+**[View landing page](https://octavi42.github.io/x-engine)** — Apple Glass design, powered by GitHub Pages

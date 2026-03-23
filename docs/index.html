@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>x-engine</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: #0a0a0a;
+      color: #f5f5f7;
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bg .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .bg .orb:nth-child(1) {
+      width: 600px;
+      height: 600px;
+      background: #1d4ed8;
+      top: -10%;
+      left: -10%;
+      animation-delay: 0s;
+    }
+
+    .bg .orb:nth-child(2) {
+      width: 500px;
+      height: 500px;
+      background: #7c3aed;
+      top: 50%;
+      right: -10%;
+      animation-delay: -7s;
+    }
+
+    .bg .orb:nth-child(3) {
+      width: 400px;
+      height: 400px;
+      background: #0ea5e9;
+      bottom: -10%;
+      left: 30%;
+      animation-delay: -14s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(60px, -40px) scale(1.05); }
+      50% { transform: translate(-30px, 60px) scale(0.95); }
+      75% { transform: translate(40px, 30px) scale(1.02); }
+    }
+
+    /* Noise overlay */
+    .bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-height: 100vh;
+    }
+
+    /* Glass card base */
+    .glass {
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    /* Header card */
+    .header {
+      text-align: center;
+      padding: 48px 32px;
+    }
+
+    .header .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: inline-block;
+      filter: grayscale(0.2);
+    }
+
+    .header h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #f5f5f7 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: rgba(245, 245, 247, 0.5);
+      font-size: 17px;
+      line-height: 1.5;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .header .handle {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(245, 245, 247, 0.35);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 16px;
+      border-radius: 100px;
+      transition: all 0.3s ease;
+    }
+
+    .header .handle:hover {
+      color: rgba(245, 245, 247, 0.7);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* Workflow section */
+    .workflow h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(245, 245, 247, 0.35);
+      margin-bottom: 24px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(245, 245, 247, 0.5);
+    }
+
+    .step-content h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: rgba(245, 245, 247, 0.9);
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: rgba(245, 245, 247, 0.4);
+      line-height: 1.4;
+    }
+
+    /* Structure section */
+    .structure h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(245, 245, 247, 0.35);
+      margin-bottom: 20px;
+    }
+
+    .file-tree {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .file-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .file-row code {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 13px;
+      color: rgba(245, 245, 247, 0.7);
+    }
+
+    .file-row span {
+      font-size: 13px;
+      color: rgba(245, 245, 247, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px 32px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer p {
+      font-size: 13px;
+      color: rgba(245, 245, 247, 0.25);
+    }
+
+    .footer a {
+      color: rgba(245, 245, 247, 0.4);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: rgba(245, 245, 247, 0.7);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container { padding: 40px 16px 40px; }
+      .glass { padding: 24px 20px; border-radius: 16px; }
+      .header { padding: 36px 20px; }
+      .header h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+
+  <div class="container">
+    <div class="glass header">
+      <div class="icon">&#9881;</div>
+      <h1>x-engine</h1>
+      <p>personal X/Twitter content engine powered by Claude Code scheduled tasks</p>
+      <a class="handle" href="https://x.com/octavicristea" target="_blank" rel="noopener">@octavicristea</a>
+    </div>
+
+    <div class="glass workflow">
+      <h2>Workflow</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Raw ideas</h3>
+            <p>Dump thoughts and links into sources/raw-ideas.md throughout the day</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Daily AI drafts</h3>
+            <p>Claude reads voice profile, checks repos, scans trends, generates drafts</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Review</h3>
+            <p>Edit, refine, or kill drafts before posting</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Post</h3>
+            <p>Publish to X, archive with engagement notes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass structure">
+      <h2>Structure</h2>
+      <div class="file-tree">
+        <div class="file-row">
+          <code>config/voice.md</code>
+          <span>tone, style, banned phrases</span>
+        </div>
+        <div class="file-row">
+          <code>config/projects.md</code>
+          <span>projects to write about</span>
+        </div>
+        <div class="file-row">
+          <code>sources/raw-ideas.md</code>
+          <span>manual idea dump</span>
+        </div>
+        <div class="file-row">
+          <code>sources/trending-log.md</code>
+          <span>auto-populated trends</span>
+        </div>
+        <div class="file-row">
+          <code>drafts/</code>
+          <span>daily draft files</span>
+        </div>
+        <div class="file-row">
+          <code>posted/archive.md</code>
+          <span>published + engagement</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass footer">
+      <p>built by <a href="https://github.com/octavi42">octavi42</a></p>
+    </div>
+  </div>
+</body>
+</html>
