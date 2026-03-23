@@ -21,3 +21,7 @@ Auto-populated during each draft run with trending dev/AI/startup topics found v
 - GLM-5 debuts as compelling open-source model with MIT license at frontier performance, $1/$3.20 pricing
 - xAI-SpaceX merger completed at ~$1.25T combined valuation
 - Databricks IPO expected as most important AI valuation signal of 2026 with $4.5B ARR
+- Peter Steinberger (OpenClaw open-source AI assistant) joined OpenAI to bring agents to mainstream — viral announcement
+- Manicule (YC-backed) building AI-native technical documentation agency — agents handle code verification and auditing at scale
+- OpenAI surpassed $25B annualized revenue; Anthropic approaching $19B ARR
+- Parallel Web Systems (Parag Agrawal's new company) building infra for AI agents to access web information
