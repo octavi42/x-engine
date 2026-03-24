@@ -2,6 +2,20 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-03-24
+
+- Context engineering emerging as key discipline — focus shifting from model selection to systematic context construction and management for AI systems
+- Cursor crossed $1B ARR in 24 months, valued at $29.3B — fastest-growing dev tool in history
+- Dapr Agents v1.0 GA launched — cloud-native AI agent deployment framework with multi-agent coordination and failure recovery
+- AMI Labs (Yann LeCun) raised $1.03B seed — largest European seed round ever — building world models on JEPA architecture
+- Robotics mega-round week: Mind Robotics ($500M), Rhoda AI ($450M), Sunday ($165M unicorn), Oxa ($103M) — $1.2B+ in one week
+- CLI-first AI tools gaining over IDE extensions — developers adopting Claude Code and OpenCode directly in terminal
+- Vibe coding mainstream: Replit tripled valuation to $9B, Lovable gaining traction for no-code AI app building
+- 95% of devs use AI tools weekly, 75% for half or more of work, 55% regularly use AI agents per March 2026 surveys
+- Gemini 3.1 Pro enters market at #2 ranking with best price-to-performance ratio among closed frontier models
+- OpenClaw ecosystem leads open-source AI assistants with 809.6K GitHub stars
+- March 2026 produced more $100M+ AI funding rounds in 2.5 weeks than any comparable period in VC history
+
 ## 2026-03-23
 
 - AI agents becoming primary users of dev infrastructure — Parag Agrawal and Nikita Shamgunov discussion went viral on the topic of rebuilding infra for agents, not humans
