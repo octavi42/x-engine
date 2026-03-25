@@ -2,6 +2,22 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-03-25
+
+- Jensen Huang at GTC 2026 called OpenClaw "the most popular open source project in the history of humanity" — centerpiece was an open-source AI agent, not a GPU
+- NVIDIA Agent Toolkit launched — OpenShell runtime for self-evolving agents, AI-Q Blueprint tops DeepResearch Bench
+- Claude Code shipped Channels — Telegram and Discord as remote controls for coding sessions
+- Garry Tan open-sourced GStack — system that turns one person into a full engineering org
+- Zero-human company experiments trending — goal to run fully autonomous company by end of April 2026
+- Vibe coding backlash gaining real momentum — pushback against raw AI-generated code without understanding
+- CFOs expect AI to reduce company headcount in 2026 — admin roles first, per WSJ survey
+- AI race shifting from model quality to chips, power, and infrastructure — Arm entering chip arena, OpenAI CEO focused on supply chains
+- OpenAI planning to nearly double workforce to 8,000 by end of 2026 — push into enterprise sales
+- Apple WWDC 2026 announced June 8-12 — focus on platform updates and AI software tools
+- GPT-5.4 launched with 1.05M context window, Tool Search feature for dynamic tool definition lookup
+- NVIDIA Nemotron 3 Super — 120B parameter MoE model with 12B active params, 60.47% SWE-Bench Verified
+- Dario Amodei predicted 90% of code will be AI-written within 6 months — debate intensifying
+
 ## 2026-03-24
 
 - Context engineering emerging as key discipline — focus shifting from model selection to systematic context construction and management for AI systems

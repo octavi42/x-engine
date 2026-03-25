@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-03-24
+- Last checked: 2026-03-25
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-03-25.md:
+- HistorAI push-to-talk and LiveKit WebRTC voice
+- Jensen Huang / OpenClaw / GTC 2026
+- Firecrawl Search real-time web research pipeline
+- AI headcount cuts / CFO survey
+- Building in public personal story (Romania to SF)
+
 From drafts/2026-03-24.md:
 - HistorAI landmark pins with Overpass API
 - Cursor $1B ARR milestone
@@ -27,9 +34,8 @@ From drafts/2026-03-23.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered:
-- Real-time web research with AI (Firecrawl deep dive)
-- Building in public journey/motivation posts (personal story, not just feature updates)
-- AI voice apps landscape (beyond personal stack — industry overview)
+- AI voice apps landscape (industry overview beyond personal stack)
+- Mobile dev with Expo/React Native (deeper technical content beyond dev loop)
 
 ## Current narrative
-Octavi is actively building HistorAI, a location-based AI audio narrator using GPS, Firecrawl Search, and ElevenLabs Conversational AI. Today was a major feature day — landmark pins on the map via Overpass API, push-to-talk, transcript streaming, and Mapbox day/night theming. The project is shipping fast with Claude Code as the primary dev tool. Early stage — no public posts yet, building the content engine alongside the product.
+Octavi is actively building HistorAI, a location-based AI audio narrator using GPS, Firecrawl Search, and ElevenLabs Conversational AI. Recent work added push-to-talk, live transcript streaming, landmark pins via Overpass API, and Mapbox day/night theming. Shipping daily with Claude Code. Content now covers the full technical stack (Firecrawl, ElevenLabs, Nominatim, Overpass, LiveKit) and has started the personal building-in-public narrative (Romania-based dev aiming for SF). No public posts yet — building the content engine alongside the product.
