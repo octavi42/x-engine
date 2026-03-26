@@ -2,6 +2,19 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-03-26
+
+- Cursor Composer 2 controversy: devs discovered it was built on Moonshot AI's Kimi K2.5 open-source model — attribution missing at launch, backlash over transparency
+- MCP (Model Context Protocol) crossed 97 million installs — transition from experimental to foundational agentic infrastructure
+- GitHub Copilot changing data policy April 24: Free/Pro/Pro+ user interaction data used for training unless users opt out
+- Google Lyria 3 Pro music model launched — most advanced music generation from DeepMind, rolling out via Gemini App and API
+- OpenAI launched Safety Bug Bounty program — expanding from security bugs to AI-specific safety and misuse risks
+- Sora API quietly discontinued — OpenAI cited unsustainable inference costs per generated minute
+- Apple-Google AI deal: Gemini integration into iOS 26.4 via Apple Private Cloud Compute, 1.2T parameter model
+- Chinese AI models surge: MiniMax M2.5 rivaling Claude Opus 4.6 at fraction of the cost, five new models from Tencent/Alibaba/Baidu/ByteDance
+- Trump appointing 24-member AI policy tech council with Zuckerberg, Ellison, Huang — co-chaired by David Sacks
+- Mistral Small 4 (22B params) outperforming closed models 3-5x its size under Apache 2.0 license
+
 ## 2026-03-25
 
 - Jensen Huang at GTC 2026 called OpenClaw "the most popular open source project in the history of humanity" — centerpiece was an open-source AI agent, not a GPU
