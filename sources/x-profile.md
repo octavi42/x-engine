@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-03-26
+- Last checked: 2026-03-27
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-03-27.md:
+- Clio web-to-mobile funnel via env-driven CTA button (building in public)
+- Apple opening Siri to third-party AI in iOS 27 (trending reaction)
+- ElevenLabs [TEASER] signal for zero-perceived-latency narration (technical tip)
+- Voice-first AI apps using real-world context (engagement question / content gap: AI voice apps landscape)
+- Perplexity Personal Computer always-on AI paradigm shift (thread)
+
 From drafts/2026-03-26.md:
 - Clio rebrand (HistorAI renamed to Clio) + web demo launch
 - Cursor / Kimi K2.5 attribution controversy
@@ -41,7 +48,7 @@ From drafts/2026-03-23.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered:
-- AI voice apps landscape (industry overview beyond personal stack)
+- (none — all angles covered within the last 14 days as of 2026-03-27)
 
 ## Current narrative
-Octavi renamed HistorAI to Clio and shipped a full web demo in one day — Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl, deployed on Vercel with an Elastic Beanstalk API backend. The project now runs on both mobile (React Native/Expo) and browser. Recent work includes search bar with Mapbox Geocoding, location persistence, landmark info panels, and a teaser narration pattern while research loads. Shipping daily with Claude Code. Content covers the full technical stack, deployment patterns, and the building-in-public narrative. No public posts yet — building the content engine alongside the product.
+Clio (formerly HistorAI) now runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. Latest work: web-to-mobile conversion funnel with env-driven CTA, mixed content proxy via Vercel rewrites, and a teaser narration pattern that starts AI audio instantly while research loads. Shipping daily with Claude Code. All content angles from projects.md now covered. Next focus areas: growth/distribution tactics, deeper AI voice landscape commentary, and fresh technical patterns from ongoing development.

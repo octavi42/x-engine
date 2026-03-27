@@ -2,6 +2,19 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-03-27
+
+- SoftBank secured $40B bridge loan (JPMorgan, Goldman Sachs, Mizuho) to fund further OpenAI investment — facility runs to March 2027
+- Apple opening Siri to third-party AI assistants in iOS 27 — ending ChatGPT's exclusive role in Apple Intelligence, any AI service can plug in via App Store apps
+- Anthropic "Claude Mythos" model leaked — details found in unsecured publicly-searchable data store before launch; federal judge issued preliminary injunction against Pentagon's ban on Anthropic tech
+- Perplexity announced "Personal Computer" — always-on AI running on dedicated Mac mini, merges local files/apps/sessions with cloud AI, works 24/7 as digital proxy
+- Claude computer use live for Pro/Max users — can open files, click through apps, navigate browsers, fill spreadsheets, triggered from phone
+- Unity Software surged 13.5% on Vector AI product revenue exceeding guidance
+- Amazon fell 4% on concerns about rising AI capital spending and margin pressure
+- Meta expanding AI infrastructure spending with new US data center investments
+- 78 chatbot bills alive in 27 states — AI legislation season accelerating, focus on schools, deepfakes, medical AI
+- Google Pixel March drop: Gemini App Actions for executing real-world tasks via natural language across third-party apps
+
 ## 2026-03-26
 
 - Cursor Composer 2 controversy: devs discovered it was built on Moonshot AI's Kimi K2.5 open-source model — attribution missing at launch, backlash over transparency
