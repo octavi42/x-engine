@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-03-27
+- Last checked: 2026-03-28
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-03-28.md:
+- Clio localStorage persistence for pinned locations (building in public)
+- Atlassian CTO split into two AI-focused roles (trending reaction)
+- Mapbox Geocoding search for Clio web demo (technical tip)
+- Location-aware AI pipeline use cases (engagement question)
+- Claude planning Perseverance rover drives on Mars (thread)
+
 From drafts/2026-03-27.md:
 - Clio web-to-mobile funnel via env-driven CTA button (building in public)
 - Apple opening Siri to third-party AI in iOS 27 (trending reaction)
@@ -48,7 +55,7 @@ From drafts/2026-03-23.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered:
-- (none — all angles covered within the last 14 days as of 2026-03-27)
+- (none — all angles covered within the last 14 days as of 2026-03-28)
 
 ## Current narrative
-Clio (formerly HistorAI) now runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. Latest work: web-to-mobile conversion funnel with env-driven CTA, mixed content proxy via Vercel rewrites, and a teaser narration pattern that starts AI audio instantly while research loads. Shipping daily with Claude Code. All content angles from projects.md now covered. Next focus areas: growth/distribution tactics, deeper AI voice landscape commentary, and fresh technical patterns from ongoing development.
+Clio (formerly HistorAI) runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. Most recent commits (March 26): search bar with Mapbox Geocoding, localStorage persistence for pinned locations, landmark info via Firecrawl, and Vercel rewrites for mixed content. No new commits since March 26 — likely in testing/polish phase. Content expanding beyond pure build updates into AI industry commentary (Atlassian reorg, NASA Mars rover) and broader location-aware AI use cases.

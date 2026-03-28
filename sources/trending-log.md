@@ -2,6 +2,19 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-03-28
+
+- Atlassian cut 1,600 jobs (~10% workforce) and replaced CTO with two AI-focused CTOs (CTO of Teamwork + CTO of Enterprise) — over 900 cuts from R&D, restructuring costs $225-236M
+- Anthropic "Claude Mythos" model leak still dominating — leaked via unsecured public data store, expected "step change" in capabilities, rumored new "Capybara" tier above Opus
+- NASA Perseverance rover AI-planned drives (using Claude) gaining renewed attention — cut route-planning time 50%, drove 1,496 feet autonomously on Mars
+- ElevenLabs tripled valuation to $11B with $500M Series D led by Sequoia — largest voice AI funding round ever
+- Windsurf holds #1 AI dev tool spot — Arena Mode for blind model comparison, Plan Mode for task planning, parallel multi-agent sessions with Git worktrees
+- Claude 4.6 Opus leads AI model rankings at 75.6% SWE-bench, 1M context window (beta), 128K output
+- Gemini Code Assist now free for individual devs — generates infra code, Cloud Run deployments, BigQuery queries on GCP
+- Google Gemini 3.1 Pro entered market at #2 with best price-to-performance ($2/$12), 77.1% ARC-AGI-2 score
+- Sam Altman called "AI washing" on companies using AI as justification for layoffs — said fewer than 1% of 2025 job losses were actually AI-caused
+- Tech layoffs globally surpassed 45,000 by early March 2026 with AI most frequently cited justification
+
 ## 2026-03-27
 
 - SoftBank secured $40B bridge loan (JPMorgan, Goldman Sachs, Mizuho) to fund further OpenAI investment — facility runs to March 2027
