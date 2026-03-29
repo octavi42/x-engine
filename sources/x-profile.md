@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-03-28
+- Last checked: 2026-03-29
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-03-29.md:
+- Clio 3-day testing phase in Bucharest, GPS drift and Firecrawl timeouts (building in public)
+- Shopify Agentic Storefronts — selling inside AI conversations (trending reaction)
+- Web Speech API for browser mic input in Clio (technical tip)
+- AI dev tool pricing and cost sustainability (engagement question)
+- OpenAI Sora shutdown and pivot to robotics (thread)
+
 From drafts/2026-03-28.md:
 - Clio localStorage persistence for pinned locations (building in public)
 - Atlassian CTO split into two AI-focused roles (trending reaction)
@@ -58,4 +65,4 @@ Angles from config/projects.md not yet covered:
 - (none — all angles covered within the last 14 days as of 2026-03-28)
 
 ## Current narrative
-Clio (formerly HistorAI) runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. Most recent commits (March 26): search bar with Mapbox Geocoding, localStorage persistence for pinned locations, landmark info via Firecrawl, and Vercel rewrites for mixed content. No new commits since March 26 — likely in testing/polish phase. Content expanding beyond pure build updates into AI industry commentary (Atlassian reorg, NASA Mars rover) and broader location-aware AI use cases.
+Clio (formerly HistorAI) runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. No new commits since March 26 — in active real-world testing phase, walking around Bucharest to find edge cases (GPS drift, Firecrawl timeouts on obscure landmarks). Content mix: build updates, AI industry commentary (Shopify agentic storefronts, Sora shutdown), technical tips (Web Speech API), and developer community engagement (AI tool pricing debate).

@@ -2,6 +2,21 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-03-29
+
+- Shopify launched Agentic Storefronts — merchants can sell directly inside ChatGPT, Gemini, Copilot, and Google AI Mode with synced checkout and inventory
+- OpenAI confirmed Sora is permanently shut down — inference costs per generated minute were unsustainable, compute redirected to robotics research
+- Google Gemini 3 Deep Think now live for Ultra subscribers with early API access — positioned for scientific and engineering work, not casual chat
+- Meta planning layoffs of up to 20% workforce to offset $135B AI capital expenditure in 2026 — nearly double its 2025 AI spend
+- Cursor shipped parallel subagents in major March release — AI executes discrete subtasks concurrently, also launched BugBot for automated PR reviews
+- Claude Cowork launched — Anthropic's desktop agent for multi-step file tasks without command-line knowledge, Claude Code surpassed $2.5B ARR
+- JetBrains announced Central — control layer for managing multiple AI coding agents across agentic workflows, early access Q2 2026
+- Google TurboQuant lets AI models run in a fraction of normal memory — DDR5 prices dipped in response
+- Epic Games laid off 1,000+ employees — largest single cut of the most recent week
+- 2026 tech layoffs reached 59,970 across 200 companies (689/day), with 9,200+ directly attributed to AI adoption per RationalFX
+- AI dev tool pricing now a top developer concern — debate shifted from "which tool is smartest" to "which won't burn credits"
+- Claude Mobile tools launched — Figma, Canva, Amplitude accessible directly from phone
+
 ## 2026-03-28
 
 - Atlassian cut 1,600 jobs (~10% workforce) and replaced CTO with two AI-focused CTOs (CTO of Teamwork + CTO of Enterprise) — over 900 cuts from R&D, restructuring costs $225-236M
