@@ -2,6 +2,18 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-03-30
+
+- DeepSeek chatbot went down for 7+ hours — longest outage since its 2025 breakout, AI labs now facing uptime expectations like traditional infrastructure
+- Mistral secured $830M in debt financing to buy 13,800 Nvidia chips and build data centers near Paris — targeting 200MW of European AI compute by end of 2027
+- Microsoft rose on Copilot expansion and new AI product launches — investors weighing AI product updates against weak YTD performance
+- Apple hired veteran Google VP to lead AI product marketing — reimagined AI-powered Siri with on-screen awareness set for 2026
+- Bluesky pitching AI as user-controlled layer for shaping social experience, fitting its open-protocol approach
+- AI valuation jitters hit markets — memory chip sell-off deepened, Nvidia/TSMC/Intel weighed on Nasdaq
+- Innovation Council Action preparing $100M+ in 2026 midterm spending to back candidates aligned with deregulatory AI agenda
+- Anthropic "Mythos" leak still trending — model described as "step change" in capabilities, leaked via unsecured public data store
+- AWS Bedrock now available in Asia Pacific (New Zealand) with Claude Opus 4.6 and Nova 2 Lite models
+
 ## 2026-03-29
 
 - Shopify launched Agentic Storefronts — merchants can sell directly inside ChatGPT, Gemini, Copilot, and Google AI Mode with synced checkout and inventory

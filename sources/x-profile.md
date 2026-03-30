@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-03-29
+- Last checked: 2026-03-30
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-03-30.md:
+- Clio 4-day no-commit testing phase, ElevenLabs hallucinating dates (building in public)
+- DeepSeek 7-hour outage, AI uptime expectations (trending reaction)
+- ElevenLabs per-language first_message for multilingual narration (technical tip)
+- Real-time web data quality, Firecrawl relevance filtering (engagement question)
+- Mistral $830M debt for European AI sovereignty and GPU ownership (thread)
+
 From drafts/2026-03-29.md:
 - Clio 3-day testing phase in Bucharest, GPS drift and Firecrawl timeouts (building in public)
 - Shopify Agentic Storefronts — selling inside AI conversations (trending reaction)
@@ -62,7 +69,7 @@ From drafts/2026-03-23.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered:
-- (none — all angles covered within the last 14 days as of 2026-03-28)
+- (none — all angles covered within the last 14 days as of 2026-03-30)
 
 ## Current narrative
-Clio (formerly HistorAI) runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. No new commits since March 26 — in active real-world testing phase, walking around Bucharest to find edge cases (GPS drift, Firecrawl timeouts on obscure landmarks). Content mix: build updates, AI industry commentary (Shopify agentic storefronts, Sora shutdown), technical tips (Web Speech API), and developer community engagement (AI tool pricing debate).
+Clio (formerly HistorAI) runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. No new commits since March 26 — in active real-world testing phase, walking around Bucharest to find edge cases (GPS drift, Firecrawl timeouts, ElevenLabs hallucinating dates on newer buildings). Content mix: build updates from testing phase, AI infrastructure commentary (DeepSeek outage, Mistral sovereign compute), technical tips (per-language voice narration), and developer community engagement (real-time web data quality).
