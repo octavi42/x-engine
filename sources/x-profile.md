@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-03-30
+- Last checked: 2026-03-31
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-03-31.md:
+- Clio web data coverage gap across Bucharest neighborhoods (building in public)
+- Apple vibe coding crackdown, Anything app removed from App Store (trending reaction)
+- Mapbox MarkerView vs Standard night lighting for dark mode pins (technical tip)
+- Knuth "Claude's Cycles" — AI finding vs proving (engagement question)
+- Knuth "Claude's Cycles" full story — Claude Opus solving open graph theory problem (thread)
+
 From drafts/2026-03-30.md:
 - Clio 4-day no-commit testing phase, ElevenLabs hallucinating dates (building in public)
 - DeepSeek 7-hour outage, AI uptime expectations (trending reaction)
@@ -60,16 +67,9 @@ From drafts/2026-03-24.md:
 - GPS-based AI narration app concept
 - Expo dev loop for GPS apps (thread)
 
-From drafts/2026-03-23.md:
-- HistorAI audio pipeline architecture (ElevenLabs Conversational AI)
-- AI agent tooling war (Claude Code, Cursor, Codex)
-- Nominatim reverse geocoding for location apps
-- AI voice app stacks
-- HistorAI full architecture walkthrough (thread)
-
 ## Content gaps
 Angles from config/projects.md not yet covered:
-- (none — all angles covered within the last 14 days as of 2026-03-30)
+- (none — all angles covered within the last 14 days as of 2026-03-31)
 
 ## Current narrative
-Clio (formerly HistorAI) runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. No new commits since March 26 — in active real-world testing phase, walking around Bucharest to find edge cases (GPS drift, Firecrawl timeouts, ElevenLabs hallucinating dates on newer buildings). Content mix: build updates from testing phase, AI infrastructure commentary (DeepSeek outage, Mistral sovereign compute), technical tips (per-language voice narration), and developer community engagement (real-time web data quality).
+Clio (formerly HistorAI) runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. No new commits since March 26 — day 5 of real-world testing across Bucharest neighborhoods, discovering that narration quality correlates with web data availability per location (old town excellent, communist-era blocks sparse). Content mix: build updates from testing phase, Apple vibe coding crackdown commentary, technical Mapbox tips, and the Knuth "Claude's Cycles" story as both engagement question and thread.

@@ -2,6 +2,18 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-03-31
+
+- Nvidia invested $2B in Marvell Technology for expanded AI infrastructure partnership — Marvell surged 12.8%, S&P 500 up 2.92%, Nasdaq up 3.83%
+- Apple pulled vibe coding app Anything from App Store citing Guideline 2.5.2 (no code execution outside review) — Replit and Vibecode already blocked earlier in March, but Vercel v0 still up
+- Donald Knuth published "Claude's Cycles" paper — Claude Opus 4.6 solved his open Hamiltonian cycle decomposition problem in 1 hour and 31 explorations, Knuth wrote the formal proof
+- California Governor Newsom signed executive order imposing new AI standards on companies doing business with the state — covers bias, discrimination, watermarking
+- Qwen3.5-Omni released — full omnimodal LLM handling text, images, audio natively
+- Europe AI innovation gap widening — AWS data shows 56% of European startups would consider leaving for better funding, 50% for faster scaling
+- LLM "Mirror Test" proposed for self-awareness — Opus 4.6 showed notable self-recognition capabilities outperforming GPT models
+- AI shifting from experimentation to execution — billion-dollar data center bets in Europe and China, capital flooding into defense, chips, and energy infrastructure
+- OpenAI developing X-like social media platform — early prototype focused on ChatGPT image generation and social feed
+
 ## 2026-03-30
 
 - DeepSeek chatbot went down for 7+ hours — longest outage since its 2025 breakout, AI labs now facing uptime expectations like traditional infrastructure
