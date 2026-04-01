@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-03-31
+- Last checked: 2026-04-01
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-01.md:
+- Clio pipeline latency: GPS to Nominatim to Firecrawl to ElevenLabs under 3 seconds (building in public)
+- Oracle 30K layoffs to fund $156B AI data center buildout (trending reaction)
+- Nominatim reverse geocoding vs Google Maps API at prototype stage (technical tip)
+- 51% of GitHub code AI-generated, engagement question (engagement question)
+- Anthropic Claude Mythos leak, Capybara tier, agentic capabilities (thread)
+
 From drafts/2026-03-31.md:
 - Clio web data coverage gap across Bucharest neighborhoods (building in public)
 - Apple vibe coding crackdown, Anything app removed from App Store (trending reaction)
@@ -69,7 +76,7 @@ From drafts/2026-03-24.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered:
-- (none — all angles covered within the last 14 days as of 2026-03-31)
+- (none — all angles covered within the last 14 days as of 2026-04-01)
 
 ## Current narrative
-Clio (formerly HistorAI) runs on both mobile (React Native/Expo) and web (Vite + React + Mapbox GL JS + ElevenLabs WebSocket + Firecrawl), deployed on Vercel with an Elastic Beanstalk API backend. No new commits since March 26 — day 5 of real-world testing across Bucharest neighborhoods, discovering that narration quality correlates with web data availability per location (old town excellent, communist-era blocks sparse). Content mix: build updates from testing phase, Apple vibe coding crackdown commentary, technical Mapbox tips, and the Knuth "Claude's Cycles" story as both engagement question and thread.
+Clio (formerly HistorAI) is in day 6 of real-world testing across Bucharest — no new commits since March 26. The full pipeline (GPS → Nominatim → Firecrawl → ElevenLabs) runs under 3 seconds, but narration quality still depends on web data availability per location. Content mix: build updates from the extended testing phase, Oracle's massive layoff-to-AI-infra pivot, Nominatim as a free geocoding alternative, AI code generation stats, and the ongoing Anthropic Claude Mythos leak story.

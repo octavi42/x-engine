@@ -2,6 +2,19 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-01
+
+- Oracle cut 20,000-30,000 jobs (~18% workforce) to fund $156B AI data center buildout — free cash flow hit -$10B, took on $58B in new debt in two months
+- Google launched Veo 3.1 Lite at $0.05/sec for 720p video gen — filling the void after OpenAI shut down Sora (was burning $15M/day)
+- Claude Mythos (Capybara tier) still in limited early access — Anthropic confirmed "step change" in capabilities, agentic multi-step execution across systems
+- GPT-5.4 launched with native computer-use capabilities — agents can operate computers and execute complex workflows across apps
+- GitHub reports 51% of all code committed in early 2026 was AI-generated or AI-assisted
+- Huawei 950PR AI chip released for inference workloads — ByteDance and Alibaba placing large orders
+- OpenAI generating $2B/month revenue, planning IPO
+- AI coding tools market hit $12.8B in 2026, up from $5.1B in 2024
+- Agentic coding workflows (multi-step planning, test running, iterative refinement) becoming the dominant paradigm over single-prompt completion
+- Microsoft investing $1B+ in Thailand cloud and AI infrastructure
+
 ## 2026-03-31
 
 - Nvidia invested $2B in Marvell Technology for expanded AI infrastructure partnership — Marvell surged 12.8%, S&P 500 up 2.92%, Nasdaq up 3.83%
