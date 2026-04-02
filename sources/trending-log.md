@@ -2,6 +2,15 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-02
+
+- LiteLLM supply chain attack: malicious PyPI packages (v1.82.7, v1.82.8) live for 40 minutes, LiteLLM present in 36% of cloud environments — Mercor (AI recruiting startup) confirmed 4TB data breach, Lapsus$ group claimed responsibility
+- Q1 2026 VC hit record $297B globally — AI captured 81% ($239B), four megarounds (OpenAI $122B, Anthropic $30B, xAI $20B, Waymo $16B) accounted for 64% of total
+- Cognichip raised $60M Series A for AI-powered chip design — Intel CEO Lip-Bu Tan joined board, claims 75% cost reduction and 50% faster timelines using physics-informed AI models
+- Cisco launched Zero Trust framework for AI agents at RSA 2026 — agent identity management, MCP policy enforcement, intent-aware monitoring for agentic workflows
+- Sakana AI's "AI Scientist" system handles autonomous research: generating ideas, running experiments, writing papers, and self-peer-review
+- Global startup funding in Q1 2026 surpassed 70% of all VC deployed in entire 2025 — nearly 150% increase quarter-over-quarter
+
 ## 2026-04-01
 
 - Oracle cut 20,000-30,000 jobs (~18% workforce) to fund $156B AI data center buildout — free cash flow hit -$10B, took on $58B in new debt in two months

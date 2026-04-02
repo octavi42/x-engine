@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-01
+- Last checked: 2026-04-02
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-02.md:
+- Clio day 7 testing dead zones, Firecrawl coverage gaps in Bucharest (building in public)
+- LiteLLM supply chain attack, Mercor 4TB breach, PyPI package security (trending reaction)
+- expo-location Accuracy.Balanced vs Accuracy.Highest battery tradeoff (technical tip)
+- Q1 2026 VC $297B record, AI 81%, four-company concentration (engagement question)
+- Cognichip $60M raise, AI designing chips, recursive loop (thread)
+
 From drafts/2026-04-01.md:
 - Clio pipeline latency: GPS to Nominatim to Firecrawl to ElevenLabs under 3 seconds (building in public)
 - Oracle 30K layoffs to fund $156B AI data center buildout (trending reaction)
@@ -75,8 +82,8 @@ From drafts/2026-03-24.md:
 - Expo dev loop for GPS apps (thread)
 
 ## Content gaps
-Angles from config/projects.md not yet covered:
-- (none — all angles covered within the last 14 days as of 2026-04-01)
+Angles from config/projects.md not yet covered recently:
+- (none — all angles covered within the last 14 days as of 2026-04-02)
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 6 of real-world testing across Bucharest — no new commits since March 26. The full pipeline (GPS → Nominatim → Firecrawl → ElevenLabs) runs under 3 seconds, but narration quality still depends on web data availability per location. Content mix: build updates from the extended testing phase, Oracle's massive layoff-to-AI-infra pivot, Nominatim as a free geocoding alternative, AI code generation stats, and the ongoing Anthropic Claude Mythos leak story.
+Clio (formerly HistorAI) is in day 7 of real-world testing across Bucharest — no new commits since March 26. The focus has shifted from building to mapping data coverage gaps: identifying neighborhoods where Firecrawl returns insufficient web data for narration. Content mix today: extended testing insights, the LiteLLM/Mercor supply chain attack as an AI security wake-up call, expo-location battery optimization, record-breaking Q1 2026 VC concentration, and the recursive loop of AI designing its own chips (Cognichip).
