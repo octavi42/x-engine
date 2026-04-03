@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-02
+- Last checked: 2026-04-03
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-03.md:
+- Clio day 8 zero commits, evaluating OpenStreetMap wiki extracts as fallback data source (building in public)
+- Liberation Day tariffs 1-year anniversary, $151B collected / $166B refund, chip tariff impact (trending reaction)
+- ElevenLabs Conversational AI dynamic system prompt injection with Firecrawl results (technical tip)
+- OpenAI 6 acquisitions in 2026, Astral (uv/ruff) and Promptfoo open-source consolidation (engagement question)
+- AI agents shift: 85% devs use AI assistance, 55% use agents, autocomplete to autonomous execution (thread)
+
 From drafts/2026-04-02.md:
 - Clio day 7 testing dead zones, Firecrawl coverage gaps in Bucharest (building in public)
 - LiteLLM supply chain attack, Mercor 4TB breach, PyPI package security (trending reaction)
@@ -83,7 +90,7 @@ From drafts/2026-03-24.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- (none — all angles covered within the last 14 days as of 2026-04-02)
+- (none — all angles covered within the last 14 days as of 2026-04-03)
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 7 of real-world testing across Bucharest — no new commits since March 26. The focus has shifted from building to mapping data coverage gaps: identifying neighborhoods where Firecrawl returns insufficient web data for narration. Content mix today: extended testing insights, the LiteLLM/Mercor supply chain attack as an AI security wake-up call, expo-location battery optimization, record-breaking Q1 2026 VC concentration, and the recursive loop of AI designing its own chips (Cognichip).
+Clio (formerly HistorAI) is in day 8 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The extended testing phase is now producing actionable architecture decisions: evaluating OpenStreetMap wiki extracts as a fallback for neighborhoods where Firecrawl returns insufficient web data. Content mix today: fallback data source planning, Liberation Day tariffs 1-year anniversary and their impact on AI chip costs, dynamic context injection in ElevenLabs Conversational AI, OpenAI's open-source acquisition spree (Astral/Promptfoo), and the rapid shift from autocomplete to autonomous AI agents in dev workflows.

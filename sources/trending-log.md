@@ -2,6 +2,17 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-03
+
+- Liberation Day tariffs 1-year anniversary: $151B collected, Supreme Court ordered $166B refund — net negative on IEEPA tariff strategy. 25% tariff on AI chips (H200, MI325X) still active, pushing hardware costs for local inference
+- OpenAI acquired 6 companies in 2026 (nearly matching 8 in all of 2025) — Astral (uv, ruff, ty) on March 19 and Promptfoo this month, both open-source dev tools absorbed into Codex and Frontier platforms
+- Cursor 3 launched agent-based workflows — AI plans and executes tasks from plain language, moving beyond autocomplete to autonomous coding
+- JetBrains survey: 85% of devs use AI coding assistance, 55% use AI agents regularly, staff+ engineers at 63.5% agent adoption
+- Cursor and Claude Code tied at 18% developer adoption at work, most common stack is Cursor + Claude Code
+- Q1 2026 VC hit $300B across 6,000 startups — 150% increase QoQ, foundational AI funding doubled all of 2025
+- World Labs (Fei-Fei Li) raised $1B for 3D world models
+- Microsoft raising prices (Power BI Pro $10→$14, Teams Phone $8→$10) citing tariff-driven cost increases
+
 ## 2026-04-02
 
 - LiteLLM supply chain attack: malicious PyPI packages (v1.82.7, v1.82.8) live for 40 minutes, LiteLLM present in 36% of cloud environments — Mercor (AI recruiting startup) confirmed 4TB data breach, Lapsus$ group claimed responsibility
