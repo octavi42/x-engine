@@ -2,6 +2,17 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-04
+
+- Google DeepMind released Gemma 4 — four open-weight models under Apache 2.0, built from Gemini 3 research. Runs on phones, 4x faster than Gemma 3, 60% less battery. Code auto-compatible with Gemini Nano 4 devices later this year
+- Microsoft MAI team (Mustafa Suleyman) shipped three foundational models: MAI-Transcribe-1 (3.8% WER across 25 languages), MAI-Voice-1 (60s audio in 1s), MAI-Image-2 (top-3 on Arena.ai). Direct challenge to OpenAI dependency
+- Cursor 3 refreshed with agent-first workflows — natural language task descriptions, LLM selection per task, moving beyond autocomplete to autonomous execution
+- GPT-5.4 scored 75.0% on OSWorld-Verified desktop task benchmark — 27.7 points above GPT-5.2, first model to surpass human-level on autonomous desktop tasks
+- DeepSeek V4 matches Claude Opus 4.6 performance at estimated $5.2M training cost, 94.7% HumanEval
+- GitHub Copilot cloud agent now signs its commits — identity and attribution for AI-generated code becoming standard
+- Smartly.io partnered with OpenAI to integrate ads directly into ChatGPT conversations — new AI-native advertising model
+- Microsoft investing $10B in Japan AI infrastructure 2026-2029
+
 ## 2026-04-03
 
 - Liberation Day tariffs 1-year anniversary: $151B collected, Supreme Court ordered $166B refund — net negative on IEEPA tariff strategy. 25% tariff on AI chips (H200, MI325X) still active, pushing hardware costs for local inference
