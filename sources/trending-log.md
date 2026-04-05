@@ -2,6 +2,16 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-05
+
+- Claude Code source code leaked via npm packaging error on March 31 — 513K lines of TypeScript across 1,906 files exposed. 44 feature flags found including KAIROS, an always-on daemon mode for background agent execution. Anthropic confirmed no customer data exposed, issued takedown requests across GitHub
+- GitHub Copilot changing data policy April 24: Free/Pro/Pro+ user interaction data used for model training unless users opt out — opt-out is off by default
+- AI coding tools market hit $12.8B in 2026, up from $5.1B in 2024. Fortune reported trust as the real bottleneck — not capability. 84% of devs using or planning to adopt AI coding tools per Stack Overflow survey
+- Cursor 3 rebuild launched April 2 — agent-first interface, AI plans and executes from natural language, Design Mode, cloud agents. Cursor crossed $1B ARR in 24 months
+- Goldman Sachs report: AI-led demand to drive sharp surge in semiconductor revenues through 2026-2027
+- Claude Code most-loved dev tool at 46% adoption. Most common stack: Cursor for editing + Claude Code for complex tasks in terminal
+- GitHub reports 51% of all code committed in early 2026 was AI-generated or AI-assisted — shift from code completion to code creation becoming the dominant paradigm
+
 ## 2026-04-04
 
 - Google DeepMind released Gemma 4 — four open-weight models under Apache 2.0, built from Gemini 3 research. Runs on phones, 4x faster than Gemma 3, 60% less battery. Code auto-compatible with Gemini Nano 4 devices later this year

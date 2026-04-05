@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-04
+- Last checked: 2026-04-05
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-05.md:
+- Clio day 10 testing, battery drain data, Accuracy.Balanced + 30-second polling, testing vs coding phase decisions (building in public)
+- Claude Code source leak via npm, 513K lines TypeScript, KAIROS daemon mode feature flag (trending reaction)
+- Zustand with expo-location for GPS subscription and Firecrawl search deduplication, 50m threshold middleware (technical tip)
+- GitHub Copilot April 24 data policy change, interaction data for training, opt-out off by default (engagement question)
+- AI coding trust bottleneck, 51% GitHub code AI-generated, $12.8B market, verification as next wave (thread)
+
 From drafts/2026-04-04.md:
 - Clio day 9 testing, OpenStreetMap wiki extracts as fallback, scoring function for source selection (building in public)
 - Google Gemma 4 release, Apache 2.0, on-device AI production-ready for mobile (trending reaction)
@@ -82,7 +89,7 @@ From drafts/2026-03-26.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- (none — all angles covered within the last 14 days as of 2026-04-04)
+- (none — all angles covered within the last 14 days as of 2026-04-05)
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 9 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The extended testing phase is producing data-driven architecture decisions: OpenStreetMap wiki extracts are being evaluated as a fallback for neighborhoods where Firecrawl returns insufficient web data, with a scoring function planned to select the best source per location. Today's broader context: Google Gemma 4 launched as production-ready on-device AI under Apache 2.0, and Microsoft shipped three in-house MAI foundational models in a direct move away from OpenAI dependency.
+Clio (formerly HistorAI) is in day 10 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). Battery drain testing has validated the Accuracy.Balanced + 30-second polling configuration for 4+ hour walking sessions. The extended testing phase continues to produce better architecture decisions than the coding phase. Today's broader context: Claude Code's source leaked via npm packaging error exposing KAIROS daemon mode, GitHub Copilot's April 24 data policy change is forcing developers to decide on training opt-outs, and trust is emerging as the key bottleneck in the $12.8B AI coding tools market.
