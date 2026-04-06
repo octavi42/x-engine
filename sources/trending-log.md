@@ -2,6 +2,16 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-06
+
+- HumanX conference opens April 6-9 at Moscone Center SF — 6,500 AI leaders, Bret Taylor (OpenAI board chair) and Andrew Ng headlining. Enterprise AI adoption shifting from exploration to procurement
+- JetBrains April 2026 report: 90% of developers use at least one AI tool at work. Claude Code at 91% CSAT and 54 NPS (highest in market), 18% workplace adoption with 6x growth in 12 months. Cursor growth slowing in both awareness and adoption
+- Anthropic CPO Mike Krieger confirmed 90% of Claude Code is written by Claude Code — self-improving development loop. Humans shifted to architects and security auditors. Claude Code authoring 4% of all public GitHub commits (135K daily)
+- OpenAI, Anthropic, and DeepMind accelerating self-improving research systems — Anthropic says Claude authors up to 90% of some projects, OpenAI plans AI "intern" deployment
+- Google Gemini 3.1 Flash-Lite released as fastest/cheapest model for real-time high-volume workloads
+- MCP (Model Context Protocol) crossed 97 million installs — every major AI provider now ships MCP-compatible tooling, becoming default agent infrastructure
+- AI startups prioritizing high salaries over equity to attract talent in April 2026, focusing on measurable ROI from AI applications
+
 ## 2026-04-05
 
 - Claude Code source code leaked via npm packaging error on March 31 — 513K lines of TypeScript across 1,906 files exposed. 44 feature flags found including KAIROS, an always-on daemon mode for background agent execution. Anthropic confirmed no customer data exposed, issued takedown requests across GitHub

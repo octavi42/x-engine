@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-05
+- Last checked: 2026-04-06
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-06.md:
+- Clio day 11 testing, Expo + EAS dev builds for physical device testing, GPS drift and satellite fix edge cases (building in public)
+- HumanX conference opening in SF, 6,500 AI leaders, enterprise AI shift from exploration to procurement (trending reaction)
+- Expo EAS dev builds for GPS apps, no Xcode/Android Studio, real satellite signals and cell towers (technical tip)
+- 90% of Claude Code written by Claude Code, self-improving AI tools, code quality when AI is primary author (engagement question)
+- Self-improving AI development, 90% dev adoption, 4% GitHub commits from Claude Code, bottleneck shift (thread)
+
 From drafts/2026-04-05.md:
 - Clio day 10 testing, battery drain data, Accuracy.Balanced + 30-second polling, testing vs coding phase decisions (building in public)
 - Claude Code source leak via npm, 513K lines TypeScript, KAIROS daemon mode feature flag (trending reaction)
@@ -89,7 +96,7 @@ From drafts/2026-03-26.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- (none — all angles covered within the last 14 days as of 2026-04-05)
+- (none — all angles covered within the last 14 days as of 2026-04-06)
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 10 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). Battery drain testing has validated the Accuracy.Balanced + 30-second polling configuration for 4+ hour walking sessions. The extended testing phase continues to produce better architecture decisions than the coding phase. Today's broader context: Claude Code's source leaked via npm packaging error exposing KAIROS daemon mode, GitHub Copilot's April 24 data policy change is forcing developers to decide on training opt-outs, and trust is emerging as the key bottleneck in the $12.8B AI coding tools market.
+Clio (formerly HistorAI) is in day 11 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The testing phase continues to surface edge cases that simulators miss: GPS drift near tall buildings, cell signal drops, and satellite fix reliability. Expo + EAS dev builds enable a fast physical-device testing loop without native toolchains. Today's broader context: HumanX conference opens in SF with 6,500 AI leaders as enterprise adoption accelerates, JetBrains reports 90% of developers now use AI tools at work with Claude Code leading satisfaction metrics, and Anthropic confirmed 90% of Claude Code is AI-written — marking a visible shift toward self-improving development systems.
