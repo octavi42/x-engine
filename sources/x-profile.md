@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-06
+- Last checked: 2026-04-07
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-07.md:
+- Clio day 12, zero commits in 16 days, walking Bucharest testing narrator accuracy, data quality focus (building in public)
+- OpenAI 13-page AI economy paper, robot taxes, 4-day workweek, policy from company displacing labor (trending reaction)
+- Firecrawl search result dedup on Express backend, URL hashing, 24h cache, API cost reduction (technical tip)
+- Anthropic $30B revenue run rate, tripled in 12 months, 3.5GW TPU deal with Google/Broadcom, AI lab as infra company (engagement question)
+- OpenAI Intelligence Age policy paper, robot taxes, public wealth funds, contradiction of regulating industry you dominate (thread)
+
 From drafts/2026-04-06.md:
 - Clio day 11 testing, Expo + EAS dev builds for physical device testing, GPS drift and satellite fix edge cases (building in public)
 - HumanX conference opening in SF, 6,500 AI leaders, enterprise AI shift from exploration to procurement (trending reaction)
@@ -96,7 +103,7 @@ From drafts/2026-03-26.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- (none — all angles covered within the last 14 days as of 2026-04-06)
+- (none — all angles covered within the last 14 days as of 2026-04-07)
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 11 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The testing phase continues to surface edge cases that simulators miss: GPS drift near tall buildings, cell signal drops, and satellite fix reliability. Expo + EAS dev builds enable a fast physical-device testing loop without native toolchains. Today's broader context: HumanX conference opens in SF with 6,500 AI leaders as enterprise adoption accelerates, JetBrains reports 90% of developers now use AI tools at work with Claude Code leading satisfaction metrics, and Anthropic confirmed 90% of Claude Code is AI-written — marking a visible shift toward self-improving development systems.
+Clio (formerly HistorAI) is in day 12 of real-world testing across Bucharest — no new commits since March 22 (20 total commits). The extended no-code testing phase is focused entirely on data quality: walking routes, documenting where the AI narrator gets historical facts wrong, and identifying Firecrawl search result gaps. Today's broader context: OpenAI released a 13-page policy paper proposing robot taxes and 4-day workweeks as AI reshapes the economy, Anthropic tripled revenue to a $30B run rate and signed a 3.5GW TPU deal with Google/Broadcom, and HumanX conference continues in SF with 6,500 AI leaders as enterprise adoption accelerates.

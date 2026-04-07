@@ -2,6 +2,17 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-07
+
+- OpenAI published "Industrial Policy for the Intelligence Age" — 13-page paper proposing robot taxes, subsidized 4-day workweek (32h, no pay cut), public wealth funds giving citizens a stake in AI-driven growth, and shifting tax burden from labor to capital. On track for IPO Q4 2026
+- Anthropic signed 3.5GW TPU compute deal with Google/Broadcom, revenue run rate hit $30B (tripled from $9B end of 2025). Broadcom stock jumped 6%. Broadcom expects $21B AI revenue from Anthropic in 2026, $42B in 2027
+- HumanX conference Day 2 at Moscone Center SF — 6,500 attendees, Bret Taylor and Andrew Ng headlining, enterprise AI shifting from exploration to procurement
+- Microsoft released Agent Framework 1.0.0 — toolkit to block dangerous agent actions before execution, integrates with existing frameworks
+- Codenotary launched AgentMon — monitoring tool tracking AI agent behavior, file access, and data patterns across systems
+- Telegram added fully private on-device AI message editor and bot-creates-bot functionality
+- OpenAI launched Safety Fellowship for external researchers (Sep 2026 - Feb 2027) focused on AI safety and alignment
+- Utah AI prescription renewal pilot (Doctronic) gaining renewed attention — first state to allow AI autonomous drug refills, 190 drugs covered, $4/renewal, launched January 2026
+
 ## 2026-04-06
 
 - HumanX conference opens April 6-9 at Moscone Center SF — 6,500 AI leaders, Bret Taylor (OpenAI board chair) and Andrew Ng headlining. Enterprise AI adoption shifting from exploration to procurement
