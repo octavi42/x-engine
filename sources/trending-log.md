@@ -2,6 +2,15 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-08
+
+- Bloomberg published "ARR is the least-trusted metric of the AI era" — triggered by Cluely CEO Roy Lee fabricating $7M ARR to a reporter (actual: $5.2M), called it "some BS" on X. ARR gaming widespread among AI startups using trial revenue × 12
+- Neuro-symbolic AI breakthrough from Tufts researchers: combined neural networks with symbolic reasoning, cut AI energy use by 100x while boosting accuracy from 34% to 95% on robotics benchmark. Training used 1% of standard energy, inference 5%. Presented at ICRA Vienna
+- AI scribes healthcare costs debate: insurers and providers both agree AI documentation tools are inflating medical billing codes and increasing costs. STAT News reports no consensus on solution — providers say it reduces burnout, insurers say it's upcoding
+- HumanX Day 3 at Moscone Center SF — Ray Kurzweil Q&A on agentic systems, exponential science, and creative AI. HumanX After Dark at SF City Hall
+- OpenAI reportedly taking early steps toward IPO, potentially late 2026. Surpassed $25B annualized revenue, secured $122B in funding
+- Cluely scandal deepening: a]6z-backed startup CEO admitted lying about revenue, Bloomberg and PYMNTS covering broader pattern of AI startup ARR inflation
+
 ## 2026-04-07
 
 - OpenAI published "Industrial Policy for the Intelligence Age" — 13-page paper proposing robot taxes, subsidized 4-day workweek (32h, no pay cut), public wealth funds giving citizens a stake in AI-driven growth, and shifting tax burden from labor to capital. On track for IPO Q4 2026

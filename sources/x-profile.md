@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-07
+- Last checked: 2026-04-08
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-08.md:
+- Clio day 13, two weeks zero commits, narration accuracy is data sourcing problem not model problem, Firecrawl thin on residential areas (building in public)
+- Bloomberg ARR least-trusted metric, Cluely CEO fabricated $7M revenue, trial revenue gaming (trending reaction)
+- Overpass API for nearby POI scouting before narrator trigger, amenity/tourism/historic tags within 200m (technical tip)
+- AI scribes saving doctors 30 min/day but inflating billing codes, healthcare cost debate, provider vs payer optimization (engagement question)
+- Neuro-symbolic AI 100x energy reduction, 34% to 95% accuracy, Tufts research, symbolic reasoning + neural networks (thread)
+
 From drafts/2026-04-07.md:
 - Clio day 12, zero commits in 16 days, walking Bucharest testing narrator accuracy, data quality focus (building in public)
 - OpenAI 13-page AI economy paper, robot taxes, 4-day workweek, policy from company displacing labor (trending reaction)
@@ -103,7 +110,7 @@ From drafts/2026-03-26.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- (none — all angles covered within the last 14 days as of 2026-04-07)
+- (none — all angles covered within the last 14 days as of 2026-04-08)
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 12 of real-world testing across Bucharest — no new commits since March 22 (20 total commits). The extended no-code testing phase is focused entirely on data quality: walking routes, documenting where the AI narrator gets historical facts wrong, and identifying Firecrawl search result gaps. Today's broader context: OpenAI released a 13-page policy paper proposing robot taxes and 4-day workweeks as AI reshapes the economy, Anthropic tripled revenue to a $30B run rate and signed a 3.5GW TPU deal with Google/Broadcom, and HumanX conference continues in SF with 6,500 AI leaders as enterprise adoption accelerates.
+Clio (formerly HistorAI) is in day 13 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The extended testing phase has surfaced a key insight: narration accuracy issues are a data sourcing problem, not a model problem. Firecrawl returns rich results for major landmarks but thin content for residential neighborhoods. Today's broader context: Bloomberg published a piece calling ARR the "least-trusted metric of the AI era" after the Cluely CEO scandal, Tufts researchers announced a neuro-symbolic AI breakthrough cutting energy use by 100x, AI scribes are driving an unexpected healthcare cost debate, and HumanX Day 3 features Ray Kurzweil at Moscone Center SF.
