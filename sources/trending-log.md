@@ -2,6 +2,17 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-10
+
+- Anthropic announced Claude Mythos Preview + Project Glasswing — frontier model so capable at finding software vulnerabilities they refuse general release. Used Mythos to surface thousands of zero-days across every major OS and browser, including a 17-year-old FreeBSD NFS root RCE (CVE-2026-4747). One browser exploit chained four bugs to escape both renderer and OS sandboxes. Restricted to AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks
+- AWS disclosed $15B annualized AI revenue run rate in Andy Jassy's April shareholder letter — first time Amazon has broken out the AI services number publicly (~10% of $142B AWS run rate). Trainium/Graviton in-house chips business now $20B+ run rate, roughly double earlier 2026 figure. Two large customers asked to buy all of Amazon's 2026 Graviton capacity. Stock up 5.5%, defending $200B 2026 capex
+- Marimo CVE-2026-39987 — critical unauthenticated RCE in the open-source Python notebook tool exploited in the wild roughly 9 hours after public disclosure. Gap between vuln disclosure and exploit now measured in hours, not days
+- Anthropic launched Claude Managed Agents in public beta — fully managed agent harness with secure sandboxing, built-in tools, server-sent event streaming
+- Anthropic launched ant CLI — command-line client for the Claude API with native Claude Code integration and YAML versioning of API resources
+- Microsoft Agent Framework 1.0 released April 7 — production unification of Semantic Kernel and AutoGen as a single open-source SDK with stable APIs, LTS commitment, and full MCP support
+- OpenAI plans to reserve part of its eventual IPO allocation for individual investors per CFO Sarah Friar (CNBC) — break from typical institutional-only public offerings
+- Intel and Google extended Xeon partnership: Google will keep using future Xeon generations and co-develop custom infrastructure processing units for AI inference and general cloud workloads
+
 ## 2026-04-08
 
 - Bloomberg published "ARR is the least-trusted metric of the AI era" — triggered by Cluely CEO Roy Lee fabricating $7M ARR to a reporter (actual: $5.2M), called it "some BS" on X. ARR gaming widespread among AI startups using trial revenue × 12
