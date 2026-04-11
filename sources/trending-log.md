@@ -2,6 +2,17 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-11
+
+- OpenAI launched a $100/month ChatGPT Pro tier April 9–10, 2026 — explicitly positioned against Anthropic's Claude Max. 5x Codex usage vs the $20 Plus tier, with a limited-time promo (through May 31) bumping it to 10x Plus. Codex now at 3M+ weekly users, up 5x in three months, growing 70% MoM. Previous Pro at $200 stays (20x Plus limits)
+- Meta shipped Muse Spark — first major model release since the $14B Alexandr Wang / Scale deal. Multimodal perception, reasoning, health, and agentic tasks. Framed as Meta finally catching Google/OpenAI after billions in capex
+- Rhoda AI launched publicly with $450M Series A — FutureVision robotics platform built on video-predictive control. Part of a huge March–April robotics megaround wave (Mind Robotics $500M, Sunday $165M, Oxa $103M)
+- Microsoft Agent Framework 1.0 shipped full MCP support for tool discovery and invocation, with A2A 1.0 cross-framework agent collaboration arriving imminently
+- MCP v2.1 spec adds Server Cards — a standard for exposing structured server metadata via a `.well-known` URL so registries and crawlers can discover server capabilities without connecting. MCP now at 97M+ monthly SDK downloads
+- NVIDIA Vera Rubin in full production — cloud delivery H2 2026, with AWS, Google Cloud, Azure, and OCI confirmed as first deployers of NVL72 rack-scale
+- OpenAI Child Safety Blueprint (April 8) — focused on AI-reshaped child exploitation threats, alongside the previously-announced Safety Fellowship running Sep 2026 – Feb 2027
+- JetBrains January 2026 AI Pulse survey now widely cited: 90% of professional devs use at least one AI tool regularly, Claude Code and Copilot tied at 18% workplace share
+
 ## 2026-04-10
 
 - Anthropic announced Claude Mythos Preview + Project Glasswing — frontier model so capable at finding software vulnerabilities they refuse general release. Used Mythos to surface thousands of zero-days across every major OS and browser, including a 17-year-old FreeBSD NFS root RCE (CVE-2026-4747). One browser exploit chained four bugs to escape both renderer and OS sandboxes. Restricted to AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks
