@@ -2,6 +2,15 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-12
+
+- Q1 2026 tech layoffs hit 80,000 workers across the industry — 48% (37,638) of cuts explicitly attributed to AI automation. Block went from 10K to under 6K employees in one round, largest single workforce reduction blamed on AI. Oracle cut 20K-30K to fund $156B data center buildout. IBM took the opposite approach — tripled entry-level hiring, arguing AI tools still need human judgment
+- "AI washing" layoffs debate intensifying: Cognizant Chief AI Officer said "AI becomes the scapegoat from a financial perspective" for companies that overhired. Sam Altman previously said fewer than 1% of 2025 job losses were actually AI-caused. Fortune ran "9 reasons AI isn't going to take your job (yet)"
+- AI coding tool stack convergence: The New Stack published "Cursor, Claude Code, and Codex are merging into one AI coding stack nobody planned" — the developer workflow is shifting from single-tool to multi-agent, with Cursor for editing and Claude Code for terminal. The "Cursor is dead" narrative gaining steam as autonomous agents overtake IDE-based dev
+- Major tech companies funding next-gen nuclear reactors for AI data center power — the AI race bottleneck shifting from compute to electricity. Oracle $156B data center buildout, NVIDIA Vera Rubin rack-scale needs cooling infrastructure nobody has yet
+- OpenAI IPO groundwork continues — potentially valuing the company at up to $1T, with a novel plan to reserve allocation for individual investors (not just institutional). Revenue surpassed $25B annualized
+- InBIA 40th annual conference (ICBI40) opening in Chicago April 12-15, bringing together entrepreneur support ecosystem practitioners
+
 ## 2026-04-11
 
 - OpenAI launched a $100/month ChatGPT Pro tier April 9–10, 2026 — explicitly positioned against Anthropic's Claude Max. 5x Codex usage vs the $20 Plus tier, with a limited-time promo (through May 31) bumping it to 10x Plus. Codex now at 3M+ weekly users, up 5x in three months, growing 70% MoM. Previous Pro at $200 stays (20x Plus limits)

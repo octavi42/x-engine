@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-08
+- Last checked: 2026-04-12
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,64 +11,85 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-12.md:
+- Clio day 17, testing longer than coding, POI backlog from Firecrawl coverage gaps (building in public)
+- Q1 2026 tech layoffs 80K workers, 48% blamed on AI, Block 10K to under 6K (trending reaction)
+- ElevenLabs signed conversation tokens for WebRTC web demo, Express endpoint, zero key exposure (technical tip)
+- AI race bottleneck shift from compute to electricity, Oracle $156B data centers, nuclear reactors (engagement question)
+- AI layoff "washing" narrative, Block/Oracle/IBM three different stories, AI as corporate justification (thread)
+
+From drafts/2026-04-11.md:
+- Clio day 16, 16 days testing, deployment as debugger (building in public)
+- OpenAI $100 ChatGPT Pro tier, credits war vs Claude Max (trending reaction)
+- Vercel rewrites proxy for mixed content, HTTPS/HTTP fix (technical tip)
+- Meta Muse Spark, $14B Alexandr Wang deal, superteam vs cultural reset (engagement question)
+- Agentic coding market inflection, capability war to credits war (thread)
+
+From drafts/2026-04-10.md:
+- Clio day 15, 3 weeks zero code, testing surfaces right next ticket (building in public)
+- Marimo RCE 9-hour exploit window, CVE-2026-39987 (trending reaction)
+- Mapbox Standard StyleImport day/night switching (technical tip)
+- AWS $15B AI revenue, Trainium $20B, in-house silicon as moat (engagement question)
+- Claude Mythos/Glasswing, thousands of zero-days, offensive security threshold (thread)
+
 From drafts/2026-04-08.md:
-- Clio day 13, two weeks zero commits, narration accuracy is data sourcing problem not model problem, Firecrawl thin on residential areas (building in public)
-- Bloomberg ARR least-trusted metric, Cluely CEO fabricated $7M revenue, trial revenue gaming (trending reaction)
-- Overpass API for nearby POI scouting before narrator trigger, amenity/tourism/historic tags within 200m (technical tip)
-- AI scribes saving doctors 30 min/day but inflating billing codes, healthcare cost debate, provider vs payer optimization (engagement question)
-- Neuro-symbolic AI 100x energy reduction, 34% to 95% accuracy, Tufts research, symbolic reasoning + neural networks (thread)
+- Clio day 13, narration accuracy is data sourcing problem, Firecrawl thin on residential (building in public)
+- Bloomberg ARR least-trusted metric, Cluely CEO fabricated revenue (trending reaction)
+- Overpass API POI scouting, amenity/tourism/historic tags within 200m (technical tip)
+- AI scribes healthcare billing inflation debate (engagement question)
+- Neuro-symbolic AI 100x energy reduction, Tufts research (thread)
 
 From drafts/2026-04-07.md:
-- Clio day 12, zero commits in 16 days, walking Bucharest testing narrator accuracy, data quality focus (building in public)
-- OpenAI 13-page AI economy paper, robot taxes, 4-day workweek, policy from company displacing labor (trending reaction)
-- Firecrawl search result dedup on Express backend, URL hashing, 24h cache, API cost reduction (technical tip)
-- Anthropic $30B revenue run rate, tripled in 12 months, 3.5GW TPU deal with Google/Broadcom, AI lab as infra company (engagement question)
-- OpenAI Intelligence Age policy paper, robot taxes, public wealth funds, contradiction of regulating industry you dominate (thread)
+- Clio day 12, walking Bucharest testing narrator accuracy (building in public)
+- OpenAI 13-page AI economy paper, robot taxes, 4-day workweek (trending reaction)
+- Firecrawl search result dedup, URL hashing, 24h cache (technical tip)
+- Anthropic $30B revenue, 3.5GW TPU deal (engagement question)
+- OpenAI Intelligence Age policy paper (thread)
 
 From drafts/2026-04-06.md:
-- Clio day 11 testing, Expo + EAS dev builds for physical device testing, GPS drift and satellite fix edge cases (building in public)
-- HumanX conference opening in SF, 6,500 AI leaders, enterprise AI shift from exploration to procurement (trending reaction)
-- Expo EAS dev builds for GPS apps, no Xcode/Android Studio, real satellite signals and cell towers (technical tip)
-- 90% of Claude Code written by Claude Code, self-improving AI tools, code quality when AI is primary author (engagement question)
-- Self-improving AI development, 90% dev adoption, 4% GitHub commits from Claude Code, bottleneck shift (thread)
+- Clio day 11, Expo EAS dev builds, GPS drift edge cases (building in public)
+- HumanX conference SF, enterprise AI procurement shift (trending reaction)
+- Expo EAS dev builds for GPS apps (technical tip)
+- 90% Claude Code written by Claude Code (engagement question)
+- Self-improving AI development (thread)
 
 From drafts/2026-04-05.md:
-- Clio day 10 testing, battery drain data, Accuracy.Balanced + 30-second polling, testing vs coding phase decisions (building in public)
-- Claude Code source leak via npm, 513K lines TypeScript, KAIROS daemon mode feature flag (trending reaction)
-- Zustand with expo-location for GPS subscription and Firecrawl search deduplication, 50m threshold middleware (technical tip)
-- GitHub Copilot April 24 data policy change, interaction data for training, opt-out off by default (engagement question)
-- AI coding trust bottleneck, 51% GitHub code AI-generated, $12.8B market, verification as next wave (thread)
+- Clio day 10, battery drain, Accuracy.Balanced + 30-second polling (building in public)
+- Claude Code source leak via npm, KAIROS daemon mode (trending reaction)
+- Zustand + expo-location GPS subscription, 50m threshold (technical tip)
+- GitHub Copilot April 24 data policy change (engagement question)
+- AI coding trust bottleneck, 51% GitHub code AI-generated (thread)
 
 From drafts/2026-04-04.md:
-- Clio day 9 testing, OpenStreetMap wiki extracts as fallback, scoring function for source selection (building in public)
-- Google Gemma 4 release, Apache 2.0, on-device AI production-ready for mobile (trending reaction)
-- Nominatim extratags field for Wikipedia/Wikidata links, free geocoding context (technical tip)
-- Microsoft MAI models (Voice, Transcribe, Image) built in-house, OpenAI dependency question (engagement question)
-- On-device AI crossing production threshold for mobile apps, Gemma 4 agentic workflows (thread)
+- Clio day 9, OpenStreetMap wiki extracts fallback (building in public)
+- Google Gemma 4 release, Apache 2.0 (trending reaction)
+- Nominatim extratags Wikipedia/Wikidata links (technical tip)
+- Microsoft MAI models in-house (engagement question)
+- On-device AI mobile production threshold (thread)
 
 From drafts/2026-04-03.md:
-- Clio day 8 zero commits, evaluating OpenStreetMap wiki extracts as fallback data source (building in public)
-- Liberation Day tariffs 1-year anniversary, chip tariff impact (trending reaction)
-- ElevenLabs Conversational AI dynamic system prompt injection with Firecrawl results (technical tip)
-- OpenAI 6 acquisitions in 2026, Astral/Promptfoo open-source consolidation (engagement question)
-- AI agents shift: 85% devs use AI assistance, 55% use agents (thread)
+- Clio day 8, evaluating OpenStreetMap fallback (building in public)
+- Liberation Day tariffs anniversary, chip tariff (trending reaction)
+- ElevenLabs dynamic system prompt injection (technical tip)
+- OpenAI 6 acquisitions 2026 (engagement question)
+- AI agents shift, 85% devs use AI assistance (thread)
 
 From drafts/2026-04-02.md:
-- Clio day 7 testing dead zones, Firecrawl coverage gaps (building in public)
-- LiteLLM supply chain attack, Mercor 4TB breach (trending reaction)
-- expo-location Accuracy.Balanced vs Accuracy.Highest battery tradeoff (technical tip)
-- Q1 2026 VC $297B record, four-company concentration (engagement question)
-- Cognichip $60M raise, AI designing chips (thread)
+- Clio day 7, dead zones, Firecrawl coverage gaps (building in public)
+- LiteLLM supply chain attack, Mercor breach (trending reaction)
+- expo-location Accuracy.Balanced vs Accuracy.Highest (technical tip)
+- Q1 2026 VC $297B record (engagement question)
+- Cognichip $60M, AI chip design (thread)
 
 From drafts/2026-04-01.md:
 - Clio pipeline latency under 3 seconds (building in public)
-- Oracle 30K layoffs for AI data center buildout (trending reaction)
-- Nominatim reverse geocoding vs Google Maps API (technical tip)
+- Oracle 30K layoffs for data centers (trending reaction)
+- Nominatim vs Google Maps API (technical tip)
 - 51% GitHub code AI-generated (engagement question)
-- Claude Mythos leak, Capybara tier (thread)
+- Claude Mythos leak (thread)
 
 From drafts/2026-03-31.md:
-- Clio web data coverage gap across neighborhoods (building in public)
+- Clio web data coverage gap (building in public)
 - Apple vibe coding crackdown (trending reaction)
 - Mapbox MarkerView dark mode (technical tip)
 - Knuth "Claude's Cycles" (engagement question + thread)
@@ -87,30 +108,9 @@ From drafts/2026-03-29.md:
 - AI dev tool pricing (engagement question)
 - OpenAI Sora shutdown (thread)
 
-From drafts/2026-03-28.md:
-- Clio localStorage persistence (building in public)
-- Atlassian CTO split (trending reaction)
-- Mapbox Geocoding search (technical tip)
-- Location-aware AI pipeline use cases (engagement question)
-- Claude planning Mars rover drives (thread)
-
-From drafts/2026-03-27.md:
-- Clio web-to-mobile funnel (building in public)
-- Apple Siri third-party AI (trending reaction)
-- ElevenLabs TEASER signal (technical tip)
-- Voice-first AI apps (engagement question)
-- Perplexity Personal Computer (thread)
-
-From drafts/2026-03-26.md:
-- Clio rebrand + web demo launch (building in public)
-- Cursor/Kimi K2.5 attribution controversy (trending reaction)
-- Vercel mixed content proxy fix (technical tip)
-- Expo GPS testing workflow (engagement question)
-- Clio web vs mobile architecture (thread)
-
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- (none — all angles covered within the last 14 days as of 2026-04-08)
+- AI voice apps (last covered March 30 — ElevenLabs per-language first_message, 13 days ago; today's technical tip addresses this)
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 13 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The extended testing phase has surfaced a key insight: narration accuracy issues are a data sourcing problem, not a model problem. Firecrawl returns rich results for major landmarks but thin content for residential neighborhoods. Today's broader context: Bloomberg published a piece calling ARR the "least-trusted metric of the AI era" after the Cluely CEO scandal, Tufts researchers announced a neuro-symbolic AI breakthrough cutting energy use by 100x, AI scribes are driving an unexpected healthcare cost debate, and HumanX Day 3 features Ray Kurzweil at Moscone Center SF.
+Clio (formerly HistorAI) is in day 17 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The extended testing phase continues to surface data sourcing as the core problem: Firecrawl returns rich results for landmarks but thin content for residential areas. A growing backlog of broken POIs is shaping the next coding sprint. Today's broader context: Q1 2026 tech layoffs hit 80K workers with 48% attributed to AI automation — Block made the largest single AI-attributed cut (10K to under 6K), while IBM took the opposite approach by tripling entry-level hiring. The AI race bottleneck is visibly shifting from compute to electricity as companies fund nuclear reactors for data center power.
