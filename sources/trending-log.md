@@ -2,6 +2,17 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-13
+
+- Stanford HAI 2026 AI Index released today — gen AI hit 53% US population adoption in 3 years (faster than PC at ~15 years or internet at ~7). US/China model gap closed to 2.7% as of March 2026 — Anthropic's top model leads by just that margin, with US and Chinese models trading the lead multiple times since early 2025. More than 90% of notable AI models now come from private labs — academic and public research pipeline functionally dead on the frontier
+- AI Index also reports: estimated consumer surplus of gen AI tools at $172B/yr for US users in early 2026, median value per user tripled 2025→2026. 4 of 5 US high school/college students now use AI for schoolwork; only 50% of schools have AI policies and only 6% of teachers say those policies are clear
+- PwC 2026 AI Performance Study released today: just 20% of companies are capturing ~75% of AI's financial returns. The leading companies focus on growth (new products, new revenue streams) rather than productivity/cost cuts. The winners are rewiring orgs, not just adopting tools
+- Anthropic shipped Claude for Word add-in, completing the full Microsoft Office trio (Word, Excel, PowerPoint) with native Claude integration — shared context carries across documents, spreadsheets, and presentations in a single session
+- AWS Weekly Roundup (April 13): Claude Mythos Preview now available in Amazon Bedrock across more regions, AWS Agent Registry launched for tracking foundation model use by department/team — department-level billing for agent usage becomes a first-class primitive
+- ElevenLabs client SDK v1.0.0 shipped with breaking changes across @elevenlabs/client, @elevenlabs/react, and @elevenlabs/react-native. useConversationControls now exposes sendMultimodalMessage; MultimodalMessageInput type exported for images and multimodal payloads; convert speech-to-text response now includes audio_duration_secs; get voice response adds recording_quality (studio/good/ok/poor/bad) and labelling_status fields
+- Proposed state AI law wave: Nebraska chatbot bill, Maryland AI pricing bill, and Maine AI health bill all moving through legislatures this week. 78+ chatbot bills alive across 27 states tracking earlier
+- HumanX conference wrap coverage: Claude dominated conversation across panels and booths, overshadowing ChatGPT in enterprise discussions on agentic AI
+
 ## 2026-04-12
 
 - Q1 2026 tech layoffs hit 80,000 workers across the industry — 48% (37,638) of cuts explicitly attributed to AI automation. Block went from 10K to under 6K employees in one round, largest single workforce reduction blamed on AI. Oracle cut 20K-30K to fund $156B data center buildout. IBM took the opposite approach — tripled entry-level hiring, arguing AI tools still need human judgment

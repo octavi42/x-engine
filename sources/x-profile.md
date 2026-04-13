@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-12
+- Last checked: 2026-04-13
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-13.md:
+- Clio day 18, 20 commits, zero since March 26, testing backlog as coding backlog, 14 broken POIs, 6 residential Firecrawl gaps (building in public)
+- Stanford AI Index 2026, 53% US adoption in 3 years, US/china gap 2.7%, 90% models from private labs (trending reaction)
+- ElevenLabs react-native v1.0 breaking changes, sendMultimodalMessage + MultimodalMessageInput, landmark photo + GPS handoff (technical tip — voice apps content gap)
+- PwC AI performance study, 20% of companies capture 75% of returns, growth vs productivity, org rewiring (engagement question)
+- Stanford AI Index deep dive thread, adoption curve, US/china parity, private lab dominance, $172B consumer surplus, governance debt (thread)
+
 From drafts/2026-04-12.md:
 - Clio day 17, testing longer than coding, POI backlog from Firecrawl coverage gaps (building in public)
 - Q1 2026 tech layoffs 80K workers, 48% blamed on AI, Block 10K to under 6K (trending reaction)
@@ -110,7 +117,9 @@ From drafts/2026-03-29.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- AI voice apps (last covered March 30 — ElevenLabs per-language first_message, 13 days ago; today's technical tip addresses this)
+- AI voice apps — addressed today via @elevenlabs/react-native v1.0 sendMultimodalMessage technical tip
+- Location-based tech (last direct angle March 26 — Overpass API POI scouting; Firecrawl residential gap referenced today but worth a dedicated post soon)
+- Real-time web research with AI (last deeply covered April 7 — Firecrawl result dedup/URL hashing)
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 17 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The extended testing phase continues to surface data sourcing as the core problem: Firecrawl returns rich results for landmarks but thin content for residential areas. A growing backlog of broken POIs is shaping the next coding sprint. Today's broader context: Q1 2026 tech layoffs hit 80K workers with 48% attributed to AI automation — Block made the largest single AI-attributed cut (10K to under 6K), while IBM took the opposite approach by tripling entry-level hiring. The AI race bottleneck is visibly shifting from compute to electricity as companies fund nuclear reactors for data center power.
+Clio (formerly HistorAI) is in day 18 of real-world testing across Bucharest — no new commits since March 26 (20 total commits). The extended testing phase keeps surfacing data sourcing as the core problem: Firecrawl returns rich results for landmarks but thin content for residential areas. The backlog of broken POIs (14 queued, 6 residential) is now explicitly driving the next coding sprint. Today's broader context: Stanford HAI released the 2026 AI Index — gen AI adoption hit 53% in the US in three years (faster than PC or internet), US/China model gap closed to 2.7%, 90%+ of notable models now come from private labs. PwC's 2026 AI Performance Study shows 20% of companies capturing ~75% of AI's financial returns, with winners focused on growth rather than cost cuts. ElevenLabs shipped breaking v1.0 SDK changes relevant to Clio's stack: multimodal message support in the react-native client unblocks photo+GPS context handoff to the narrator agent in a single hook call.
