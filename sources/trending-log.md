@@ -2,6 +2,20 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-14
+
+- OpenAI shipped GPT-5.4-Cyber to a limited group of digital defenders — released one week after Anthropic's Mythos Preview. Both models specialize in finding software security vulnerabilities; neither is generally available. The cybersecurity frontier is now gated infrastructure, not open release
+- Anthropic co-founder Jack Clark (Head of Public Benefit) confirmed Anthropic briefed the Trump administration on Mythos. Mythos Preview reportedly scores 93.9% on SWE-bench Verified and 94.6% on GPQA Diamond
+- OpenAI's new revenue chief publicly criticized Anthropic, saying Claude's creator is building a narrative "on fear, restriction, and the idea that a small group of elites should control AI." Also distanced OpenAI from Microsoft, touting AWS enterprise partnership as generating "frankly staggering" demand
+- OpenAI's $852B valuation reportedly causing unease among its own investors amid Anthropic competition, per PYMNTS. Anthropic at $30B ARR run rate as of early April
+- Anthropic acquired NY-based Coefficient Bio for ~$400M — biopharma focus, building on Claude Life Sciences from Oct 2025
+- Google Gemini 3.1 Ultra launched with 2M-token context window, native multimodality across text/image/audio/video, and a sandboxed Code Execution tool that lets the model write and run code mid-conversation
+- Google Research unveiled TurboQuant at ICLR 2026 — an algorithm reducing KV cache memory overhead, one of the biggest bottlenecks for running large models locally
+- Stanford AI Index follow-up coverage: employment among software developers aged 22-25 down nearly 20% since 2024. AI researcher migration into the US down 89% since 2017, with 80% of that drop in the last year alone. Labor market bifurcating: elite research talent stays put, junior devs displaced fastest
+- React Native 0.85 shipped April 7 — New Animation Backend (native-driven by default), Jest preset moved to dedicated package. Relevant to Clio's mobile stack
+- ElevenLabs ElevenAgents GA — unified Users page, dynamic SIP headers, content guardrails, retention controls, bulk invites, seat_type. Also: DTMF input support, scoped analysis, test folders added via April 7 API schema regen
+- MIT Technology Review announces "10 Things That Matter in AI Right Now" — first edition dropping April 21 at EmTech AI conference
+
 ## 2026-04-13
 
 - Stanford HAI 2026 AI Index released today — gen AI hit 53% US population adoption in 3 years (faster than PC at ~15 years or internet at ~7). US/China model gap closed to 2.7% as of March 2026 — Anthropic's top model leads by just that margin, with US and Chinese models trading the lead multiple times since early 2025. More than 90% of notable AI models now come from private labs — academic and public research pipeline functionally dead on the frontier
