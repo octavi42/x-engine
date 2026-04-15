@@ -2,6 +2,20 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-15
+
+- The Information reported Anthropic is preparing Claude Opus 4.7 for launch this week, incremental upgrade to Opus 4.6. Keyword trended across AI Twitter within hours; Tibor Blaho confirmed citing The Information. Shares of Adobe, Wix, Figma, GoDaddy closed in the red on the related design-tool leak
+- Anthropic preparing an AI design tool that generates websites, landing pages, and presentations from prompts — direct shot at Figma/Wix/Adobe/GoDaddy territory
+- Claude Code shipped Routines — scheduled, API, and GitHub-event triggers running on Anthropic's cloud infrastructure. A Routine = prompt + repos + connectors, fired by a trigger. Daily limits: 5 runs on Pro, 15 on Max, 25 on Team/Enterprise, overage per-run. Pricing unit shifted from chat session to triggered job
+- Claude Code desktop app redesigned — UI surfaces more functions to the forefront, reduces app-switching
+- Claude outage mid-day April 15 — thousands hit login failures, chat interruptions, usage-limit glitches, partial service degradation. Fortune also ran a piece on developer backlash over Claude performance decline and transparency concerns
+- OpenAI officially announced GPT-5.4-Cyber on April 14 — distributed via Trusted Access for Cyber program to vetted defenders, formalizing the closed-beta cybersecurity model pattern both labs are now using
+- OpenAI's $852B valuation facing investor scrutiny as Sam Altman pivots company toward enterprise AI — shift away from consumer-viral growth toward long-term enterprise contracts
+- Anthropic ARR now $30B vs OpenAI's ~$24B/yr ($2B/month) — Anthropic pulled ahead on revenue for the first time
+- Prefix raised $7.5M seed (Collide Capital + Slow Ventures) for facility management for restaurants/retailers — $2.5M ARR in two years, 500% YoY growth, some customers 3x efficiency gains, 15%+ cost savings
+- Utilities gearing up for estimated $1.4T spending surge to power AI data centers. Microsoft scrambling for data center capacity, Amazon pushing into satellite networks to challenge Starlink
+- DeepX signaling revived investor appetite for edge-AI silicon — specialized, lower-power, embedded/device-centric chips as the opening for venture-backed semis
+
 ## 2026-04-14
 
 - OpenAI shipped GPT-5.4-Cyber to a limited group of digital defenders — released one week after Anthropic's Mythos Preview. Both models specialize in finding software security vulnerabilities; neither is generally available. The cybersecurity frontier is now gated infrastructure, not open release
