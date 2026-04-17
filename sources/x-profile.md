@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-16
+- Last checked: 2026-04-17
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-17.md:
+- Clio day 22, first code in 27 days, writing query classifier for Firecrawl location types (building in public)
+- Claude Design launched, text to prototypes/slides, Figma stock dropped (trending reaction)
+- Expo EAS dev builds for GPS testing on real devices, full loop under 3 seconds (technical tip — mobile dev/Expo content gap)
+- OpenAI $20B Cerebras chip deal, Nvidia dependency hedging (engagement question)
+- Claude Design AI toolchain thread — idea to design to code to deploy pipeline (thread)
+
 From drafts/2026-04-16.md:
 - Clio day 21, testing sprint ending, every broken POI mapped to code fix, query classifier next (building in public)
 - Claude Opus 4.7 launched, same pricing, task budgets, 3.75MP vision (trending reaction)
@@ -74,41 +81,13 @@ From drafts/2026-04-07.md:
 - Anthropic $30B revenue, 3.5GW TPU deal (engagement question)
 - OpenAI Intelligence Age policy paper (thread)
 
-From drafts/2026-04-06.md:
-- Clio day 11, Expo EAS dev builds, GPS drift edge cases (building in public)
-- HumanX conference SF, enterprise AI procurement shift (trending reaction)
-- Expo EAS dev builds for GPS apps (technical tip)
-- 90% Claude Code written by Claude Code (engagement question)
-- Self-improving AI development (thread)
-
-From drafts/2026-04-05.md:
-- Clio day 10, battery drain, Accuracy.Balanced + 30-second polling (building in public)
-- Claude Code source leak via npm, KAIROS daemon mode (trending reaction)
-- Zustand + expo-location GPS subscription, 50m threshold (technical tip)
-- GitHub Copilot April 24 data policy change (engagement question)
-- AI coding trust bottleneck thread (thread)
-
-From drafts/2026-04-04.md:
-- Clio day 9, OpenStreetMap wiki extracts fallback (building in public)
-- Google Gemma 4 release, Apache 2.0 (trending reaction)
-- Nominatim extratags Wikipedia/Wikidata links (technical tip)
-- Microsoft MAI models in-house (engagement question)
-- On-device AI mobile production threshold (thread)
-
-From drafts/2026-04-03.md:
-- Clio day 8, evaluating OpenStreetMap fallback (building in public)
-- Liberation Day tariffs anniversary, chip tariff (trending reaction)
-- ElevenLabs dynamic system prompt injection (technical tip)
-- OpenAI 6 acquisitions 2026 (engagement question)
-- AI agents shift, 85% devs use AI assistance (thread)
-
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- AI voice apps — last covered April 15 (TEASER signal tip) and April 13 (ElevenLabs v1.0 breaking changes). Well-covered this week.
-- Location-based tech — addressed today via Nominatim vs Google Maps geocoding tip. Well-covered.
-- Real-time web research with AI — last deeply covered April 14 (Firecrawl depth varies by place type). Covered this week.
-- Mobile dev with Expo/React Native — last covered April 11 (Vercel rewrites). Could use a dedicated post soon.
-- Building in public — daily coverage via Clio field testing updates.
+- AI voice apps — last covered April 15 (TEASER signal tip) and April 13 (ElevenLabs v1.0). Could use a fresh angle soon.
+- Location-based tech — covered April 16 (Nominatim tip). Well-covered this week.
+- Real-time web research with AI — last deeply covered April 14 (Firecrawl depth by place type) and today (query classifier in building-in-public). Covered this week.
+- Mobile dev with Expo/React Native — addressed today with Expo EAS dev builds tip. Gap filled.
+- Building in public — daily coverage via Clio field testing and coding updates.
 
 ## Current narrative
-Clio (formerly HistorAI) is in day 21 of real-world testing across Bucharest — no new commits since March 26 (20 total). The extended testing phase is ending: every broken POI now maps to a specific code fix, making the next coding sprint self-evident. The query classifier for Firecrawl residential gaps is the clear first ticket. Today's broader context: Anthropic launched Claude Opus 4.7 with task budgets and 3.75MP vision at unchanged pricing, but also introduced government ID verification for Claude access — part of a wider trend of AI access stratification across the industry. User backlash over Claude performance decline continues via Axios and Fortune coverage. OpenAI partnered with Novo Nordisk on a drug discovery AI model, and American Express acquired Sam Altman-backed Hyper for AI expense management.
+Clio (formerly HistorAI) is on day 22. The 27-day testing-only phase in Bucharest just ended — every broken POI now maps to a specific code fix. Today marks the return to code: writing a query classifier that routes Firecrawl searches based on location type (named POI, residential address, natural feature). Three prompt templates, one detector. The broader context: Anthropic launched Claude Design today, a text-to-visual product that hands off directly to Claude Code — compressing the idea-to-build pipeline further. Figma stock dropped. OpenAI committed $20B to Cerebras to hedge Nvidia dependency. Anthropic receiving VC offers at up to $800B. ChatGPT is showing its first ads to free-tier users.

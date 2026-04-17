@@ -2,6 +2,16 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-17
+
+- Anthropic launched Claude Design — experimental product for generating prototypes, slides, one-pagers from text prompts. Powered by Opus 4.7, available in research preview for Pro/Max/Team/Enterprise. Reads team design systems for consistency. Exports to PDF, PPTX, Canva, or hands off directly to Claude Code. Figma stock nosedived on the announcement
+- OpenAI committed $20B+ to Cerebras chips over 3 years, doubling previous $10B agreement. Gets equity warrants up to 10% of Cerebras. Total potential spend $30B. Cerebras targeting IPO at $35B valuation in Q2 2026 — the OpenAI deal is central to that listing
+- Anthropic receiving VC offers at up to $800B valuation — more than doubling its current valuation per Business Insider
+- OpenAI investors questioning whether Sam Altman is the right CEO to take the company public — Bret Taylor (current board chair, former Salesforce co-CEO) mentioned as potential replacement per Gizmodo
+- Anthropic having "peace talks" at Trump White House over Mythos model and its cybersecurity capabilities — Axios scoop
+- ChatGPT rolling out ads for Free and Go tier users in Australia, New Zealand, and Canada — first ads in an AI chatbot product
+- OpenAI launched new life sciences AI models for drug discovery researchers — expanding into specialized vertical domains
+
 ## 2026-04-16
 
 - Anthropic launched Claude Opus 4.7 — incremental upgrade over 4.6, same $5/$25 pricing. New features: task budgets (token target for full agentic loop), xhigh effort level, /ultrareview in Claude Code, 3.75MP hi-res vision (up from 1.15MP). Narrowly retakes lead over GPT-5.4 and Gemini 3.1 Pro on agentic coding, tool use, and financial analysis benchmarks
