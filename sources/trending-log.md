@@ -2,6 +2,15 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-19
+
+- CNBC published "AI demand is inflated, and only Anthropic is being realistic" — Anthropic moved to per-token billing so revenue reflects actual usage. Dario Amodei describes a "cone of uncertainty" — data centers take 1-2 years to build, companies committing billions for unverifiable demand
+- OpenAI CRO Denise Dresser sent internal memo to all staff accusing Anthropic of inflating $30B run rate by $8B through gross accounting on AWS/Azure/Google Cloud billings. Ramp data shows Anthropic at 30.6% of enterprise AI paying customers vs OpenAI's 35.2%, crossover projected within two months ahead of dual IPOs
+- OpenAI pivoting hard to enterprise — CFO Sarah Friar says business customers grew from 20% to 40% of revenue, expected to hit 50% by year-end. Launching model for "high-value professional work." Scaled back consumer experiments including Sora to redirect compute
+- EU AI Act hiring rules enforcement in 105 days (August 2, 2026) — mandatory annual third-party bias audits for any AI hiring tool, €15M or 3% global turnover penalties. Certified auditors already filling up
+- TechCrunch published "The 12-month window" and "OpenAI's existential questions" on April 19
+- Public opinion souring on AI and data centers as both Anthropic and OpenAI look toward IPOs per CNBC
+
 ## 2026-04-17
 
 - Anthropic launched Claude Design — experimental product for generating prototypes, slides, one-pagers from text prompts. Powered by Opus 4.7, available in research preview for Pro/Max/Team/Enterprise. Reads team design systems for consistency. Exports to PDF, PPTX, Canva, or hands off directly to Claude Code. Figma stock nosedived on the announcement

@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-17
+- Last checked: 2026-04-19
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-19.md:
+- Clio day 24, query classifier tested against 47 broken POIs, coordinate disambiguator next (building in public)
+- CNBC AI demand inflation, Anthropic per-token billing vs OpenAI volume pricing (trending reaction)
+- Clio full narration pipeline: GPS to Nominatim to Firecrawl to ElevenLabs, under 3 seconds (technical tip — AI voice apps content gap)
+- OpenAI CRO memo accusing Anthropic of $8B revenue inflation, gross vs net accounting (engagement question)
+- AI demand cone of uncertainty, data center spending vs actual revenue, dual IPO implications (thread)
+
 From drafts/2026-04-17.md:
 - Clio day 22, first code in 27 days, writing query classifier for Firecrawl location types (building in public)
 - Claude Design launched, text to prototypes/slides, Figma stock dropped (trending reaction)
@@ -74,20 +81,13 @@ From drafts/2026-04-08.md:
 - AI scribes healthcare billing inflation debate (engagement question)
 - Neuro-symbolic AI 100x energy reduction thread (thread)
 
-From drafts/2026-04-07.md:
-- Clio day 12, walking Bucharest testing narrator accuracy (building in public)
-- OpenAI 13-page AI economy paper, robot taxes, 4-day workweek (trending reaction)
-- Firecrawl search result dedup, URL hashing, 24h cache (technical tip)
-- Anthropic $30B revenue, 3.5GW TPU deal (engagement question)
-- OpenAI Intelligence Age policy paper (thread)
-
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- AI voice apps — last covered April 15 (TEASER signal tip) and April 13 (ElevenLabs v1.0). Could use a fresh angle soon.
-- Location-based tech — covered April 16 (Nominatim tip). Well-covered this week.
-- Real-time web research with AI — last deeply covered April 14 (Firecrawl depth by place type) and today (query classifier in building-in-public). Covered this week.
-- Mobile dev with Expo/React Native — addressed today with Expo EAS dev builds tip. Gap filled.
-- Building in public — daily coverage via Clio field testing and coding updates.
+- AI voice apps — addressed today with full narration pipeline tip. Well-covered this week.
+- Location-based tech — last covered April 16 (Nominatim tip). Could use a fresh angle soon.
+- Real-time web research with AI — covered April 17 (query classifier) and April 19 (Firecrawl in pipeline tip). Well-covered.
+- Mobile dev with Expo/React Native — last covered April 17 (EAS dev builds). Could use a fresh angle next week.
+- Building in public — daily coverage via Clio updates.
 
 ## Current narrative
-Clio (formerly HistorAI) is on day 22. The 27-day testing-only phase in Bucharest just ended — every broken POI now maps to a specific code fix. Today marks the return to code: writing a query classifier that routes Firecrawl searches based on location type (named POI, residential address, natural feature). Three prompt templates, one detector. The broader context: Anthropic launched Claude Design today, a text-to-visual product that hands off directly to Claude Code — compressing the idea-to-build pipeline further. Figma stock dropped. OpenAI committed $20B to Cerebras to hedge Nvidia dependency. Anthropic receiving VC offers at up to $800B. ChatGPT is showing its first ads to free-tier users.
+Clio (formerly HistorAI) is on day 24. The query classifier written on day 22 is now being tested against the 47 broken POIs logged during the 27-day Bucharest field testing phase. 43 of 47 POIs now route correctly; the remaining 4 are name-collision edge cases (church names matching street names) requiring a coordinate disambiguator. The broader context: CNBC published a piece arguing AI demand is inflated and only Anthropic is being realistic about it — Anthropic moved to per-token billing while OpenAI drives volume. OpenAI's CRO leaked a memo accusing Anthropic of inflating revenue by $8B through gross accounting. Both companies heading toward IPO. The enterprise AI battle is intensifying.
