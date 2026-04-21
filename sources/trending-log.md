@@ -2,6 +2,15 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-21
+
+- OpenAI launched cost-per-click ads inside ChatGPT — $3-5/click bids, projected $2.4B ad revenue in 2026 and $11B in 2027. Previously had CPM-only ads since February. Advertisers can now choose views or clicks in the ad manager
+- MIT Technology Review drops first-ever "10 Things That Matter in AI Right Now" list at EmTech AI conference on MIT campus today — annual list from their AI reporting team covering key technologies, emerging trends, and movements in AI for 2026
+- India constituted AIGEG (AI Governance and Economic Group) — cabinet-level inter-ministerial body chaired by Union IT Minister, developing unified legal framework for all AI companies operating in India, with explicit mandate to assess labor market impacts of AI adoption
+- EU AI Act hiring rules enforcement now 103 days away (August 2, 2026) — mandatory annual third-party bias audits for any AI hiring tool, penalties up to €15M or 3% global turnover. Certified auditors already filling up
+- Fiber AI trending as top AI startup in April 2026 with 4,400% growth rate
+- AI coding tools market at $12.8B in 2026 (up from $5.1B in 2024), Claude Code at 18% workplace adoption with 6x growth in 12 months per JetBrains survey
+
 ## 2026-04-19
 
 - CNBC published "AI demand is inflated, and only Anthropic is being realistic" — Anthropic moved to per-token billing so revenue reflects actual usage. Dario Amodei describes a "cone of uncertainty" — data centers take 1-2 years to build, companies committing billions for unverifiable demand
