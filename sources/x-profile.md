@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-21
+- Last checked: 2026-04-23
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-23.md:
+- Clio day 28, coordinate disambiguator complete, 47/47 POIs pass, second field test next (building in public)
+- Recursive Superintelligence $500M raise at $4B valuation, 20-person startup (trending reaction)
+- ElevenLabs conversational AI narrator pattern, system prompt vs user message (technical tip — AI voice apps content gap)
+- White House China industrial-scale AI distillation, model theft vs API access (engagement question)
+- Tesla $25B capex for AI/robotics, capex arms race beyond big tech (thread)
+
 From drafts/2026-04-21.md:
 - Clio day 26, coordinate disambiguator for 4 name-collision POI failures (building in public)
 - OpenAI CPC ads inside ChatGPT, $3-5/click, $2.4B projected ad revenue (trending reaction)
@@ -90,11 +97,11 @@ From drafts/2026-04-08.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- AI voice apps — last covered April 19 (full narration pipeline tip). Due for a fresh angle in a few days.
-- Location-based tech — covered today April 21 (coordinate disambiguation tip). Well-covered this week.
-- Real-time web research with AI — last covered April 19 (Firecrawl in pipeline tip). Well-covered.
-- Mobile dev with Expo/React Native — last covered April 17 (EAS dev builds). Due for a fresh angle soon.
+- AI voice apps — covered today April 23 (ElevenLabs narrator pattern tip). Well-covered this week.
+- Location-based tech — last covered April 21 (coordinate disambiguation tip). Well-covered.
+- Real-time web research with AI — last covered April 19 (Firecrawl in pipeline tip). Due for a fresh angle soon.
+- Mobile dev with Expo/React Native — last covered April 17 (EAS dev builds). Due for a fresh angle.
 - Building in public — daily coverage via Clio updates.
 
 ## Current narrative
-Clio (formerly HistorAI) is on day 26. The query classifier built on day 22 has been tested against the 47 broken POIs from the Bucharest field testing phase — 43 of 47 now route correctly. The remaining 4 are name-collision edge cases where churches share their name with the street they're on, and Nominatim returns both entities. The fix: a coordinate disambiguator that cross-references GPS coords against Overpass API bounding boxes to pick the right entity. Meanwhile, OpenAI launched CPC ads inside ChatGPT at $3-5/click, projecting $2.4B in ad revenue for 2026 — the AI assistant is becoming an ad platform. MIT Technology Review dropped its first-ever "10 Things That Matter in AI Right Now" list at EmTech AI today.
+Clio (formerly HistorAI) is on day 28. The coordinate disambiguator built to handle the 4 remaining name-collision POIs (churches sharing names with their streets) is complete — GPS point-in-polygon checks against Overpass API bounding boxes resolve all cases. 47/47 test cases now pass the classifier. Next step: a second field test in Bucharest to find edge cases the test suite missed. In trending news, Recursive Superintelligence raised $500M at $4B valuation as a 4-month-old, 20-person startup aiming to automate AI training. The White House accused China of industrial-scale distillation campaigns against US AI labs. Tesla tripled capex to $25B for AI and robotics infrastructure.

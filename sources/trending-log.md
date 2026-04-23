@@ -2,6 +2,15 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-23
+
+- White House accused China of 'industrial-scale' AI model distillation — tens of thousands of proxy accounts extracting capabilities from US AI labs. Anthropic named DeepSeek, Moonshot AI, MiniMax in February. Precedes Trump-Xi summit by 3 weeks
+- Recursive Superintelligence raised $500M at $4B valuation — 4-month-old, 20-person startup backed by GV and Nvidia. Founded by Tim Rocktaschel (UCL/DeepMind) and Richard Socher (ex-Salesforce). Goal: automate entire AI training pipeline. Public launch mid-May
+- Tesla tripled 2026 capex to $25B for AI and robotics — Optimus robot factory in Fremont, chip research fab in Austin, six simultaneous production lines (Cybercab, Semi, batteries). CFO warned negative FCF rest of year. $44.7B cash on hand
+- Grok multi-day outage — 48+ hours of 'high demand' errors affecting free and paid users since April 21. xAI status page claimed 'fully operational' while users locked out. Timing aligns with new feature rollout (custom templates, video extensions)
+- Meta laying off 10% of workforce (~8,000 employees) to redirect into AI investment
+- Data Center World conference wrapping up April 20-23, focusing on AI infrastructure and power demands
+
 ## 2026-04-21
 
 - OpenAI launched cost-per-click ads inside ChatGPT — $3-5/click bids, projected $2.4B ad revenue in 2026 and $11B in 2027. Previously had CPM-only ads since February. Advertisers can now choose views or clicks in the ad manager
