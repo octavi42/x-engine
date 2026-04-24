@@ -2,6 +2,13 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-24
+
+- DeepSeek launched V4 models — V4-Pro (1.6T params, 1M context window, Hybrid Attention Architecture) and V4-Flash. Open source on Hugging Face. Output pricing: V4-Pro $3.48/M tokens, V4-Flash $0.28/M tokens — vs Anthropic $25 and OpenAI $30. Running on Huawei Ascend 950 chips instead of Nvidia. Tencent and Alibaba in talks to invest in DeepSeek's first funding round
+- Cognition AI (Devin) in early talks to raise at $25B valuation — more than double its $10.2B from September. ARR grew from $1M (Sep 2024) to $73M (Jun 2025). Autonomous AI software engineer handling projects start to finish
+- Era raised $11M seed (Abstract Ventures + BoxGroup) for intelligence infrastructure for AI-powered smart gadgets
+- Simon Willison published analysis: DeepSeek V4 "almost on the frontier, a fraction of the price" — open-source performance gap shrinking to single-digit percentages
+
 ## 2026-04-23
 
 - White House accused China of 'industrial-scale' AI model distillation — tens of thousands of proxy accounts extracting capabilities from US AI labs. Anthropic named DeepSeek, Moonshot AI, MiniMax in February. Precedes Trump-Xi summit by 3 weeks
