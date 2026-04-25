@@ -2,6 +2,16 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-25
+
+- OpenAI shipped GPT-5.5 (codenamed "Spud") — released April 23 to ChatGPT/Codex paid tiers, API access April 24. More token-efficient than 5.4, better at coding, computer use, and multi-step research. Same per-token latency. GPT-5.5 Pro available for Pro/Business/Enterprise. Fastest major model release cycle yet — two weeks between 5.4 and 5.5
+- GitHub Copilot data policy change took effect April 24 — Free/Pro/Pro+ user interaction data (inputs, outputs, code snippets, context) now used for AI model training by default. Opt-out not opt-in. Business and Enterprise exempt. Data shared with Microsoft affiliates but not third-party providers
+- Instacart co-founder Apoorva Mehta launched Abundance — AI hedge fund with $100M seed equity. Thousands of AI agents research the web, pick stocks, size positions, execute trades. No human portfolio manager in the loop. Inspired by o3's reasoning capabilities. Plans to accept outside capital later
+- Agentic AI paradigm shift dominating developer discourse — Gartner reports 1,445% surge in multi-agent system inquiries. Industry moving from "AI that answers" to "AI that gets things done." GitHub Agent HQ lets devs run Claude, Codex, and Copilot simultaneously on same tasks
+- Omni AI analytics platform raised $120M Series C at $1.5B valuation
+- Australian semiconductor startup Syenta raised $26M to commercialize advanced AI chip packaging
+- Arizona AI legislation — three AI bills in play as legislature approaches adjournment April 25
+
 ## 2026-04-24
 
 - DeepSeek launched V4 models — V4-Pro (1.6T params, 1M context window, Hybrid Attention Architecture) and V4-Flash. Open source on Hugging Face. Output pricing: V4-Pro $3.48/M tokens, V4-Flash $0.28/M tokens — vs Anthropic $25 and OpenAI $30. Running on Huawei Ascend 950 chips instead of Nvidia. Tencent and Alibaba in talks to invest in DeepSeek's first funding round

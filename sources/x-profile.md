@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-24
+- Last checked: 2026-04-25
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-25.md:
+- Clio day 30, all 47 tests pass, field test 2 prep walking bucharest old town (building in public)
+- GPT-5.5 shipped two weeks after 5.4, model release cadence accelerating (trending reaction)
+- Firecrawl search vs scrape for real-time location research (technical tip — real-time web research content gap)
+- GitHub Copilot data policy, opt-out not opt-in, training on user data (engagement question)
+- Abundance AI hedge fund, Instacart co-founder, AI agents making capital allocation decisions (thread)
+
 From drafts/2026-04-24.md:
 - Clio day 29, zero commits in 29 days, all work testing/disambiguation, field test 2 next (building in public)
 - DeepSeek V4 launched, 1.6T params, open source, $3.48/M vs $25-30, Huawei chips (trending reaction)
@@ -81,27 +88,13 @@ From drafts/2026-04-12.md:
 - AI race bottleneck shift from compute to electricity (engagement question)
 - AI layoff "washing" narrative thread (thread)
 
-From drafts/2026-04-11.md:
-- Clio day 16, deployment as debugger (building in public)
-- OpenAI $100 ChatGPT Pro tier, credits war (trending reaction)
-- Vercel rewrites proxy for mixed content (technical tip)
-- Meta Muse Spark, superteam vs cultural reset (engagement question)
-- Agentic coding market inflection thread (thread)
-
-From drafts/2026-04-10.md:
-- Clio day 15, 3 weeks zero code, testing surfaces right next ticket (building in public)
-- Marimo RCE 9-hour exploit window (trending reaction)
-- Mapbox Standard StyleImport day/night switching (technical tip)
-- AWS $15B AI revenue, in-house silicon as moat (engagement question)
-- Claude Mythos/Glasswing, thousands of zero-days (thread)
-
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
 - AI voice apps — last covered April 23 (ElevenLabs narrator pattern). Well-covered this week.
 - Location-based tech — last covered April 21 (coordinate disambiguation). Well-covered.
-- Real-time web research with AI — last covered April 19 (Firecrawl in pipeline). Due for a fresh angle.
-- Mobile dev with Expo/React Native — covered today April 24 (useConversation hook in Expo). Well-covered now.
+- Real-time web research with AI — covered today April 25 (Firecrawl search vs scrape). Well-covered now.
+- Mobile dev with Expo/React Native — last covered April 24 (useConversation hook in Expo). Well-covered.
 - Building in public — daily coverage via Clio updates.
 
 ## Current narrative
-Clio (formerly HistorAI) is on day 29. Zero commits since March 26 — all work has been testing, classifier rules, and coordinate disambiguation logic built on top of a stable codebase. 47/47 test cases pass the classifier now. Next step: second field test in Bucharest to find edge cases the test suite can't catch. In trending news, DeepSeek launched V4 today — open-source, 1.6T params, $3.48/M output tokens vs $25-30 at Anthropic/OpenAI, running on Huawei Ascend chips. Cognition AI (Devin) is in talks to raise at $25B valuation, more than doubling from $10.2B six months ago.
+Clio (formerly HistorAI) is on day 30. Zero commits since March 26 — all work has been testing, classifier rules, and coordinate disambiguation logic built on top of a stable codebase. 47/47 test cases pass. Next step: second field test walking Bucharest old town to find edge cases synthetic tests can't catch. In trending news, OpenAI shipped GPT-5.5 two weeks after 5.4 — fastest model release cadence yet. GitHub Copilot data policy took effect April 24 — Free/Pro/Pro+ user data trains models by default. Instacart co-founder Apoorva Mehta launched Abundance, an AI hedge fund with $100M seed where AI agents handle all trading decisions.
