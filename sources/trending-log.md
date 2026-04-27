@@ -2,6 +2,16 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-27
+
+- China blocked Meta's $2B acquisition of AI agent startup Manus — National Development and Reform Commission ordered the deal's cancellation. Beijing banned Manus cofounders Xiao Hong and Ji Yichao from leaving the country during investigation. Manus went viral in March 2025 with autonomous AI agents. Meta had already integrated Manus into internal systems. Reported by CNN, CNBC, Bloomberg, Washington Post, TechCrunch
+- GPT-5.5 developer reactions split — some teams switching immediately, others staying on Claude Opus 4.7. API not yet available for production while Claude ships everywhere. NVIDIA reports 10,000+ employees using GPT-5.5-powered Codex internally. UK AISI found a universal jailbreak for cyber safeguards during testing (6 hours of expert red-teaming)
+- Enterprise agent adoption accelerating — 40% of enterprise apps expected to have AI agents by end of 2026, up from 5% in 2025. But only 10% of organizations have actually scaled agents past pilot — governance, not technology, is the bottleneck
+- Snowflake went all-in on agentic AI — Snowflake Intelligence as personal work agent turning data insights into automated actions. Cortex Code expanded as governed agent for data stacks, available on desktop and CLI
+- Google rebranded AI platform to Gemini Enterprise Agent Platform — 200+ foundation models and enterprise governance in one place
+- C3 AI released C3 Code — enterprise platform converting natural language into production-grade AI applications in hours, automating the entire development lifecycle
+- 92% of US developers now using AI coding tools daily, 67% globally. Agentic coding (multi-step planning, test running, iterative refinement) becoming dominant over single-prompt completion
+
 ## 2026-04-25
 
 - OpenAI shipped GPT-5.5 (codenamed "Spud") — released April 23 to ChatGPT/Codex paid tiers, API access April 24. More token-efficient than 5.4, better at coding, computer use, and multi-step research. Same per-token latency. GPT-5.5 Pro available for Pro/Business/Enterprise. Fastest major model release cycle yet — two weeks between 5.4 and 5.5

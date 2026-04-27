@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-25
+- Last checked: 2026-04-27
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-27.md:
+- Clio day 32, field test 2 done, failures are data gaps not code bugs (building in public)
+- China blocks Meta's $2B Manus acquisition, AI geopolitics (trending reaction)
+- Expo EAS dev loop for GPS app testing on real devices (technical tip — mobile dev/Expo + location-based tech content gaps)
+- Enterprise agent adoption gap, 40% target vs 10% scaled (engagement question)
+- Cloud platforms rebrand to "agent platform" — Snowflake, Google, C3 AI, copilot era ending (thread)
+
 From drafts/2026-04-25.md:
 - Clio day 30, all 47 tests pass, field test 2 prep walking bucharest old town (building in public)
 - GPT-5.5 shipped two weeks after 5.4, model release cadence accelerating (trending reaction)
@@ -74,27 +81,13 @@ From drafts/2026-04-14.md:
 - OpenAI $852B valuation vs Anthropic $30B ARR (engagement question)
 - Software dev employment 22-25 down 20%, labor market bifurcation (thread)
 
-From drafts/2026-04-13.md:
-- Clio day 18, 20 commits, zero since March 26, testing backlog as coding backlog (building in public)
-- Stanford AI Index 2026, 53% US adoption in 3 years, US/China gap 2.7% (trending reaction)
-- ElevenLabs react-native v1.0 breaking changes, sendMultimodalMessage (technical tip)
-- PwC AI performance study, 20% capture 75% of returns (engagement question)
-- Stanford AI Index deep dive thread (thread)
-
-From drafts/2026-04-12.md:
-- Clio day 17, testing longer than coding, POI backlog (building in public)
-- Q1 2026 tech layoffs 80K workers, 48% blamed on AI (trending reaction)
-- ElevenLabs signed conversation tokens for WebRTC (technical tip)
-- AI race bottleneck shift from compute to electricity (engagement question)
-- AI layoff "washing" narrative thread (thread)
-
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- AI voice apps — last covered April 23 (ElevenLabs narrator pattern). Well-covered this week.
-- Location-based tech — last covered April 21 (coordinate disambiguation). Well-covered.
-- Real-time web research with AI — covered today April 25 (Firecrawl search vs scrape). Well-covered now.
-- Mobile dev with Expo/React Native — last covered April 24 (useConversation hook in Expo). Well-covered.
+- AI voice apps — last covered April 23 (ElevenLabs narrator pattern). Due for coverage soon.
+- Location-based tech — covered today April 27 via Expo EAS GPS testing tip. Well-covered.
+- Real-time web research with AI — last covered April 25 (Firecrawl search vs scrape). Well-covered.
+- Mobile dev with Expo/React Native — covered today April 27 via Expo EAS GPS testing tip. Well-covered.
 - Building in public — daily coverage via Clio updates.
 
 ## Current narrative
-Clio (formerly HistorAI) is on day 30. Zero commits since March 26 — all work has been testing, classifier rules, and coordinate disambiguation logic built on top of a stable codebase. 47/47 test cases pass. Next step: second field test walking Bucharest old town to find edge cases synthetic tests can't catch. In trending news, OpenAI shipped GPT-5.5 two weeks after 5.4 — fastest model release cadence yet. GitHub Copilot data policy took effect April 24 — Free/Pro/Pro+ user data trains models by default. Instacart co-founder Apoorva Mehta launched Abundance, an AI hedge fund with $100M seed where AI agents handle all trading decisions.
+Clio (formerly HistorAI) is on day 32. Zero commits since March 26 — all work has been testing, classifier rules, coordinate disambiguation, and now field testing. 47/47 synthetic test cases pass. Field test 2 through Bucharest old town revealed data gaps in Nominatim's OSM data rather than code bugs — a shift from debugging logic to debugging geography. In trending news, China blocked Meta's $2B acquisition of AI agent startup Manus, banning the cofounders from leaving the country. Enterprise AI is rebranding from copilots to agent platforms — Snowflake, Google, and C3 AI all launched agent-first products this month, but only 10% of organizations have scaled agents past pilot.
