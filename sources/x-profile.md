@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-27
+- Last checked: 2026-04-29
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-04-29.md:
+- Clio day 34, mapping OSM data gaps across bucharest, debugging geography not code (building in public)
+- OpenAI missed Q1 revenue and user targets, Anthropic at $30B ARR (trending reaction)
+- ElevenLabs per-POI conversation session lifecycle, killing sessions to prevent audio bleed (technical tip — AI voice apps content gap)
+- Top AI researchers leaving big tech for startups, David Silver $1.1B seed, LeCun left Meta (engagement question)
+- Avoca AI voice agent for plumbers $1B valuation, where AI money actually flows (thread)
+
 From drafts/2026-04-27.md:
 - Clio day 32, field test 2 done, failures are data gaps not code bugs (building in public)
 - China blocks Meta's $2B Manus acquisition, AI geopolitics (trending reaction)
@@ -67,27 +74,13 @@ From drafts/2026-04-16.md:
 - Anthropic government ID requirement for Claude access, identity-gated AI tradeoff (engagement question)
 - AI access stratification thread — four tiers from open-weight to org-gated, open-weight floor rising (thread)
 
-From drafts/2026-04-15.md:
-- Clio day 20, gap between last commit and now, feature-complete realization (building in public)
-- Claude Code Routines — scheduled/API/GitHub-event triggers (trending reaction)
-- ElevenLabs TEASER signal + turn_timeout 3s for zero dead air (technical tip)
-- Anthropic AI design tool, Figma/Wix/Adobe red (engagement question)
-- Claude Code Routines for solo builders thread (thread)
-
-From drafts/2026-04-14.md:
-- Clio day 19, POI backlog as geography problem, location-based fallbacks (building in public)
-- GPT-5.4-Cyber shipped to defenders, cybersecurity frontier gated (trending reaction)
-- Firecrawl depth varies by place type, classify query first (technical tip)
-- OpenAI $852B valuation vs Anthropic $30B ARR (engagement question)
-- Software dev employment 22-25 down 20%, labor market bifurcation (thread)
-
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- AI voice apps — last covered April 23 (ElevenLabs narrator pattern). Due for coverage soon.
-- Location-based tech — covered today April 27 via Expo EAS GPS testing tip. Well-covered.
-- Real-time web research with AI — last covered April 25 (Firecrawl search vs scrape). Well-covered.
-- Mobile dev with Expo/React Native — covered today April 27 via Expo EAS GPS testing tip. Well-covered.
+- AI voice apps — covered today April 29 via ElevenLabs session lifecycle tip. Well-covered.
+- Location-based tech — last covered April 27 via Expo EAS GPS testing. Well-covered.
+- Real-time web research with AI — last covered April 25 (Firecrawl search vs scrape). Due for coverage soon.
+- Mobile dev with Expo/React Native — last covered April 27. Well-covered.
 - Building in public — daily coverage via Clio updates.
 
 ## Current narrative
-Clio (formerly HistorAI) is on day 32. Zero commits since March 26 — all work has been testing, classifier rules, coordinate disambiguation, and now field testing. 47/47 synthetic test cases pass. Field test 2 through Bucharest old town revealed data gaps in Nominatim's OSM data rather than code bugs — a shift from debugging logic to debugging geography. In trending news, China blocked Meta's $2B acquisition of AI agent startup Manus, banning the cofounders from leaving the country. Enterprise AI is rebranding from copilots to agent platforms — Snowflake, Google, and C3 AI all launched agent-first products this month, but only 10% of organizations have scaled agents past pilot.
+Clio (formerly HistorAI) is on day 34. Zero commits since March 26 — all work has been testing, classifier rules, coordinate disambiguation, and field testing. 47/47 synthetic test cases pass. Field test 2 through Bucharest old town revealed data gaps in Nominatim's OSM data rather than code bugs. Current focus is mapping which streets and neighborhoods have outdated or missing POI data before field test 3. In trending news, OpenAI missed Q1 revenue and user targets per WSJ while Anthropic hit $30B ARR — the pre-IPO narrative is shifting. Google expanded Pentagon AI access after Anthropic refused unrestricted DoD use, and top AI researchers are leaving Big Tech en masse for billion-dollar startups.

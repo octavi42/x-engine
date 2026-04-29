@@ -2,6 +2,16 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-04-29
+
+- OpenAI missed Q1 revenue and user targets per WSJ — fell short of internal goal of 1B weekly ChatGPT users by year-end. Anthropic's gains in coding and enterprise pushed OpenAI below monthly revenue goals on several occasions. CFO Sarah Friar reportedly at odds with Sam Altman over the miss. Oracle dropped 4%, Broadcom and AMD down 3-4%. Anthropic at $30B ARR and growing. Reported by WSJ, CNBC, Fortune
+- Google expanded Pentagon AI access after Anthropic's refusal — DoD branded Anthropic a "supply chain risk" after Anthropic refused unrestricted use (no domestic surveillance, no autonomous weapons). Google signed deal for Gemini 3.1 on classified networks, joining OpenAI and xAI. 950 Google employees signed open letter opposing the deal. Anthropic suing DoD, judge granted preliminary injunction. Reported by TechCrunch, CNBC, WSJ
+- Top AI researchers leaving Big Tech en masse for startups — CNBC report. David Silver (DeepMind) raised $1.1B seed for Ineffable Intelligence. Tim Rocktäschel (DeepMind) raising $1B for Recursive Superintelligence. Yann LeCun left Meta for AMI Labs ($1B raise). VCs funnelled $18.8B into AI startups founded since start of 2025 per Dealroom
+- Avoca raised $125M+ at $1B valuation — AI voice agent for plumbers, HVAC, automotive, moving companies. 800 customers, on track to book $1B in jobs this year. Series B led by Meritech and General Catalyst, Series A by Kleiner Perkins. Reported by Fortune, PR Newswire
+- OpenAI and Anthropic briefed House Homeland Security Committee on cyber-capable AI models — Mythos Preview and GPT-5.4-Cyber implications for cybersecurity. Reported by Axios
+- Stanford 2026 AI Index: AI agents jumped from 12% to 66% success on real computer tasks. Agents now navigate software almost as well as people
+- EU Digital Omnibus on AI: final political trilogue in Brussels April 28. December 2027 deadline for stand-alone high-risk systems, August 2028 for AI embedded in regulated products
+
 ## 2026-04-27
 
 - China blocked Meta's $2B acquisition of AI agent startup Manus — National Development and Reform Commission ordered the deal's cancellation. Beijing banned Manus cofounders Xiao Hong and Ji Yichao from leaving the country during investigation. Manus went viral in March 2025 with autonomous AI agents. Meta had already integrated Manus into internal systems. Reported by CNN, CNBC, Bloomberg, Washington Post, TechCrunch
