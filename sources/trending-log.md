@@ -2,6 +2,18 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-01
+
+- Microsoft Agent 365 went GA today at $15/user/month — enterprise agent governance control plane. Part of new M365 E7 suite at $99/user/month. Observe, govern, and secure AI agent fleets across orgs. Microsoft Learn, TechCommunity, Microsoft Security Blog
+- OpenAI reportedly building an AI smartphone — agents replace apps entirely. MediaTek and Qualcomm developing custom chip, Luxshare manufacturing. Specs by Q1 2027, mass production 2028. Targeting 300-400M annual shipments. TechCrunch, MacRumors, 9to5Mac, The Next Web
+- Shapes exited stealth (April 29) with $8M seed led by Lightspeed — AI characters dropped into human group chats. 400K MAU, 3M AI Shapes built by users
+- Microsoft-OpenAI partnership restructured — Microsoft ends Azure revenue share to OpenAI, OpenAI can now serve on AWS and Google Cloud, ending 2019 exclusivity. OpenAI still pays Microsoft capped 20% through 2030
+- Amazon launched "Join the chat" (April 28) — AI-powered audio Q&A on product pages, conversational responses from product features and customer feedback
+- NVIDIA launched Ising — open-source AI models for quantum computing, 2.5x faster and 3x more accurate error-correction decoding vs traditional methods
+- Claude Opus 4.7 leads coding benchmarks at 87.6% SWE-bench Verified vs GPT-5.4 at 74.9%. Claude Code at #1 AI coding tool in 8 months since May 2025 launch
+- McKinsey study (Feb 2026): AI coding tools reduce routine coding time by 46% on average. But security researchers report ~50% of AI-generated code contains vulnerabilities — speed vs security tension growing
+- AI coding tools market at $12.8B in 2026 (up from $5.1B in 2024). 92% of US devs use AI tools daily, 51% of GitHub commits AI-generated or AI-assisted
+
 ## 2026-04-30
 
 - Big Tech combined AI capex for 2026 now projected at $725B+ — Alphabet $190B, Microsoft $190B, Amazon $200B, Meta $125-145B. Combined spending nearly doubled YoY, $100B more than projected last quarter. Alphabet rallied 10% on earnings beat, Meta dropped 9% after raising capex to $145B. Amazon free cash flow projected negative $17-28B for 2026. Fortune, CNBC, Sherwood News, Tom's Hardware

@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-04-30
+- Last checked: 2026-05-01
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-05-01.md:
+- Clio day 36, contributing missing POIs back to OpenStreetMap in drumul taberei (building in public)
+- OpenAI building phone where agents replace apps, no app store (trending reaction)
+- Nominatim place name as key input to Firecrawl Search, reverse geocoding bridges GPS to web research (technical tip — real-time web research with AI)
+- Microsoft Agent 365 GA at $15/user/month, agent governance as SaaS category (engagement question)
+- AI coding speed vs security paradox, McKinsey 46% faster but 50% of AI code has vulns (thread)
+
 From drafts/2026-04-30.md:
 - Clio day 35, mapping bucharest neighborhoods for POI data density, contributing to OSM (building in public)
 - Big Tech $725B AI capex, alphabet +10% meta -9%, market pricing proof of return (trending reaction)
@@ -67,20 +74,13 @@ From drafts/2026-04-19.md:
 - OpenAI CRO memo accusing Anthropic of $8B revenue inflation, gross vs net accounting (engagement question)
 - AI demand cone of uncertainty, data center spending vs actual revenue, dual IPO implications (thread)
 
-From drafts/2026-04-17.md:
-- Clio day 22, first code in 27 days, writing query classifier for Firecrawl location types (building in public)
-- Claude Design launched, text to prototypes/slides, Figma stock dropped (trending reaction)
-- Expo EAS dev builds for GPS testing on real devices, full loop under 3 seconds (technical tip — mobile dev/Expo)
-- OpenAI $20B Cerebras chip deal, Nvidia dependency hedging (engagement question)
-- Claude Design AI toolchain thread — idea to design to code to deploy pipeline (thread)
-
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- AI voice apps — last covered April 29 via ElevenLabs session lifecycle. Well-covered.
-- Location-based tech — covered today April 30 via GPS distance gating. Well-covered.
-- Real-time web research with AI — last covered April 25 (Firecrawl search vs scrape). Due for coverage next run.
-- Mobile dev with Expo/React Native — last covered April 27. Due for coverage soon.
+- AI voice apps — last covered April 29 via ElevenLabs session lifecycle. Due for coverage soon.
+- Location-based tech — covered April 30 via GPS distance gating. Well-covered.
+- Real-time web research with AI — covered today May 1 via Nominatim-to-Firecrawl bridge. Well-covered.
+- Mobile dev with Expo/React Native — last covered April 27. Due for coverage next run.
 - Building in public — daily coverage via Clio updates.
 
 ## Current narrative
-Clio (formerly HistorAI) is on day 35. Zero commits since March 26 — all work has been testing, classifier rules, coordinate disambiguation, and field testing. 47/47 synthetic test cases pass. Now mapping Bucharest neighborhood by neighborhood for POI data density in Nominatim's OSM data — some areas like Lipscani have dense coverage, others like Drumul Taberei have almost none. Planning to contribute missing POIs back to OpenStreetMap before field test 3. In trending news, Big Tech committed $725B+ in combined AI capex for 2026 — Alphabet rallied 10% on earnings while Meta dropped 9% after raising capex to $145B. Anthropic launched Claude for Creative Work with connectors for Adobe, Blender, Autodesk, and Ableton. Hightouch raised $150M at $2.75B for agentic marketing.
+Clio (formerly HistorAI) is on day 36. Zero commits since March 26 — all work has been testing, classifier rules, coordinate disambiguation, field testing, and now contributing back to OpenStreetMap. 47/47 synthetic test cases pass. Now actively adding missing POIs to OSM in Bucharest neighborhoods with sparse coverage (Drumul Taberei had almost no data, Lipscani is dense). The app narrates locations it couldn't find before the OSM contributions. In trending news, Microsoft Agent 365 went GA today at $15/user/month as a dedicated enterprise agent governance layer. OpenAI is reportedly building a smartphone where AI agents replace traditional apps — MediaTek/Qualcomm chip, mass production 2028. McKinsey found AI coding tools cut routine coding time by 46%, but security researchers report ~50% of AI-generated code contains vulnerabilities.
