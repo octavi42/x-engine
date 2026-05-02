@@ -2,7 +2,7 @@
 Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
-- Last checked: 2026-05-01
+- Last checked: 2026-05-02
 
 ## Recent posts (last 10)
 No public posts found via web search. Account may be new or not yet indexed.
@@ -11,6 +11,13 @@ No public posts found via web search. Account may be new or not yet indexed.
 No data yet — posted/archive.md is empty.
 
 ## Topics covered (last 14 days)
+From drafts/2026-05-02.md:
+- Clio day 37, testing 12 newly contributed OSM POIs in drumul taberei, nominatim indexing delay (building in public)
+- TechCrunch '21 european startups to watch', europe's AI in deep tech not chatbots (trending reaction)
+- expo-location watchPositionAsync with Accuracy.High and 10m distanceFilter for GPS narrator (technical tip — mobile dev with Expo/React Native)
+- Vertical AI outperforming generic chatbot wrappers, what niche to build (engagement question)
+- Pentagon signs 7 AI deals, excludes anthropic for refusing unrestricted military AI use, supply chain risk label (thread)
+
 From drafts/2026-05-01.md:
 - Clio day 36, contributing missing POIs back to OpenStreetMap in drumul taberei (building in public)
 - OpenAI building phone where agents replace apps, no app store (trending reaction)
@@ -76,11 +83,11 @@ From drafts/2026-04-19.md:
 
 ## Content gaps
 Angles from config/projects.md not yet covered recently:
-- AI voice apps — last covered April 29 via ElevenLabs session lifecycle. Due for coverage soon.
-- Location-based tech — covered April 30 via GPS distance gating. Well-covered.
-- Real-time web research with AI — covered today May 1 via Nominatim-to-Firecrawl bridge. Well-covered.
-- Mobile dev with Expo/React Native — last covered April 27. Due for coverage next run.
+- AI voice apps — last covered April 29. Due for coverage soon.
+- Location-based tech — covered April 30. Well-covered.
+- Real-time web research with AI — covered May 1. Well-covered.
+- Mobile dev with Expo/React Native — covered today May 2 via expo-location watchPositionAsync. Well-covered now.
 - Building in public — daily coverage via Clio updates.
 
 ## Current narrative
-Clio (formerly HistorAI) is on day 36. Zero commits since March 26 — all work has been testing, classifier rules, coordinate disambiguation, field testing, and now contributing back to OpenStreetMap. 47/47 synthetic test cases pass. Now actively adding missing POIs to OSM in Bucharest neighborhoods with sparse coverage (Drumul Taberei had almost no data, Lipscani is dense). The app narrates locations it couldn't find before the OSM contributions. In trending news, Microsoft Agent 365 went GA today at $15/user/month as a dedicated enterprise agent governance layer. OpenAI is reportedly building a smartphone where AI agents replace traditional apps — MediaTek/Qualcomm chip, mass production 2028. McKinsey found AI coding tools cut routine coding time by 46%, but security researchers report ~50% of AI-generated code contains vulnerabilities.
+Clio (formerly HistorAI) is on day 37. Zero commits since March 26 — all work has been testing, classifier rules, coordinate disambiguation, field testing, and contributing back to OpenStreetMap. 47/47 synthetic test cases pass. After adding 12 POIs in Drumul Taberei yesterday, 11 narrate correctly today — one awaiting Nominatim indexing. Now expanding to Militari for field test 3. In trending news, the Pentagon signed AI deals with 7 companies (OpenAI, Google, Microsoft, Nvidia, AWS, SpaceX, Reflection) and excluded Anthropic, labeling them a "supply chain risk" for refusing unrestricted military AI use. TechCrunch published "21 European startups to watch" highlighting Europe's strength in hardware-adjacent deep tech. Vertical AI tools are outperforming generic chatbot wrappers as the market shifts from horizontal to domain-specific products.

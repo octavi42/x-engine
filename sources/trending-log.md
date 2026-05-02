@@ -2,6 +2,15 @@
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-02
+
+- Pentagon signed AI deals with 7 companies (OpenAI, Google, Microsoft, Nvidia, AWS, SpaceX, Reflection) for classified defense networks, excluded Anthropic. Anthropic labeled "supply chain risk" for refusing unrestricted use in autonomous weapons and mass surveillance. Federal judge blocked blacklist via preliminary injunction. White House reopened talks in April. CNN, CNBC, Defense News, SiliconANGLE
+- TechCrunch published "Beyond Lovable and Mistral: 21 European startups to watch" — Alta Ares (counter-drone AI), Cailabs (photonics for satellite comms), Theker (AI logistics robots), BottleCap AI (Prague, own models), Fundamental ($1.4B valuation from stealth). Europe's AI strength in hardware-adjacent deep tech. TechCrunch
+- Vertical AI outperforming generic chatbot wrappers — niche startups packaging trust better for narrow use cases (legal drafting, AI tutors, engineering assistants with IP hygiene). Buyers want tools that act, not generate text. Agentic AI replacing chatbot era
+- Vibe coding going mainstream, agentic engineering emerging as next phase — humans stop writing code entirely and direct AI agents. Replit Agent, Cognition/Devin, Cursor Agent Mode executing end-to-end from natural language
+- AI adoption in business increasing 30%+ in 2026, 64% of marketers using AI content creation tools (HubSpot 2026 State of Marketing). Social media top use case. Tools shifting from "assistants" to "agents" executing independently
+- GPT-5.5 widened cloud reach after loosening Microsoft exclusivity — now distributable through AWS. Google shipped Gemma 4 for reasoning and agentic workflows under Apache 2.0
+
 ## 2026-05-01
 
 - Microsoft Agent 365 went GA today at $15/user/month — enterprise agent governance control plane. Part of new M365 E7 suite at $99/user/month. Observe, govern, and secure AI agent fleets across orgs. Microsoft Learn, TechCommunity, Microsoft Security Blog
