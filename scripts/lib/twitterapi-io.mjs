@@ -28,7 +28,9 @@ function client(apiKey) {
 
 function normalizeTweet(t) {
   return {
-    id: t.id,
+    // Coerce to string — twitterapi.io can return numeric IDs, but tool
+    // schemas hand them back as strings; mismatched types break Map lookups.
+    id: t.id != null ? String(t.id) : null,
     url: t.url,
     text: t.text ?? '',
     handle: t.author?.userName ?? null,
@@ -73,7 +75,7 @@ export function makeTwitterApi(apiKey) {
       return out;
     },
 
-    async searchTweets({ query, queryType = 'Latest', max = 30 }) {
+    async searchTweets({ query, queryType = 'Top', max = 30 }) {
       const out = [];
       let cursor = '';
       while (out.length < max) {
@@ -94,9 +96,16 @@ export function makeTwitterApi(apiKey) {
 
 // Engagement-rate scoring. Bookmarks weighted highest — best signal of "saved
 // for later" which correlates with the algorithm's amplification logic.
+//
+// Denominator uses views (impressions) when known; falls back to followers
+// only as a coarse reach proxy when views are missing. Using max(views,
+// followers) inverts the signal for viral tweets — a viral post with more
+// views than followers ends up ranked below a less-viral one.
 export function engagementScore(tweet) {
   const interactions =
     tweet.likes + 2 * tweet.replies + 3 * tweet.bookmarks + 1.5 * tweet.retweets;
-  const denom = Math.max(tweet.views, tweet.author_followers ?? 0, 1);
+  const denom = tweet.views > 0
+    ? tweet.views
+    : Math.max(tweet.author_followers ?? 1, 1);
   return interactions / denom;
 }

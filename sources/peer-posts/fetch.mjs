@@ -40,6 +40,7 @@ export async function fetch(source, env) {
   const seedsPerRun = params.seedsPerRun ?? 5;
   const poolTarget = params.poolTarget ?? 30;
   const maxAgentSteps = params.maxAgentSteps ?? 30;
+  const fetchBudget = params.fetchBudget ?? 15;
   const maxTokens = params.maxTokens ?? 6000;
   const model = env.RESEARCH_MODEL ?? DEFAULT_MODEL;
 
@@ -52,6 +53,8 @@ export async function fetch(source, env) {
   const tweetCache = new Map();
   const pool = new Map();
   const handleScores = new Map();
+  const fetchedHandles = new Set();
+  const fetchBudgetRef = { calls: 0, limit: fetchBudget };
 
   const twitter = makeTwitterApi(apiKey);
 
@@ -61,51 +64,66 @@ export async function fetch(source, env) {
     tweetCache,
     pool,
     handleScores,
+    fetchedHandles,
+    fetchBudgetRef,
     seedsPerRun,
     windowDays,
     poolTarget,
   });
 
-  const system = renderSystemPrompt({ niche, params, windowDays, poolTarget });
+  const system = renderSystemPrompt({ niche, params, windowDays, poolTarget, fetchBudget });
   const userPrompt = renderUserPrompt({ state, seedHandles });
 
   const client = makeClient({ apiKey: anthropicKey });
 
-  const stepLog = [];
-  const result = await runAgent({
-    client,
-    model,
-    system,
-    tools,
-    userPrompt,
-    terminalTool: 'submit_patterns',
-    maxSteps: maxAgentSteps,
-    maxTokens,
-    onStep(info) {
-      stepLog.push(info);
-      const inputPreview = JSON.stringify(info.input).slice(0, 80);
-      console.log(`  [agent] ${info.name}(${inputPreview}) ${info.ok ? 'ok' : `ERR ${info.error}`}`);
-    },
-  });
-
-  // Apply per-handle scores into state.
-  for (const [handle, scores] of handleScores.entries()) {
-    recordPull(state, handle, scores);
+  let result;
+  let promoted = [];
+  try {
+    result = await runAgent({
+      client,
+      model,
+      system,
+      tools,
+      userPrompt,
+      terminalTool: 'submit_patterns',
+      maxSteps: maxAgentSteps,
+      maxTokens,
+      onStep(info) {
+        const inputPreview = JSON.stringify(info.input).slice(0, 80);
+        console.log(`  [agent] ${info.name}(${inputPreview}) ${info.ok ? 'ok' : `ERR ${info.error}`}`);
+      },
+    });
+  } finally {
+    // Persist state even if the agent crashed mid-run — blacklist /
+    // discovery / partial fetches are still valuable next time.
+    for (const handle of fetchedHandles) {
+      recordPull(state, handle, handleScores.get(handle.toLowerCase()) ?? []);
+    }
+    // Also stamp any handle that was scored but not fetched (rare).
+    for (const handle of handleScores.keys()) {
+      if (!fetchedHandles.has(handle)) {
+        recordPull(state, handle, handleScores.get(handle) ?? []);
+      }
+    }
+    promoted = promoteDiscovered(state);
+    await saveState(source.dir, state);
   }
-  const promoted = promoteDiscovered(state);
-  await saveState(source.dir, state);
 
-  const patternsMd = result.terminalInput?.patterns_markdown?.trim()
-    || result.text
-    || '_(agent did not emit a patterns analysis this run)_';
+  const patternsMd = stripLeadingPatternsHeader(
+    result.terminalInput?.patterns_markdown?.trim()
+      || result.text
+      || '_(agent did not emit a patterns analysis this run)_'
+  );
 
-  const items = composeItems({ patternsMd, pool, tweetCache });
+  const items = composeItems({ patternsMd, pool });
 
   const meta = {
     model,
     agent_steps: result.steps,
     stop_reason: result.stop_reason,
     pool_size: pool.size,
+    fetch_calls: fetchBudgetRef.calls,
+    fetch_budget: fetchBudgetRef.limit,
     discovered: Object.keys(state.discovered ?? {}).length,
     promoted: promoted.length,
     input_tokens: result.usage?.input_tokens ?? 0,
@@ -114,6 +132,13 @@ export async function fetch(source, env) {
   };
 
   return { items, meta };
+}
+
+// writeLatest wraps each item body in `## ${title}`. The agent's output is
+// the body of the patterns item, so any leading `## Patterns observed...`
+// duplicates the wrapper title. Drop it if present.
+function stripLeadingPatternsHeader(md) {
+  return md.replace(/^\s*##\s+Patterns? observed[^\n]*\n+/i, '').trimStart();
 }
 
 // ----- niche brief (voice + projects) -----
@@ -136,7 +161,7 @@ async function loadNicheBrief(repoRoot) {
 
 // ----- prompts -----
 
-function renderSystemPrompt({ niche, params, windowDays, poolTarget }) {
+function renderSystemPrompt({ niche, params, windowDays, poolTarget, fetchBudget }) {
   const projectBlock = niche.projects
     .map((p) => `### ${p.name}\n\n${p.text.trim()}`)
     .join('\n\n');
@@ -167,21 +192,28 @@ You have tools to:
    Use queryType: "Top" for high-engagement, "Latest" for fresh signal.
 4. From search results, pick out NEW handles that consistently produce great
    on-niche content. Call promote_handle on them. Add their best tweets to pool.
-5. Stop fetching when pool >= ${poolTarget}, or at most ~25 tool calls.
+5. Stop fetching when pool >= ${poolTarget}, or your fetch budget runs out.
 6. Reflect on the pool. What hooks worked? What length, structure, specificity?
-   Call submit_patterns with a markdown analysis structured as:
+   Call submit_patterns with a markdown analysis structured as below.
 
-   ## Patterns observed this run
+# Output format for submit_patterns
+Do NOT include a top-level "## Patterns observed this run" header — the
+output is rendered under that title automatically. Start with a 1-2 sentence
+summary paragraph, then use ### sub-headers for the rest:
+
+   <one-paragraph summary>
+
+   ### Specific patterns
    - 3-5 specific patterns. Each one: "what + how often + why it likely worked"
    - Bad: "use specifics" — Good: "8/10 top tweets opened with a number"
 
-   ## Hook archetypes
+   ### Hook archetypes
    - 3-5 opening templates with example tweets
 
-   ## Length / structure notes
+   ### Length / structure notes
    - Median chars in top tweets, structural observations
 
-   ## Anti-patterns
+   ### Anti-patterns
    - What's NOT working in this niche this run
 
 # Niche context
@@ -197,7 +229,8 @@ ${projectBlock}
 - Prefer tweets that are short (≤220 chars), specific, and have unusually
   high engagement-per-impression (the platform amplifies these).
 - Do NOT add the user's own posts (handle: @octavicristea) to the pool.
-- Be efficient with tool calls — each twitter fetch costs money.
+- Be efficient with tool calls — twitter fetches cost real money. Hard budget
+  is ${fetchBudget} fetches per run; the tool will refuse further calls past that.
 - When in doubt, do not add to pool — quality over quantity.`;
 }
 
@@ -236,9 +269,29 @@ Begin.`;
 
 // ----- tools -----
 
-function buildTools({ twitter, state, tweetCache, pool, handleScores, seedsPerRun, windowDays, poolTarget }) {
+function buildTools({
+  twitter,
+  state,
+  tweetCache,
+  pool,
+  handleScores,
+  fetchedHandles,
+  fetchBudgetRef,
+  seedsPerRun,
+  windowDays,
+  poolTarget,
+}) {
   const sinceIso = new Date(Date.now() - windowDays * 86_400_000).toISOString();
   const ownHandle = 'octavicristea';
+
+  function checkBudget() {
+    if (fetchBudgetRef.calls >= fetchBudgetRef.limit) {
+      throw new Error(
+        `fetch budget exhausted (${fetchBudgetRef.limit} calls used). Call submit_patterns now with what you have.`
+      );
+    }
+    fetchBudgetRef.calls += 1;
+  }
 
   function trimTweetForAgent(t) {
     return {
@@ -300,6 +353,7 @@ function buildTools({ twitter, state, tweetCache, pool, handleScores, seedsPerRu
         additionalProperties: false,
       },
       async run({ handle, include_replies = false }) {
+        checkBudget();
         const tweets = await twitter.userLastTweets({
           userName: handle,
           includeReplies: include_replies,
@@ -307,9 +361,12 @@ function buildTools({ twitter, state, tweetCache, pool, handleScores, seedsPerRu
           max: 30,
         });
         for (const t of tweets) tweetCache.set(t.id, t);
+        fetchedHandles.add(handle.toLowerCase());
         return {
           handle,
           count: tweets.length,
+          fetch_calls_used: fetchBudgetRef.calls,
+          fetch_budget: fetchBudgetRef.limit,
           tweets: tweets.map(trimTweetForAgent),
         };
       },
@@ -328,11 +385,14 @@ function buildTools({ twitter, state, tweetCache, pool, handleScores, seedsPerRu
         additionalProperties: false,
       },
       async run({ query, query_type = 'Top', max = 20 }) {
+        checkBudget();
         const tweets = await twitter.searchTweets({ query, queryType: query_type, max });
         for (const t of tweets) tweetCache.set(t.id, t);
         return {
           query,
           count: tweets.length,
+          fetch_calls_used: fetchBudgetRef.calls,
+          fetch_budget: fetchBudgetRef.limit,
           tweets: tweets.map(trimTweetForAgent),
         };
       },
@@ -435,7 +495,7 @@ function buildTools({ twitter, state, tweetCache, pool, handleScores, seedsPerRu
 
 // ----- output -----
 
-function composeItems({ patternsMd, pool, tweetCache }) {
+function composeItems({ patternsMd, pool }) {
   const items = [];
 
   items.push({

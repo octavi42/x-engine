@@ -256,19 +256,18 @@ async function main() {
 
     const refined = result.refined.replace(/\n+/g, ' ').trim();
     const refinedChars = refined.length;
-    if (refinedChars > CHAR_LIMIT) {
-      console.warn(`  #${d.index}: refined ${refinedChars} > ${CHAR_LIMIT}, stamping anyway — review manually`);
+    const refinedIssues = runRules(refined);
+    if (refinedIssues.length) {
+      console.warn(`  #${d.index}: refined has ${refinedIssues.length} rule issue(s): ${refinedIssues.join('; ')}`);
     }
 
-    await stampDraft({
-      filePath: file,
-      draftIndex: d.index,
-      updates: {
-        Score: formatScore(result.score),
-        Critique: result.critique.replace(/\n+/g, ' ').trim(),
-        Refined: refined,
-      },
-    });
+    const updates = {
+      Score: formatScore(result.score),
+      Critique: result.critique.replace(/\n+/g, ' ').trim(),
+      Refined: refined,
+    };
+    if (refinedIssues.length) updates.RefinedIssues = refinedIssues.join('; ');
+    await stampDraft({ filePath: file, draftIndex: d.index, updates });
     console.log(`  #${d.index}: ${formatScore(result.score)}`);
     console.log(`     ${refined.slice(0, 70)}${refinedChars > 70 ? '…' : ''} (${refinedChars}c)`);
   }
