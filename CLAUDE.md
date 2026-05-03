@@ -29,13 +29,13 @@ Current sources:
 - `sources/trending/` — static. Append a `## YYYY-MM-DD` section each run with trending findings.
 - `sources/raw-ideas/` — concat. Drop manual ideas in `sources/raw-ideas/items/<project>.md`; sync concatenates into `latest.md`.
 - `sources/obsidian-personal/` — obsidian-vault. Pulls Build Log + Ideas from recent daily notes.
+- `sources/github-commits/` — github-commits. Recent commits across each project's GitHub repo (auto-discovered from `config/projects/*.md`). Requires `gh` CLI authenticated locally.
 
 To add a new source: create `sources/<name>/source.config.json` (and optionally `fetch.mjs`). No changes needed elsewhere — the orchestrator and drafting agent discover it automatically. By convention, fetched sources gitignore their `latest.md` (it's regenerated each sync) — drop a `.gitignore` containing `latest.md` next to the `fetch.mjs`.
 
 ## Research phase
-- For each project file in `config/projects/`, use web search to check its GitHub repo for recent commits. Never clone repos into this workspace.
+- Run `npm run sync` first — refreshes all fetched sources, including `sources/github-commits/latest.md` for recent project commits. Never clone repos into this workspace.
 - Search the web for trending dev/AI/startup topics each run.
-- Run `npm run sync` so all fetched sources (raw-ideas, obsidian-personal, etc.) refresh their `latest.md`.
 - After searching for trending topics, append today's findings to `sources/trending/latest.md` with a `## YYYY-MM-DD` date header (keep the existing frontmatter at the top). This builds a history of what was trending over time.
 
 ## Profile sync phase
