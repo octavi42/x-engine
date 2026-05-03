@@ -95,8 +95,9 @@ export function recordDiscovery(state, handle, score, reason) {
   }
 }
 
-// Discovered handles seen 3+ times with score >= threshold get auto-promoted.
-export function promoteDiscovered(state, { minScore = 3.5, minSeen = 1 } = {}) {
+// Discovered handles with score >= threshold get auto-promoted to active seeds.
+// Active or blacklisted handles are skipped.
+export function promoteDiscovered(state, { minScore = 3.5 } = {}) {
   const promoted = [];
   for (const [key, d] of Object.entries(state.discovered)) {
     if (state.handles[key]?.status === 'blacklisted') continue;
