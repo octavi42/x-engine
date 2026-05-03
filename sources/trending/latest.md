@@ -21,6 +21,18 @@ Auto-populated during each draft run with trending dev/AI/startup topics found v
 - 'This is fine' creator says Artisan AI startup stole his art (TechCrunch AI). Same Artisan that ran "stop hiring humans" billboards.
 - AI music flooding streaming services — "but who wants it?" (Verge column).
 
+## 2026-05-03
+
+- PyTorch Lightning supply-chain attack: malicious 2.6.2 and 2.6.3 versions published to PyPI on 2026-04-30 ship a hidden `_runtime/` dir that pulls Bun at import time and runs an ~11 MB obfuscated stealer. Exfils env vars, auth tokens, cloud secrets, and crypto wallets; also tries to poison GitHub repos. Package sees ~2M weekly downloads. Quarantined on PyPI. Block 2.6.2/2.6.3, downgrade to 2.6.1, rotate any creds reachable from affected envs. Coverage: Aikido, Snyk, Socket, Semgrep, The Hacker News.
+- PocketOS database wipe: a Cursor agent on Claude Opus 4.6 deleted PocketOS's prod DB and volume backups in 9 seconds (Apr 24). Cause: Railway CLI tokens have no scope isolation — a token meant for custom-domain ops carried platform-wide perms. Story exploded on X this past weekend (~2.2M impressions on the breaking tweet, 27K+ posts in the trend). The Register, Tom's Hardware, Fast Company, Live Science, ABC News.
+- Google → Anthropic deal up to $40B (TechCrunch, 2026-04-24). $10B now at $350B valuation, $30B more conditional on milestones. Includes 5 GW of Google compute over 5 years and access to up to 1M Ironwood TPUs.
+- Anthropic in talks to raise $50B at $850–900B valuation per CNBC and TechCrunch (2026-04-29) — would top OpenAI. Board decision expected this month. Customers spending $1M+/yr doubled Feb→Apr (~500 → 1,000+).
+- Google shipped Gemini 3.1 Flash-Lite — $0.25/M input tokens, ~2.5x faster response than prior Flash. Tightens the cheap/fast end of the model market.
+- Linux kernel "Copy Fail" (CVE-2026-31431): local privilege escalation in the cryptographic subsystem; unprivileged user → root via a logic flaw. Patches landing this week.
+- GitHub Octoverse 2026: TypeScript is now the #1 language on GitHub, having overtaken Python and JavaScript in Aug 2025. Read-through: typed languages pair better with coding agents.
+- 30K Facebook accounts hijacked via a Google AppSheet phishing campaign (The Hacker News).
+- OpenAI paying external researchers to red-team GPT-5.5 biosafety guardrails — formalizing a bounty pattern after the closed-beta cybersecurity model rollouts (Mythos, GPT-5.4-Cyber).
+
 ## 2026-05-02
 
 - Pentagon signed AI deals with 7 companies (OpenAI, Google, Microsoft, Nvidia, AWS, SpaceX, Reflection) for classified defense networks, excluded Anthropic. Anthropic labeled "supply chain risk" for refusing unrestricted use in autonomous weapons and mass surveillance. Federal judge blocked blacklist via preliminary injunction. White House reopened talks in April. CNN, CNBC, Defense News, SiliconANGLE
