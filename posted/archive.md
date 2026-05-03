@@ -16,3 +16,10 @@ Likes: X | Reposts: X | Replies: X | Notes: ...
 URL: https://x.com/i/web/status/2050969731155349933
 Project: Road to SF
 Likes: — | Reposts: — | Replies: — | Notes:
+
+## 2026-05-03
+> prod fresh tabs froze on dialogue. cause: browser blocked audio.play() with no user gesture. fix: on rejection, attach one-shot pointerdown/keydown listeners and retry on first input. 6s safety timer falls back to fixed cadence so the typewriter still reveals.
+
+URL: https://x.com/i/web/status/2051036972710261187
+Project: Road to SF
+Likes: — | Reposts: — | Replies: — | Notes:
