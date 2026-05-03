@@ -8,6 +8,19 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-04
+
+- Harvard study: OpenAI o1 correctly diagnosed 67% of ER patients vs 50-55% by triage doctors. Real emergency room cases, not benchmarks. Guardian + TechCrunch AI coverage. Vertical AI in narrow domains crossing parity with experts.
+- Cursor reportedly in talks to be acquired by SpaceX for $60B per Amjad Masad's StrictlyVC interview (TechCrunch, 2026-05-01). Replit framed as next likely target if valuation stays elevated.
+- Meta acquired Assured Robot Intelligence to bolster humanoid AI ambitions (TechCrunch AI, 2026-05-01).
+- AMPAS: AI-generated actors and scripts now ineligible for Oscars (TechCrunch AI, 2026-05-02).
+- Show HN: Apple SHARP (single-image 3D Gaussian splatting) running in browser via ONNX runtime web + WebGPU (HN, 143 pts). 2.4 GB sidecar but inference in seconds on recent Mac.
+- Show HN: Ableton Live MCP — control Live from MCP-compatible AI agents (HN, 46 pts).
+- "Why TUIs Are Back" front-paged HN (182 pts). Dev culture moment.
+- Mercedes-Benz commits to bringing back physical buttons (HN, 529 pts). UX backlash against touchscreen-everywhere.
+- 'This is fine' creator says Artisan AI startup stole his art (TechCrunch AI). Same Artisan that ran "stop hiring humans" billboards.
+- AI music flooding streaming services — "but who wants it?" (Verge column).
+
 ## 2026-05-02
 
 - Pentagon signed AI deals with 7 companies (OpenAI, Google, Microsoft, Nvidia, AWS, SpaceX, Reflection) for classified defense networks, excluded Anthropic. Anthropic labeled "supply chain risk" for refusing unrestricted use in autonomous weapons and mass surveillance. Federal judge blocked blacklist via preliminary injunction. White House reopened talks in April. CNN, CNBC, Defense News, SiliconANGLE
