@@ -125,22 +125,69 @@ function buildStatusTable(content) {
   ].join("\n");
 }
 
-export async function runAgent(env, userText) {
+const HISTORY_KEY = (chatId) => `chat:${chatId}`;
+const HISTORY_TTL_SECONDS = 60 * 60 * 24 * 7; // 7 days
+const MAX_HISTORY_ENTRIES = 30;
+
+async function loadHistory(env, chatId) {
+  if (!env.CHAT_HISTORY) return [];
+  const raw = await env.CHAT_HISTORY.get(HISTORY_KEY(chatId));
+  if (!raw) return [];
+  try { return JSON.parse(raw); } catch { return []; }
+}
+
+async function saveHistory(env, chatId, history) {
+  if (!env.CHAT_HISTORY) return;
+  let trimmed = history;
+  if (trimmed.length > MAX_HISTORY_ENTRIES) {
+    const cut = trimmed.length - MAX_HISTORY_ENTRIES;
+    let i = cut;
+    while (i < trimmed.length && trimmed[i].kind !== "user_text") i++;
+    trimmed = trimmed.slice(i);
+  }
+  await env.CHAT_HISTORY.put(HISTORY_KEY(chatId), JSON.stringify(trimmed), {
+    expirationTtl: HISTORY_TTL_SECONDS,
+  });
+}
+
+export async function clearHistory(env, chatId) {
+  if (!env.CHAT_HISTORY) return false;
+  await env.CHAT_HISTORY.delete(HISTORY_KEY(chatId));
+  return true;
+}
+
+function rehydrate(history) {
+  const messages = [];
+  for (const turn of history) {
+    if (turn.kind === "user_text") {
+      messages.push({ role: "user", content: [{ type: "text", text: `User: ${turn.text}` }] });
+    } else if (turn.kind === "tool_result") {
+      messages.push({ role: "user", content: turn.content });
+    } else if (turn.kind === "assistant") {
+      messages.push({ role: "assistant", content: turn.content });
+    }
+  }
+  return messages;
+}
+
+export async function runAgent(env, chatId, userText) {
   const path = todayPath();
   const file = await getFile(env, REPO, path);
   const draftsContent = file?.content || "(no drafts file exists for today yet)";
-
   const statusTable = buildStatusTable(draftsContent);
-  const messages = [
-    {
-      role: "user",
-      content: [
-        { type: "text", text: `STATUS TABLE (authoritative for status — ${path}):\n\n${statusTable}` },
-        { type: "text", text: `RAW MARKDOWN (use for body content only):\n\n${draftsContent}` },
-        { type: "text", text: `User: ${userText}` },
-      ],
-    },
-  ];
+
+  const history = await loadHistory(env, chatId);
+  const messages = rehydrate(history);
+  messages.push({
+    role: "user",
+    content: [
+      { type: "text", text: `STATUS TABLE (authoritative for status — ${path}):\n\n${statusTable}` },
+      { type: "text", text: `RAW MARKDOWN (use for body content only):\n\n${draftsContent}` },
+      { type: "text", text: `User: ${userText}` },
+    ],
+  });
+
+  const newEntries = [{ kind: "user_text", text: userText }];
 
   for (let i = 0; i < 6; i++) {
     const res = await callClaude(env, { messages });
@@ -156,12 +203,17 @@ export async function runAgent(env, userText) {
       }
       messages.push({ role: "assistant", content: res.content });
       messages.push({ role: "user", content: toolResults });
+      newEntries.push({ kind: "assistant", content: res.content });
+      newEntries.push({ kind: "tool_result", content: toolResults });
       continue;
     }
 
+    newEntries.push({ kind: "assistant", content: res.content });
+    await saveHistory(env, chatId, [...history, ...newEntries]);
     const text = res.content.filter(c => c.type === "text").map(c => c.text).join("\n").trim();
     return text || "(no reply)";
   }
 
+  await saveHistory(env, chatId, [...history, ...newEntries]);
   return "agent loop limit reached — try a more specific request";
 }

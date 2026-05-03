@@ -1,7 +1,7 @@
 import { sendMessage, escapeHtml } from "./telegram.js";
 import { getFile, putFile } from "./github.js";
 import { parseDrafts, stampDraft, replaceBody } from "./drafts.js";
-import { runAgent } from "./llm.js";
+import { runAgent, clearHistory } from "./llm.js";
 
 const REPO = "octavi42/x-engine";
 
@@ -24,6 +24,10 @@ export async function handleCommand(env, msg) {
   if (text === "/start" || text === "/help") return reply(env, chatId, helpText());
   if (text === "/today") return cmdToday(env, chatId);
   if (text === "/queue") return cmdQueue(env, chatId);
+  if (text === "/clear") {
+    await clearHistory(env, chatId);
+    return reply(env, chatId, "🧹 conversation memory cleared");
+  }
 
   const m = text.match(/^\/(approve|reject)\s+(\d+)\s*$/);
   if (m) return cmdSetStatus(env, chatId, Number(m[2]), m[1] === "approve" ? "approved" : "rejected");
@@ -33,7 +37,7 @@ export async function handleCommand(env, msg) {
 
   if (text.startsWith("/")) return reply(env, chatId, "unknown command — try /help");
 
-  const agentReply = await runAgent(env, text);
+  const agentReply = await runAgent(env, chatId, text);
   return reply(env, chatId, agentReply);
 }
 
@@ -45,6 +49,7 @@ function helpText() {
     "/approve N — approve draft #N",
     "/reject N — reject draft #N",
     "/edit N: new body — replace body of draft #N",
+    "/clear — wipe the bot's conversation memory",
     "/help — this message",
     "",
     "<i>All edits target today's drafts file.</i>",
