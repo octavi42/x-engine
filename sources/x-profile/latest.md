@@ -1,3 +1,9 @@
+---
+source: x-profile
+type: static
+description: Account snapshot, recent posts, topics covered, content gaps. Hand-edited during the profile sync phase.
+---
+
 # X Profile — @octavicristea
 Auto-updated every run. Do not edit manually.
 

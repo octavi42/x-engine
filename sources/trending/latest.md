@@ -1,3 +1,9 @@
+---
+source: trending
+type: static
+description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY-MM-DD section each run.
+---
+
 # Trending Topics Log
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.

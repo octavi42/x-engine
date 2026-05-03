@@ -1,0 +1,12 @@
+{
+  "name": "obsidian-personal",
+  "type": "obsidian-vault",
+  "description": "Recent Build Log + Ideas sections from daily notes in the personal Obsidian vault.",
+  "enabled": true,
+  "params": {
+    "vaultPath": "/Users/cristeaoctavian/Documents/Obsidian Vault",
+    "dailyNotesDir": "Daily Notes",
+    "sinceDays": 7,
+    "sections": ["Build Log", "Ideas"]
+  }
+}

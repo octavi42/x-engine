@@ -1,0 +1,7 @@
+{
+  "name": "trending",
+  "type": "static",
+  "description": "Rolling log of trending dev/AI/startup topics. Append a new ## YYYY-MM-DD section each run.",
+  "enabled": true,
+  "params": {}
+}
