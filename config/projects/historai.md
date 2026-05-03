@@ -1,6 +1,5 @@
-# Projects
+# HistorAI
 
-## HistorAI
 - **Repo:** https://github.com/octavi42/historai
 - **Description:** Location-based AI audio narrator. Uses GPS to research and narrate the history of places around you in real-time using AI voice.
 - **Stack:** React Native, Expo, ElevenLabs Conversational AI, Firecrawl Search, Nominatim

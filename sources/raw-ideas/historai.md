@@ -1,9 +1,4 @@
-# Raw Ideas
-
-Dump raw thoughts, links, observations here throughout the day.
-Don't worry about polish — just capture the idea. Claude will turn these into drafts.
-
-Format: bullet point with enough context to write a post from.
+# Raw Ideas — HistorAI
 
 ---
 
