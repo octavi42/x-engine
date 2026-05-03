@@ -9,7 +9,8 @@
   "scripts": {
     "post": "node --env-file=.env.local scripts/post.mjs",
     "post:dry": "node --env-file=.env.local scripts/post.mjs --dry",
-    "check-auth": "node --env-file=.env.local scripts/check-auth.mjs"
+    "check-auth": "node --env-file=.env.local scripts/check-auth.mjs",
+    "post:ci": "node scripts/post.mjs"
   },
   "repository": {
     "type": "git",

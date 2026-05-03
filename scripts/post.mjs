@@ -7,7 +7,7 @@ import { stampDraft } from "./lib/stamp-draft.mjs";
 const ROOT = process.cwd();
 const DRAFTS_DIR = path.join(ROOT, "drafts");
 const ARCHIVE_PATH = path.join(ROOT, "posted/archive.md");
-const MAX_PER_RUN = 3;
+const MAX_PER_RUN = Number(process.env.MAX_PER_RUN ?? 3);
 const CHAR_LIMIT = 280;
 const DRY = process.argv.includes("--dry");
 
