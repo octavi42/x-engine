@@ -30,6 +30,7 @@
     "node": ">=20.6.0"
   },
   "dependencies": {
+    "fast-xml-parser": "^5.7.2",
     "twitter-api-v2": "^1.29.0"
   }
 }

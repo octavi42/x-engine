@@ -30,13 +30,14 @@ Current sources:
 - `sources/raw-ideas/` — concat. Drop manual ideas in `sources/raw-ideas/items/<project>.md`; sync concatenates into `latest.md`.
 - `sources/obsidian-personal/` — obsidian-vault. Pulls Build Log + Ideas from recent daily notes.
 - `sources/github-commits/` — github-commits. Recent commits across each project's GitHub repo (auto-discovered from `config/projects/*.md`). Requires `gh` CLI authenticated locally.
+- `sources/rss-trending/` — rss. Recent items from configured AI/dev/startup news feeds (HN, TechCrunch AI, The Verge AI by default). Edit `params.feeds` in the config to add or remove sources.
 
 To add a new source: create `sources/<name>/source.config.json` (and optionally `fetch.mjs`). No changes needed elsewhere — the orchestrator and drafting agent discover it automatically. By convention, fetched sources gitignore their `latest.md` (it's regenerated each sync) — drop a `.gitignore` containing `latest.md` next to the `fetch.mjs`.
 
 ## Research phase
-- Run `npm run sync` first — refreshes all fetched sources, including `sources/github-commits/latest.md` for recent project commits. Never clone repos into this workspace.
-- Search the web for trending dev/AI/startup topics each run.
-- After searching for trending topics, append today's findings to `sources/trending/latest.md` with a `## YYYY-MM-DD` date header (keep the existing frontmatter at the top). This builds a history of what was trending over time.
+- Run `npm run sync` first — refreshes all fetched sources. The primary trending signal is `sources/rss-trending/latest.md` (last ~48h of feed items); recent project commits land in `sources/github-commits/latest.md`. Never clone repos into this workspace.
+- Optionally search the web for additional context not covered by the configured feeds.
+- Distill the run's trending signal (RSS items + any extra web findings) into a curated `## YYYY-MM-DD` section appended to `sources/trending/latest.md` (keep the frontmatter at the top). This is the long-running history; rss-trending is the volatile feed.
 
 ## Profile sync phase
 - Search the web for recent posts from @octavicristea (try queries like "from:octavicristea site:x.com" or "octavicristea twitter"). Extract the last 10 posts with their text and any visible engagement.

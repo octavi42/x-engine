@@ -1,0 +1,15 @@
+{
+  "name": "rss-trending",
+  "type": "rss",
+  "description": "Recent items from AI/dev/startup news feeds. Edit the feeds array to add or remove sources.",
+  "enabled": true,
+  "params": {
+    "sinceHours": 48,
+    "maxPerFeed": 25,
+    "feeds": [
+      { "name": "Hacker News", "url": "https://hnrss.org/frontpage" },
+      { "name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/" },
+      { "name": "The Verge AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml" }
+    ]
+  }
+}
