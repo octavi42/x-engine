@@ -1,12 +1,35 @@
-import { sendMessage, escapeHtml } from "./telegram.js";
+import { sendMessage, deleteMessages, escapeHtml } from "./telegram.js";
 import { getFile, putFile } from "./github.js";
 import { parseDrafts, stampDraft, replaceBody } from "./drafts.js";
 import { runAgent, clearHistory } from "./llm.js";
 
 const REPO = "octavi42/x-engine";
+const MSGS_KEY = (chatId) => `msgs:${chatId}`;
+const MSGS_TTL = 60 * 60 * 24 * 7;
+const MAX_TRACKED = 1000;
 
 function todayPath() {
   return `drafts/${new Date().toISOString().slice(0, 10)}.md`;
+}
+
+async function trackMessageId(env, chatId, messageId) {
+  if (!env.CHAT_HISTORY || !messageId) return;
+  const raw = await env.CHAT_HISTORY.get(MSGS_KEY(chatId));
+  const ids = raw ? JSON.parse(raw) : [];
+  ids.push(messageId);
+  const trimmed = ids.length > MAX_TRACKED ? ids.slice(-MAX_TRACKED) : ids;
+  await env.CHAT_HISTORY.put(MSGS_KEY(chatId), JSON.stringify(trimmed), { expirationTtl: MSGS_TTL });
+}
+
+async function loadTrackedMessages(env, chatId) {
+  if (!env.CHAT_HISTORY) return [];
+  const raw = await env.CHAT_HISTORY.get(MSGS_KEY(chatId));
+  return raw ? JSON.parse(raw) : [];
+}
+
+async function clearTrackedMessages(env, chatId) {
+  if (!env.CHAT_HISTORY) return;
+  await env.CHAT_HISTORY.delete(MSGS_KEY(chatId));
 }
 
 function statusEmoji(d) {
@@ -21,13 +44,12 @@ export async function handleCommand(env, msg) {
   const text = msg.text.trim();
   const chatId = msg.chat.id;
 
+  await trackMessageId(env, chatId, msg.message_id);
+
   if (text === "/start" || text === "/help") return reply(env, chatId, helpText());
   if (text === "/today") return cmdToday(env, chatId);
   if (text === "/queue") return cmdQueue(env, chatId);
-  if (text === "/clear") {
-    await clearHistory(env, chatId);
-    return reply(env, chatId, "🧹 conversation memory cleared");
-  }
+  if (text === "/clear") return cmdClear(env, chatId);
 
   const m = text.match(/^\/(approve|reject)\s+(\d+)\s*$/);
   if (m) return cmdSetStatus(env, chatId, Number(m[2]), m[1] === "approve" ? "approved" : "rejected");
@@ -57,7 +79,20 @@ function helpText() {
 }
 
 async function reply(env, chatId, text) {
-  await sendMessage(env, chatId, text);
+  const sent = await sendMessage(env, chatId, text);
+  if (sent?.message_id) await trackMessageId(env, chatId, sent.message_id);
+  return sent;
+}
+
+async function cmdClear(env, chatId) {
+  const ids = await loadTrackedMessages(env, chatId);
+  await clearHistory(env, chatId);
+  await clearTrackedMessages(env, chatId);
+  if (ids.length) {
+    await deleteMessages(env, chatId, ids);
+  }
+  // No confirmation message — chat is wiped, that's the confirmation.
+  // (Telegram silently skips messages older than 48h; we can't recover those.)
 }
 
 async function cmdToday(env, chatId) {
