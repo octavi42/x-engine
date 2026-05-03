@@ -23,7 +23,6 @@ async function findCandidates() {
 
 function validate(candidates) {
   const errors = [];
-  if (candidates.length === 0) errors.push("No drafts marked Status: approved (with empty Posted).");
   if (candidates.length > MAX_PER_RUN) errors.push(`Too many candidates (${candidates.length}); cap is ${MAX_PER_RUN} per run.`);
   for (const c of candidates) {
     const file = path.basename(c.filePath);
@@ -58,6 +57,10 @@ async function main() {
   console.log(DRY ? "[DRY RUN]" : "[LIVE POST]");
 
   const candidates = await findCandidates();
+  if (candidates.length === 0) {
+    console.log("Nothing to post — no drafts marked Status: approved with empty Posted.");
+    return;
+  }
   const errors = validate(candidates);
   if (errors.length) {
     console.error("Validation failed:");
