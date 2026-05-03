@@ -1,6 +1,7 @@
 import { sendMessage, escapeHtml } from "./telegram.js";
 import { getFile, putFile } from "./github.js";
 import { parseDrafts, stampDraft, replaceBody } from "./drafts.js";
+import { runAgent } from "./llm.js";
 
 const REPO = "octavi42/x-engine";
 
@@ -30,7 +31,10 @@ export async function handleCommand(env, msg) {
   const e = text.match(/^\/edit\s+(\d+)\s*[:：]\s*([\s\S]+)$/);
   if (e) return cmdEdit(env, chatId, Number(e[1]), e[2].trim());
 
-  return reply(env, chatId, "unknown command — try /help");
+  if (text.startsWith("/")) return reply(env, chatId, "unknown command — try /help");
+
+  const agentReply = await runAgent(env, text);
+  return reply(env, chatId, agentReply);
 }
 
 function helpText() {
