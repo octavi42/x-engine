@@ -109,6 +109,24 @@ async function executeTool(env, name, input) {
   }
 }
 
+function buildTimeContext() {
+  const now = new Date();
+  const utc = now.toISOString().slice(0, 16).replace("T", " ") + " UTC";
+  const local = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Bucharest",
+    weekday: "long",
+    year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit",
+    hour12: false,
+  }).format(now);
+  return [
+    `Now (UTC): ${utc}`,
+    `Now (Europe/Bucharest): ${local}`,
+    `Post slots: 12:00 / 16:00 / 20:00 UTC = 15:00 / 19:00 / 23:00 EEST in summer (14/18/22 EET in winter).`,
+    `Notify slots: 11:00 / 15:00 / 19:00 UTC (1h before each post).`,
+  ].join("\n");
+}
+
 function buildStatusTable(content) {
   const drafts = parseDrafts(content);
   if (!drafts.length) return "(no drafts in file)";
@@ -175,12 +193,14 @@ export async function runAgent(env, chatId, userText) {
   const file = await getFile(env, REPO, path);
   const draftsContent = file?.content || "(no drafts file exists for today yet)";
   const statusTable = buildStatusTable(draftsContent);
+  const timeContext = buildTimeContext();
 
   const history = await loadHistory(env, chatId);
   const messages = rehydrate(history);
   messages.push({
     role: "user",
     content: [
+      { type: "text", text: `CURRENT TIME:\n\n${timeContext}` },
       { type: "text", text: `STATUS TABLE (authoritative for status — ${path}):\n\n${statusTable}` },
       { type: "text", text: `RAW MARKDOWN (use for body content only):\n\n${draftsContent}` },
       { type: "text", text: `User: ${userText}` },
