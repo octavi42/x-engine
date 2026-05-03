@@ -1,5 +1,5 @@
 import { getFile, putFile } from "./github.js";
-import { stampDraft, replaceBody } from "./drafts.js";
+import { stampDraft, replaceBody, parseDrafts } from "./drafts.js";
 
 const REPO = "octavi42/x-engine";
 const MODEL = "claude-haiku-4-5-20251001";
@@ -10,7 +10,11 @@ function todayPath() {
 
 const SYSTEM_PROMPT = `You are a Telegram bot for managing daily X/Twitter post drafts for @octavicristea.
 
-You can: inspect, approve, reject, and edit drafts in today's file. Today's drafts are injected as context each turn. Use tools to make changes — never claim you've changed something without calling the corresponding tool.
+You can: inspect, approve, reject, and edit drafts in today's file. Today's drafts are injected as context each turn in two forms:
+1. A STATUS TABLE — the authoritative source of truth for which drafts are approved/rejected/posted. Read status ONLY from this table. Do not infer status from the raw markdown.
+2. The RAW MARKDOWN — use this only for body content (when the user asks "what does draft 3 say" or asks you to edit).
+
+Use tools to make changes — never claim you've changed something without calling the corresponding tool. After a tool returns, report exactly what the tool said.
 
 When the user is ambiguous (e.g. "approve the autoplay one"), match on body content or project. If two drafts could match, ask which.
 
@@ -18,7 +22,7 @@ Reply rules:
 - Telegram-style: short, plain prose. No markdown headers. Use <b> and <i> sparingly.
 - Confirm changes by stating what changed (e.g. "🟢 #4 approved").
 - When listing drafts, prefix with status emoji: ✅ posted, 🟢 approved, ❌ rejected, ⚪ no status.
-- If the user asks to edit, propose the new text first only if they were vague; if they gave the exact replacement, just call the tool.
+- A draft is "approved" ONLY if the status table shows status=approved. No status field = treat as ⚪ no status.
 - Hard limit: tweet bodies are ≤280 chars. Reject edits that exceed this.
 - The poster picks the next approved+unposted draft at scheduled times (12/16/20 UTC = 15/19/23 EEST).`;
 
@@ -60,6 +64,7 @@ async function callClaude(env, { messages }) {
     body: JSON.stringify({
       model: MODEL,
       max_tokens: 1024,
+      temperature: 0,
       system: [{ type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } }],
       tools: TOOLS,
       messages,
@@ -74,28 +79,50 @@ async function callClaude(env, { messages }) {
 
 async function executeTool(env, name, input) {
   const path = todayPath();
-  if (name === "set_status") {
-    const file = await getFile(env, REPO, path);
-    if (!file) return `error: no drafts file at ${path}`;
-    let updated;
-    try { updated = stampDraft(file.content, input.draft_index, { Status: input.status }); }
-    catch (e) { return `error: ${e.message}`; }
-    if (updated === file.content) return `#${input.draft_index} was already ${input.status}`;
-    await putFile(env, REPO, path, updated, `bot: ${input.status} draft #${input.draft_index}`, file.sha);
-    return `ok — set #${input.draft_index} status to ${input.status}`;
+  console.log("tool call", name, JSON.stringify(input));
+  try {
+    if (name === "set_status") {
+      const file = await getFile(env, REPO, path);
+      if (!file) return `error: no drafts file at ${path}`;
+      let updated;
+      try { updated = stampDraft(file.content, input.draft_index, { Status: input.status }); }
+      catch (e) { return `error: ${e.message}`; }
+      if (updated === file.content) return `#${input.draft_index} was already ${input.status}`;
+      await putFile(env, REPO, path, updated, `bot: ${input.status} draft #${input.draft_index}`, file.sha);
+      return `ok — set #${input.draft_index} status to ${input.status}`;
+    }
+    if (name === "edit_body") {
+      if (typeof input.new_body !== "string" || !input.new_body.length) return "error: new_body required";
+      if (input.new_body.length > 280) return `error: body is ${input.new_body.length}c, max 280`;
+      const file = await getFile(env, REPO, path);
+      if (!file) return `error: no drafts file at ${path}`;
+      let updated;
+      try { updated = replaceBody(file.content, input.draft_index, input.new_body); }
+      catch (e) { return `error: ${e.message}`; }
+      await putFile(env, REPO, path, updated, `bot: edit draft #${input.draft_index}`, file.sha);
+      return `ok — replaced body of #${input.draft_index} (${input.new_body.length}c)`;
+    }
+    return `unknown tool: ${name}`;
+  } catch (e) {
+    console.error(`tool ${name} threw:`, e?.message || e);
+    return `error: ${e?.message || e}`;
   }
-  if (name === "edit_body") {
-    if (typeof input.new_body !== "string" || !input.new_body.length) return "error: new_body required";
-    if (input.new_body.length > 280) return `error: body is ${input.new_body.length}c, max 280`;
-    const file = await getFile(env, REPO, path);
-    if (!file) return `error: no drafts file at ${path}`;
-    let updated;
-    try { updated = replaceBody(file.content, input.draft_index, input.new_body); }
-    catch (e) { return `error: ${e.message}`; }
-    await putFile(env, REPO, path, updated, `bot: edit draft #${input.draft_index}`, file.sha);
-    return `ok — replaced body of #${input.draft_index} (${input.new_body.length}c)`;
-  }
-  return `unknown tool: ${name}`;
+}
+
+function buildStatusTable(content) {
+  const drafts = parseDrafts(content);
+  if (!drafts.length) return "(no drafts in file)";
+  const rows = drafts.map(d => {
+    const status = (d.status || "").toLowerCase() || "(none)";
+    const posted = d.posted ? "yes" : "no";
+    const project = d.project || "general";
+    return `| ${d.index} | ${status} | ${posted} | ${d.body.length} | ${project} |`;
+  });
+  return [
+    "| # | status | posted | chars | project |",
+    "|---|--------|--------|-------|---------|",
+    ...rows,
+  ].join("\n");
 }
 
 export async function runAgent(env, userText) {
@@ -103,11 +130,13 @@ export async function runAgent(env, userText) {
   const file = await getFile(env, REPO, path);
   const draftsContent = file?.content || "(no drafts file exists for today yet)";
 
+  const statusTable = buildStatusTable(draftsContent);
   const messages = [
     {
       role: "user",
       content: [
-        { type: "text", text: `Current drafts file (${path}):\n\n${draftsContent}` },
+        { type: "text", text: `STATUS TABLE (authoritative for status — ${path}):\n\n${statusTable}` },
+        { type: "text", text: `RAW MARKDOWN (use for body content only):\n\n${draftsContent}` },
         { type: "text", text: `User: ${userText}` },
       ],
     },
