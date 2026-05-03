@@ -1,0 +1,9 @@
+{
+  "name": "raw-ideas",
+  "type": "concat",
+  "description": "Manual idea dump. Drop notes into items/<project>.md (one file per project). Sync concatenates into latest.md.",
+  "enabled": true,
+  "params": {
+    "itemsDir": "items"
+  }
+}

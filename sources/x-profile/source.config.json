@@ -1,0 +1,7 @@
+{
+  "name": "x-profile",
+  "type": "static",
+  "description": "Account snapshot, recent posts, topics covered, content gaps. Hand-edited during the profile sync phase.",
+  "enabled": true,
+  "params": {}
+}
