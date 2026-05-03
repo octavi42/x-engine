@@ -11,6 +11,10 @@ const MAX_PER_RUN = Number(process.env.MAX_PER_RUN ?? 3);
 const CHAR_LIMIT = 280;
 const DRY = process.argv.includes("--dry");
 
+function bodyFor(c) {
+  return c.status.toLowerCase() === "approved-refined" && c.refined ? c.refined : c.body;
+}
+
 async function findCandidates() {
   const files = (await readdir(DRAFTS_DIR)).filter(f => f.endsWith(".md"));
   const all = [];
@@ -18,7 +22,10 @@ async function findCandidates() {
     const drafts = await parseDraftFile(path.join(DRAFTS_DIR, f));
     all.push(...drafts);
   }
-  return all.filter(d => d.status.toLowerCase() === "approved" && !d.posted);
+  return all.filter(d => {
+    const status = d.status.toLowerCase();
+    return (status === "approved" || status === "approved-refined") && !d.posted;
+  });
 }
 
 function validate(candidates) {
@@ -26,27 +33,36 @@ function validate(candidates) {
   if (candidates.length > MAX_PER_RUN) errors.push(`Too many candidates (${candidates.length}); cap is ${MAX_PER_RUN} per run.`);
   for (const c of candidates) {
     const file = path.basename(c.filePath);
-    if (!c.body) errors.push(`[${file} #${c.index}] empty body.`);
-    if (c.body.length > CHAR_LIMIT) errors.push(`[${file} #${c.index}] ${c.body.length} chars > ${CHAR_LIMIT}.`);
+    const body = bodyFor(c);
+    if (c.status.toLowerCase() === "approved-refined" && !c.refined) {
+      errors.push(`[${file} #${c.index}] Status: approved-refined but no Refined: line found.`);
+      continue;
+    }
+    if (!body) errors.push(`[${file} #${c.index}] empty body.`);
+    if (body.length > CHAR_LIMIT) errors.push(`[${file} #${c.index}] ${body.length} chars > ${CHAR_LIMIT}.`);
   }
   return errors;
 }
 
 function preview(c) {
   const file = path.basename(c.filePath);
-  const trim = c.body.length > 70 ? c.body.slice(0, 67) + "..." : c.body;
-  return `  [${file} #${c.index}] (${c.body.length}c) ${trim}`;
+  const body = bodyFor(c);
+  const variant = c.status.toLowerCase() === "approved-refined" ? " [refined]" : "";
+  const trim = body.length > 70 ? body.slice(0, 67) + "..." : body;
+  return `  [${file} #${c.index}]${variant} (${body.length}c) ${trim}`;
 }
 
 async function archive(c, tweetUrl) {
   const today = new Date().toISOString().slice(0, 10);
+  const body = bodyFor(c);
   const block = [
     "",
     `## ${today}`,
-    `> ${c.body.replace(/\n/g, "\n> ")}`,
+    `> ${body.replace(/\n/g, "\n> ")}`,
     "",
     `URL: ${tweetUrl}`,
     `Project: ${c.project || "general"}`,
+    `Variant: ${c.status.toLowerCase() === "approved-refined" ? "refined" : "original"}`,
     "Likes: — | Reposts: — | Replies: — | Notes:",
     "",
   ].join("\n");
@@ -83,7 +99,7 @@ async function main() {
     console.log(`-> Posting [${file} #${c.index}]...`);
     let result;
     try {
-      result = await tweet(c.body);
+      result = await tweet(bodyFor(c));
     } catch (e) {
       console.error(`  X tweet failed: ${e.message}`);
       console.error("  Aborting. No state changed for this draft.");

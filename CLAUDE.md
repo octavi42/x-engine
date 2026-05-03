@@ -31,6 +31,7 @@ Current sources:
 - `sources/obsidian-personal/` — obsidian-vault. Pulls Build Log + Ideas from recent daily notes.
 - `sources/github-commits/` — github-commits. Recent commits across each project's GitHub repo (auto-discovered from `config/projects/*.md`). Requires `gh` CLI authenticated locally.
 - `sources/rss-trending/` — rss. Recent items from configured AI/dev/startup news feeds (HN, TechCrunch AI, The Verge AI by default). Edit `params.feeds` in the config to add or remove sources.
+- `sources/peer-posts/` — peer-posts. Autoresearch agent (Sonnet 4.6 via Anthropic SDK + tool use) that rotates seed handles, fetches their recent tweets via twitterapi.io, scores relevance to my niche, traverses search results to discover new accounts, and emits a distilled patterns analysis + top tweets. State (rotation cursor, scores, blacklist) lives in `sources/peer-posts/.state.json`. Requires `TWITTERAPI_IO_KEY` and `ANTHROPIC_API_KEY` in `.env.local`. Edit `params.seedHandles` to curate the seed pool.
 
 To add a new source: create `sources/<name>/source.config.json` (and optionally `fetch.mjs`). No changes needed elsewhere — the orchestrator and drafting agent discover it automatically. By convention, fetched sources gitignore their `latest.md` (it's regenerated each sync) — drop a `.gitignore` containing `latest.md` next to the `fetch.mjs`.
 
@@ -62,18 +63,29 @@ To add a new source: create `sources/<name>/source.config.json` (and optionally 
 - At least one draft per run should address a content gap.
 - Tag each draft with the project name it relates to (or "general" for cross-project posts).
 
+## Autoimprove (optional, before approval)
+
+After drafting, run `npm run enhance` to score each single-tweet draft against `sources/peer-posts/latest.md` patterns + `config/voice.md` and stamp three new metadata lines onto the draft:
+- `**Score:**` — 4-axis rubric (specificity, hook, length, pattern_match)
+- `**Critique:**` — 2-3 sentence direct critique
+- `**Refined:**` — single-line rewrite ≤ 280 chars
+
+Threads (drafts whose body is split into `### Hook (post 1)` style sub-sections) are skipped automatically. Already-enhanced drafts are skipped unless you pass `--force`. Single-draft mode: `npm run enhance -- --draft=3`.
+
 ## Approval & posting
 
 The poster (`scripts/post.mjs`) reads inline metadata to decide what to send to X.
 
 To approve a draft for posting:
-- Add `**Status:** approved` to the draft's metadata block.
-- The poster only fires on drafts where `Status=approved` AND `Posted` is empty.
+- `**Status:** approved` — posts the original body (the `> ` blockquote)
+- `**Status:** approved-refined` — posts the `**Refined:**` value instead (requires `npm run enhance` to have stamped one)
+- The poster only fires on drafts where `Posted` is empty and status is one of the above.
 
 Workflow:
-1. `npm run post:dry` — preview which drafts would post, with char counts.
-2. `npm run post` — actually post (requires `.env.local` with X API keys).
-3. After success, the poster stamps `**Posted:** <ISO timestamp>` and `**TweetURL:** <url>` back into the draft, and appends an entry to `posted/archive.md`.
+1. `npm run enhance` — (optional) score + refine drafts.
+2. `npm run post:dry` — preview which drafts would post, with char counts.
+3. `npm run post` — actually post (requires `.env.local` with X API keys).
+4. After success, the poster stamps `**Posted:** <ISO timestamp>` and `**TweetURL:** <url>` back into the draft, and appends an entry to `posted/archive.md` (with `Variant: original|refined`).
 
 Hard limits enforced by the poster (do not bypass):
 - Max 3 posts per invocation (bug-blast safety).

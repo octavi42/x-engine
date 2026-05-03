@@ -1,0 +1,23 @@
+{
+  "name": "peer-posts",
+  "type": "peer-posts",
+  "description": "Top tweets from accounts in my niche, distilled into engagement patterns. Driven by an autoresearch agent that rotates seeds, scores relevance, and discovers new accounts.",
+  "enabled": true,
+  "params": {
+    "seedHandles": [
+      "levelsio",
+      "swyx",
+      "simonw",
+      "theo",
+      "jxnlco",
+      "nutlope",
+      "sama",
+      "karpathy"
+    ],
+    "windowDays": 14,
+    "seedsPerRun": 5,
+    "poolTarget": 30,
+    "maxAgentSteps": 30,
+    "maxTokens": 6000
+  }
+}
