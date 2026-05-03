@@ -1,0 +1,11 @@
+{
+  "name": "github-commits",
+  "type": "github-commits",
+  "description": "Recent commits across all projects' GitHub repos. Repos auto-discovered from config/projects/*.md.",
+  "enabled": true,
+  "params": {
+    "projectsDir": "config/projects",
+    "sinceDays": 7,
+    "maxPerRepo": 20
+  }
+}
