@@ -22,6 +22,7 @@ export async function fetch(source) {
   const items = [];
   const errors = [];
   const skipped = [];
+  const reposWithCommits = new Set();
 
   for (const project of projects) {
     if (!project.repo) {
@@ -31,19 +32,22 @@ export async function fetch(source) {
     const { owner, repo } = project.repo;
     try {
       const commits = await fetchCommits(owner, repo, since, maxPerRepo);
+      if (commits.length) reposWithCommits.add(`${owner}/${repo}`);
       for (const commit of commits) {
         const message = commit.commit?.message ?? '';
-        const [subject, ...rest] = message.split('\n');
+        const subject = message.split('\n', 1)[0];
+        const messageBody = message.slice(subject.length).trim();
         const sha = commit.sha?.slice(0, 7) ?? '';
+        const date = commit.commit?.author?.date ?? '';
+        const author = commit.commit?.author?.name ?? 'unknown';
+        const bodyParts = [`**${author}** · ${date} · ${sha}`];
+        if (messageBody) bodyParts.push('', messageBody);
         items.push({
           title: `${repo}: ${subject}`,
-          body: [
-            `**${commit.commit?.author?.name ?? 'unknown'}** · ${commit.commit?.author?.date ?? ''} · ${sha}`,
-            '',
-            message.trim(),
-          ].join('\n'),
+          body: bodyParts.join('\n'),
           url: commit.html_url,
-          tags: [project.name, `${owner}/${repo}`, sha].filter(Boolean),
+          tags: [project.name, `${owner}/${repo}`].filter(Boolean),
+          date,
         });
       }
     } catch (err) {
@@ -51,12 +55,13 @@ export async function fetch(source) {
     }
   }
 
-  items.sort((a, b) => (b.url ?? '').localeCompare(a.url ?? ''));
+  // ISO 8601 strings sort lexicographically the same as chronologically.
+  items.sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
 
   const meta = {
     since,
     projects_scanned: projects.length,
-    repos_with_commits: new Set(items.flatMap((i) => i.tags?.filter((t) => t.includes('/')) ?? [])).size,
+    repos_with_commits: reposWithCommits.size,
   };
   if (skipped.length) meta.skipped = skipped.join(', ');
   if (errors.length) meta.errors = errors.join(' | ');
