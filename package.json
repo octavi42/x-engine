@@ -12,7 +12,8 @@
     "check-auth": "node --env-file=.env.local scripts/check-auth.mjs",
     "post:ci": "node scripts/post.mjs",
     "notify": "node scripts/notify.mjs",
-    "sync": "node scripts/sync-sources.mjs"
+    "sync": "node --env-file=.env.local scripts/sync-sources.mjs",
+    "enhance": "node --env-file=.env.local scripts/enhance.mjs"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "node": ">=20.6.0"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.92.0",
     "fast-xml-parser": "^5.7.2",
     "twitter-api-v2": "^1.29.0"
   }

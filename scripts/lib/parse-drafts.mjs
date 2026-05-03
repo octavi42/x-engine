@@ -49,6 +49,9 @@ export async function parseDraftFile(filePath) {
       tweetUrl: metadata.tweeturl || "",
       type: metadata.type || "",
       source: metadata.source || "",
+      refined: metadata.refined || "",
+      score: metadata.score || "",
+      critique: metadata.critique || "",
     });
   }
 
