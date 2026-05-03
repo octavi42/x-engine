@@ -1,0 +1,32 @@
+{
+  "name": "x-engine",
+  "version": "1.0.0",
+  "description": "Personal X/Twitter content engine powered by Claude Code scheduled tasks.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "post": "node --env-file=.env.local scripts/post.mjs",
+    "post:dry": "node --env-file=.env.local scripts/post.mjs --dry",
+    "check-auth": "node --env-file=.env.local scripts/check-auth.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octavi42/x-engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octavi42/x-engine/issues"
+  },
+  "homepage": "https://github.com/octavi42/x-engine#readme",
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "dependencies": {
+    "twitter-api-v2": "^1.29.0"
+  }
+}
