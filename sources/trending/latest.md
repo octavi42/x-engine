@@ -10,6 +10,12 @@ Auto-populated during each draft run with trending dev/AI/startup topics found v
 
 ## 2026-05-04
 
+- Anthropic + Goldman Sachs + Blackstone launched a $1.5B AI deployment firm today (CNBC, TechCrunch). Hellman & Friedman, Apollo, General Atlantic also in. Not consulting — embeds engineers inside portfolio companies to redesign workflows around Claude. Direct shot at McKinsey-style enterprise AI rollouts.
+- OpenAI joint venture: $4B raised from 19 investors at $10B valuation for enterprise AI services (TPG, Brookfield, Advent, Bain Capital). Same day as Anthropic's announcement.
+- Mandiant M-Trends 2026: 28.3% of CVEs now exploited within 24h of public disclosure. Patches arriving after exploits is the new normal.
+- Malicious packages in public registries grew from 55K (2022) to 454.6K (2025). Inflection points coincide with GPT-4 release and 2025 agentic-coding wave.
+- Codex Security agent (OpenAI) crossed 3,000+ critical/high vulns fixed across orgs. Anthropic's Mythos surfaced "thousands" of zero-days via Project Glasswing partners.
+- Hybrid AI dev tool stack now the norm: avg dev runs 2.3 AI coding tools simultaneously. Cursor (inline edits) + Claude Code (terminal refactors) is the dominant pair (faros.ai, sitepoint).
 - Harvard study: OpenAI o1 correctly diagnosed 67% of ER patients vs 50-55% by triage doctors. Real emergency room cases, not benchmarks. Guardian + TechCrunch AI coverage. Vertical AI in narrow domains crossing parity with experts.
 - Cursor reportedly in talks to be acquired by SpaceX for $60B per Amjad Masad's StrictlyVC interview (TechCrunch, 2026-05-01). Replit framed as next likely target if valuation stays elevated.
 - Meta acquired Assured Robot Intelligence to bolster humanoid AI ambitions (TechCrunch AI, 2026-05-01).
