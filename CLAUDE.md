@@ -63,14 +63,28 @@ To add a new source: create `sources/<name>/source.config.json` (and optionally 
 - At least one draft per run should address a content gap.
 - Tag each draft with the project name it relates to (or "general" for cross-project posts).
 
-## Auth (peer-posts + enhance)
+## Auth (sync + draft + enhance)
 
-Both `npm run sync` (for the peer-posts source) and `npm run enhance` shell out to `claude -p` and bill against the Pro/Max subscription, not an API key.
+`npm run sync` (peer-posts research), `npm run draft`, and `npm run enhance` all shell out to `claude -p` and bill against the Pro/Max subscription, not an API key.
 
 Setup once:
 1. `claude setup-token` (while logged into your Pro/Max plan) — outputs a 1-year token.
 2. Paste it into `.env.local` as `CLAUDE_CODE_OAUTH_TOKEN=...`.
 3. Make sure `ANTHROPIC_API_KEY` is NOT set in `.env.local` or your shell — the scripts pre-flight-check this and will refuse to run if both are present (silent-API-billing footgun).
+
+## Autodraft
+
+`npm run draft` generates today's `drafts/YYYY-MM-DD.md` from voice + projects + all sources + posted archive. The autonomous equivalent of asking Claude in chat to "generate today's drafts."
+
+Behind the scenes: `claude -p` runs with the draft MCP server (`mcp-servers/draft/server.mjs`) which exposes a single `submit_drafts` tool. The agent reads context, builds 4-6 drafts (mix of building-in-public, technical tip, trending reaction, optional thread), submits the structured batch, and the parent script renders it to the canonical draft markdown format.
+
+Flags:
+- `npm run draft` — writes today's file (errors if it exists)
+- `npm run draft -- --date=2026-05-05` — target a different date
+- `npm run draft -- --force` — overwrite an existing file
+- `npm run draft -- --count=4` — hint about batch size
+
+Refuses to overwrite existing draft files unless `--force` is passed.
 
 ## Autoimprove (optional, before approval)
 
