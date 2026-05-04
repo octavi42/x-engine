@@ -17,9 +17,9 @@
     "simonw": {
       "handle": "simonw",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0
+      "last_pulled": "2026-05-04",
+      "score_sum": 3,
+      "score_n": 1
     },
     "theo": {
       "handle": "theo",
@@ -38,9 +38,9 @@
     "nutlope": {
       "handle": "nutlope",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0
+      "last_pulled": "2026-05-04",
+      "score_sum": 4,
+      "score_n": 1
     },
     "sama": {
       "handle": "sama",
@@ -52,9 +52,9 @@
     "karpathy": {
       "handle": "karpathy",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0
+      "last_pulled": "2026-05-04",
+      "score_sum": 3,
+      "score_n": 1
     },
     "bedriyan0": {
       "handle": "bedriyan0",
@@ -95,9 +95,9 @@
     "_meer_habib": {
       "handle": "_meer_habib",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0,
+      "last_pulled": "2026-05-04",
+      "score_sum": 5,
+      "score_n": 1,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Expo/React Native builder posting specific lib stack (expo-liquid-glass, Reanimated, keyboard-controller), 582 likes / 584 bookmarks — exact niche match for Octavi's mobile AI work"
     },
@@ -113,18 +113,18 @@
     "mayfer": {
       "handle": "mayfer",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0,
+      "last_pulled": "2026-05-04",
+      "score_sum": 3,
+      "score_n": 1,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Local AI pipeline builder (whisper+qwen+moondream offline) — massive engagement, maps directly to Octavi's UGC discovery pipeline with local models"
     },
     "prajwaltomar_": {
       "handle": "PrajwalTomar_",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0,
+      "last_pulled": "2026-05-04",
+      "score_sum": 2,
+      "score_n": 1,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
     }
@@ -194,5 +194,5 @@
       "reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
     }
   },
-  "last_run": "2026-05-04T10:50:12.108Z"
+  "last_run": "2026-05-04T13:30:30.003Z"
 }
