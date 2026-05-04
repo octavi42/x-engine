@@ -94,4 +94,16 @@ UGC Discovery Pipeline remains backlog — Phase 1 is in progress but no posted 
 In trending news (5/3 → 5/4): the standout AI signal is the Harvard study on OpenAI o1 beating triage doctors at ER diagnosis (67% vs 50–55%) — direct fit for the "vertical AI past parity" thesis already drafted today. Cursor reportedly being acquired by SpaceX for $60B (Amjad Masad on StrictlyVC) is the second-tier signal — already in today's drafts as the engagement question. Meta acquired Assured Robot Intelligence; AI-generated actors and scripts are now ineligible for Oscars; PyTorch Lightning had a supply-chain attack on PyPI (covered in 5/3 drafts but not posted).
 
 ## Top performing
-No data — only 2 posts in the archive, both with empty Likes/Reposts/Replies fields. First baseline expected ~24–48h after first post (5/3 posts are now ~24–30h old). Manually note current engagement before tomorrow's profile sync so the improve agent has a reference signal.
+<!-- auto-feedback:start -->
+Generated 2026-05-04 — top 2 by engagement score (likes + 2·replies + 3·bookmarks + 1.5·reposts).
+
+1. **2026-05-03** · score 2.0 · Likes 2 · Replies 0 · Reposts 0 · Bookmarks 0 · Views 58
+   > every page refresh on my ai game was regenerating images server-side. cause: base64 dataUrls in sessionStorage, partialize stripped the field on persist. ~$0.30 and ~30s wasted per reload. fix: upload each image to vercel blob, store the…
+   - https://x.com/i/web/status/2050969731155349933
+   - Project: Road to SF
+
+2. **2026-05-03** · score 1.0 · Likes 1 · Replies 0 · Reposts 0 · Bookmarks 0 · Views 32
+   > prod fresh tabs froze on dialogue. cause: browser blocked audio.play() with no user gesture. fix: on rejection, attach one-shot pointerdown/keydown listeners and retry on first input. 6s safety timer falls back to fixed cadence so the ty…
+   - https://x.com/i/web/status/2051036972710261187
+   - Project: Road to SF
+<!-- auto-feedback:end -->
