@@ -158,6 +158,19 @@ export async function runClaude({
   const toolUses = [];
   const textChunks = [];
   let stderrBuf = '';
+  const startTs = Date.now();
+  let lastEventTs = startTs;
+
+  // Heartbeat: every 15s with no events from claude, print elapsed time so
+  // the user can tell "stuck" from "model is thinking." Cleared on exit.
+  const heartbeat = setInterval(() => {
+    if (!verbose) return;
+    const idle = Date.now() - lastEventTs;
+    if (idle >= 15_000) {
+      const total = ((Date.now() - startTs) / 1000).toFixed(0);
+      process.stderr.write(`[heartbeat] ${total}s elapsed · ${(idle / 1000).toFixed(0)}s idle\n`);
+    }
+  }, 15_000);
 
   let pendingLine = '';
   child.stdout.setEncoding('utf8');
@@ -173,6 +186,7 @@ export async function runClaude({
       } catch {
         continue;
       }
+      lastEventTs = Date.now();
       handleEvent(evt, { toolUses, textChunks });
       if (verbose) mirrorToStderr(evt);
       if (onEvent) onEvent(evt);
@@ -187,6 +201,8 @@ export async function runClaude({
     child.on('error', (err) => reject(new ClaudeRunError(`failed to spawn claude: ${err.message}`)));
     child.on('close', (code) => resolve(code ?? 0));
   });
+
+  clearInterval(heartbeat);
 
   // Best-effort temp cleanup.
   await rm(mcpDir, { recursive: true, force: true }).catch(() => {});
