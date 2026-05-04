@@ -209,50 +209,13 @@ server.registerTool(
   }
 );
 
-server.registerTool(
-  'fetch_user_tweets',
-  {
-    description: `Fetch a user's recent tweets from the last ${WINDOW_DAYS} days. Returns up to 30 with metrics. Counts against the fetch budget.`,
-    inputSchema: {
-      handle: z.string().describe('Twitter username, no @'),
-      include_replies: z.boolean().optional(),
-    },
-  },
-  async ({ handle, include_replies = false }) => {
-    logCall('fetch_user_tweets', { handle });
-    // Reserve before the network call; if the budget is full, fail fast
-    // and tell the agent to stop.
-    await withRun((r) => checkBudget(r));
-
-    const tweets = await withFetchLock(() =>
-      twitter.userLastTweets({
-        userName: handle,
-        includeReplies: include_replies,
-        sinceDate: sinceIso,
-        max: 30,
-      })
-    );
-
-    let fetchCalls = 0;
-    await withRun((r) => {
-      r.fetch_calls = (r.fetch_calls ?? 0) + 1;
-      fetchCalls = r.fetch_calls;
-      for (const t of tweets) r.tweet_cache[t.id] = t;
-      r.fetched_handles = r.fetched_handles ?? [];
-      if (!r.fetched_handles.includes(handle.toLowerCase())) {
-        r.fetched_handles.push(handle.toLowerCase());
-      }
-    });
-
-    return ok({
-      handle,
-      count: tweets.length,
-      fetch_calls_used: fetchCalls,
-      fetch_budget: FETCH_BUDGET,
-      tweets: tweets.map(trimTweetForAgent),
-    });
-  }
-);
+// fetch_user_tweets is intentionally NOT registered. twitterapi.io's
+// /twitter/user/last_tweets endpoint has been timing out 100% of the time
+// on this account across 4+ runs (each call burns ~85s on doomed
+// pagination retries before throwing). Until it stabilizes, the agent
+// only has search_tweets — which works fine and covers the same niche
+// via `from:handle` / topic queries. Restore by re-registering this tool
+// once the upstream endpoint is healthy.
 
 server.registerTool(
   'search_tweets',
