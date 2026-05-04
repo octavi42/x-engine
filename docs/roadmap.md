@@ -354,9 +354,128 @@ Every technique below costs tokens or compute. At ~3 posts/day, recalibration ma
 
 ---
 
+## v3.0 — Early-reply hunter (notify-only)
+
+**Status:** designed, not built. Researched 2026-05-04. Highest-leverage growth move at sub-1k follower scale — ride other people's viral waves instead of trying to make your own posts go viral cold.
+
+### Why this matters (research-backed)
+At a small account, original posts have low cold-start velocity. Replying early on tweets that *do* go viral is the only growth tactic with leverage:
+- Replies carry **~150× the algorithmic weight of likes** in 2026 ([XLab guide](https://use-xlab.com/blog/how-to-grow-on-twitter-2026)).
+- **67% of small-account growth** comes from reply consistency, not posting alone ([Witty Playbook](https://witty.so/playbook/reply-led-growth/anatomy-high-value-reply)).
+- First **3-5 replies** on a tweet that goes big siphon disproportionate attention from the eventual viral wave.
+- The **30-90 minute window** after a tweet posts is when X's algorithm tests it on a small audience — replies during this window influence whether it advances.
+
+This pivots the engine from "post and grow" to "engage and grow." Both run in parallel.
+
+### Honest tradeoff to remember
+Auto-posting AI-generated replies via API is a **top-3 shadowban trigger** ([Amplifresh 2026 safety guide](https://amplifresh.com/blog/automate-x-twitter-engagement-without-getting-banned)). Even if the human taps "approve," if the comment text was machine-generated and posted seconds later through the same API key, X's spam classifier may pattern-match. **v1 is notify-only — Telegram message with a copy-pasteable suggestion, user opens X manually.** Auto-posting is deferred behind ≥2 weeks of clean manual usage.
+
+### Tools landscape
+Checked Tweet Hunter, Typefully, Hypefury, Reply Guy. **None ship a true viral-reply hunter** — they do scheduling, AI rewrites, popularity prediction for *your* posts. Reply Guy is closest but doesn't generate the comment. This is a real gap; building it on the existing twitterapi.io infra is reasonable.
+
+### Architecture
+
+```
+.github/workflows/hunt.yml          every 30 min, 14:00-22:00 UTC (peak X hours)
+   └─ npm run hunt                  ~16 runs/day
+       │
+       ├─ 1. Fetch (twitterapi.io userLastTweets)
+       │     each peer-posts seed handle: last 5 tweets
+       │     ~110 tweets/poll × 16 polls ≈ 1.8k/day → ~$0.15/day → ~$4.5/month
+       │
+       ├─ 2. Pre-filter
+       │     posted in last 90 min · not a reply · not in 60d-ttl dedup cache
+       │     ≥5 likes OR ≥2 replies (cheap absolute floor)
+       │
+       ├─ 3. Score (the part research changed my mind on)
+       │     for each candidate, fetch author's last 20 tweets to compute
+       │     median engagement velocity (likes + 2*replies) / minutes
+       │     score = this_velocity / author_median_velocity
+       │     comment_to_like_ratio (controversy / debate signal — strongest viral predictor per arXiv 1910.02807)
+       │     keep top 2-3/day above combined threshold
+       │
+       ├─ 4. Generate suggested comment (claude -p, free on Pro/Max)
+       │     system prompt:
+       │       voice.md + own top performers (from feedback loop, v2.3)
+       │       + "Expertise Reply" pattern (agree + add framework + brief example)
+       │     constraints: ≤200 chars, no emojis, no hashtags, no @mentions, no link
+       │
+       ├─ 5. Notify (Telegram, existing infra)
+       │     <body> · @author · 23❤ in 14m / median 3❤ → 7.6× velocity
+       │     suggested comment in <code> block (mobile copy-tap)
+       │     deeplink to open the tweet in X
+       │     [optional] /skip <id> bot command to suppress similar future ones
+       │
+       └─ 6. Persist (sources/comment-hunter/.state.json, gitignored)
+             {tweet_id, suggested_at, author, score, comment_text}
+             60-day TTL · dedup · later inputs to a reply-engagement feedback loop
+```
+
+### Critical guardrails (non-negotiable in v1)
+
+| Risk | Guardrail |
+|---|---|
+| Shadowban from automated reply pattern | **No auto-post.** Telegram → user opens X → user posts manually. Breaks the bot fingerprint. |
+| Same tweet suggested twice | 60-day TTL dedup state file |
+| Notification fatigue | Cap **2-3/day** top-scored only. Better to miss than burn engagement budget on mediocre. |
+| Generic "great point!" replies | Few-shot prompt with research-backed Expertise Reply pattern + own top performers |
+| Cost runaway | Hard fetch budget per run + per day; abort if exceeded |
+| Detected as bot at the X-API level | Randomized timing on actual reply posts when v2 enables them |
+
+### Why notify-only beats auto-post on the math
+Research consensus: 30-50 thoughtful replies/day stays under rate limits — but that assumes *manual* replies. AI-generated replies are categorically different:
+- Same tool fingerprint
+- Same general voice
+- Posted within seconds via the same API key
+
+5/day of those = much higher detection probability than 5 manual replies. Notify-only sidesteps the whole vector.
+
+### File changes
+
+**New:**
+- `scripts/hunt.mjs` — entry point.
+- `scripts/lib/virality.mjs` — `scoreCandidate(tweet, authorBaseline)` returning `{score, reasons}`.
+- `scripts/lib/comment-gen.mjs` — wraps `claude -p` with the suggestion system prompt.
+- `mcp-servers/comment/server.mjs` — exposes `submit_suggestion` tool, mirrors the improve MCP shape.
+- `sources/comment-hunter/.state.json` — gitignored persistent dedup + scores.
+- `.github/workflows/hunt.yml` — cron every 30 min during 14-22 UTC.
+- `tests/virality.test.mjs` — score formula correctness, baseline math, dedup logic.
+
+**Modified:**
+- `scripts/lib/twitterapi-io.mjs` — already has `userLastTweets`; no changes for v1.
+- `scripts/lib/x-client.mjs` — add `reply(text, tweetId)` (just `client.v2.reply(text, tweetId)`). Unused in v1 but ready for v2.
+- `package.json` — add `hunt` / `hunt:dry` / `hunt:ci` scripts.
+- `CLAUDE.md` — document the hunt loop and the "no auto-reply yet" decision.
+- `.env.local.example` — no new vars; reuses `TWITTERAPI_IO_KEY`, `CLAUDE_CODE_OAUTH_TOKEN`, `TELEGRAM_*`, `X_API_*` (the X creds are pre-positioned for v2's auto-reply).
+
+### Phased rollout (each phase independently valuable)
+
+| Phase | Effort | What ships | What it unlocks |
+|---|---|---|---|
+| **3.0.1 Notify-only hunter** | ~3h | Polling, scoring, claude-gen suggestion, Telegram ping | Daily 2-3 manually-posted high-quality early replies |
+| **3.0.2 Reply-engagement feedback** | ~2h, after 2 wks of 3.0.1 | New `posted/replies-archive.md` + `feedback-replies.mjs` mirroring `feedback.mjs` | Improver/comment-gen learn from which YOUR replies actually landed (not just peer patterns) |
+| **3.0.3 Optional `/reply <id>` bot command** | ~2h, after another 2 wks | Cloudflare Worker bot extension that posts via X API | One-tap reply from notification — only safe after fingerprint stabilized |
+| **3.0.4 Watch-tier expansion** | ~3h | Auto-discovers handles whose tweets routinely score >5× their baseline; promotes into a faster polling tier | Catch viral tweets from outside the hand-curated peer pool |
+
+### Cross-loop wins after v2.8 (knowledge base) lands
+Once posts + peer tweets + own engagement live in pgvector, the hunt loop gets meaningfully sharper:
+- Comment generation pulls **own** top-replies as few-shot (currently can only pull own top *posts*).
+- Pre-filter can dedup against *semantic* similarity to past suggestions, not just tweet ID.
+- Score blends in "how often does this author's content historically convert into engagement-on-my-replies" — a much stronger ranker than absolute virality score.
+
+### Deferred from this plan
+- Hashtag/topic-search hunting (too noisy at v1; peer-handle list is the right starting envelope)
+- WebSocket streaming from twitterapi.io (sub-second latency unnecessary at 30-min poll cadence; one extra moving part for negligible benefit)
+- Auto-following the OP after replying (separate growth tactic, separate workflow, separate blast radius)
+- Multi-account simulation (explicit anti-spam violation)
+- LLM-judge scoring of comment quality (the human eyeball pass IS the quality filter in v1)
+- Comment quality calibration via reply-engagement (lives in v3.0.2, not v3.0.1)
+
+---
+
 ## What we will NOT build
 
 - Slack/Pushover post-success pings (over-engineering for personal use)
 - Web UI for draft management (terminal + Obsidian or VS Code editing the markdown is enough)
-- DM/reply automation (different blast-radius — keep one-way for now)
 - Per-tweet A/B testing (volume too low to be statistically meaningful)
+- DM automation (different blast-radius — replies are gated behind v3.0.3 manual-only window first)
