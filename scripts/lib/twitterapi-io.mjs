@@ -2,7 +2,9 @@
 // Docs: https://docs.twitterapi.io/api-reference
 
 const BASE = 'https://api.twitterapi.io';
-const TIMEOUT_MS = 15_000;
+// Aggressive per-call timeout — paginated calls multiply this. 8s is enough
+// for healthy responses; anything slower is a problem worth surfacing.
+const TIMEOUT_MS = 8_000;
 
 function client(apiKey) {
   if (!apiKey) throw new Error('TWITTERAPI_IO_KEY not set');
@@ -50,7 +52,7 @@ export function makeTwitterApi(apiKey) {
   const call = client(apiKey);
 
   return {
-    async userLastTweets({ userName, includeReplies = false, sinceDate, max = 40 }) {
+    async userLastTweets({ userName, includeReplies = false, sinceDate, max = 20 }) {
       const out = [];
       let cursor = '';
       const cutoff = sinceDate ? new Date(sinceDate).getTime() : 0;
@@ -75,7 +77,7 @@ export function makeTwitterApi(apiKey) {
       return out;
     },
 
-    async searchTweets({ query, queryType = 'Top', max = 30 }) {
+    async searchTweets({ query, queryType = 'Top', max = 20 }) {
       const out = [];
       let cursor = '';
       while (out.length < max) {
