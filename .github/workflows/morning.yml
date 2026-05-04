@@ -1,0 +1,130 @@
+name: morning
+
+# Daily autonomous run: sync sources → generate drafts → score & refine.
+# Drafts land in the repo and a Telegram message goes out so you can
+# review and approve from your phone before the first post slot at 12 UTC.
+
+on:
+  schedule:
+    - cron: "0 6 * * *"      # 06:00 UTC ≈ 09:00 EEST (summer) / 08:00 EET (winter)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Override target date (YYYY-MM-DD). Default = today UTC."
+        required: false
+        default: ""
+
+concurrency:
+  group: x-engine-morning
+  cancel-in-progress: false
+
+permissions:
+  contents: write          # commit drafts + state back to main
+
+jobs:
+  morning:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Claude Code CLI
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude --version
+
+      - name: Resolve target date
+        id: date
+        run: |
+          if [ -n "${{ inputs.date }}" ]; then
+            echo "value=${{ inputs.date }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ---- 1. sync sources --------------------------------------------------
+      - name: Sync sources
+        env:
+          # Skip the obsidian-personal source — it needs a local vault that
+          # doesn't exist on the CI runner.
+          DISABLED_SOURCES: obsidian-personal
+          # Don't fail the workflow if a single source (e.g. a flaky RSS feed)
+          # errors — downstream steps run with the partial data we have.
+          SYNC_TOLERATE_ERRORS: "1"
+          # twitterapi.io for the peer-posts research agent.
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+          # Claude Code OAuth — bills against the Pro/Max subscription.
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # gh CLI auth for the github-commits source.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run sync:ci
+
+      # ---- 2. generate today's drafts --------------------------------------
+      - name: Draft
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: npm run draft:ci -- --date=${{ steps.date.outputs.value }} --force
+
+      # ---- 3. score + refine each draft ------------------------------------
+      - name: Enhance
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: npm run enhance:ci -- --file=drafts/${{ steps.date.outputs.value }}.md
+
+      # ---- 4. commit + push back to main -----------------------------------
+      - name: Commit + push
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            drafts/${{ steps.date.outputs.value }}.md \
+            sources/peer-posts/.state.json \
+            || true
+          if git diff --cached --quiet; then
+            echo "no changes — skipping commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "morning run ${{ steps.date.outputs.value }} [skip ci]"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ---- 5. ping Telegram so you know drafts are ready -------------------
+      - name: Notify Telegram (success)
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DATE: ${{ steps.date.outputs.value }}
+        run: |
+          DRAFT_URL="https://github.com/${{ github.repository }}/blob/main/drafts/${DATE}.md"
+          MSG="🟢 Morning run done — drafts/${DATE}.md is ready.%0A%0AReview + approve: ${DRAFT_URL}%0A%0AOr ask the bot: \"list drafts\""
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "text=${MSG}" \
+            -d "disable_web_page_preview=true" \
+            > /dev/null
+
+      - name: Notify Telegram (failure)
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          MSG="🔴 Morning run failed.%0A%0ALogs: ${RUN_URL}"
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "text=${MSG}" \
+            -d "disable_web_page_preview=true" \
+            > /dev/null

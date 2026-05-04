@@ -1,0 +1,198 @@
+{
+  "handles": {
+    "levelsio": {
+      "handle": "levelsio",
+      "status": "active",
+      "last_pulled": "2026-05-04",
+      "score_sum": 4,
+      "score_n": 1
+    },
+    "swyx": {
+      "handle": "swyx",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0
+    },
+    "simonw": {
+      "handle": "simonw",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0
+    },
+    "theo": {
+      "handle": "theo",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0
+    },
+    "jxnlco": {
+      "handle": "jxnlco",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0
+    },
+    "nutlope": {
+      "handle": "nutlope",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0
+    },
+    "sama": {
+      "handle": "sama",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0
+    },
+    "karpathy": {
+      "handle": "karpathy",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0
+    },
+    "bedriyan0": {
+      "handle": "bedriyan0",
+      "status": "active",
+      "last_pulled": "2026-05-04",
+      "score_sum": 5,
+      "score_n": 1,
+      "promoted_at": "2026-05-04",
+      "promoted_reason": "Won Claude hackathon with voice-first AI clinic — ElevenLabs STT/TTS, 5K likes, exactly in Octavi's voice AI + hackathon lane"
+    },
+    "saboo_shubham_": {
+      "handle": "Saboo_Shubham_",
+      "status": "active",
+      "last_pulled": "2026-05-04",
+      "score_sum": 4,
+      "score_n": 1,
+      "promoted_at": "2026-05-04",
+      "promoted_reason": "Voice AI agent builder with specific stack posts — 650 likes, open source focus, consistent build-in-public signal"
+    },
+    "pratiik125": {
+      "handle": "Pratiik125",
+      "status": "active",
+      "last_pulled": "2026-05-04",
+      "score_sum": 5,
+      "score_n": 1,
+      "promoted_at": "2026-05-04",
+      "promoted_reason": "React Native + Expo builder, specific physics demo, 566 likes — maps directly to Octavi's mobile AI stack"
+    },
+    "novorepnoy": {
+      "handle": "novorepnoy",
+      "status": "active",
+      "last_pulled": "2026-05-04",
+      "score_sum": 4,
+      "score_n": 1,
+      "promoted_at": "2026-05-04",
+      "promoted_reason": "Flutter voice app builder with personal problem framing, 47% engagement ratio — strong match for Octavi's voice app + real-world use angle"
+    },
+    "_meer_habib": {
+      "handle": "_meer_habib",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-05-04",
+      "promoted_reason": "Expo/React Native builder posting specific lib stack (expo-liquid-glass, Reanimated, keyboard-controller), 582 likes / 584 bookmarks — exact niche match for Octavi's mobile AI work"
+    },
+    "rbayuokt": {
+      "handle": "rbayuokt",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-05-04",
+      "promoted_reason": "React Native / Expo library builder posting specific on-device ML work (OCR via mlkit), clean \"today I built\" format, 209 likes / 156 bookmarks"
+    },
+    "mayfer": {
+      "handle": "mayfer",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-05-04",
+      "promoted_reason": "Local AI pipeline builder (whisper+qwen+moondream offline) — massive engagement, maps directly to Octavi's UGC discovery pipeline with local models"
+    },
+    "prajwaltomar_": {
+      "handle": "PrajwalTomar_",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-05-04",
+      "promoted_reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
+    }
+  },
+  "discovered": {
+    "bedriyan0": {
+      "handle": "bedriyan0",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 5,
+      "reason": "Won Claude hackathon with voice-first AI clinic — ElevenLabs STT/TTS, 5K likes, exactly in Octavi's voice AI + hackathon lane"
+    },
+    "saboo_shubham_": {
+      "handle": "Saboo_Shubham_",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 4,
+      "reason": "Voice AI agent builder with specific stack posts — 650 likes, open source focus, consistent build-in-public signal"
+    },
+    "pratiik125": {
+      "handle": "Pratiik125",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 4,
+      "reason": "React Native + Expo builder, specific physics demo, 566 likes — maps directly to Octavi's mobile AI stack"
+    },
+    "novorepnoy": {
+      "handle": "novorepnoy",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 4,
+      "reason": "Flutter voice app builder with personal problem framing, 47% engagement ratio — strong match for Octavi's voice app + real-world use angle"
+    },
+    "betomoedano": {
+      "handle": "betomoedano",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 3,
+      "reason": "React Native AI app dev, specific migration posts, Claude Code usage — relevant to Octavi's mobile dev niche"
+    },
+    "_meer_habib": {
+      "handle": "_meer_habib",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 5,
+      "reason": "Expo/React Native builder posting specific lib stack (expo-liquid-glass, Reanimated, keyboard-controller), 582 likes / 584 bookmarks — exact niche match for Octavi's mobile AI work"
+    },
+    "rbayuokt": {
+      "handle": "rbayuokt",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 4,
+      "reason": "React Native / Expo library builder posting specific on-device ML work (OCR via mlkit), clean \"today I built\" format, 209 likes / 156 bookmarks"
+    },
+    "mayfer": {
+      "handle": "mayfer",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 5,
+      "reason": "Local AI pipeline builder (whisper+qwen+moondream offline) — massive engagement, maps directly to Octavi's UGC discovery pipeline with local models"
+    },
+    "prajwaltomar_": {
+      "handle": "PrajwalTomar_",
+      "first_seen": "2026-05-04",
+      "last_seen": "2026-05-04",
+      "score": 4,
+      "reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
+    }
+  },
+  "last_run": "2026-05-04T10:50:12.108Z"
+}

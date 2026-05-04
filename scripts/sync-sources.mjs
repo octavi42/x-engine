@@ -7,9 +7,19 @@ import { listSources, writeLatest } from './lib/source-loader.mjs';
 const startedAt = Date.now();
 const sources = await listSources();
 
+// Comma-separated list of source names to skip on this run, set via env.
+// Used in CI where some sources can't run (e.g. obsidian-personal needs a
+// local vault that doesn't exist on GitHub Actions runners).
+const disabled = new Set(
+  (process.env.DISABLED_SOURCES ?? '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+);
+
 const results = await Promise.all(sources.map(async (source) => {
-  if (source.enabled === false) {
-    return { name: source.name, status: 'disabled', detail: '' };
+  if (source.enabled === false || disabled.has(source.name)) {
+    return { name: source.name, status: 'disabled', detail: disabled.has(source.name) ? 'via DISABLED_SOURCES' : '' };
   }
 
   const fetchPath = join(source.dir, 'fetch.mjs');
@@ -48,5 +58,11 @@ for (const r of results) {
 const errors = results.filter((r) => r.status === 'error');
 if (errors.length) {
   console.error(`\n${errors.length} source(s) failed`);
-  process.exit(1);
+  // In CI it's often acceptable for non-critical sources to fail (e.g. an
+  // unreliable RSS feed) — set SYNC_TOLERATE_ERRORS=1 to keep the workflow
+  // green and let downstream steps run with the partial data we have.
+  if (!process.env.SYNC_TOLERATE_ERRORS) {
+    process.exit(1);
+  }
+  console.error('SYNC_TOLERATE_ERRORS set — continuing despite errors');
 }
