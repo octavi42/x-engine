@@ -24,9 +24,11 @@ permissions:
 jobs:
   morning:
     runs-on: ubuntu-latest
-    # Fail fast if `claude -p` wedges. Healthy run is ~10-15 min; the cap
-    # keeps a hung run from burning hours of GH Actions minutes.
-    timeout-minutes: 20
+    # Fail fast if `claude -p` wedges. Real-world budget observed:
+    #   sync ~5-12 min · draft ~3-5 min · enhance ~6 drafts × ~60s = 6 min
+    # Worst case ~25 min; cap at 30 to leave margin without letting a
+    # hung run burn hours of GH Actions minutes.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -144,7 +146,9 @@ jobs:
             > /dev/null
 
       - name: Notify Telegram (failure)
-        if: failure()
+        # `failure()` does NOT match a job cancelled by timeout-minutes,
+        # so include `cancelled()` to ensure timeouts trigger a ping too.
+        if: failure() || cancelled()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -152,7 +156,7 @@ jobs:
           RUN_ID: ${{ github.run_id }}
         run: |
           RUN_URL="https://github.com/${REPO}/actions/runs/${RUN_ID}"
-          MSG=$(printf '🔴 Morning run failed.\n\nLogs: %s' "$RUN_URL")
+          MSG=$(printf '🔴 Morning run failed or timed out.\n\nLogs: %s' "$RUN_URL")
           curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
             --data-urlencode "text=${MSG}" \

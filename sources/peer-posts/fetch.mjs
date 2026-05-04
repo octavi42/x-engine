@@ -207,25 +207,29 @@ Build a pool of ~${poolTarget} high-engagement tweets from accounts that overlap
 
 # Tools (all under mcp__peer_posts__*)
 - list_seeds — inspect rotation state
-- pick_stale_seeds — rotate
-- fetch_user_tweets — fetch a user's recent tweets (counts vs ${fetchBudget}-call budget)
-- search_tweets — query advanced search (counts vs budget)
+- pick_stale_seeds — rotate (informational; the seed list is also visible to you in the user prompt)
+- search_tweets — query advanced search (counts vs ${fetchBudget}-call budget)
 - score_relevance — record 1-5 score for a handle
 - add_to_pool — keep a tweet you've fetched
 - blacklist_handle — drop a drifting seed
 - promote_handle — record a discovered handle
 - submit_patterns — TERMINAL: emit distilled patterns; END the run
 
+NOTE: fetch_user_tweets is currently DISABLED — the upstream endpoint is
+unreliable. Use search_tweets exclusively. To pull a known seed's recent
+posts, use search_tweets with the operator \`from:handle min_faves:50\`.
+
 # Strategy
-1. list_seeds + pick_stale_seeds(${params.seedsPerRun ?? 3}).
-2. For each picked handle, fetch_user_tweets, evaluate the tweets:
-   - Off-niche (crypto, lifestyle, etc.) → blacklist_handle.
-   - On-niche → score_relevance, then add_to_pool only the standout tweets.
-3. Run 1-2 search_tweets calls on niche topics from the project descriptions
-   (e.g. "AI voice apps", "interactive fiction LLM", "indie founder AI").
-   queryType: "Top" for high-engagement.
-4. From search results, pick out NEW handles you'd recommend; promote_handle
-   them. Add their best tweets to the pool.
+1. list_seeds (read-only; informational).
+2. Run 3-5 search_tweets calls covering both:
+   a) per-seed pulls via \`from:handle\` syntax (e.g. \`from:levelsio min_faves:100\`)
+      for the stalest seeds you'd most like to refresh
+   b) niche topic queries from the project descriptions (e.g.
+      "AI voice apps", "interactive fiction LLM", "indie founder AI")
+   queryType: "Top" for high-engagement signal.
+3. Score on-niche handles with score_relevance; blacklist drift; add the
+   standout tweets to the pool with add_to_pool.
+4. Promote new handles you discover with promote_handle.
 5. Stop fetching when pool >= ${poolTarget}, or budget runs out.
 6. submit_patterns with the distilled markdown.
 
