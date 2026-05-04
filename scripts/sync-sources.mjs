@@ -17,6 +17,14 @@ const disabled = new Set(
     .filter(Boolean)
 );
 
+// Surface typos — silently no-op'd disables are how a "disabled" obsidian
+// source ends up in the run anyway, then surprise-kills the workflow.
+for (const name of disabled) {
+  if (!sources.some((s) => s.name === name)) {
+    console.warn(`DISABLED_SOURCES: unknown source "${name}" — typo? Known: ${sources.map((s) => s.name).join(', ')}`);
+  }
+}
+
 const results = await Promise.all(sources.map(async (source) => {
   if (source.enabled === false || disabled.has(source.name)) {
     return { name: source.name, status: 'disabled', detail: disabled.has(source.name) ? 'via DISABLED_SOURCES' : '' };

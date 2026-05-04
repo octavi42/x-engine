@@ -24,11 +24,13 @@ permissions:
 jobs:
   morning:
     runs-on: ubuntu-latest
+    # Fail fast if `claude -p` wedges. Healthy run is ~10-15 min; the cap
+    # keeps a hung run from burning hours of GH Actions minutes.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -38,18 +40,27 @@ jobs:
       - run: npm ci
 
       - name: Install Claude Code CLI
+        # Pin to a major so a bad upstream release doesn't silently brick
+        # the daily run. Bump intentionally via PR.
         run: |
-          npm install -g @anthropic-ai/claude-code
+          npm install -g '@anthropic-ai/claude-code@^2'
           claude --version
 
       - name: Resolve target date
         id: date
+        env:
+          INPUT_DATE: ${{ inputs.date }}
         run: |
-          if [ -n "${{ inputs.date }}" ]; then
-            echo "value=${{ inputs.date }}" >> "$GITHUB_OUTPUT"
+          if [ -n "$INPUT_DATE" ]; then
+            value="$INPUT_DATE"
           else
-            echo "value=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+            value="$(date -u +%F)"
           fi
+          if ! [[ "$value" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::invalid date format: '$value' (need YYYY-MM-DD)"
+            exit 1
+          fi
+          echo "value=$value" >> "$GITHUB_OUTPUT"
 
       # ---- 1. sync sources --------------------------------------------------
       - name: Sync sources
@@ -100,19 +111,36 @@ jobs:
           fi
 
       # ---- 5. ping Telegram so you know drafts are ready -------------------
+      # `curl --data-urlencode` handles escaping; MSG embeds real \n via
+      # printf so newlines render in Telegram instead of leaking %0A literals.
       - name: Notify Telegram (success)
-        if: success()
+        if: success() && steps.commit.outputs.committed == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DATE: ${{ steps.date.outputs.value }}
+          REPO: ${{ github.repository }}
+        run: |
+          DRAFT_URL="https://github.com/${REPO}/blob/main/drafts/${DATE}.md"
+          MSG=$(printf '🟢 Morning run done — drafts/%s.md is ready.\n\nReview + approve: %s\n\nOr ask the bot: "list drafts"' "$DATE" "$DRAFT_URL")
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MSG}" \
+            --data-urlencode "disable_web_page_preview=true" \
+            > /dev/null
+
+      - name: Notify Telegram (no changes)
+        if: success() && steps.commit.outputs.committed == 'false'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DATE: ${{ steps.date.outputs.value }}
         run: |
-          DRAFT_URL="https://github.com/${{ github.repository }}/blob/main/drafts/${DATE}.md"
-          MSG="🟢 Morning run done — drafts/${DATE}.md is ready.%0A%0AReview + approve: ${DRAFT_URL}%0A%0AOr ask the bot: \"list drafts\""
+          MSG=$(printf 'ℹ️ Morning run finished but no changes to commit (drafts/%s.md unchanged).' "$DATE")
           curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d "chat_id=${TELEGRAM_CHAT_ID}" \
-            -d "text=${MSG}" \
-            -d "disable_web_page_preview=true" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MSG}" \
+            --data-urlencode "disable_web_page_preview=true" \
             > /dev/null
 
       - name: Notify Telegram (failure)
@@ -120,11 +148,13 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          MSG="🔴 Morning run failed.%0A%0ALogs: ${RUN_URL}"
+          RUN_URL="https://github.com/${REPO}/actions/runs/${RUN_ID}"
+          MSG=$(printf '🔴 Morning run failed.\n\nLogs: %s' "$RUN_URL")
           curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d "chat_id=${TELEGRAM_CHAT_ID}" \
-            -d "text=${MSG}" \
-            -d "disable_web_page_preview=true" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MSG}" \
+            --data-urlencode "disable_web_page_preview=true" \
             > /dev/null
