@@ -9,87 +9,89 @@ Auto-updated every run. Do not edit manually.
 
 ## Account snapshot
 - Last checked: 2026-05-04
+- Profile: https://x.com/octavicristea — bio "writing code until something works", 222 followers / 530 following, joined May 2020
+- Indexed by web search: account exists but recent post bodies are JS-rendered and not visible to search engines. Authoritative source for engagement is `posted/archive.md`; manually update Likes/Reposts/Replies fields after checking the X site directly.
 
 ## Recent posts (last 10)
-From posted/archive.md:
-1. **2026-05-03** "every page refresh on my ai game was regenerating images server-side. cause: base64 dataUrls in sessionStorage…" → roadtosf, $0.30 image-regen bug. Engagement: not yet recorded.
-2. **2026-05-03** "prod fresh tabs froze on dialogue. cause: browser blocked audio.play() with no user gesture…" → roadtosf, autoplay typewriter fix. Engagement: not yet recorded.
+From `posted/archive.md` — only 2 posts in the archive so far:
 
-No additional posts found via web search. Account may be new or not yet indexed.
+1. **2026-05-03** — *roadtosf base64/sessionStorage cost bug*
+   > every page refresh on my ai game was regenerating images server-side. cause: base64 dataUrls in sessionStorage, partialize stripped the field on persist. ~$0.30 and ~30s wasted per reload. fix: upload each image to vercel blob, store the short url.
+   - URL: https://x.com/i/web/status/2050969731155349933
+   - Project: Road to SF · Engagement: not yet recorded
+
+2. **2026-05-03** — *roadtosf autoplay typewriter fix*
+   > prod fresh tabs froze on dialogue. cause: browser blocked audio.play() with no user gesture. fix: on rejection, attach one-shot pointerdown/keydown listeners and retry on first input. 6s safety timer falls back to fixed cadence so the typewriter still reveals.
+   - URL: https://x.com/i/web/status/2051036972710261187
+   - Project: Road to SF · Engagement: not yet recorded
+
+No additional posts found via web search.
 
 ## Top performing posts
-No engagement data recorded yet — both 5/3 posts have empty likes/replies/notes fields in archive.md.
+No engagement data recorded yet — both 5/3 posts have empty Likes/Reposts/Replies fields. **Action:** spend 30s on x.com/octavicristea, copy current numbers into `posted/archive.md` for both posts before next sync. Without this the improve agent can't tell which of your posts actually worked.
 
 ## Topics covered (last 14 days)
-From drafts/2026-05-03.md (5 roadtosf drafts; 2 posted as singles, thread not posted):
-- $0.30 image-regen bug — base64 dataUrls + zustand partialize gotcha (POSTED)
-- Hiding 5s arc gen behind a "level" — pre-fire next episode while player walks current
-- Silicon Mania grounding — weekly haiku 4.5 scrape → Jaccard rank → "name verbatim" prompt injection
-- Autoplay-blocked typewriter — gesture-retry + 6s safety timer (POSTED)
-- Thread hook: 5 engineering things that almost killed roadtosf launch (NOT POSTED)
 
-From drafts/2026-05-02.md:
-- Clio day 37, testing 12 newly contributed OSM POIs in drumul taberei, nominatim indexing delay (building in public)
-- TechCrunch '21 european startups to watch', europe's AI in deep tech not chatbots (trending reaction)
-- expo-location watchPositionAsync with Accuracy.High and 10m distanceFilter for GPS narrator (technical tip — mobile dev with Expo/React Native)
-- Vertical AI outperforming generic chatbot wrappers, what niche to build (engagement question)
-- Pentagon signs 7 AI deals, excludes anthropic for refusing unrestricted military AI use, supply chain risk label (thread)
+**drafts/2026-05-04.md** (today, 5 drafts — none posted yet):
+- Building in public — roadtosf "narrator lobby" (free-text Q&A while episode 0 generates) — latency hiding via product
+- Technical tip — ElevenLabs Scribe Realtime needs `speech_to_text` scope on API key, 401 missing_permissions if absent (AI voice apps gap addressed)
+- Trending reaction — Harvard study on OpenAI o1 outperforming ER triage (67% vs 50–55%) — vertical AI past parity
+- Engagement question — Cursor reportedly being acquired by SpaceX for $60B
+- Thread — 4 latency-hiding patterns for LLM apps (pre-fire next episode, narrator lobby, stream arc-gen beat-by-beat, pre-fire image-gen at plan-ready)
 
-From drafts/2026-05-01.md:
-- Clio day 36, contributing missing POIs back to OpenStreetMap in drumul taberei (building in public)
-- OpenAI building phone where agents replace apps, no app store (trending reaction)
-- Nominatim place name as key input to Firecrawl Search, reverse geocoding bridges GPS to web research (technical tip — real-time web research with AI)
-- Microsoft Agent 365 GA at $15/user/month, agent governance as SaaS category (engagement question)
-- AI coding speed vs security paradox, McKinsey 46% faster but 50% of AI code has vulns (thread)
+**drafts/2026-05-03.md**:
+- Building in public — roadtosf cast persistence (snapshot {name, voiceId, look} into run state, 1 real cameo cap per episode) — first time posted
+- Trending reaction — PyTorch Lightning 2.6.2/2.6.3 supply-chain attack on PyPI (credential stealer, ~2M weekly downloads)
+- Technical tip — HistorAI/Clio Overpass API for POI density mapping
+- Two more posts shipped earlier same day: base64 cost bug (POSTED), autoplay UX (POSTED)
 
-From drafts/2026-04-30.md:
-- Clio day 35, mapping bucharest neighborhoods for POI data density, contributing to OSM (building in public)
-- Big Tech $725B AI capex (trending reaction)
-- GPS distance gating in Clio, 50m threshold (technical tip — location-based tech)
-- Claude for Creative Work connectors (engagement question)
-- Hightouch $150M agentic marketing (thread)
+**drafts/2026-05-02.md**: Clio day 37 OSM POI testing in drumul taberei · TechCrunch '21 European startups to watch (deep tech AI thesis) · expo-location watchPositionAsync technical tip · Vertical AI engagement question · Pentagon AI deals excluding Anthropic thread
 
-From drafts/2026-04-29.md:
-- Clio day 34, mapping OSM data gaps (building in public)
-- OpenAI missed Q1 revenue and user targets (trending reaction)
-- ElevenLabs per-POI conversation session lifecycle, killing sessions to prevent audio bleed (technical tip — AI voice apps)
-- Top AI researchers leaving big tech for startups (engagement question)
-- Avoca AI voice agent for plumbers $1B valuation (thread)
+**drafts/2026-05-01.md**: Clio day 36 (OSM contributions) · OpenAI agent-phone trending · Nominatim+Firecrawl bridge technical tip · Microsoft Agent 365 GA engagement question · AI coding speed vs security paradox thread
 
-From drafts/2026-04-27.md and earlier:
-- Clio days 24-32: query classifier, coordinate disambiguator, OSM contributions, field tests
-- Trending reactions: GPT-5.5 ship cadence, DeepSeek V4, China blocks Manus, Recursive Superintelligence raise
-- Technical tips: Firecrawl search vs scrape, ElevenLabs useConversation, Nominatim coordinate disambiguation, full GPS→Nominatim→Firecrawl→ElevenLabs pipeline (<3s)
-- Engagement questions: GitHub Copilot data policy, Enterprise agent adoption gap, OpenAI CRO accusing Anthropic of inflation
-- Threads: Cognition $25B valuation, Cloud platforms rebrand to "agent platform", Tesla $25B robotics capex, AI assistants becoming ad platforms, AI demand cone of uncertainty
+**drafts/2026-04-30.md**: Clio day 35 (POI density mapping) · Big Tech $725B AI capex trending · Clio GPS distance gating technical tip · Claude for Creative Work connectors engagement question · Hightouch $150M agentic marketing thread
+
+**drafts/2026-04-29.md**: Clio day 34 (OSM data gaps) · OpenAI Q1 miss trending · ElevenLabs per-POI session lifecycle technical tip · Top AI researchers leaving big tech engagement question · Avoca AI voice agent for plumbers $1B thread
+
+**drafts/2026-04-27.md and earlier (4/16 → 4/27)**: Clio days 24–32 daily build logs (query classifier, coordinate disambiguator, OSM contributions, field tests) · trending: GPT-5.5 cadence, DeepSeek V4, China blocks Manus, Recursive Superintelligence raise · technical tips: Firecrawl search vs scrape, ElevenLabs useConversation, Nominatim coord disambiguation, full GPS→Nominatim→Firecrawl→ElevenLabs pipeline (<3s) · engagement: GitHub Copilot data policy, enterprise agent adoption gap, OpenAI CRO accusing Anthropic · threads: Cognition $25B, cloud platforms→agent platform rebrand, Tesla $25B robotics, AI assistants becoming ad platforms, AI demand uncertainty
 
 ## Content gaps
-Angles from config/projects/*.md vs topics covered in last 14 days:
+Angles from `config/projects/*.md` vs topics covered in last 14 days:
 
 **HistorAI:**
-- AI voice apps — last covered April 29 (per-POI session lifecycle). **Addressed in today's draft #2 (Scribe Realtime scope gotcha).**
-- Mobile dev with Expo/React Native — covered May 2 (watchPositionAsync). Well-covered.
-- Location-based tech — covered April 30 (GPS distance gating). Well-covered.
-- Real-time web research with AI — covered May 1 (nominatim+Firecrawl). Well-covered.
-- Building in public — Clio updates have been daily but went silent the last 3 days (no Clio drafts since 5/2; today's drafts are all roadtosf or general).
+- Building in public (Clio) — **GAP WIDENING.** Daily Clio build-log posts ran 4/16 → 5/2 (no fresh updates since). Last covered topic: drumul taberei OSM POI testing (5/2). 5/3 had a Clio technical tip but no build-log; 5/4 has zero HistorAI content. If Clio is still being built, post the build log; if paused, that's a narrative shift worth saying out loud.
+- AI voice apps — covered today (5/4 #2, ElevenLabs Scribe Realtime scope). Well-covered.
+- Mobile dev with Expo/React Native — covered 5/2 (watchPositionAsync). Well-covered.
+- Location-based tech — covered 4/30 (GPS distance gating). Well-covered.
+- Real-time web research with AI — covered 5/1 (Nominatim+Firecrawl). Well-covered.
 
 **Road to SF:**
-- Hiding LLM latency — covered 5/3 (single-tweet draft, not posted) and today's thread.
-- Grounding LLM stories in real-world news — covered 5/3 (single-tweet draft, not posted).
-- Cost gotcha (base64 in sessionStorage) — POSTED 5/3.
-- Browser autoplay UX — POSTED 5/3.
-- ElevenLabs Scribe Realtime STT — addressed in today's draft #2.
-- Cast persistence across procedural episodes — never posted, candidate for future.
-- Hackathon-ship gotchas (Resend sandbox, Stripe NEXT_PUBLIC at build) — never posted, candidate.
-- "Mystery is the product" design principle — never posted, candidate.
+- Hiding LLM latency — covered today (5/4 thread + narrator lobby single). Saturated for now.
+- Grounding LLM stories in real-world news — covered 5/3 (single, NOT POSTED). Eligible to repost or extend.
+- Cost gotcha (base64 sessionStorage) — POSTED 5/3 ✓
+- Browser autoplay UX — POSTED 5/3 ✓
+- ElevenLabs Scribe Realtime STT — covered today (5/4 #2). Well-covered.
+- Cast persistence — covered 5/3 (NOT POSTED). Still candidate.
+- Hackathon-ship gotchas (Resend sandbox, Stripe NEXT_PUBLIC at build) — **NEVER POSTED.** Still candidate.
+- "Mystery is the product" design principle — **NEVER POSTED.** Still candidate.
 
 **UGC Discovery Pipeline:**
-- All 5 angles never covered. Project status is "Phase 1 — video scoring MVP." Backlog. Likely needs build-log signal before posting.
+- All 5 angles still **NEVER COVERED**. Project status: "Phase 1 — video scoring MVP."
+  - Running AI vision models locally on Apple Silicon
+  - Vocal isolation (Demucs) on noisy TikToks
+  - Structured JSON output from local LLMs (Ollama + Pydantic)
+  - Automating creator discovery / UGC sourcing
+  - Building data pipelines with local-first AI (no API costs)
+- **Recommendation:** likely needs commits or a build-log signal in `obsidian-personal` before posting — without specifics this would read as vague. The peer-posts pool's @mayfer (whisper+qwen+moondream pipeline, 2272 bookmarks) is a perfect comp; mirror that "named stack + concrete output" format when UGC drafts get written.
 
 ## Current narrative
-Road to SF launched 2026-04-30 for ElevenLabs Hackathon #5 — submission shipped, repo flipped public, two technical-detail tweets posted yesterday. Active development has tapered: per the 5/3 commit only one post-launch fix landed (Resume aborted in-flight beat after offline refresh). Build logs in Obsidian have been empty for 5/1, 5/2, 5/3 — no fresh Clio updates either. Today's drafts lean heavily on roadtosf because that's where the actual signal is.
+Road to SF is the dominant narrative thread right now. Launched 4/30 for ElevenLabs Hackathon #5; two technical-detail bug-fix tweets shipped 5/3 (base64 + autoplay), and today (5/4) the engine generated 5 more roadtosf-heavy drafts including a 6-tweet latency-hiding thread that bundles four production techniques (pre-fire episodes, narrator lobby, stream arc-gen, pre-fire image-gen). Build cadence on roadtosf has tapered post-launch (one fix-commit on 5/3) but the queued drafts cover techniques worth posting independent of fresh commits.
 
-In trending news (2026-05-03 → 2026-05-04): Harvard study on OpenAI o1 outperforming triage doctors on ER diagnoses (67% vs 50-55%) is the standout AI signal — fits the user's "vertical AI beats horizontal chatbots" thesis. Cursor reportedly in talks to be acquired by SpaceX for $60B per Amjad Masad's StrictlyVC interview. Meta bought Assured Robot Intelligence for humanoid AI. AI-generated actors/scripts ineligible for Oscars.
+HistorAI/Clio has gone quiet — daily build-log posts ran reliably 4/16 → 5/2, then dropped. Three days of silence is now a narrative ambiguity to the audience: did Clio ship, pause, or pivot? Worth either a "what I learned in 35 days of building Clio" wrap-up or one fresh build-log entry to keep the thread alive.
+
+UGC Discovery Pipeline remains backlog — Phase 1 is in progress but no posted content. The peer-posts pool just surfaced a perfect format to mimic (mayfer's local AI pipeline tweet) once there's something concrete to ship.
+
+In trending news (5/3 → 5/4): the standout AI signal is the Harvard study on OpenAI o1 beating triage doctors at ER diagnosis (67% vs 50–55%) — direct fit for the "vertical AI past parity" thesis already drafted today. Cursor reportedly being acquired by SpaceX for $60B (Amjad Masad on StrictlyVC) is the second-tier signal — already in today's drafts as the engagement question. Meta acquired Assured Robot Intelligence; AI-generated actors and scripts are now ineligible for Oscars; PyTorch Lightning had a supply-chain attack on PyPI (covered in 5/3 drafts but not posted).
 
 ## Top performing
-No data — only 2 posts in archive, both with empty engagement fields. First baseline expected ~24-48h after first post (5/3 post is ~24h old).
+No data — only 2 posts in the archive, both with empty Likes/Reposts/Replies fields. First baseline expected ~24–48h after first post (5/3 posts are now ~24–30h old). Manually note current engagement before tomorrow's profile sync so the improve agent has a reference signal.
