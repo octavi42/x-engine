@@ -86,6 +86,27 @@ Flags:
 
 Refuses to overwrite existing draft files unless `--force` is passed.
 
+## Scheduled runs (GitHub Actions)
+
+Three workflows in `.github/workflows/`:
+
+- `morning.yml` — daily at 06:00 UTC. Runs `sync:ci` → `draft:ci --force` → `enhance:ci`, commits drafts + peer-posts state back to main with `[skip ci]`, sends a Telegram message with a link to the draft file.
+- `notify.yml` — 11:00 / 15:00 / 19:00 UTC (1h before each post slot). Pings Telegram with the next pending approved draft so you can edit/reject before it ships.
+- `post.yml` — 12:00 / 16:00 / 20:00 UTC. Posts the next approved draft (cap of 1/slot, 3/day total via `MAX_PER_RUN`).
+
+Required secrets (Repo → Settings → Secrets and variables → Actions):
+- `CLAUDE_CODE_OAUTH_TOKEN` — from `claude setup-token`. Drives sync (peer-posts agent), draft, enhance.
+- `TWITTERAPI_IO_KEY` — drives the peer-posts twitterapi.io fetcher.
+- `X_API_KEY` / `X_API_SECRET` / `X_ACCESS_TOKEN` / `X_ACCESS_SECRET` — drive the poster.
+- `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` — drive the morning + notify messages.
+- `GITHUB_TOKEN` — auto-provided by Actions; needed for the github-commits source's `gh api` calls and for the morning workflow's `git push` back to main.
+
+CI-only knobs (set in workflow env, not as secrets):
+- `DISABLED_SOURCES=obsidian-personal` — skip sources that need a local-machine resource.
+- `SYNC_TOLERATE_ERRORS=1` — make `sync:ci` exit 0 with errors so a flaky source doesn't fail the workflow.
+
+Manual trigger any of these via Actions tab → workflow → "Run workflow." The morning workflow also accepts a `date` input to override the target date.
+
 ## Autoimprove (optional, before approval)
 
 After drafting, run `npm run enhance` to score each single-tweet draft against `sources/peer-posts/latest.md` patterns + `config/voice.md` and stamp three new metadata lines onto the draft:

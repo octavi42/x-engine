@@ -13,8 +13,11 @@
     "post:ci": "node scripts/post.mjs",
     "notify": "node scripts/notify.mjs",
     "sync": "node --env-file=.env.local scripts/sync-sources.mjs",
+    "sync:ci": "node scripts/sync-sources.mjs",
     "draft": "node --env-file=.env.local scripts/draft.mjs",
+    "draft:ci": "node scripts/draft.mjs",
     "enhance": "node --env-file=.env.local scripts/enhance.mjs",
+    "enhance:ci": "node scripts/enhance.mjs",
     "test": "node --test 'tests/*.test.mjs'"
   },
   "repository": {
