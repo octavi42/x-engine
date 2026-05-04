@@ -93,6 +93,23 @@ export function makeTwitterApi(apiKey) {
       }
       return out.slice(0, max);
     },
+
+    // Lookup tweets by ID. Used by the engagement feedback loop to refresh
+    // metrics for posts we shipped in the last week.
+    //
+    // The endpoint takes a comma-separated `tweet_ids` query param. It is
+    // rate-limited per request so we batch in chunks of 100. Tweets that
+    // have been deleted are silently dropped from the response.
+    async tweetsByIds({ ids, batchSize = 100 }) {
+      const out = [];
+      const unique = [...new Set(ids.filter(Boolean).map(String))];
+      for (let i = 0; i < unique.length; i += batchSize) {
+        const chunk = unique.slice(i, i + batchSize);
+        const res = await call('/twitter/tweets', { tweet_ids: chunk.join(',') });
+        for (const t of res.tweets ?? []) out.push(normalizeTweet(t));
+      }
+      return out;
+    },
   };
 }
 

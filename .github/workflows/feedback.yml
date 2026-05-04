@@ -1,0 +1,93 @@
+name: feedback
+
+# Engagement feedback loop. Runs ~24h after the latest post slot so all of
+# yesterday's posts (12/16/20 UTC) have had at least 17h to accumulate
+# likes/replies/bookmarks before we read them.
+#
+# Output:
+#  - posted/archive.md gets Likes/Reposts/Replies/Bookmarks/Views/Fetched
+#    stamped onto entries 24h-7d old.
+#  - sources/x-profile/latest.md "## Top performing" block is regenerated
+#    from the now-stamped archive — picked up by the next morning's
+#    `npm run enhance` as few-shot examples for the improve agent.
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 13:00 UTC daily
+  workflow_dispatch:
+    inputs:
+      max_age:
+        description: "Override max age in days (default 7)."
+        required: false
+        default: "7"
+      min_age:
+        description: "Override min age in days (default 1)."
+        required: false
+        default: "1"
+
+concurrency:
+  group: x-engine-feedback
+  cancel-in-progress: false
+
+permissions:
+  contents: write          # commit archive + profile updates back to main
+
+jobs:
+  feedback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch engagement
+        env:
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+        run: |
+          npm run feedback:ci -- \
+            --max-age=${{ inputs.max_age || '7' }} \
+            --min-age=${{ inputs.min_age || '1' }}
+
+      - name: Commit + push
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posted/archive.md sources/x-profile/latest.md || true
+          if git diff --cached --quiet; then
+            echo "no changes — nothing was stamped"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "feedback: stamp engagement $(date -u +%F) [skip ci]"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Notify Telegram (failure)
+        # `failure()` does not match a job cancelled by timeout-minutes,
+        # so include `cancelled()` to ensure timeouts trigger a ping too.
+        if: failure() || cancelled()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          if [ -z "${TELEGRAM_BOT_TOKEN:-}" ] || [ -z "${TELEGRAM_CHAT_ID:-}" ]; then
+            exit 0
+          fi
+          RUN_URL="https://github.com/${REPO}/actions/runs/${RUN_ID}"
+          MSG=$(printf '🟡 Feedback run failed.\n\nLogs: %s' "$RUN_URL")
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MSG}" \
+            --data-urlencode "disable_web_page_preview=true" \
+            > /dev/null

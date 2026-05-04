@@ -25,6 +25,7 @@ import { fileURLToPath } from 'node:url';
 import { parseDraftFile } from './lib/parse-drafts.mjs';
 import { stampDraft } from './lib/stamp-draft.mjs';
 import { runClaude, probeClaudeAuth } from './lib/run-claude.mjs';
+import { parseArchive, topPerformers } from './lib/archive.mjs';
 
 const here = fileURLToPath(import.meta.url);
 const ROOT = process.cwd();
@@ -90,6 +91,16 @@ function runRules(body) {
   return violations;
 }
 
+async function loadOwnTopPerformers(n = 3) {
+  if (!existsSync(ARCHIVE_PATH)) return [];
+  try {
+    const entries = await parseArchive(ARCHIVE_PATH);
+    return topPerformers(entries, n);
+  } catch {
+    return [];
+  }
+}
+
 async function lastPostedTexts(daysBack = 7) {
   if (!existsSync(ARCHIVE_PATH)) return [];
   const text = await readFile(ARCHIVE_PATH, 'utf8');
@@ -110,10 +121,18 @@ async function lastPostedTexts(daysBack = 7) {
   return out.map((s) => s.trim()).filter(Boolean);
 }
 
-function buildSystemPrompt({ voice, peerPosts, recentPosts }) {
+function buildSystemPrompt({ voice, peerPosts, recentPosts, ownTopPerformers }) {
   const recent = recentPosts.length
     ? recentPosts.map((p, i) => `${i + 1}. ${p.slice(0, 200)}${p.length > 200 ? '…' : ''}`).join('\n')
     : '(no recent posts in archive)';
+
+  const ownTop = ownTopPerformers.length
+    ? ownTopPerformers.map((p, i) => {
+        const m = p.metrics;
+        const stats = `likes=${m.likes ?? '—'} replies=${m.replies ?? '—'} reposts=${m.reposts ?? '—'}${m.bookmarks != null ? ` bookmarks=${m.bookmarks}` : ''}`;
+        return `${i + 1}. (${p.date} · ${stats}) ${p.body.replace(/\s+/g, ' ').slice(0, 240)}`;
+      }).join('\n')
+    : '_(no engagement data yet — feedback loop will populate this once posts have aged 24h+)_';
 
   return `You are a tweet-improvement agent for an X content engine.
 
@@ -133,6 +152,14 @@ ${voice.trim()}
 # Peer engagement patterns (this week)
 
 ${peerPosts.trim() || '_(no peer-posts data yet — score against voice + general principles)_'}
+
+# User's own top-performing posts
+
+These are the user's posts with the highest engagement to date. Mirror what's
+working for THEIR audience (hook, structure, specificity) — peer patterns are
+secondary signal.
+
+${ownTop}
 
 # Posts the user already published in the last 7 days
 
@@ -243,14 +270,15 @@ async function main() {
     readFile(PEER_POSTS_PATH, 'utf8').catch(() => ''),
   ]);
   const recentPosts = await lastPostedTexts(7);
+  const ownTopPerformers = await loadOwnTopPerformers();
 
   const authProbe = await probeClaudeAuth();
   if (!authProbe.ok) throw new Error(`auth check failed: ${authProbe.reason}`);
 
   const model = process.env.IMPROVE_MODEL ?? DEFAULT_MODEL;
-  const system = buildSystemPrompt({ voice, peerPosts, recentPosts });
+  const system = buildSystemPrompt({ voice, peerPosts, recentPosts, ownTopPerformers });
 
-  console.log(`model: ${model} · ${candidates.length} draft(s) · peer-posts: ${peerPosts ? 'loaded' : 'missing'}\n`);
+  console.log(`model: ${model} · ${candidates.length} draft(s) · peer-posts: ${peerPosts ? 'loaded' : 'missing'} · own top: ${ownTopPerformers.length}\n`);
 
   // Per-run temp dir for result files.
   const runDir = path.join(tmpdir(), `x-engine-improve-${randomBytes(4).toString('hex')}`);

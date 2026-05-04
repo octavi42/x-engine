@@ -88,15 +88,16 @@ Refuses to overwrite existing draft files unless `--force` is passed.
 
 ## Scheduled runs (GitHub Actions)
 
-Three workflows in `.github/workflows/`:
+Four workflows in `.github/workflows/`:
 
 - `morning.yml` — daily at 06:00 UTC. Runs `sync:ci` → `draft:ci --force` → `enhance:ci`, commits drafts + peer-posts state back to main with `[skip ci]`, sends a Telegram message with a link to the draft file.
 - `notify.yml` — 11:00 / 15:00 / 19:00 UTC (1h before each post slot). Pings Telegram with the next pending approved draft so you can edit/reject before it ships.
 - `post.yml` — 12:00 / 16:00 / 20:00 UTC. Posts the next approved draft (cap of 1/slot, 3/day total via `MAX_PER_RUN`).
+- `feedback.yml` — daily at 13:00 UTC. Stamps engagement metrics (likes/reposts/replies/bookmarks/views) onto archive entries 1-7 days old via twitterapi.io, then regenerates the "Top performing" block in `sources/x-profile/latest.md` so the next morning's `enhance` run can use YOUR winners as few-shot examples.
 
 Required secrets (Repo → Settings → Secrets and variables → Actions):
 - `CLAUDE_CODE_OAUTH_TOKEN` — from `claude setup-token`. Drives sync (peer-posts agent), draft, enhance.
-- `TWITTERAPI_IO_KEY` — drives the peer-posts twitterapi.io fetcher.
+- `TWITTERAPI_IO_KEY` — drives the peer-posts twitterapi.io fetcher AND the engagement feedback loop.
 - `X_API_KEY` / `X_API_SECRET` / `X_ACCESS_TOKEN` / `X_ACCESS_SECRET` — drive the poster.
 - `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` — drive the morning + notify messages.
 - `GITHUB_TOKEN` — auto-provided by Actions; needed for the github-commits source's `gh api` calls and for the morning workflow's `git push` back to main.
@@ -135,6 +136,24 @@ Hard limits enforced by the poster (do not bypass):
 - Max 3 posts per invocation (bug-blast safety).
 - Body must be ≤280 chars.
 - Threads not supported in v1 — single tweets only.
+
+## Engagement feedback
+
+`npm run feedback` closes the "what worked" loop. Once a day (13:00 UTC via `feedback.yml`) it:
+
+1. Parses `posted/archive.md` and finds entries 1-7 days old with empty `Likes:` placeholders.
+2. Hits `twitterapi.io`'s `/twitter/tweets?tweet_ids=...` endpoint with their tweet IDs.
+3. Stamps `Likes / Reposts / Replies / Bookmarks / Views / Fetched` back into the archive in-place, preserving any hand-written `Notes:`.
+4. Recomputes the `## Top performing` block in `sources/x-profile/latest.md` (wrapped in `<!-- auto-feedback:start/end -->` markers — everything outside the markers is left alone).
+
+The next morning's `npm run enhance` reads those top performers from `posted/archive.md` and includes the top 3 as few-shot examples in the improve agent's system prompt — so refined drafts mirror what's actually working for YOUR audience, not just peers'.
+
+Flags:
+- `npm run feedback:dry` — preview which entries would be stamped, no fetch
+- `npm run feedback -- --max-age=14 --min-age=0` — widen the window
+- `npm run feedback -- --limit=20` — cap fetches per run
+
+Cost: ~3-5 tweets/day at $0.15/1k → pennies/month on twitterapi.io. Requires `TWITTERAPI_IO_KEY` (already set for the peer-posts source).
 
 ## Banned phrases (from voice.md)
 Never use any of these:

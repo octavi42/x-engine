@@ -81,13 +81,11 @@ When v1 has been reliable for ~7 days with no manual intervention bugs, wire a d
 
 ---
 
-## v2.3 — Engagement sync
+## v2.3 — Engagement sync ✅ shipped
 
-**Status:** archive format already supports it; just needs the script.
+`scripts/feedback.mjs` runs daily at 13:00 UTC via `.github/workflows/feedback.yml`. Walks `posted/archive.md`, batches tweet IDs (1-7d old, unstamped) into `twitterapi.io`'s `/twitter/tweets` endpoint, stamps `Likes/Reposts/Replies/Bookmarks/Views/Fetched` back inline, then regenerates the auto-marked `## Top performing` block in `sources/x-profile/latest.md`. The next morning's `enhance` run picks up those top performers as few-shot examples.
 
-`scripts/sync-engagement.mjs`, runs once daily, walks `posted/archive.md`, parses `URL:` lines, hits X API `tweets.fields=public_metrics` for each, writes back `Likes: N | Reposts: N | Replies: N` inline. Closes the engine's "what worked" loop. Bearer Token (already saved separately) suffices for read-only.
-
-Expected effort: ~30 min. Run via cron alongside daily post.
+Closes the engine's "what worked" loop end-to-end.
 
 ---
 

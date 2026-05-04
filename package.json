@@ -18,6 +18,9 @@
     "draft:ci": "node scripts/draft.mjs",
     "enhance": "node --env-file=.env.local scripts/enhance.mjs",
     "enhance:ci": "node scripts/enhance.mjs",
+    "feedback": "node --env-file=.env.local scripts/feedback.mjs",
+    "feedback:dry": "node --env-file=.env.local scripts/feedback.mjs --dry",
+    "feedback:ci": "node scripts/feedback.mjs",
     "test": "node --test 'tests/*.test.mjs'"
   },
   "repository": {
