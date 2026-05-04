@@ -31,7 +31,7 @@ Current sources:
 - `sources/obsidian-personal/` — obsidian-vault. Pulls Build Log + Ideas from recent daily notes.
 - `sources/github-commits/` — github-commits. Recent commits across each project's GitHub repo (auto-discovered from `config/projects/*.md`). Requires `gh` CLI authenticated locally.
 - `sources/rss-trending/` — rss. Recent items from configured AI/dev/startup news feeds (HN, TechCrunch AI, The Verge AI by default). Edit `params.feeds` in the config to add or remove sources.
-- `sources/peer-posts/` — peer-posts. Autoresearch agent (Sonnet 4.6 via Anthropic SDK + tool use) that rotates seed handles, fetches their recent tweets via twitterapi.io, scores relevance to my niche, traverses search results to discover new accounts, and emits a distilled patterns analysis + top tweets. State (rotation cursor, scores, blacklist) lives in `sources/peer-posts/.state.json`. Requires `TWITTERAPI_IO_KEY` and `ANTHROPIC_API_KEY` in `.env.local`. Edit `params.seedHandles` to curate the seed pool.
+- `sources/peer-posts/` — peer-posts. Autoresearch agent driven by `claude -p` headless mode (bills against my Claude Pro/Max subscription, not the API). The CLI launches `mcp-servers/peer-posts/server.mjs` over stdio, which exposes 9 tools the agent uses: rotate seeds, fetch tweets via twitterapi.io, score relevance, curate a pool, blacklist drift, promote discoveries, submit_patterns. Long-lived rotation state lives in `sources/peer-posts/.state.json`; per-run pool/cache lives in `sources/peer-posts/.run.json` (both gitignored). Requires `TWITTERAPI_IO_KEY` and `CLAUDE_CODE_OAUTH_TOKEN` in `.env.local`. Edit `params.seedHandles` to curate the seed pool.
 
 To add a new source: create `sources/<name>/source.config.json` (and optionally `fetch.mjs`). No changes needed elsewhere — the orchestrator and drafting agent discover it automatically. By convention, fetched sources gitignore their `latest.md` (it's regenerated each sync) — drop a `.gitignore` containing `latest.md` next to the `fetch.mjs`.
 
@@ -62,6 +62,15 @@ To add a new source: create `sources/<name>/source.config.json` (and optionally 
 - Prioritize content gaps — angles from any project in config/projects/ that haven't been covered recently.
 - At least one draft per run should address a content gap.
 - Tag each draft with the project name it relates to (or "general" for cross-project posts).
+
+## Auth (peer-posts + enhance)
+
+Both `npm run sync` (for the peer-posts source) and `npm run enhance` shell out to `claude -p` and bill against the Pro/Max subscription, not an API key.
+
+Setup once:
+1. `claude setup-token` (while logged into your Pro/Max plan) — outputs a 1-year token.
+2. Paste it into `.env.local` as `CLAUDE_CODE_OAUTH_TOKEN=...`.
+3. Make sure `ANTHROPIC_API_KEY` is NOT set in `.env.local` or your shell — the scripts pre-flight-check this and will refuse to run if both are present (silent-API-billing footgun).
 
 ## Autoimprove (optional, before approval)
 

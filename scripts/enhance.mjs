@@ -3,27 +3,40 @@
 // patterns distilled in sources/peer-posts/latest.md and the voice in
 // config/voice.md, and emits a critique + refined rewrite per draft.
 //
+// Powered by `claude -p` headless mode (Pro/Max subscription billing).
+// The improve MCP server (mcp-servers/improve/server.mjs) exposes a single
+// tool, submit_critique, which Claude is instructed to call exactly once.
+// Results are persisted to a per-draft JSON file the parent reads after
+// `claude -p` exits.
+//
 // Usage:
 //   npm run enhance                      # enhances today's draft file
 //   npm run enhance -- --file=drafts/2026-05-04.md
-//   npm run enhance -- --draft=3         # only enhance draft #3 in today's file
-//   npm run enhance -- --force           # re-run on drafts already enhanced
+//   npm run enhance -- --draft=3
+//   npm run enhance -- --force           # re-run on already-enhanced drafts
 
 import { existsSync } from 'node:fs';
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, mkdir, unlink } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { randomBytes } from 'node:crypto';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-import { makeClient } from './lib/agent-loop.mjs';
 import { parseDraftFile } from './lib/parse-drafts.mjs';
 import { stampDraft } from './lib/stamp-draft.mjs';
+import { runClaude } from './lib/run-claude.mjs';
 
+const here = fileURLToPath(import.meta.url);
 const ROOT = process.cwd();
 const DRAFTS_DIR = path.join(ROOT, 'drafts');
 const VOICE_PATH = path.join(ROOT, 'config/voice.md');
 const PEER_POSTS_PATH = path.join(ROOT, 'sources/peer-posts/latest.md');
 const ARCHIVE_PATH = path.join(ROOT, 'posted/archive.md');
+const MCP_SERVER_PATH = path.resolve(here, '..', '..', 'mcp-servers/improve/server.mjs');
+
 const CHAR_LIMIT = 280;
 const DEFAULT_MODEL = 'claude-sonnet-4-6';
+const MAX_TURNS = 4; // call submit_critique then stop; 4 leaves room for one retry
 
 const BANNED_PHRASES = [
   'game-changer',
@@ -102,12 +115,14 @@ function buildSystemPrompt({ voice, peerPosts, recentPosts }) {
 
   return `You are a tweet-improvement agent for an X content engine.
 
-For each draft you're given, you score it on four axes against the user's voice
-and the engagement patterns observed this week, then write one refined rewrite.
+For each draft you're given, score it on four axes against the user's voice
+and the engagement patterns observed this week, then produce one refined
+rewrite.
 
 # Output protocol
-You MUST respond by calling the submit_critique tool exactly once. Never reply
-with plain text — the loop only reads the tool input.
+Call the mcp__improve__submit_critique tool EXACTLY ONCE with the structured
+result. Do not call any other tool. Do not output additional text after the
+tool call — end your turn.
 
 # Voice (user's tone, audience, banned phrases)
 
@@ -123,12 +138,11 @@ ${recent}
 
 # Hard rules
 - Refined tweet must be ≤ ${CHAR_LIMIT} chars.
-- Refined tweet must not use any banned phrase from the voice file.
-- Refined tweet must contain a specific technical detail (number, name, mechanism)
+- Refined must not use any banned phrase from the voice file.
+- Refined must contain a specific technical detail (number, name, mechanism)
   unless the original is a question/engagement post — then a sharp question is ok.
 - Don't repeat a topic the user posted in the last 7 days. If the draft
-  duplicates one, say so in the critique and refine to a different angle if
-  possible.
+  duplicates one, say so in the critique and refine to a different angle.
 - 0 or 1 hashtag max. No external links unless the original explicitly needs it.
 - Match the user's voice (lowercase starts ok, fragments ok, terse, no hype).
 
@@ -142,41 +156,12 @@ ${recent}
 2-3 sentences max. Be direct. Reference the patterns when possible.`;
 }
 
-const SUBMIT_CRITIQUE_TOOL = {
-  name: 'submit_critique',
-  description: 'Emit the structured critique + refined rewrite. Call exactly once.',
-  input_schema: {
-    type: 'object',
-    properties: {
-      score: {
-        type: 'object',
-        properties: {
-          specificity: { type: 'integer', minimum: 1, maximum: 5 },
-          hook: { type: 'integer', minimum: 1, maximum: 5 },
-          length: { type: 'integer', minimum: 1, maximum: 5 },
-          pattern_match: { type: 'integer', minimum: 1, maximum: 5 },
-        },
-        required: ['specificity', 'hook', 'length', 'pattern_match'],
-        additionalProperties: false,
-      },
-      critique: { type: 'string', description: '2-3 sentence direct critique' },
-      refined: {
-        type: 'string',
-        description: `The rewritten tweet, single line, ≤ ${CHAR_LIMIT} chars. No preamble.`,
-      },
-    },
-    required: ['score', 'critique', 'refined'],
-    additionalProperties: false,
-  },
-};
-
-async function critiqueDraft(client, model, system, draft, ruleViolations) {
+function buildUserPrompt(draft, ruleViolations) {
   const projectLine = draft.project ? `Project: ${draft.project}` : 'Project: general';
   const ruleBlock = ruleViolations.length
     ? `Deterministic rule violations to fix:\n${ruleViolations.map((v) => '- ' + v).join('\n')}`
     : 'Deterministic rule check: clean.';
-
-  const userPrompt = `${projectLine}
+  return `${projectLine}
 Title: ${draft.title}
 Body (${draft.body.length} chars):
 ${draft.body}
@@ -184,19 +169,37 @@ ${draft.body}
 ${ruleBlock}
 
 Score, critique, and rewrite via submit_critique.`;
+}
 
-  const response = await client.messages.create({
+async function critiqueOne({ draft, system, model, resultFile }) {
+  // Wipe any previous result for this draft.
+  if (existsSync(resultFile)) await unlink(resultFile);
+
+  const userPrompt = buildUserPrompt(draft, runRules(draft.body));
+
+  const mcpServers = {
+    improve: {
+      command: 'node',
+      args: [MCP_SERVER_PATH],
+      env: { IMPROVE_RESULT_FILE: resultFile },
+    },
+  };
+
+  await runClaude({
+    prompt: userPrompt,
+    systemPrompt: system,
     model,
-    max_tokens: 1024,
-    system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
-    tools: [SUBMIT_CRITIQUE_TOOL],
-    tool_choice: { type: 'tool', name: 'submit_critique' },
-    messages: [{ role: 'user', content: userPrompt }],
+    mcpServers,
+    allowedTools: ['mcp__improve'],
+    maxTurns: MAX_TURNS,
   });
 
-  const block = response.content.find((b) => b.type === 'tool_use' && b.name === 'submit_critique');
-  if (!block) throw new Error('model did not call submit_critique');
-  return { ...block.input, usage: response.usage };
+  if (!existsSync(resultFile)) {
+    throw new Error('model did not call submit_critique (no result file written)');
+  }
+  const entries = JSON.parse(await readFile(resultFile, 'utf8'));
+  if (!entries.length) throw new Error('result file empty');
+  return entries.at(-1); // most recent
 }
 
 function formatScore(s) {
@@ -216,9 +219,9 @@ async function main() {
 
   const candidates = drafts.filter((d) => {
     if (args.draft && d.index !== args.draft) return false;
-    if (!d.body) return false; // threads / sub-section drafts skipped
-    if (d.posted) return false; // already posted
-    if (!args.force && d.refined) return false; // already enhanced
+    if (!d.body) return false;
+    if (d.posted) return false;
+    if (!args.force && d.refined) return false;
     return true;
   });
 
@@ -233,28 +236,32 @@ async function main() {
   ]);
   const recentPosts = await lastPostedTexts(7);
 
-  const client = makeClient();
   const model = process.env.IMPROVE_MODEL ?? DEFAULT_MODEL;
   const system = buildSystemPrompt({ voice, peerPosts, recentPosts });
 
   console.log(`model: ${model} · ${candidates.length} draft(s) · peer-posts: ${peerPosts ? 'loaded' : 'missing'}\n`);
 
-  let totalIn = 0;
-  let totalOut = 0;
+  // Per-run temp dir for result files.
+  const runDir = path.join(tmpdir(), `x-engine-improve-${randomBytes(4).toString('hex')}`);
+  await mkdir(runDir, { recursive: true });
+
   for (const d of candidates) {
     const violations = runRules(d.body);
     if (violations.length) console.log(`  #${d.index}: rule check — ${violations.length} violation(s)`);
-    let result;
+    let entry;
     try {
-      result = await critiqueDraft(client, model, system, d, violations);
+      entry = await critiqueOne({
+        draft: d,
+        system,
+        model,
+        resultFile: path.join(runDir, `draft-${d.index}.json`),
+      });
     } catch (err) {
       console.error(`  #${d.index}: ERROR ${err.message}`);
       continue;
     }
-    totalIn += result.usage?.input_tokens ?? 0;
-    totalOut += result.usage?.output_tokens ?? 0;
 
-    const refined = result.refined.replace(/\n+/g, ' ').trim();
+    const refined = String(entry.refined ?? '').replace(/\n+/g, ' ').trim();
     const refinedChars = refined.length;
     const refinedIssues = runRules(refined);
     if (refinedIssues.length) {
@@ -262,17 +269,17 @@ async function main() {
     }
 
     const updates = {
-      Score: formatScore(result.score),
-      Critique: result.critique.replace(/\n+/g, ' ').trim(),
+      Score: formatScore(entry.score),
+      Critique: String(entry.critique ?? '').replace(/\n+/g, ' ').trim(),
       Refined: refined,
     };
     if (refinedIssues.length) updates.RefinedIssues = refinedIssues.join('; ');
     await stampDraft({ filePath: file, draftIndex: d.index, updates });
-    console.log(`  #${d.index}: ${formatScore(result.score)}`);
+    console.log(`  #${d.index}: ${formatScore(entry.score)}`);
     console.log(`     ${refined.slice(0, 70)}${refinedChars > 70 ? '…' : ''} (${refinedChars}c)`);
   }
 
-  console.log(`\ndone. ${candidates.length} draft(s) enhanced. tokens: ${totalIn} in / ${totalOut} out.`);
+  console.log(`\ndone. ${candidates.length} draft(s) enhanced.`);
 }
 
 main().catch((e) => {
