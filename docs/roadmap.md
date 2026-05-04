@@ -127,6 +127,233 @@ Append `Cost: $0.05` to each archive entry (X post fee + image gen if attached).
 
 ---
 
+## v2.8 — Knowledge base (Postgres + pgvector via Supabase)
+
+**Status:** designed, not built. Highest-leverage architectural change after v2.3 — turns three independently-amnesiac loops into one self-improving system.
+
+### The problem
+All three Claude-driven loops are amnesiac across runs:
+- **Drafting** reads static `sources/*/latest.md` snapshots; no memory of what shipped or what worked.
+- **Peer-posts research** distills patterns from *that run's* pool only; cross-run signal is thrown away.
+- **Autoimprover** scores drafts on a 4-axis rubric and produces refinements, but **never sees if the refinements actually outperformed**. There is currently zero feedback loop between predicted score and actual engagement.
+
+`posted/archive.md` is enough for hand-skim review but useless for retrieval, time-series metrics, semantic dedup, or correlation analysis.
+
+### Decision: hybrid store, not embeddings-only or SQL-only
+Plain markdown won't scale past a few hundred posts. Pure embeddings can't answer *"my best posts about caching since March"*. Pure SQL can't answer *"find drafts semantically similar to this idea"*. Need both — structured columns for analytics + filtering, vector column for semantic recall.
+
+### Stack: Supabase + pgvector
+- One Postgres instance, `pgvector` extension, embeddings as a column type. No separate vector DB.
+- The Supabase MCP plugin is already wired up in this workspace → drafting + improver agents can RAG-query their own history at runtime via MCP, not just read static snapshots.
+- Free tier covers ~10k posts + ~100k peer tweets easily. Egress is the only thing to watch.
+
+### Honest tradeoff to remember
+Adding a remote DB introduces a hard dependency for `draft` and `enhance` runs in CI. Failure mode: Supabase down → drafting agent runs without history (degraded, not broken — fall back to current static `latest.md` snapshots). Don't make any loop *require* the DB; it's an enrichment, not a critical path.
+
+### Schema sketch
+
+```sql
+posts (
+  id, tweet_id, posted_at, body, project, type,
+  has_image, status, draft_file
+)
+
+post_metrics (                  -- snapshots over time, not single row
+  id, post_id, snapshot_at,
+  likes, reposts, replies, bookmarks, views, engagement_rate
+)
+
+post_images (
+  id, post_id, url,
+  ai_description,               -- vision pass: literal contents
+  ai_meaning                    -- vision pass: why this image with this post
+)
+
+post_comments (
+  id, post_id, parent_id, author, body, posted_at, likes
+)
+
+post_analysis (                 -- one LLM pass per post
+  post_id, relevance_score, themes[], hooks_used[],
+  voice_match, why_it_worked
+)
+
+peer_tweets (                   -- every peer tweet ever scored
+  id, tweet_id, author, posted_at, body, metrics jsonb,
+  relevance_score, classification
+)
+
+peer_authors (                  -- running aggregates per seed handle
+  handle, niche_drift_score, relevance_trend, last_seen
+)
+
+peer_patterns (                 -- identified hook/format archetypes
+  id, label, exemplar_tweet_id,
+  first_seen, last_seen, freq_trend, avg_engagement
+)
+
+enhance_runs (                  -- the feedback table — joined to posts
+  id, draft_id, draft_body, score jsonb, critique, refined,
+  variant_shipped,              -- original | refined | rejected
+  fk → posts.id
+)
+
+embeddings (                    -- one polymorphic table, ref_table discriminator
+  id, ref_table, ref_id,
+  content text, vector vector(1536), model
+)
+```
+
+One `embeddings` table with a `ref_table` discriminator means a single semantic search returns posts + comments + image meanings + peer tweets together. Cross-domain queries are the whole point.
+
+### What it unlocks (per loop)
+
+**Drafting agent**
+- Real "don't repeat" check: `cosine_distance(draft, recent_post) < 0.25` over 90 days. Replaces the current 7-day string match (which misses paraphrases).
+- Content-gap detection becomes a query: angles in `config/projects/*` not semantically covered in last N days. Replaces the manual hand-pass during profile sync.
+- Track-record-aware: agent RAGs "top 10 of my own posts on caching" before drafting on caching, not blindly imitating peer patterns.
+
+**Peer-posts research**
+- Novel hook detection — tweets that cluster together but are far from the 30-day corpus → emergent pattern. Surface at top of `latest.md`.
+- Saturation detection — pattern showed up 3×/week last month, 12× this week → already overused. Stops the system from chasing dying memes.
+- Proactive author drift — author's recent embedding centroid drifts > threshold from their historical centroid → blacklist before the relevance scorer notices.
+- `peer-posts/latest.md` stops being a per-run snapshot and becomes a **rendered query** over the rolling corpus with novelty/saturation labels.
+
+**Autoimprover (highest leverage)**
+- Calibrated rubric: after ~30 enhanced posts, regress each axis against `engagement_rate` → discover which axes actually predict engagement *for this account*. Drop or reweight the noisy ones.
+- A/B the improver itself: when shipped variant was `refined`, did it beat the `original`-variant median? **Right now you cannot tell.** This is the only place the system makes a prediction with a measurable outcome.
+- Predicted engagement: "this draft scores like your historical median (~30 likes)" — concrete signal at approval time instead of vibes.
+- In-context exemplars: feed the improver its top-10 historical "draft → refined → outperformed" triples. Sharper output without retraining.
+
+### Cross-domain queries (none of the three loops can do alone)
+- *"Find peer tweets semantically similar to my top-performing posts"* → cross-pollinate proven angles back into research seeds.
+- *"Find drafts that scored ≥4 on every axis but flopped"* → debug the improver's blind spots.
+- *"Find post archetypes I've never tried that work for accounts of my size"* → anti-imitation; do what others don't.
+
+### File changes
+
+**New:**
+- `db/migrations/0001_init.sql` — schema above + pgvector extension.
+- `scripts/sync-engagement.mjs` — for each row in `posted/archive.md`, hit `tweetsByIds` (already in `twitterapi-io.mjs`) + comments endpoint, upsert into `post_metrics` + `post_comments`.
+- `scripts/index-posts.mjs` — for new posts: vision pass on images, LLM relevance/theme tagging, embeddings on body + image meaning + comment threads. Idempotent, content-hash gated.
+- `scripts/lib/db.mjs` — Postgres pool wrapper, `upsertPost`, `upsertEmbedding`, `searchSimilar` helpers.
+- `scripts/lib/embeddings.mjs` — wraps `text-embedding-3-small` ($0.02/1M tokens, ~free at this volume).
+- `sources/post-history/` — new source. `fetch.mjs` queries Supabase for "top performers last 30d" + "posts on topics similar to today's draft candidates" → renders `latest.md`. **Closes the engagement loop.**
+- `mcp-servers/knowledge/server.mjs` — exposes `search_my_posts(query, filters)`, `predict_engagement(body)`, `find_similar_peer_tweets(body)` tools to the draft + improve agents at runtime.
+
+**Modified:**
+- `scripts/post.mjs` — after successful post, `INSERT INTO posts` and seed first `post_metrics` snapshot.
+- `scripts/enhance.mjs` — write each run into `enhance_runs` with the structured score, critique, refined body.
+- `mcp-servers/peer-posts/server.mjs` — persist scored tweets into `peer_tweets` instead of throwing the corpus away each run.
+- `mcp-servers/draft/server.mjs` — register the new `knowledge` server so the drafting agent can RAG live.
+- `.env.local.example` — `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `OPENAI_EMBEDDINGS_KEY` (or reuse Claude vision via the existing OAuth token).
+- `.github/workflows/morning.yml` — add `npm run sync-engagement` + `npm run index-posts` between `sync` and `draft`.
+
+### Cost reality check
+At current volume (~3 posts/day = ~1k posts/year + ~10k comments + ~1k images):
+- Embeddings: cents per year (`text-embedding-3-small`).
+- Vision: ~$0.001/image with `gpt-4o-mini`, or free via the existing Claude Pro/Max OAuth flow.
+- Supabase: free tier covers it.
+- Net: ~$0/month at personal-account scale.
+
+### Implementation order (each independently valuable)
+
+| Phase | Add | Unlocks |
+|---|---|---|
+| 1 | `posts` + `post_metrics` + `embeddings` (own posts) | Drafting agent gets memory, semantic dedup, gap detection |
+| 2 | `peer_tweets` + `peer_authors` + `peer_patterns` | Novelty/saturation detection, proactive author drift |
+| 3 | `enhance_runs` joined to `posts` | Improver becomes self-calibrating, predicted engagement |
+
+By phase 3 the improver doesn't just see your post history — it sees *the peer corpus your hook was inspired by* and can flag *"this archetype is saturating, your last 2 attempts at it underperformed."* Not possible with markdown, three separate stores, or embeddings alone.
+
+### Deferred from this plan
+- Multi-account knowledge bases (one DB per X account)
+- Public dashboard exposing the metrics
+- Automatic seed-handle discovery from peer-tweet clustering
+- LLM-driven schema migrations (let the agent ALTER TABLE — no, never)
+- Replacing `posted/archive.md` entirely; keep it as the human-readable mirror
+
+---
+
+## v2.9 — Self-improving research & critique loops (literature-grounded)
+
+**Status:** designed, not built. Builds on v2.8's KB. The KB schema is the *prerequisite*; this entry is what to actually run on top of it.
+
+### Why this matters
+v2.8 stores the data. This phase is what closes the prediction → outcome loop. Without it, the autoimprover keeps producing miscalibrated 1-5 scores forever, and peer-posts keeps re-distilling the same patterns each run with no temporal awareness.
+
+### Source papers (all cited inline below)
+
+| Tag | Paper | Year | Core idea |
+|---|---|---|---|
+| **Reflexion** | [Shinn et al., NeurIPS](https://arxiv.org/abs/2303.11366) | 2023 | Verbal natural-language reflections stored in episodic memory; next attempt RAGs closest reflections. +11pp HumanEval. |
+| **Self-Refine** | [Madaan et al.](https://arxiv.org/abs/2303.17651) | 2023 | Iterative critique→refine loop, no training. ~20% absolute improvement across 7 tasks. |
+| **Pearl** | [ACL 2024](https://aclanthology.org/2024.customnlp4u-1.16/) | 2024 | Generation-calibrated retriever — retrieval scores trained to correlate with downstream output quality, not raw similarity. |
+| **Salemi 2025** | [Salemi et al.](https://arxiv.org/html/2504.08745v1) | 2025 | Author-specific features + contrastive counter-examples = +15% over baseline RAG personalization. |
+| **LLM-Judge Overconfidence** | [arxiv 2508.06225](https://arxiv.org/html/2508.06225v1) | 2024-25 | LLM scores systematically overconfident, miscalibrated. Solutions: TH-Score, isotonic/Platt recalibration. |
+| **TF-IDF+LSH novelty** | Verheij et al. ([1605.00122](https://arxiv.org/abs/1605.00122)) | 2016 | Cheap incremental sentence-level novelty detection in text streams. |
+| **Dynamic NMF** | IBM/WSDM | 2012 | Topic emergence/evolution with temporal regularization. |
+| **TwHIN-BERT** | Twitter | 2022 | Engagement-aware embeddings outperform text-only embeddings for downstream prediction. |
+
+### Honest tradeoff to remember
+Every technique below costs tokens or compute. At ~3 posts/day, recalibration math is free, contrastive exemplars are ~20% more retrieval cost, multi-step Self-Refine is 2-3× the LLM bill on enhance. Gate the expensive moves behind `--deep` flags; default to the cheap moves (recalibration, contrastive retrieval) which give the largest single boost in the literature.
+
+### Autoresearch (peer-posts) — what to ship
+
+| Technique | From | Concrete move |
+|---|---|---|
+| **Novelty via centroid distance** | TF-IDF+LSH / Semantic Scan | Compute rolling 30-day centroid of `peer_tweets` embeddings. Score each new tweet's distance from centroid → rank "emerging" hooks at top of `latest.md`. Trivial on pgvector. |
+| **Saturation = cluster-frequency slope** | Dynamic NMF | HDBSCAN-cluster recent peer embeddings. Track cluster size per week. Positive slope + high density = saturating (deprioritize); positive slope + low density = emerging (surface). |
+| **Burst-based seed discovery** | SDNML / burst detection | Authors who suddenly mention rising clusters get auto-promoted into the seed pool. Stops the system from depending on hand-curated `seedHandles` in `peer-posts/source.config.json`. |
+| **Contrastive corpus tagging** | Salemi 2025 | Each peer pattern joined to own engagement → tagged `worked_for_me` / `flopped_for_me` / `untried`. Drafting agent sees both sides instead of blindly imitating. |
+
+`peer-posts/latest.md` becomes a **rendered query** over the rolling corpus with `[novelty: 0.83]` / `[saturating]` labels attached. Per-run amnesia ends.
+
+### Autoimprover (enhance) — what to ship (higher leverage than autoresearch)
+
+| Technique | From | Concrete move |
+|---|---|---|
+| **Reflexion-style memory** | Shinn 2023 | After each post lands, generate a one-sentence verbal reflection ("predicted hook 5/5, actual engagement bottom quartile, likely too generic"). Store in `enhance_runs.reflection`. Next critique RAGs the 5 closest historical reflections as in-context examples. |
+| **Iterative refine loop** | Self-Refine 2023 | Replace one-shot critique with: critique → refine → re-critique → stop when score plateaus or 3 iterations. +20% in the paper, costs 2-3× tokens. Keep behind `--deep` flag. |
+| **Score recalibration** | TH-Score / isotonic | After ~30 (predicted_score, actual_engagement_percentile) pairs, fit isotonic regression in a `scripts/calibrate.mjs` weekly job. Ship `calibrated_score = isotonic(raw_score)`. Stamp it on the draft as `**CalibratedScore:**`. The raw 1-5 stops being trusted directly. |
+| **Contrastive exemplars** | Salemi 2025 (+15%) | When critiquing, retrieve **(a)** top-3 own posts on similar topic that worked, **(b)** bottom-3 own posts on similar topic that flopped, **(c)** 1-2 peer posts in the same archetype. Show all three labeled. The model learns *what differentiates yours*. **Highest dollar-for-dollar move in this entire phase.** |
+| **Generation-calibrated retrieval** | Pearl 2024 | Don't use cosine similarity to pick exemplars. Use historical "engagement of posts that imitated this exemplar" as the retrieval score. After enough data, dramatically better than text-similarity. Implement once contrastive-exemplar baseline exists. |
+| **Thompson sampling over archetypes** | Spotify llm-bandit | Each hook archetype (completion-hook, symptom/cause/fix, X-things-list, etc.) is an arm. Sample with Thompson sampling — exploit known winners, reserve exploration probability for novel archetypes. After ~50 posts you have a real posterior, not vibes. |
+
+### File changes (delta on top of v2.8)
+
+**New:**
+- `scripts/calibrate.mjs` — weekly isotonic regression on `enhance_runs` × `post_metrics` join. Writes `db/calibration_<date>.json`. Improver loads at startup.
+- `scripts/lib/reflection.mjs` — generates one-sentence reflections after engagement lands; stamps `enhance_runs.reflection`.
+- `scripts/lib/contrastive-retrieval.mjs` — given a draft body, returns `{wins[], flops[], peer_refs[]}` triples for the improver prompt.
+- `scripts/lib/novelty.mjs` — `noveltyScore(embedding)` against the rolling 30-day centroid; `saturationLabel(cluster_id)` from frequency slope.
+- `scripts/lib/bandit.mjs` — Thompson sampling over archetypes with persistent posterior in `archetype_arms` table.
+
+**Modified:**
+- `scripts/enhance.mjs` — add `--deep` flag for iterative refine loop; always inject contrastive exemplars; output calibrated score alongside raw score; bandit-pick the archetype hint when no archetype is forced.
+- `mcp-servers/peer-posts/server.mjs` — emit `latest.md` as a rendered query (top-N by novelty score, exclude saturating clusters, prepend tagging).
+- `mcp-servers/improve/server.mjs` — accept `contrastive_exemplars` in the tool schema and stamp `**CalibratedScore:**` + `**Reflection:**` (after post-mortem).
+- `db/migrations/0002_loops.sql` — add `enhance_runs.reflection`, `archetype_arms (archetype, alpha, beta, last_updated)`, `cluster_state (cluster_id, label, freq_slope, last_seen)`.
+
+### Implementation order (each independently useful)
+
+| Phase | Add | Effort | Unlocks |
+|---|---|---|---|
+| 9.1 | Contrastive exemplars in enhance | ~1 day | Highest single boost. Drop-in on top of v2.8. |
+| 9.2 | Score recalibration + reflection store | ~1 day | Improver stops being miscalibrated. Real predicted-engagement signal. |
+| 9.3 | Novelty + saturation labels in peer-posts | ~2 days | Per-run amnesia ends. Stops chasing dying memes. |
+| 9.4 | Iterative refine (`--deep`) | ~half day | Optional power move for important drafts. |
+| 9.5 | Thompson-sampling archetype bandit | ~1 day | Real exploration/exploitation, not always-greedy. |
+| 9.6 | Pearl-style generation-calibrated retrieval | ~2 days | Replaces cosine-similarity exemplar selection. Build last — needs ≥3 months of data. |
+
+### Deferred from this plan
+- TwHIN-style fine-tuned engagement-aware embeddings (training a model is overkill at this scale; isotonic recalibration on top of off-the-shelf embeddings captures most of the value)
+- LoRA-finetuning the improver on own corpus (skip — in-context contrastive exemplars beat finetuning at this volume per Salemi 2025)
+- Full multi-agent debate / tournament critique (over-engineered; single-agent with contrastive exemplars hits the diminishing-returns wall first)
+- RLAIF/PPO loops (need >1000 samples to be statistically meaningful; not there yet)
+
+---
+
 ## What we will NOT build
 
 - Slack/Pushover post-success pings (over-engineering for personal use)
