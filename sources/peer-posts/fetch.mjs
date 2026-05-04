@@ -17,7 +17,7 @@ import { existsSync } from 'node:fs';
 import { resolve, join, basename, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { runClaude } from '../../scripts/lib/run-claude.mjs';
+import { runClaude, probeClaudeAuth } from '../../scripts/lib/run-claude.mjs';
 import { engagementScore } from '../../scripts/lib/twitterapi-io.mjs';
 import {
   loadState,
@@ -45,6 +45,7 @@ export async function fetch(source, env) {
   const fetchBudget = params.fetchBudget ?? 15;
   const model = env.RESEARCH_MODEL ?? DEFAULT_MODEL;
 
+  const today = new Date().toISOString().slice(0, 10);
   const stateFile = join(source.dir, '.state.json');
   const runFile = join(source.dir, '.run.json');
 
@@ -68,8 +69,9 @@ export async function fetch(source, env) {
   const systemPrompt = renderSystemPrompt({ niche, params, windowDays, poolTarget, fetchBudget });
   const userPrompt = renderUserPrompt({ state, seedHandles });
 
+  // Server name uses underscores so tool names normalize to mcp__peer_posts__*
   const mcpServers = {
-    'peer-posts': {
+    peer_posts: {
       command: 'node',
       args: [MCP_SERVER_PATH],
       env: {
@@ -85,8 +87,10 @@ export async function fetch(source, env) {
     },
   };
 
-  const allowedTools = ['mcp__peer-posts'];
-
+  const authProbe = await probeClaudeAuth();
+  if (!authProbe.ok) {
+    throw new Error(`auth check failed: ${authProbe.reason}`);
+  }
   console.log(`peer-posts: claude -p ${model} (max-turns=${maxAgentSteps}, fetch-budget=${fetchBudget})`);
 
   let claudeResult;
@@ -96,7 +100,6 @@ export async function fetch(source, env) {
       systemPrompt,
       model,
       mcpServers,
-      allowedTools,
       maxTurns: maxAgentSteps,
       onEvent(evt) {
         if (evt.type === 'assistant' && evt.message?.content) {
@@ -118,7 +121,7 @@ export async function fetch(source, env) {
   const finalState = await loadState(source.dir);
 
   const promoted = Object.values(finalState.handles).filter(
-    (h) => h.promoted_at === new Date().toISOString().slice(0, 10)
+    (h) => h.promoted_at === today
   );
 
   const patternsMd = stripLeadingPatternsHeader(
@@ -190,7 +193,7 @@ function renderSystemPrompt({ niche, params, windowDays, poolTarget, fetchBudget
 # Goal
 Build a pool of ~${poolTarget} high-engagement tweets from accounts that overlap with the user's niche, then distill the patterns that made them work.
 
-# Tools (all under mcp__peer-posts__*)
+# Tools (all under mcp__peer_posts__*)
 - list_seeds — inspect rotation state
 - pick_stale_seeds — rotate
 - fetch_user_tweets — fetch a user's recent tweets (counts vs ${fetchBudget}-call budget)

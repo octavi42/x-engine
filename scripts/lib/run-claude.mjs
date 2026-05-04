@@ -11,11 +11,14 @@
 // is set, the CLI silently uses API billing instead of OAuth. We require it
 // to be unset (not just empty).
 
-import { spawn } from 'node:child_process';
+import { spawn, execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { writeFile, mkdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { randomBytes } from 'node:crypto';
+
+const execFileAsync = promisify(execFile);
 
 export class ClaudeAuthError extends Error {}
 export class ClaudeRunError extends Error {}
@@ -36,23 +39,56 @@ export function ensureSubscriptionAuth() {
   }
 }
 
+// Best-effort: ask the CLI which auth source it would use. Catches the case
+// where a settings.json apiKeyHelper or ~/.claude.json entry would override
+// the OAuth token even with a clean env. We treat any reference to an API
+// key as a hard fail — when in doubt, don't bill the wrong account.
+//
+// Returns { ok: true } or { ok: false, reason }. Doesn't throw — the caller
+// decides whether to surface this as a warning or abort.
+export async function probeClaudeAuth(env = process.env) {
+  try {
+    const { stdout } = await execFileAsync('claude', ['auth', 'status'], {
+      env: { ...env, ANTHROPIC_API_KEY: undefined },
+      timeout: 10_000,
+    });
+    const lower = stdout.toLowerCase();
+    if (lower.includes('api key') || lower.includes('api_key')) {
+      return { ok: false, reason: `claude auth status mentions API key:\n${stdout.trim()}` };
+    }
+    return { ok: true, detail: stdout.trim() };
+  } catch (err) {
+    // `claude auth status` may not be a command on every CLI version.
+    // Don't block the run on a missing subcommand — the env-only check is
+    // already in place.
+    return { ok: true, detail: `(claude auth status unavailable: ${err.message})` };
+  }
+}
+
 async function writeTempMcpConfig({ servers }) {
+  // The config file embeds env blocks (incl. twitterapi.io key). Lock the
+  // dir + file modes so it's not world-readable on shared machines.
   const dir = join(tmpdir(), `x-engine-${randomBytes(4).toString('hex')}`);
-  await mkdir(dir, { recursive: true });
+  await mkdir(dir, { recursive: true, mode: 0o700 });
   const path = join(dir, 'mcp.json');
-  await writeFile(path, JSON.stringify({ mcpServers: servers }, null, 2));
+  await writeFile(path, JSON.stringify({ mcpServers: servers }, null, 2), { mode: 0o600 });
   return { path, dir };
 }
 
 // Runs `claude -p` and yields parsed stream-json events (line-delimited JSON).
-// Returns { events, finalText, toolUses, exitCode }.
+// Returns { finalText, toolUses, exitCode }.
+//
+// We always pass --permission-mode bypassPermissions because we control the
+// MCP servers in this repo and headless mode has no UI to approve tool calls.
+// Trying to allow-list tool patterns instead is a footgun: server-name
+// hyphens normalize to underscores and patterns must include `__*`, so
+// mismatches cause every tool call to stall on a never-answered prompt.
 //
 // Options:
 //   prompt          — the user prompt (string)
 //   systemPrompt    — overrides Claude Code's default system prompt
 //   model           — e.g. 'claude-sonnet-4-6'
 //   mcpServers      — { name: { command, args, env } } (writes to a temp config)
-//   allowedTools    — array of tool patterns, e.g. ['mcp__peer_posts__*']
 //   maxTurns        — caps the tool-use loop
 //   cwd             — working dir for the subprocess
 //   onEvent         — callback(event) for each parsed line
@@ -61,7 +97,6 @@ export async function runClaude({
   systemPrompt,
   model,
   mcpServers,
-  allowedTools = [],
   maxTurns,
   cwd = process.cwd(),
   onEvent,
@@ -75,10 +110,10 @@ export async function runClaude({
     '--output-format', 'stream-json',
     '--verbose', // required when --output-format=stream-json
     '--mcp-config', mcpConfigPath,
+    '--permission-mode', 'bypassPermissions',
   ];
   if (systemPrompt) args.push('--system-prompt', systemPrompt);
   if (model) args.push('--model', model);
-  if (allowedTools.length) args.push('--allowedTools', allowedTools.join(','));
   if (maxTurns) args.push('--max-turns', String(maxTurns));
   args.push(prompt);
 
@@ -93,7 +128,6 @@ export async function runClaude({
     stdio: ['ignore', 'pipe', 'pipe'],
   });
 
-  const events = [];
   const toolUses = [];
   const textChunks = [];
   let stderrBuf = '';
@@ -112,7 +146,6 @@ export async function runClaude({
       } catch {
         continue;
       }
-      events.push(evt);
       handleEvent(evt, { toolUses, textChunks });
       if (onEvent) onEvent(evt);
     }
@@ -137,7 +170,6 @@ export async function runClaude({
   }
 
   return {
-    events,
     toolUses,
     finalText: textChunks.join('').trim(),
     exitCode,
@@ -147,7 +179,8 @@ export async function runClaude({
 // Walks a stream-json event and records tool_use blocks + text deltas.
 // We are deliberately lenient about event shape — Claude Code's stream-json
 // format is documented but evolves; we only inspect well-known fields.
-function handleEvent(evt, { toolUses, textChunks }) {
+// Exported for unit testing.
+export function handleEvent(evt, { toolUses, textChunks }) {
   // The `assistant` event wraps a full message with content blocks.
   if (evt.type === 'assistant' && evt.message?.content) {
     for (const block of evt.message.content) {

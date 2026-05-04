@@ -20,8 +20,6 @@ import { z } from 'zod';
 
 import { makeTwitterApi, engagementScore } from '../../scripts/lib/twitterapi-io.mjs';
 import {
-  loadState as _loadState,
-  saveState as _saveState,
   ensureHandles,
   rotatePick,
   recordPull,
@@ -101,19 +99,33 @@ function trimTweetForAgent(t) {
 
 // ----- helpers used by tools -----
 
-async function withRun(mutator) {
-  const run = await loadRun();
-  await mutator(run);
-  await saveRun(run);
-  return run;
+// Serialize state mutations across concurrent tool calls. Claude can call
+// multiple tools in a single assistant turn; without this, two tools doing
+// `load → mutate → save` race and the last writer wipes the other's work.
+let runChain = Promise.resolve();
+let stateChain = Promise.resolve();
+
+function withRun(mutator) {
+  const next = runChain.then(async () => {
+    const run = await loadRun();
+    await mutator(run);
+    await saveRun(run);
+    return run;
+  });
+  runChain = next.catch(() => {}); // failures don't poison the chain
+  return next;
 }
 
-async function withState(mutator) {
-  const state = await loadState();
-  ensureHandles(state, SEED_HANDLES);
-  await mutator(state);
-  await saveState(state);
-  return state;
+function withState(mutator) {
+  const next = stateChain.then(async () => {
+    const state = await loadState();
+    ensureHandles(state, SEED_HANDLES);
+    await mutator(state);
+    await saveState(state);
+    return state;
+  });
+  stateChain = next.catch(() => {});
+  return next;
 }
 
 function checkBudget(run) {
@@ -130,7 +142,10 @@ const ok = (data) => ({
 
 // ----- tool implementations -----
 
-const server = new McpServer({ name: 'peer-posts', version: '1.0.0' });
+// NOTE: server name uses underscores (peer_posts) so the resulting tool
+// names are stable: mcp__peer_posts__<tool>. Hyphens get normalized
+// inconsistently by Claude Code, which makes allow-listing fragile.
+const server = new McpServer({ name: 'peer_posts', version: '1.0.0' });
 
 server.registerTool(
   'list_seeds',
@@ -382,8 +397,4 @@ server.registerTool(
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
-process.stderr.write('peer-posts MCP server connected\n');
-
-// silence the linters about unused imports kept for parity:
-void _loadState;
-void _saveState;
+process.stderr.write('peer_posts MCP server connected\n');

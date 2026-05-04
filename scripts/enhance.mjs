@@ -24,7 +24,7 @@ import { fileURLToPath } from 'node:url';
 
 import { parseDraftFile } from './lib/parse-drafts.mjs';
 import { stampDraft } from './lib/stamp-draft.mjs';
-import { runClaude } from './lib/run-claude.mjs';
+import { runClaude, probeClaudeAuth } from './lib/run-claude.mjs';
 
 const here = fileURLToPath(import.meta.url);
 const ROOT = process.cwd();
@@ -36,7 +36,9 @@ const MCP_SERVER_PATH = path.resolve(here, '..', '..', 'mcp-servers/improve/serv
 
 const CHAR_LIMIT = 280;
 const DEFAULT_MODEL = 'claude-sonnet-4-6';
-const MAX_TURNS = 4; // call submit_critique then stop; 4 leaves room for one retry
+// 3 turns: think → call submit_critique → end. We retry once at the
+// caller layer (not inside the loop) if the first try doesn't emit.
+const MAX_TURNS = 3;
 
 const BANNED_PHRASES = [
   'game-changer',
@@ -175,7 +177,7 @@ async function critiqueOne({ draft, system, model, resultFile }) {
   // Wipe any previous result for this draft.
   if (existsSync(resultFile)) await unlink(resultFile);
 
-  const userPrompt = buildUserPrompt(draft, runRules(draft.body));
+  const baseUserPrompt = buildUserPrompt(draft, runRules(draft.body));
 
   const mcpServers = {
     improve: {
@@ -185,21 +187,27 @@ async function critiqueOne({ draft, system, model, resultFile }) {
     },
   };
 
-  await runClaude({
-    prompt: userPrompt,
-    systemPrompt: system,
-    model,
-    mcpServers,
-    allowedTools: ['mcp__improve'],
-    maxTurns: MAX_TURNS,
-  });
+  // Try once normally; if Claude didn't call submit_critique, re-prompt with
+  // a stricter instruction. The result file is the source of truth.
+  const attempts = [
+    baseUserPrompt,
+    baseUserPrompt + '\n\nREQUIRED: respond by calling mcp__improve__submit_critique exactly once. No prose. No other tools.',
+  ];
 
-  if (!existsSync(resultFile)) {
-    throw new Error('model did not call submit_critique (no result file written)');
+  for (const prompt of attempts) {
+    await runClaude({
+      prompt,
+      systemPrompt: system,
+      model,
+      mcpServers,
+      maxTurns: MAX_TURNS,
+    });
+    if (existsSync(resultFile)) {
+      const entries = JSON.parse(await readFile(resultFile, 'utf8'));
+      if (entries.length) return entries.at(-1);
+    }
   }
-  const entries = JSON.parse(await readFile(resultFile, 'utf8'));
-  if (!entries.length) throw new Error('result file empty');
-  return entries.at(-1); // most recent
+  throw new Error('model did not call submit_critique after retry');
 }
 
 function formatScore(s) {
@@ -235,6 +243,9 @@ async function main() {
     readFile(PEER_POSTS_PATH, 'utf8').catch(() => ''),
   ]);
   const recentPosts = await lastPostedTexts(7);
+
+  const authProbe = await probeClaudeAuth();
+  if (!authProbe.ok) throw new Error(`auth check failed: ${authProbe.reason}`);
 
   const model = process.env.IMPROVE_MODEL ?? DEFAULT_MODEL;
   const system = buildSystemPrompt({ voice, peerPosts, recentPosts });
