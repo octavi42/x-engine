@@ -101,6 +101,7 @@ export async function fetch(source, env) {
       model,
       mcpServers,
       maxTurns: maxAgentSteps,
+      verbose: true, // mirror text deltas + tool-error + result events to stderr
       onEvent(evt) {
         if (evt.type === 'assistant' && evt.message?.content) {
           for (const block of evt.message.content) {
@@ -190,6 +191,17 @@ function renderSystemPrompt({ niche, params, windowDays, poolTarget, fetchBudget
 
   return `You are an autoresearch agent that curates peer tweets for an X/Twitter content engine.
 
+# CRITICAL OPERATIONAL RULES (read first)
+1. ONLY use tools under mcp__peer_posts__*. Tools like Bash, Read, Write,
+   WebFetch, WebSearch, ToolSearch are NOT available — do not attempt them.
+2. If ANY tool returns an error, do NOT retry. Move to a different operation,
+   or call submit_patterns immediately to end the run.
+3. Do NOT add sleeps, waits, retries, or rate-limit "fixes" — fetches are
+   already serialized at 1.2s server-side.
+4. When fetch_budget reaches its limit, the tool will refuse further calls.
+   Call submit_patterns immediately with whatever pool you have.
+5. Maximum tool calls per run: ~25. Keep moves tight.
+
 # Goal
 Build a pool of ~${poolTarget} high-engagement tweets from accounts that overlap with the user's niche, then distill the patterns that made them work.
 
@@ -205,13 +217,13 @@ Build a pool of ~${poolTarget} high-engagement tweets from accounts that overlap
 - submit_patterns — TERMINAL: emit distilled patterns; END the run
 
 # Strategy
-1. list_seeds + pick_stale_seeds(${params.seedsPerRun ?? 5}).
+1. list_seeds + pick_stale_seeds(${params.seedsPerRun ?? 3}).
 2. For each picked handle, fetch_user_tweets, evaluate the tweets:
    - Off-niche (crypto, lifestyle, etc.) → blacklist_handle.
    - On-niche → score_relevance, then add_to_pool only the standout tweets.
-3. Run 2-3 search_tweets calls on niche topics from the project descriptions
+3. Run 1-2 search_tweets calls on niche topics from the project descriptions
    (e.g. "AI voice apps", "interactive fiction LLM", "indie founder AI").
-   queryType: "Top" for high-engagement, "Latest" for fresh signal.
+   queryType: "Top" for high-engagement.
 4. From search results, pick out NEW handles you'd recommend; promote_handle
    them. Add their best tweets to the pool.
 5. Stop fetching when pool >= ${poolTarget}, or budget runs out.

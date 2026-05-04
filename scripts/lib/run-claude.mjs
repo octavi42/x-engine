@@ -75,35 +75,61 @@ async function writeTempMcpConfig({ servers }) {
   return { path, dir };
 }
 
+// Default deny-list for Claude Code's built-in tools. We want the agent
+// strictly confined to MCP tools registered in mcpServers; without this the
+// agent has been observed reaching for Bash to "respect rate limits" via
+// `sleep`, looping for minutes silently. ToolSearch must remain because
+// Claude Code uses it to load MCP tool schemas on demand.
+const DEFAULT_DISALLOWED_TOOLS = [
+  'Bash',
+  'Read',
+  'Write',
+  'Edit',
+  'Glob',
+  'Grep',
+  'WebFetch',
+  'WebSearch',
+  'Task',
+  'TodoWrite',
+  'KillBash',
+  'NotebookEdit',
+  'SlashCommand',
+];
+
 // Runs `claude -p` and yields parsed stream-json events (line-delimited JSON).
 // Returns { finalText, toolUses, exitCode }.
 //
-// We always pass --permission-mode bypassPermissions because we control the
-// MCP servers in this repo and headless mode has no UI to approve tool calls.
-// Trying to allow-list tool patterns instead is a footgun: server-name
-// hyphens normalize to underscores and patterns must include `__*`, so
-// mismatches cause every tool call to stall on a never-answered prompt.
+// We always pass --permission-mode bypassPermissions + a deny-list for the
+// built-in tools. Allow-listing patterns alone is fragile (server-name
+// hyphen normalization, missing __* wildcards), and bypassPermissions on
+// its own opens Bash/Read/Write to the agent.
 //
 // Options:
-//   prompt          — the user prompt (string)
-//   systemPrompt    — overrides Claude Code's default system prompt
-//   model           — e.g. 'claude-sonnet-4-6'
-//   mcpServers      — { name: { command, args, env } } (writes to a temp config)
-//   maxTurns        — caps the tool-use loop
-//   cwd             — working dir for the subprocess
-//   onEvent         — callback(event) for each parsed line
+//   prompt           — the user prompt (string)
+//   systemPrompt     — overrides Claude Code's default system prompt
+//   model            — e.g. 'claude-sonnet-4-6'
+//   mcpServers       — { name: { command, args, env } } (writes to a temp config)
+//   maxTurns         — caps the tool-use loop
+//   disallowedTools  — extra tools to block (default list above is always added)
+//   cwd              — working dir for the subprocess
+//   onEvent          — callback(event) for each parsed line
+//   verbose          — if true, mirror tool calls + text to stderr live
 export async function runClaude({
   prompt,
   systemPrompt,
   model,
   mcpServers,
   maxTurns,
+  disallowedTools = [],
   cwd = process.cwd(),
   onEvent,
+  verbose = false,
 }) {
   ensureSubscriptionAuth();
 
   const { path: mcpConfigPath, dir: mcpDir } = await writeTempMcpConfig({ servers: mcpServers });
+
+  const denyList = [...new Set([...DEFAULT_DISALLOWED_TOOLS, ...disallowedTools])];
 
   const args = [
     '-p',
@@ -111,6 +137,7 @@ export async function runClaude({
     '--verbose', // required when --output-format=stream-json
     '--mcp-config', mcpConfigPath,
     '--permission-mode', 'bypassPermissions',
+    '--disallowedTools', denyList.join(','),
   ];
   if (systemPrompt) args.push('--system-prompt', systemPrompt);
   if (model) args.push('--model', model);
@@ -147,6 +174,7 @@ export async function runClaude({
         continue;
       }
       handleEvent(evt, { toolUses, textChunks });
+      if (verbose) mirrorToStderr(evt);
       if (onEvent) onEvent(evt);
     }
   });
@@ -174,6 +202,32 @@ export async function runClaude({
     finalText: textChunks.join('').trim(),
     exitCode,
   };
+}
+
+// Mirrors interesting events to stderr for live diagnosis. When the agent
+// hangs, stdout shows only tool_use; stderr now also shows model "thoughts"
+// (text deltas), tool errors, and result events with cost/duration.
+function mirrorToStderr(evt) {
+  if (evt.type === 'assistant' && evt.message?.content) {
+    for (const block of evt.message.content) {
+      if (block.type === 'text' && typeof block.text === 'string' && block.text.trim()) {
+        process.stderr.write(`[think] ${block.text.replace(/\s+/g, ' ').slice(0, 240)}\n`);
+      }
+    }
+  }
+  if (evt.type === 'user' && evt.message?.content) {
+    for (const block of evt.message.content) {
+      if (block.type === 'tool_result' && block.is_error) {
+        const text = typeof block.content === 'string' ? block.content : JSON.stringify(block.content);
+        process.stderr.write(`[tool-error] ${text.slice(0, 240)}\n`);
+      }
+    }
+  }
+  if (evt.type === 'result') {
+    const cost = evt.total_cost_usd ?? evt.usage?.total_cost_usd;
+    const duration = evt.duration_ms;
+    process.stderr.write(`[result] ${evt.subtype ?? 'done'} · ${duration ? `${(duration / 1000).toFixed(1)}s` : ''} · $${cost ?? '—'}\n`);
+  }
 }
 
 // Walks a stream-json event and records tool_use blocks + text deltas.
