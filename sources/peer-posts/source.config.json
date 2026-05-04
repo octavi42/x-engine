@@ -15,9 +15,10 @@
       "karpathy"
     ],
     "windowDays": 14,
-    "seedsPerRun": 5,
-    "poolTarget": 30,
-    "maxAgentSteps": 30,
+    "seedsPerRun": 3,
+    "poolTarget": 20,
+    "maxAgentSteps": 20,
+    "fetchBudget": 8,
     "maxTokens": 6000
   }
 }

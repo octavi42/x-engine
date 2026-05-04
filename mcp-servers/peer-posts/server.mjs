@@ -99,11 +99,15 @@ function trimTweetForAgent(t) {
 
 // ----- helpers used by tools -----
 
+const FETCH_DELAY_MS = Number(process.env.PEER_POSTS_FETCH_DELAY_MS ?? 1200);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 // Serialize state mutations across concurrent tool calls. Claude can call
 // multiple tools in a single assistant turn; without this, two tools doing
 // `load → mutate → save` race and the last writer wipes the other's work.
 let runChain = Promise.resolve();
 let stateChain = Promise.resolve();
+let fetchChain = Promise.resolve();
 
 function withRun(mutator) {
   const next = runChain.then(async () => {
@@ -128,11 +132,32 @@ function withState(mutator) {
   return next;
 }
 
+// Serialize external twitter fetches with a small delay between them. Even
+// at $10 paid balance, twitterapi.io's QPS is low; firing 5 in parallel
+// triggered 429s in the previous run. The chain enforces "at most one
+// fetch in flight, with FETCH_DELAY_MS between consecutive fetches."
+async function withFetchLock(fn) {
+  const next = fetchChain.then(async () => {
+    const result = await fn();
+    await sleep(FETCH_DELAY_MS);
+    return result;
+  });
+  fetchChain = next.catch(() => {});
+  return next;
+}
+
+function logCall(name, input) {
+  const preview = JSON.stringify(input).slice(0, 80);
+  process.stderr.write(`[mcp] ${name}(${preview})\n`);
+}
+
 function checkBudget(run) {
   if (run.fetch_calls >= FETCH_BUDGET) {
-    throw new Error(
-      `fetch budget exhausted (${FETCH_BUDGET} calls used). Call submit_patterns now with what you have.`
+    const err = new Error(
+      `fetch budget exhausted (${FETCH_BUDGET} calls used). Call submit_patterns now with what you have. Do NOT retry.`
     );
+    err.budgetExhausted = true;
+    throw err;
   }
 }
 
@@ -194,19 +219,24 @@ server.registerTool(
     },
   },
   async ({ handle, include_replies = false }) => {
-    const run = await loadRun();
-    checkBudget(run);
-    run.fetch_calls += 1;
-    await saveRun(run);
+    logCall('fetch_user_tweets', { handle });
+    // Reserve before the network call; if the budget is full, fail fast
+    // and tell the agent to stop.
+    await withRun((r) => checkBudget(r));
 
-    const tweets = await twitter.userLastTweets({
-      userName: handle,
-      includeReplies: include_replies,
-      sinceDate: sinceIso,
-      max: 30,
-    });
+    const tweets = await withFetchLock(() =>
+      twitter.userLastTweets({
+        userName: handle,
+        includeReplies: include_replies,
+        sinceDate: sinceIso,
+        max: 30,
+      })
+    );
 
+    let fetchCalls = 0;
     await withRun((r) => {
+      r.fetch_calls = (r.fetch_calls ?? 0) + 1;
+      fetchCalls = r.fetch_calls;
       for (const t of tweets) r.tweet_cache[t.id] = t;
       r.fetched_handles = r.fetched_handles ?? [];
       if (!r.fetched_handles.includes(handle.toLowerCase())) {
@@ -217,7 +247,7 @@ server.registerTool(
     return ok({
       handle,
       count: tweets.length,
-      fetch_calls_used: run.fetch_calls,
+      fetch_calls_used: fetchCalls,
       fetch_budget: FETCH_BUDGET,
       tweets: tweets.map(trimTweetForAgent),
     });
@@ -236,19 +266,23 @@ server.registerTool(
     },
   },
   async ({ query, query_type = 'Top', max = 20 }) => {
-    const run = await loadRun();
-    checkBudget(run);
-    run.fetch_calls += 1;
-    await saveRun(run);
+    logCall('search_tweets', { query: query.slice(0, 60), query_type, max });
+    await withRun((r) => checkBudget(r));
 
-    const tweets = await twitter.searchTweets({ query, queryType: query_type, max });
+    const tweets = await withFetchLock(() =>
+      twitter.searchTweets({ query, queryType: query_type, max })
+    );
+
+    let fetchCalls = 0;
     await withRun((r) => {
+      r.fetch_calls = (r.fetch_calls ?? 0) + 1;
+      fetchCalls = r.fetch_calls;
       for (const t of tweets) r.tweet_cache[t.id] = t;
     });
     return ok({
       query,
       count: tweets.length,
-      fetch_calls_used: run.fetch_calls,
+      fetch_calls_used: fetchCalls,
       fetch_budget: FETCH_BUDGET,
       tweets: tweets.map(trimTweetForAgent),
     });
