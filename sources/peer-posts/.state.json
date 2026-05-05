@@ -10,9 +10,9 @@
     "swyx": {
       "handle": "swyx",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0
+      "last_pulled": "2026-05-05",
+      "score_sum": 3,
+      "score_n": 1
     },
     "simonw": {
       "handle": "simonw",
@@ -24,16 +24,16 @@
     "theo": {
       "handle": "theo",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0
+      "last_pulled": "2026-05-05",
+      "score_sum": 4,
+      "score_n": 1
     },
     "jxnlco": {
       "handle": "jxnlco",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0
+      "last_pulled": "2026-05-05",
+      "score_sum": 3,
+      "score_n": 1
     },
     "nutlope": {
       "handle": "nutlope",
@@ -45,9 +45,9 @@
     "sama": {
       "handle": "sama",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0
+      "last_pulled": "2026-05-05",
+      "score_sum": 3,
+      "score_n": 1
     },
     "karpathy": {
       "handle": "karpathy",
@@ -127,6 +127,24 @@
       "score_n": 1,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
+    },
+    "alexcooldev": {
+      "handle": "alexcooldev",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-05-05",
+      "promoted_reason": "Solo founder building with React Native/Expo, posts specific revenue+stack breakdowns ($18K-24K/month), 3286-4382 bookmarks per post — exact niche match for Octavi's mobile AI work and SF startup aspirations"
+    },
+    "defileo": {
+      "handle": "defileo",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-05-05",
+      "promoted_reason": "Posts narrative-driven local AI pipeline stories (Whisper offline, JARVIS-style) with high bookmark rates — strong overlap with Octavi's UGC discovery pipeline angle"
     }
   },
   "discovered": {
@@ -192,7 +210,28 @@
       "last_seen": "2026-05-04",
       "score": 4,
       "reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
+    },
+    "alexcooldev": {
+      "handle": "alexcooldev",
+      "first_seen": "2026-05-05",
+      "last_seen": "2026-05-05",
+      "score": 5,
+      "reason": "Solo founder building with React Native/Expo, posts specific revenue+stack breakdowns ($18K-24K/month), 3286-4382 bookmarks per post — exact niche match for Octavi's mobile AI work and SF startup aspirations"
+    },
+    "defileo": {
+      "handle": "defileo",
+      "first_seen": "2026-05-05",
+      "last_seen": "2026-05-05",
+      "score": 4,
+      "reason": "Posts narrative-driven local AI pipeline stories (Whisper offline, JARVIS-style) with high bookmark rates — strong overlap with Octavi's UGC discovery pipeline angle"
+    },
+    "donvito": {
+      "handle": "donvito",
+      "first_seen": "2026-05-05",
+      "last_seen": "2026-05-05",
+      "score": 3,
+      "reason": "React Native + AI mobile dev with Cursor/Expo, publishes build logs and code — relevant to Octavi's mobile stack but older content cadence"
     }
   },
-  "last_run": "2026-05-04T13:30:30.003Z"
+  "last_run": "2026-05-05T09:28:01.756Z"
 }
