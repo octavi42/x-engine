@@ -8,6 +8,18 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-05
+
+- Anthropic unveiled 10 financial-services AI agents (Bloomberg, PYMNTS) — preconfigured for KYC checks, pitchbook generation, deal screening. Push to win Wall Street; investment-bank/asset-manager/insurance buyers as the wedge.
+- OpenAI x PwC partnership — building AI agents for the "core operating rhythms of finance": forecasting, planning, reporting, procurement, payments, treasury. Same-day finance push as Anthropic.
+- Bloomberg breaks: OpenAI is finalizing "The Development Company" — $4B raise from 19 investors at $10B valuation. Direct mirror of Anthropic + Goldman/Blackstone $1.5B venture announced 5/4. Two enterprise-AI deployment vehicles within 24h.
+- OpenAI + Anthropic both officially launched their AI services subsidiaries in India today (theaiinsider.tech, technosports). Same-day market expansion.
+- Cursor 2.5 patched a vulnerability where a malicious Git repository could trigger arbitrary code execution through Cursor's AI agent. Clone-then-run agent threat model is now public. Same surface area as the PocketOS DB-wipe story (5/3) — agents inheriting host capabilities with no scope isolation.
+- Google's TurboQuant landed at ICLR 2026 — KV-cache compression via PolarQuant vector rotation + Quantized Johnson-Lindenstrauss projection. Aimed at long-context inference cost. Two-step process, drops KV memory significantly.
+- GPT-5.5 rolled out on Amazon Bedrock — OpenAI frontier model now usable inside AWS with native security controls and procurement contracts. Microsoft-OpenAI exclusivity unwind continues (started 5/1 with AWS access).
+- Legal AI startup Legora at $5.6B valuation — direct competition with Harvey heating up. YC alum Skio sold for $105M after raising only $8M (capital-efficient AI exit pattern).
+- Anthropic eyeing $900B valuation round per TechCrunch — ahead of OpenAI's reported $852B raise; both targeting IPO posture in 2026-27.
+
 ## 2026-05-04
 
 - Anthropic + Goldman Sachs + Blackstone launched a $1.5B AI deployment firm today (CNBC, TechCrunch). Hellman & Friedman, Apollo, General Atlantic also in. Not consulting — embeds engineers inside portfolio companies to redesign workflows around Claude. Direct shot at McKinsey-style enterprise AI rollouts.
