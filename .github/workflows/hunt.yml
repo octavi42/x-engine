@@ -46,6 +46,13 @@ jobs:
 
       - run: npm ci
 
+      - name: Install Claude Code CLI
+        # Pin to a major so a bad upstream release doesn't silently brick
+        # the run. Bump intentionally via PR.
+        run: |
+          npm install -g '@anthropic-ai/claude-code@^2'
+          claude --version
+
       - name: Run hunter
         env:
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}

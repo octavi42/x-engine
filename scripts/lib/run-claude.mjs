@@ -206,15 +206,19 @@ export async function runClaude({
     stderrBuf += chunk;
   });
 
-  const exitCode = await new Promise((resolve, reject) => {
-    child.on('error', (err) => reject(new ClaudeRunError(`failed to spawn claude: ${err.message}`)));
-    child.on('close', (code) => resolve(code ?? 0));
-  });
-
-  clearInterval(heartbeat);
-
-  // Best-effort temp cleanup.
-  await rm(mcpDir, { recursive: true, force: true }).catch(() => {});
+  let exitCode;
+  try {
+    exitCode = await new Promise((resolve, reject) => {
+      child.on('error', (err) => reject(new ClaudeRunError(`failed to spawn claude: ${err.message}`)));
+      child.on('close', (code) => resolve(code ?? 0));
+    });
+  } finally {
+    // Always clear; otherwise a spawn ENOENT (or any rejection) leaks the
+    // interval and keeps the event loop alive until the parent runner
+    // kills the process.
+    clearInterval(heartbeat);
+    await rm(mcpDir, { recursive: true, force: true }).catch(() => {});
+  }
 
   if (exitCode !== 0) {
     throw new ClaudeRunError(
