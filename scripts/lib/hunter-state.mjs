@@ -51,13 +51,42 @@ export function isAlreadySuggested(state, tweetId) {
   return Boolean(state.entries[String(tweetId)]);
 }
 
-export function recordSuggestion(state, { tweet, score, comment }) {
+// Rich per-suggestion record. Includes the full tweet snapshot at the time
+// we surfaced it (so retrospective analysis works even if the tweet is
+// deleted later) and the score breakdown (so we can correlate score to
+// outcome once we add reply-engagement tracking in v3.0.2). The `outcome`
+// field starts null and is meant to be filled in later — manually for now,
+// programmatically once feedback-replies.mjs lands.
+export function recordSuggestion(
+  state,
+  { tweet, score, comment, reasoning, matchedQuery }
+) {
   state.entries[String(tweet.id)] = {
     suggestedAt: new Date().toISOString(),
     author: tweet.handle,
     url: tweet.url,
-    score,
+    tweetText: tweet.text,
+    metrics: {
+      likes: tweet.likes,
+      replies: tweet.replies,
+      retweets: tweet.retweets,
+      bookmarks: tweet.bookmarks,
+      views: tweet.views,
+      ageMinutes: score.ageMinutes,
+    },
+    scoreDetails: {
+      ratio: score.score,
+      candidateVelocity: score.candidateVelocity,
+      authorMedianVelocity: score.authorMedianVelocity,
+      authorSampleSize: score.authorSampleSize,
+      controversy: score.controversy,
+    },
+    score: score.score,
     comment,
+    reasoning: reasoning ?? null,
+    matchedQuery: matchedQuery ?? null,
+    outcome: null, // posted | edited | skipped | null (filled later)
+    outcomeNotes: null,
   };
 }
 

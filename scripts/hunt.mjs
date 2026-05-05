@@ -48,11 +48,13 @@ import {
 import { generateSuggestion, COMMENT_CHAR_LIMIT } from './lib/comment-gen.mjs';
 import { probeClaudeAuth } from './lib/run-claude.mjs';
 import { parseArchive, topPerformers } from './lib/archive.mjs';
+import { appendRunSection } from './lib/hunter-log.mjs';
 
 const here = fileURLToPath(import.meta.url);
 const ROOT = process.cwd();
 const CONFIG_PATH = path.join(ROOT, 'sources/comment-hunter/source.config.json');
 const STATE_PATH = path.join(ROOT, 'sources/comment-hunter/.state.json');
+const LOG_PATH = path.join(ROOT, 'sources/comment-hunter/log.md');
 const VOICE_PATH = path.join(ROOT, 'config/voice.md');
 const ARCHIVE_PATH = path.join(ROOT, 'posted/archive.md');
 const MCP_SERVER_PATH = path.resolve(here, '..', '..', 'mcp-servers/comment/server.mjs');
@@ -227,7 +229,9 @@ async function main() {
 
   // --- 1. Search across topics ---
   const searched = new Map(); // tweet.id → tweet
+  const matchedQueryBy = new Map(); // tweet.id → topic that surfaced it first
   let searchCalls = 0;
+  const searchErrors = [];
   for (const topic of config.searchQueries) {
     const query = buildSearchQuery(topic, config);
     try {
@@ -239,10 +243,15 @@ async function main() {
       searchCalls += 1;
       for (const t of tweets) {
         if (!t.id) continue;
-        if (!searched.has(t.id)) searched.set(t.id, t);
+        if (!searched.has(t.id)) {
+          searched.set(t.id, t);
+          matchedQueryBy.set(t.id, topic); // record first-match topic
+        }
       }
     } catch (err) {
-      console.warn(`hunt: search failed for "${topic.slice(0, 40)}…": ${err.message}`);
+      const msg = `search failed for "${topic.slice(0, 40)}…": ${err.message}`;
+      console.warn(`hunt: ${msg}`);
+      searchErrors.push(msg);
     }
   }
   console.log(`hunt: ${searchCalls} search(es) → ${searched.size} unique tweet(s) before filter`);
@@ -350,10 +359,12 @@ async function main() {
     for (const { tweet, score } of winners) {
       const ratio = displayRatio(score);
       const ratioStr = ratio !== null ? `${ratio.toFixed(1)}×` : 'cold';
+      const matchedQuery = matchedQueryBy.get(tweet.id);
       console.log('');
       console.log(`@${tweet.handle} · ${ratioStr} · ${score.reasons.join(' · ')}`);
       console.log(`  ${tweet.text.replace(/\s+/g, ' ').slice(0, 160)}`);
       console.log(`  ${tweetUrl(tweet)}`);
+      if (matchedQuery) console.log(`  query: ${matchedQuery}`);
     }
     appendRunLog(state, {
       searched: searched.size,
@@ -372,7 +383,10 @@ async function main() {
   await mkdir(runDir, { recursive: true });
 
   let notified = 0;
+  const notifiedRecords = []; // for hunter-log
+  const errors = [...searchErrors];
   for (const [idx, { tweet, score }] of winners.entries()) {
+    const matchedQuery = matchedQueryBy.get(tweet.id) ?? null;
     let suggestion;
     try {
       suggestion = await generateSuggestion({
@@ -385,13 +399,16 @@ async function main() {
         mcpServerPath: MCP_SERVER_PATH,
       });
     } catch (err) {
-      console.warn(`hunt: suggestion-gen failed for ${tweet.id}: ${err.message}`);
+      const msg = `suggestion-gen failed for ${tweet.id} (@${tweet.handle}): ${err.message}`;
+      console.warn(`hunt: ${msg}`);
+      errors.push(msg);
       continue;
     }
 
     const trimmed = String(suggestion.comment ?? '').replace(/\s+/g, ' ').trim();
     if (!trimmed) {
       console.warn(`hunt: empty suggestion for ${tweet.id} — skipping`);
+      errors.push(`empty suggestion for ${tweet.id}`);
       continue;
     }
     if (trimmed.length > COMMENT_CHAR_LIMIT) {
@@ -403,18 +420,29 @@ async function main() {
     try {
       await sendTelegram({ token: tg.token, chatId: tg.chatId, text });
     } catch (err) {
-      console.error(`hunt: telegram send failed: ${err.message}`);
+      const msg = `telegram send failed for ${tweet.id}: ${err.message}`;
+      console.error(`hunt: ${msg}`);
+      errors.push(msg);
       continue;
     }
 
     recordSuggestion(state, {
       tweet,
-      score: score.score,
+      score,
       comment: finalSuggestion.comment,
+      reasoning: finalSuggestion.reasoning,
+      matchedQuery,
     });
+    notifiedRecords.push({ tweet, score, suggestion: finalSuggestion, matchedQuery });
     notified += 1;
     console.log(`hunt: notified ${tweet.id} (@${tweet.handle}, ${score.score.toFixed(1)}×)`);
   }
+
+  const rejectedRecords = rejected.map((r) => ({
+    tweet: r.tweet,
+    score: r.score,
+    matchedQuery: matchedQueryBy.get(r.tweet.id) ?? null,
+  }));
 
   appendRunLog(state, {
     searched: searched.size,
@@ -422,6 +450,16 @@ async function main() {
     notified,
   });
   await saveHunterState(STATE_PATH, state);
+
+  // Human-readable per-run log of the funnel. Captures both winners and
+  // rejected top-scored candidates so threshold/query tuning is data-driven.
+  await appendRunSection(LOG_PATH, {
+    runSummary: { searched: searched.size, scored: scored.length, notified },
+    notified: notifiedRecords,
+    rejected: rejectedRecords,
+    errors,
+  });
+
   console.log(`\nhunt: done · ${notified} notification(s) sent (today total ${sentToday + notified}/${config.maxNotifyPerDay})`);
 }
 

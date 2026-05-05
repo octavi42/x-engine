@@ -180,6 +180,15 @@ Tunable in `sources/comment-hunter/source.config.json`:
 
 Required env: `TWITTERAPI_IO_KEY`, `CLAUDE_CODE_OAUTH_TOKEN`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. All four are already configured for other workflows.
 
+### What gets captured (for review + future improvement)
+
+Every non-dry run writes two things, both committed back to main with `[skip ci]`:
+
+- `sources/comment-hunter/.state.json` — structured state. Per notified entry: full tweet text + metrics (likes/replies/retweets/bookmarks/views/age) at suggestion time, score breakdown (velocity, author baseline, sample size, controversy), the agent's reasoning, the search query that surfaced it, and an `outcome` field (`null` until you fill it: `posted` / `edited` / `skipped`). Plus a 60-day TTL'd `runs[]` log for daily-cap accounting.
+- `sources/comment-hunter/log.md` — append-only human-readable funnel. One section per run with both winners and rejected top-scored candidates (with reject reasons) — the data you need to tune queries and thresholds.
+
+To stamp an outcome on a past suggestion, edit `.state.json` directly: set `entries["<id>"].outcome` to `posted` / `edited` / `skipped`, optionally `outcomeNotes` for context. The future `feedback-replies.mjs` (v3.0.2) will populate these automatically by reading your reply history.
+
 ## Banned phrases (from voice.md)
 Never use any of these:
 - "game-changer"
