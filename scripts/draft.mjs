@@ -23,10 +23,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { runClaude, probeClaudeAuth } from './lib/run-claude.mjs';
+import { trimTrendingLog, clipText } from './lib/trim-sources.mjs';
 
 export const CHAR_LIMIT = 280;
 const DEFAULT_MODEL = 'claude-sonnet-4-6';
 const MAX_TURNS = 4;
+const TRENDING_DAYS = 14;
+const MAX_SOURCE_BYTES = 20_000;
+const MAX_ARCHIVE_BYTES = 10_000;
 const here = fileURLToPath(import.meta.url);
 const ROOT = process.cwd();
 const DRAFTS_DIR = path.join(ROOT, 'drafts');
@@ -69,10 +73,13 @@ async function loadContext() {
   for (const d of sourceDirs) {
     const latest = path.join(SOURCES_DIR, d, 'latest.md');
     if (!existsSync(latest)) continue;
-    sources.push({ name: d, content: await readFile(latest, 'utf8') });
+    let content = await readFile(latest, 'utf8');
+    if (d === 'trending') content = trimTrendingLog(content, TRENDING_DAYS);
+    sources.push({ name: d, content: clipText(content, MAX_SOURCE_BYTES) });
   }
 
-  const archive = existsSync(ARCHIVE_PATH) ? await readFile(ARCHIVE_PATH, 'utf8') : '';
+  const archiveRaw = existsSync(ARCHIVE_PATH) ? await readFile(ARCHIVE_PATH, 'utf8') : '';
+  const archive = clipText(archiveRaw, MAX_ARCHIVE_BYTES);
 
   return { voice, projects, sources, archive };
 }

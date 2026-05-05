@@ -139,7 +139,16 @@ export async function runClaude({
     '--permission-mode', 'bypassPermissions',
     '--disallowedTools', denyList.join(','),
   ];
-  if (systemPrompt) args.push('--system-prompt', systemPrompt);
+  // Pass the system prompt via a file rather than --system-prompt <string>.
+  // The system prompt is built from many sources (voice + projects + every
+  // sources/*/latest.md + archive) and can easily exceed Linux's ARG_MAX
+  // (~128KB total argv+envp) once enough days of trending data accumulate,
+  // causing `spawn E2BIG`. The file path keeps argv small regardless of size.
+  if (systemPrompt) {
+    const systemPromptPath = join(mcpDir, 'system-prompt.txt');
+    await writeFile(systemPromptPath, systemPrompt, { mode: 0o600 });
+    args.push('--system-prompt-file', systemPromptPath);
+  }
   if (model) args.push('--model', model);
   if (maxTurns) args.push('--max-turns', String(maxTurns));
   args.push(prompt);
