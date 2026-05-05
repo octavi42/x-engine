@@ -1,0 +1,96 @@
+name: hunt
+
+# Comment-hunter — searches twitterapi.io for tweets that are accumulating
+# engagement faster than their author's baseline, asks Claude (`claude -p`,
+# Pro/Max billing) for a suggested reply, pings Telegram with the suggestion
+# + a deeplink. User opens X manually and posts (notify-only by design —
+# automated AI replies are a top-3 shadowban trigger per 2026 X-safety
+# research).
+#
+# Cron: every 30 min during peak X hours (14:00-22:00 UTC, roughly
+# 9am-5pm Eastern). 18 runs/day. Combined with maxNotifyPerDay: 3 in
+# sources/comment-hunter/source.config.json this caps notifications well
+# below saturation.
+
+on:
+  schedule:
+    - cron: "*/30 14-22 * * *"
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: "Dry run — score + print, no Claude, no Telegram."
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: x-engine-hunt
+  cancel-in-progress: false
+
+permissions:
+  contents: write          # commit state back to main
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run hunter
+        env:
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ "${{ inputs.dry }}" = "true" ]; then
+            npm run hunt:ci -- --dry
+          else
+            npm run hunt:ci
+          fi
+
+      - name: Commit state
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sources/comment-hunter/.state.json || true
+          if git diff --cached --quiet; then
+            echo "no state changes — nothing to commit"
+          else
+            git commit -m "hunter: state $(date -u +%FT%TZ) [skip ci]"
+            # Tolerate races: another hunt run may have pushed first. Pull
+            # with rebase, replay our state commit, retry once. State is a
+            # JSON merge-conflict landmine, so on rebase failure we abort
+            # and let the next run reconcile from a fresh checkout.
+            git pull --rebase --autostash origin main || git rebase --abort
+            git push || echo "push failed (likely race) — next run will retry"
+          fi
+
+      - name: Notify Telegram (failure)
+        if: failure() || cancelled()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          if [ -z "${TELEGRAM_BOT_TOKEN:-}" ] || [ -z "${TELEGRAM_CHAT_ID:-}" ]; then
+            exit 0
+          fi
+          RUN_URL="https://github.com/${REPO}/actions/runs/${RUN_ID}"
+          MSG=$(printf '🟡 Hunt run failed.\n\nLogs: %s' "$RUN_URL")
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MSG}" \
+            --data-urlencode "disable_web_page_preview=true" \
+            > /dev/null

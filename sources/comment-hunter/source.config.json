@@ -1,0 +1,28 @@
+{
+  "name": "comment-hunter",
+  "type": "comment-hunter",
+  "description": "Search-driven viral-tweet hunter. Polls twitterapi.io advanced search for recent tweets matching topic queries, scores each by velocity vs the author's own baseline, and pings Telegram with a Claude-generated suggested reply. Notify-only — user opens X manually to post (avoids automated-reply shadowban patterns).",
+  "enabled": false,
+  "params": {
+    "searchQueries": [
+      "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "(\"building in public\" OR buildinpublic OR \"shipped today\") -airdrop -giveaway -$",
+      "(ElevenLabs OR \"voice AI\" OR \"voice agent\") -airdrop -token -$",
+      "(\"local LLM\" OR Ollama OR \"on-device AI\") -token -$",
+      "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
+      "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
+      "(\"React Native\" OR Expo OR \"mobile dev\") -airdrop -token -$"
+    ],
+    "maxAgeMinutes": 90,
+    "minLikesAbsolute": 10,
+    "minVelocityRatio": 3.0,
+    "maxNotifyPerRun": 3,
+    "maxNotifyPerDay": 3,
+    "tweetsPerQuery": 30,
+    "maxCandidatesToScore": 10,
+    "authorBaselineSize": 20,
+    "fetchBudgetPerRun": 30,
+    "stateTtlDays": 60
+  }
+}

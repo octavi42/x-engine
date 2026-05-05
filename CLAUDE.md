@@ -155,6 +155,31 @@ Flags:
 
 Cost: ~3-5 tweets/day at $0.15/1k → pennies/month on twitterapi.io. Requires `TWITTERAPI_IO_KEY` (already set for the peer-posts source).
 
+## Comment hunter (early-reply hunter)
+
+`npm run hunt` is a notify-only viral-tweet hunter. Every 30 min during peak X hours (14:00-22:00 UTC via `hunt.yml`) it:
+
+1. Hits `twitterapi.io` advanced search for each topic in `sources/comment-hunter/source.config.json` (`searchQueries`), with `min_faves`, `since_time`, and `-is:reply` operators baked in.
+2. Pre-filters to: posted in last 90 min · ≥10 likes · not a reply · not in 60-day dedup state.
+3. For each candidate, fetches the author's last 20 non-reply tweets and computes velocity vs author's median (`scripts/lib/virality.mjs`). Keeps the top score that clears the absolute and ratio floors.
+4. Caps at 3 notifications/day across all runs.
+5. For each winner, runs `claude -p` (Pro/Max billing) with `mcp-servers/comment/server.mjs` to generate a single ≤200-char Expertise-Reply suggestion.
+6. Pings Telegram with author + score + tweet body + suggested reply (in a `<code>` block for mobile copy-tap) + an "Open in X" deeplink. **You open X manually and post.** Auto-posting AI replies is a known shadowban trigger.
+7. Stamps the tweet ID into `sources/comment-hunter/.state.json` (gitignored, 60-day TTL).
+
+Flags:
+- `npm run hunt:dry` — search + score + print to stdout, no Claude, no Telegram. Use this first to tune `minLikesAbsolute` / `minVelocityRatio` before turning notifications on.
+- `npm run hunt` — full pipeline.
+
+Tunable in `sources/comment-hunter/source.config.json`:
+- `searchQueries` — topics to hunt (composed with engagement + age operators at run time).
+- `maxAgeMinutes` — default 90 (matches X's algorithmic test window).
+- `minLikesAbsolute` / `minVelocityRatio` — floors. Bump up if notifications are noisy.
+- `maxNotifyPerDay` — hard cap across all runs (default 3).
+- `fetchBudgetPerRun` — twitterapi.io call ceiling per run (default 80).
+
+Required env: `TWITTERAPI_IO_KEY`, `CLAUDE_CODE_OAUTH_TOKEN`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. All four are already configured for other workflows.
+
 ## Banned phrases (from voice.md)
 Never use any of these:
 - "game-changer"

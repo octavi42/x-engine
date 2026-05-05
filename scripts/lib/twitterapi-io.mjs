@@ -52,18 +52,25 @@ export function makeTwitterApi(apiKey) {
   const call = client(apiKey);
 
   return {
-    async userLastTweets({ userName, includeReplies = false, sinceDate, max = 20 }) {
+    async userLastTweets({ userName, includeReplies = false, sinceDate, max = 20, maxPages = Infinity }) {
       const out = [];
       let cursor = '';
+      let pages = 0;
       const cutoff = sinceDate ? new Date(sinceDate).getTime() : 0;
 
-      while (out.length < max) {
+      while (out.length < max && pages < maxPages) {
         const res = await call('/twitter/user/last_tweets', {
           userName,
           cursor,
           includeReplies,
         });
-        const tweets = (res.tweets ?? []).map(normalizeTweet);
+        pages += 1;
+        // twitterapi.io's /user/last_tweets nests tweets under `data.tweets`
+        // and pagination flags at the top level — different shape from
+        // /tweet/advanced_search and /tweets, which keep `tweets` at the
+        // top level. Read both to be tolerant of either layout.
+        const tweetsRaw = res.data?.tweets ?? res.tweets ?? [];
+        const tweets = tweetsRaw.map(normalizeTweet);
         for (const t of tweets) {
           if (t.created_at && cutoff && new Date(t.created_at).getTime() < cutoff) {
             return out;
