@@ -28,7 +28,7 @@
 //               --dry mode.)
 
 import { existsSync } from 'node:fs';
-import { readFile, mkdir } from 'node:fs/promises';
+import { readFile, readdir, mkdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { randomBytes } from 'node:crypto';
 import path from 'node:path';
@@ -56,6 +56,7 @@ const CONFIG_PATH = path.join(ROOT, 'sources/comment-hunter/source.config.json')
 const STATE_PATH = path.join(ROOT, 'sources/comment-hunter/.state.json');
 const LOG_PATH = path.join(ROOT, 'sources/comment-hunter/log.md');
 const VOICE_PATH = path.join(ROOT, 'config/voice.md');
+const PROJECTS_DIR = path.join(ROOT, 'config/projects');
 const ARCHIVE_PATH = path.join(ROOT, 'posted/archive.md');
 const MCP_SERVER_PATH = path.resolve(here, '..', '..', 'mcp-servers/comment/server.mjs');
 
@@ -90,6 +91,22 @@ async function loadConfig() {
 
 async function loadVoice() {
   return readFile(VOICE_PATH, 'utf8').catch(() => '');
+}
+
+// Concatenate all config/projects/*.md so the suggestion agent can ground
+// "shipped on roadtosf" claims in the actual project list. Best-effort —
+// missing dir is fine, the prompt has a fallback.
+async function loadProjects() {
+  if (!existsSync(PROJECTS_DIR)) return '';
+  try {
+    const files = (await readdir(PROJECTS_DIR)).filter((f) => f.endsWith('.md'));
+    const bodies = await Promise.all(
+      files.sort().map(async (f) => `### ${f}\n${await readFile(path.join(PROJECTS_DIR, f), 'utf8')}`)
+    );
+    return bodies.join('\n\n');
+  } catch {
+    return '';
+  }
 }
 
 async function loadOwnTopPerformers(n = 3) {
@@ -377,7 +394,7 @@ async function main() {
   }
 
   // --- 5. Generate + notify ---
-  const [voice, ownTop] = await Promise.all([loadVoice(), loadOwnTopPerformers()]);
+  const [voice, ownTop, projects] = await Promise.all([loadVoice(), loadOwnTopPerformers(), loadProjects()]);
   const model = process.env.HUNT_MODEL ?? DEFAULT_MODEL;
   const runDir = path.join(tmpdir(), `x-engine-hunt-${randomBytes(4).toString('hex')}`);
   await mkdir(runDir, { recursive: true });
@@ -394,6 +411,7 @@ async function main() {
         scoreReasons: score.reasons,
         voice,
         ownTopPerformers: ownTop,
+        projects,
         model,
         resultFile: path.join(runDir, `suggestion-${idx}.json`),
         mcpServerPath: MCP_SERVER_PATH,
