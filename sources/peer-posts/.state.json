@@ -104,9 +104,9 @@
     "rbayuokt": {
       "handle": "rbayuokt",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0,
+      "last_pulled": "2026-05-06",
+      "score_sum": 2,
+      "score_n": 1,
       "promoted_at": "2026-05-04",
       "promoted_reason": "React Native / Expo library builder posting specific on-device ML work (OCR via mlkit), clean \"today I built\" format, 209 likes / 156 bookmarks"
     },
@@ -131,20 +131,31 @@
     "alexcooldev": {
       "handle": "alexcooldev",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0,
+      "last_pulled": "2026-05-06",
+      "score_sum": 4,
+      "score_n": 1,
       "promoted_at": "2026-05-05",
       "promoted_reason": "Solo founder building with React Native/Expo, posts specific revenue+stack breakdowns ($18K-24K/month), 3286-4382 bookmarks per post — exact niche match for Octavi's mobile AI work and SF startup aspirations"
     },
     "defileo": {
       "handle": "defileo",
-      "status": "active",
+      "status": "blacklisted",
       "last_pulled": null,
       "score_sum": 0,
       "score_n": 0,
       "promoted_at": "2026-05-05",
-      "promoted_reason": "Posts narrative-driven local AI pipeline stories (Whisper offline, JARVIS-style) with high bookmark rates — strong overlap with Octavi's UGC discovery pipeline angle"
+      "promoted_reason": "Posts narrative-driven local AI pipeline stories (Whisper offline, JARVIS-style) with high bookmark rates — strong overlap with Octavi's UGC discovery pipeline angle",
+      "blacklist_reason": "Hustle-story narrative format (Google Maps + Claude side-income), not developer building-in-public — drifted from technical AI builder niche",
+      "blacklisted_at": "2026-05-06"
+    },
+    "m2fauzaan": {
+      "handle": "M2Fauzaan",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-05-06",
+      "promoted_reason": "Native app builder, \"Anyway I fixed it / I built\" hook format, 1738 likes + 2022 bookmarks — high engagement on specific problem-solving builds"
     }
   },
   "discovered": {
@@ -231,7 +242,21 @@
       "last_seen": "2026-05-05",
       "score": 3,
       "reason": "React Native + AI mobile dev with Cursor/Expo, publishes build logs and code — relevant to Octavi's mobile stack but older content cadence"
+    },
+    "m2fauzaan": {
+      "handle": "M2Fauzaan",
+      "first_seen": "2026-05-06",
+      "last_seen": "2026-05-06",
+      "score": 4,
+      "reason": "Native app builder, \"Anyway I fixed it / I built\" hook format, 1738 likes + 2022 bookmarks — high engagement on specific problem-solving builds"
+    },
+    "tomilola_ng": {
+      "handle": "tomilola_ng",
+      "first_seen": "2026-05-06",
+      "last_seen": "2026-05-06",
+      "score": 3,
+      "reason": "React Native + Expo + FastAPI builder posting specific stack breakdowns — relevant to Octavi's mobile AI work"
     }
   },
-  "last_run": "2026-05-05T09:28:01.756Z"
+  "last_run": "2026-05-06T12:10:27.993Z"
 }
