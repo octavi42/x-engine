@@ -12,7 +12,7 @@
       "(\"local LLM\" OR Ollama OR \"on-device AI\") -token -$",
       "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
       "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
-      "(\"React Native\" OR Expo OR \"mobile dev\") -airdrop -token -$"
+      "(\"React Native\" OR \"Expo Go\" OR \"Expo SDK\" OR \"Expo Router\" OR \"mobile dev\") -airdrop -token -$"
     ],
     "maxAgeMinutes": 90,
     "minLikesAbsolute": 10,
