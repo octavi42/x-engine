@@ -157,7 +157,7 @@ Cost: ~3-5 tweets/day at $0.15/1k → pennies/month on twitterapi.io. Requires `
 
 ## Comment hunter (early-reply hunter)
 
-`npm run hunt` is a notify-only viral-tweet hunter. Every 30 min during peak X hours (14:00-22:00 UTC via `hunt.yml`) it:
+`npm run hunt` is a notify-only viral-tweet hunter. Every 30 min during peak X hours (14:00-20:00 UTC via `hunt.yml`) it:
 
 1. Hits `twitterapi.io` advanced search for each topic in `sources/comment-hunter/source.config.json` (`searchQueries`), with `min_faves`, `since_time`, and `-is:reply` operators baked in.
 2. Pre-filters to: posted in last 90 min · ≥10 likes · not a reply · not in 60-day dedup state.

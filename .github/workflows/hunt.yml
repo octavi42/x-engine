@@ -7,16 +7,19 @@ name: hunt
 # automated AI replies are a top-3 shadowban trigger per 2026 X-safety
 # research).
 #
-# Cron: every 30 min during peak X hours (14:00-22:00 UTC, roughly
-# 9am-5pm Eastern). 18 runs/day. Combined with maxNotifyPerDay: 3 in
-# sources/comment-hunter/source.config.json this caps notifications well
-# below saturation.
+# Cron: every 30 min during peak X hours (14:00-20:00 UTC, roughly
+# 9am-3pm Eastern / 17:00-23:00 Bucharest). 14 runs/day. Combined with
+# maxNotifyPerDay: 3 in sources/comment-hunter/source.config.json this
+# caps notifications well below saturation.
 
 on:
   schedule:
     # :07 / :37 instead of :00 / :30 — GH's :00 minute is heavily oversubscribed,
     # which causes runner-acquisition failures and silently-skipped slots.
-    - cron: "7,37 14-22 * * *"
+    # 14-20 UTC = 17:00-23:00 Bucharest — still awake to act on suggestions.
+    # Past 20 UTC (>23:00 local) notifications arrive too late for the
+    # tweet's reply-engagement window.
+    - cron: "7,37 14-20 * * *"
   workflow_dispatch:
     inputs:
       dry:
