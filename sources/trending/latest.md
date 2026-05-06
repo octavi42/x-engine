@@ -8,6 +8,16 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-06
+
+- Anthropic signed a compute deal with Elon Musk's SpaceX to use the full Colossus 1 facility in Memphis (220K Nvidia GPUs, +300 MW within a month). Bloomberg + Al Jazeera. Lands while Musk is still suing OpenAI/Altman — compute now reads as a fungible commodity nobody can afford to be picky about.
+- Anthropic deepens Wall Street push: 10 pre-built finance agents, full Microsoft 365 integration, Moody's data partnership, Claude Opus 4.7 as the "most capable model for financial work." Already deployed at Goldman, Visa, Citi, AIG. Fortune. Financial services now Anthropic's #2 segment after tech.
+- Sierra raised $950M at a $15B valuation (Tiger Global, GV, Sequoia, Benchmark) — agentic AI for customer service. $150M ARR in 8 quarters. Customers include Prudential, Cigna, BCBS, Rocket Mortgage, Nordstrom, plus 1-in-3 of the world's largest banks.
+- OpenAI x PwC partnership (announced 5/5) — AI agents for forecasting, planning, reporting, procurement, payments, treasury. Combined with the Anthropic-Goldman/Blackstone vehicle from 5/4, both labs are now also services firms.
+- GitHub announced Copilot code review will start consuming GitHub Actions minutes on private repos June 1, 2026, alongside new AI Credits billing. Bill is shifting from seat-based to consumption-based for code review.
+- Microsoft VS Copilot April update: cloud agent sessions runnable from the IDE, user-level custom agents, a dedicated Debugger agent, expanded skills support, chat history, Copilot CLI default reasoning bumped to Claude Opus 4.6.
+- Show HN / GitHub trending: jcode (1jehuang) — "code agent toolkit," autonomous code-modifying utilities, climbing GH trending this week.
+
 ## 2026-05-05
 
 - Anthropic unveiled 10 financial-services AI agents (Bloomberg, PYMNTS) — preconfigured for KYC checks, pitchbook generation, deal screening. Push to win Wall Street; investment-bank/asset-manager/insurance buyers as the wedge.
