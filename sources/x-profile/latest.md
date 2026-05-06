@@ -95,7 +95,7 @@ In trending news (5/3 → 5/4): the standout AI signal is the Harvard study on O
 
 ## Top performing
 <!-- auto-feedback:start -->
-Generated 2026-05-04 — top 2 by engagement score (likes + 2·replies + 3·bookmarks + 1.5·reposts).
+Generated 2026-05-06 — top 2 by engagement score (likes + 2·replies + 3·bookmarks + 1.5·reposts).
 
 1. **2026-05-03** · score 2.0 · Likes 2 · Replies 0 · Reposts 0 · Bookmarks 0 · Views 58
    > every page refresh on my ai game was regenerating images server-side. cause: base64 dataUrls in sessionStorage, partialize stripped the field on persist. ~$0.30 and ~30s wasted per reload. fix: upload each image to vercel blob, store the…
