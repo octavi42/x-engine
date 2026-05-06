@@ -14,7 +14,9 @@ name: hunt
 
 on:
   schedule:
-    - cron: "*/30 14-22 * * *"
+    # :07 / :37 instead of :00 / :30 — GH's :00 minute is heavily oversubscribed,
+    # which causes runner-acquisition failures and silently-skipped slots.
+    - cron: "7,37 14-22 * * *"
   workflow_dispatch:
     inputs:
       dry:

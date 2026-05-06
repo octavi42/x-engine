@@ -6,7 +6,12 @@ name: morning
 
 on:
   schedule:
-    - cron: "0 6 * * *"      # 06:00 UTC ≈ 09:00 EEST (summer) / 08:00 EET (winter)
+    # Two slots, both off-the-hour to dodge GitHub's :00 high-load minute
+    # where scheduled runs frequently fail with "runner not acquired".
+    # The second slot is a backup: if today's draft already exists, the
+    # job exits early as a no-op.
+    - cron: "17 6 * * *"     # 06:17 UTC ≈ 09:17 EEST (summer) / 08:17 EET (winter) — primary
+    - cron: "17 7 * * *"     # 07:17 UTC — catch-up if primary missed runner acquisition
   workflow_dispatch:
     inputs:
       date:
@@ -64,8 +69,27 @@ jobs:
           fi
           echo "value=$value" >> "$GITHUB_OUTPUT"
 
+      # ---- 0. catch-up gate ------------------------------------------------
+      # The 07:17 backup cron exists in case the 06:17 primary couldn't
+      # acquire a runner. If today's draft is already in the repo, exit
+      # early so the backup is a no-op. Manual workflow_dispatch always
+      # runs (so you can force a regenerate via --force).
+      - name: Skip if draft already exists
+        id: gate
+        env:
+          DATE: ${{ steps.date.outputs.value }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ] && [ -s "drafts/${DATE}.md" ]; then
+            echo "drafts/${DATE}.md already exists — backup cron is a no-op"
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          fi
+
       # ---- 1. sync sources --------------------------------------------------
       - name: Sync sources
+        if: steps.gate.outputs.should_run == 'true'
         env:
           # Skip the obsidian-personal source — it needs a local vault that
           # doesn't exist on the CI runner.
@@ -83,12 +107,14 @@ jobs:
 
       # ---- 2. generate today's drafts --------------------------------------
       - name: Draft
+        if: steps.gate.outputs.should_run == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: npm run draft:ci -- --date=${{ steps.date.outputs.value }} --force
 
       # ---- 3. score + refine each draft ------------------------------------
       - name: Enhance
+        if: steps.gate.outputs.should_run == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: npm run enhance:ci -- --file=drafts/${{ steps.date.outputs.value }}.md
@@ -96,6 +122,7 @@ jobs:
       # ---- 4. commit + push back to main -----------------------------------
       - name: Commit + push
         id: commit
+        if: steps.gate.outputs.should_run == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

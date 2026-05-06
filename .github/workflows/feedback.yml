@@ -13,7 +13,7 @@ name: feedback
 
 on:
   schedule:
-    - cron: "0 13 * * *"   # 13:00 UTC daily
+    - cron: "17 13 * * *"  # 13:17 UTC daily — off-the-hour to dodge GH's :00 high-load minute
   workflow_dispatch:
     inputs:
       max_age:
