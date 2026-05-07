@@ -149,9 +149,24 @@ jobs:
             echo "committed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "morning run ${{ steps.date.outputs.value }} [skip ci]"
-            git push
-            echo "committed=true" >> "$GITHUB_OUTPUT"
-          fi
+            # Rebase-and-retry on push race. Concurrent workflows
+            # (hunter, feedback, manual edits) can land on main during
+            # the 10-20min morning run window, rejecting our push.
+            # Pull --rebase replays our commit on top; if that conflicts
+            # we abort cleanly so the next run reconciles from a fresh
+            # checkout instead of leaving a half-applied rebase.
+            for attempt in 1 2 3; do
+              if git push; then
+                echo "committed=true" >> "$GITHUB_OUTPUT"
+                break
+              fi
+              echo "push rejected (attempt $attempt) — rebasing"
+              if ! git pull --rebase --autostash origin main; then
+                git rebase --abort || true
+                echo "rebase failed — aborting; next run will reconcile"
+                exit 1
+              fi
+            done
 
       # ---- 5. ping Telegram so you know drafts are ready -------------------
       # `curl --data-urlencode` handles escaping; MSG embeds real \n via
