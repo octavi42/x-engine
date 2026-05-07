@@ -78,3 +78,41 @@ Searched: **47** unique · Scored: **8** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-05-07 16:13 UTC
+
+Searched: **57** unique · Scored: **8** · Notified: **3**
+
+### Notified
+
+- **@brian_armstrong** · 243.0× · 237❤ 63💬 in 24m · vel 15.41/min vs author median 0.06 → 243.0×
+  - URL: https://x.com/brian_armstrong/status/2052415200981115172
+  - Tweet: Now AI agents on AWS can pay for services in USDC, settled on @base
+  - Suggestion: how do spend limits work per invocation? shared wallet + a runaway retry loop and it's empty before cloudwatch notices
+  - Reasoning: Shape C — points at the real unsolved engineering problem (per-invocation spend caps on a shared wallet) with a concrete failure mode, sounds like an engineer who's actually thought about deploying this.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@SuhailKakar** · 33.3× · 95❤ 14💬 in 80m · vel 1.53/min vs author median 0.05 → 33.3×
+  - URL: https://x.com/SuhailKakar/status/2052400942369386638
+  - Tweet: watching people vibe code apps with zero security sense is crazy exposed api keys, no auth, prod secrets in client code - one push from a 40k openai bill and a leaked db i spent 6 years building apps used by millions, packaged my non-negotiables into 20 skills for claude code + codex - link below
+  - Suggestion: hit this on roadtosf — stripe live key in NEXT_PUBLIC_* because the dashboard snippet defaulted to it. baked into the client bundle at build. caught it before prod, barely.
+  - Reasoning: Shape A lived experience: anchors to a real shipped project with a specific Next.js footgun (NEXT_PUBLIC_* bakes secrets into the client bundle), directly matching the tweet's "prod secrets in client code" complaint with a concrete near-miss.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@marclou** · 24.7× · 160❤ 44💬 in 59m · vel 4.23/min vs author median 0.17 → 24.7×
+  - URL: https://x.com/marclou/status/2052406367785566210
+  - Tweet: 2026 goal: make all my startups AI-first. I'm starting with @DataFast_: ✅ Open all API endpoints ✅ llms.txt & markdown docs ⬜️ CLI (in progress) ⬜️ MCP ⬜️ Generative UI ⬜️ Onboarding w/ paywall At the speed AI is going, I think a lot of front-end will disapear and SaaS will be mostly backend. AI assistants will do the UI.
+  - Suggestion: who owns session state when generative UI regenerates the page on every turn
+  - Reasoning: Shape C — targets the one unsolved implementation detail behind "AI assistants will do the UI," sounds like an engineer who's actually hit this wall rather than a cheerleader.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Rejected (top 2 scored)
+
+- @Cointelegraph · 2.3× · 106❤ 22💬 in 32m · vel 4.65/min vs author median 1.99 → 2.3×
+  - 🔥 JUST IN: Coinbase integrates x402 payments into Amazon Bedrock AgentCore, enabling AI agents to make USDC micropayments on Base and Solana. https://t.co/GonpMNgybs
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @Cointelegraph · 1.0× · 57❤ 34💬 in 63m · vel 1.99/min vs author median 2.04 → 1.0× · controversy 0.60 (replies/likes)
+  - 🔥 INSIGHT: “If we believe AI agents are going to be economically important actors, we need a financial system that looks a lot like DeFi,” says @a16zcrypto GP Guy Wuollet. https://t.co/i6hdqr3sXZ
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---

@@ -161,6 +161,87 @@
       "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2052415200981115172": {
+      "suggestedAt": "2026-05-07T16:12:23.547Z",
+      "author": "brian_armstrong",
+      "url": "https://x.com/brian_armstrong/status/2052415200981115172",
+      "tweetText": "Now AI agents on AWS can pay for services in USDC, settled on @base",
+      "metrics": {
+        "likes": 237,
+        "replies": 63,
+        "retweets": 22,
+        "bookmarks": 22,
+        "views": 19401,
+        "ageMinutes": 23.559066666666666
+      },
+      "scoreDetails": {
+        "ratio": 243.01829340339762,
+        "candidateVelocity": 15.408080682313392,
+        "authorMedianVelocity": 0.0634029663632638,
+        "authorSampleSize": 19,
+        "controversy": 0.26582278481012656
+      },
+      "score": 243.01829340339762,
+      "comment": "how do spend limits work per invocation? shared wallet + a runaway retry loop and it's empty before cloudwatch notices",
+      "reasoning": "Shape C — points at the real unsolved engineering problem (per-invocation spend caps on a shared wallet) with a concrete failure mode, sounds like an engineer who's actually thought about deploying this.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2052400942369386638": {
+      "suggestedAt": "2026-05-07T16:12:49.084Z",
+      "author": "SuhailKakar",
+      "url": "https://x.com/SuhailKakar/status/2052400942369386638",
+      "tweetText": "watching people vibe code apps with zero security sense is crazy\n\nexposed api keys, no auth, prod secrets in client code - one push from a 40k openai bill and a leaked db\n\ni spent 6 years building apps used by millions, packaged my non-negotiables into 20 skills for claude code + codex - link below",
+      "metrics": {
+        "likes": 95,
+        "replies": 14,
+        "retweets": 7,
+        "bookmarks": 81,
+        "views": 7680,
+        "ageMinutes": 80.20906666666667
+      },
+      "scoreDetails": {
+        "ratio": 33.29064728387008,
+        "candidateVelocity": 1.533492473003883,
+        "authorMedianVelocity": 0.04606376259156991,
+        "authorSampleSize": 19,
+        "controversy": 0.14736842105263157
+      },
+      "score": 33.29064728387008,
+      "comment": "hit this on roadtosf — stripe live key in NEXT_PUBLIC_* because the dashboard snippet defaulted to it. baked into the client bundle at build. caught it before prod, barely.",
+      "reasoning": "Shape A lived experience: anchors to a real shipped project with a specific Next.js footgun (NEXT_PUBLIC_* bakes secrets into the client bundle), directly matching the tweet's \"prod secrets in client code\" complaint with a concrete near-miss.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2052406367785566210": {
+      "suggestedAt": "2026-05-07T16:13:22.297Z",
+      "author": "marclou",
+      "url": "https://x.com/marclou/status/2052406367785566210",
+      "tweetText": "2026 goal: make all my startups AI-first.\n\nI'm starting with @DataFast_:\n\n✅ Open all API endpoints\n✅ llms.txt & markdown docs\n⬜️ CLI (in progress)\n⬜️ MCP\n⬜️ Generative UI\n⬜️ Onboarding w/ paywall\n\nAt the speed AI is going, I think a lot of front-end will disapear and SaaS will be mostly backend.\n\nAI assistants will do the UI.",
+      "metrics": {
+        "likes": 160,
+        "replies": 44,
+        "retweets": 3,
+        "bookmarks": 105,
+        "views": 6718,
+        "ageMinutes": 58.65906666666667
+      },
+      "scoreDetails": {
+        "ratio": 24.651421111495605,
+        "candidateVelocity": 4.227820422191057,
+        "authorMedianVelocity": 0.17150412558647635,
+        "authorSampleSize": 19,
+        "controversy": 0.275
+      },
+      "score": 24.651421111495605,
+      "comment": "who owns session state when generative UI regenerates the page on every turn",
+      "reasoning": "Shape C — targets the one unsolved implementation detail behind \"AI assistants will do the UI,\" sounds like an engineer who's actually hit this wall rather than a cheerleader.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
@@ -231,6 +312,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-05-07T16:13:22.298Z",
+      "searched": 57,
+      "scored": 8,
+      "notified": 3
     }
   ]
 }
