@@ -71,19 +71,33 @@ jobs:
 
       # ---- 0. catch-up gate ------------------------------------------------
       # The 07:17 backup cron exists in case the 06:17 primary couldn't
-      # acquire a runner. If today's draft is already in the repo, exit
-      # early so the backup is a no-op. Manual workflow_dispatch always
-      # runs (so you can force a regenerate via --force).
-      - name: Skip if draft already exists
+      # acquire a runner. Skip only when the draft was *generated today*
+      # — checking existence alone breaks if a stale file (e.g. a
+      # hand-generated draft from days ago) already sits at that path.
+      # We compare the file's mtime UTC date to today UTC.
+      - name: Skip if draft was already generated today
         id: gate
         env:
           DATE: ${{ steps.date.outputs.value }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
-          if [ "$EVENT_NAME" = "schedule" ] && [ -s "drafts/${DATE}.md" ]; then
-            echo "drafts/${DATE}.md already exists — backup cron is a no-op"
+          if [ "$EVENT_NAME" != "schedule" ]; then
+            echo "manual dispatch — always run"
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ ! -s "drafts/${DATE}.md" ]; then
+            echo "drafts/${DATE}.md missing — primary did not run, generating"
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          file_mtime_date=$(date -u -r "drafts/${DATE}.md" +%F)
+          today=$(date -u +%F)
+          if [ "$file_mtime_date" = "$today" ]; then
+            echo "drafts/${DATE}.md generated today (${file_mtime_date}) — backup is a no-op"
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           else
+            echo "drafts/${DATE}.md is stale (mtime ${file_mtime_date}, today ${today}) — regenerating"
             echo "should_run=true" >> "$GITHUB_OUTPUT"
           fi
 
