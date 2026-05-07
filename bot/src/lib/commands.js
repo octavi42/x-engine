@@ -1,4 +1,4 @@
-import { sendMessage, deleteMessages, escapeHtml } from "./telegram.js";
+import { sendMessage, deleteMessages, escapeHtml, sanitizeTelegramHtml } from "./telegram.js";
 import { getFile, putFile } from "./github.js";
 import { parseDrafts, stampDraft, replaceBody } from "./drafts.js";
 import { runAgent, clearHistory } from "./llm.js";
@@ -60,7 +60,9 @@ export async function handleCommand(env, msg) {
   if (text.startsWith("/")) return reply(env, chatId, "unknown command — try /help");
 
   const agentReply = await runAgent(env, chatId, text);
-  return reply(env, chatId, agentReply);
+  // LLM output is free-form — may contain stray "<" (e.g. "<3s") that the
+  // HTML parser rejects. Sanitize while preserving allowed Telegram tags.
+  return reply(env, chatId, sanitizeTelegramHtml(agentReply));
 }
 
 function helpText() {
