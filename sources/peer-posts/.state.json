@@ -113,18 +113,18 @@
     "mayfer": {
       "handle": "mayfer",
       "status": "active",
-      "last_pulled": "2026-05-04",
-      "score_sum": 3,
-      "score_n": 1,
+      "last_pulled": "2026-05-07",
+      "score_sum": 8,
+      "score_n": 2,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Local AI pipeline builder (whisper+qwen+moondream offline) — massive engagement, maps directly to Octavi's UGC discovery pipeline with local models"
     },
     "prajwaltomar_": {
       "handle": "PrajwalTomar_",
       "status": "active",
-      "last_pulled": "2026-05-04",
-      "score_sum": 2,
-      "score_n": 1,
+      "last_pulled": "2026-05-07",
+      "score_sum": 5,
+      "score_n": 2,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
     },
@@ -151,9 +151,9 @@
     "m2fauzaan": {
       "handle": "M2Fauzaan",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0,
+      "last_pulled": "2026-05-07",
+      "score_sum": 5,
+      "score_n": 1,
       "promoted_at": "2026-05-06",
       "promoted_reason": "Native app builder, \"Anyway I fixed it / I built\" hook format, 1738 likes + 2022 bookmarks — high engagement on specific problem-solving builds"
     }
@@ -258,5 +258,5 @@
       "reason": "React Native + Expo + FastAPI builder posting specific stack breakdowns — relevant to Octavi's mobile AI work"
     }
   },
-  "last_run": "2026-05-06T12:10:27.993Z"
+  "last_run": "2026-05-07T14:20:51.160Z"
 }
