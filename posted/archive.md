@@ -29,3 +29,11 @@ Likes: 1 | Reposts: 0 | Replies: 0 | Notes:
 Bookmarks: 0
 Views: 32
 Fetched: 2026-05-04T14:38:10.333Z
+
+## 2026-05-07
+> anyway, I fixed it. judges couldn't test roadtosf.com end-to-end before hitting the paywall. fix: check if user_balance row exists for the anon cookie. if not, grant 6. skips logged-in users and repeat anons.
+
+URL: https://x.com/i/web/status/2052423716899037370
+Project: 6 free credits for first-time anon users
+Variant: refined
+Likes: — | Reposts: — | Replies: — | Notes:
