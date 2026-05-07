@@ -30,7 +30,6 @@ async function findCandidates() {
 
 function validate(candidates) {
   const errors = [];
-  if (candidates.length > MAX_PER_RUN) errors.push(`Too many candidates (${candidates.length}); cap is ${MAX_PER_RUN} per run.`);
   for (const c of candidates) {
     const file = path.basename(c.filePath);
     const body = bodyFor(c);
@@ -72,11 +71,25 @@ async function archive(c, tweetUrl) {
 async function main() {
   console.log(DRY ? "[DRY RUN]" : "[LIVE POST]");
 
-  const candidates = await findCandidates();
-  if (candidates.length === 0) {
+  const allCandidates = await findCandidates();
+  if (allCandidates.length === 0) {
     console.log("Nothing to post — no drafts marked Status: approved with empty Posted.");
     return;
   }
+
+  // Deterministic order: oldest draft file first, then in-file order.
+  // Otherwise readdir's filesystem-dependent order makes "first N" arbitrary.
+  allCandidates.sort((a, b) =>
+    a.filePath === b.filePath ? a.index - b.index : a.filePath.localeCompare(b.filePath)
+  );
+
+  // If more drafts are approved than the per-run cap, post the oldest N
+  // and defer the rest to the next slot. Hard-failing here (the prior
+  // behavior) breaks the whole pipeline when the user front-loads
+  // approvals.
+  const candidates = allCandidates.slice(0, MAX_PER_RUN);
+  const deferred = allCandidates.slice(MAX_PER_RUN);
+
   const errors = validate(candidates);
   if (errors.length) {
     console.error("Validation failed:");
@@ -84,8 +97,12 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`Plan: ${candidates.length} draft${candidates.length === 1 ? "" : "s"}`);
+  console.log(`Plan: ${candidates.length} draft${candidates.length === 1 ? "" : "s"} this slot${deferred.length ? ` (${deferred.length} deferred to next slot)` : ""}`);
   for (const c of candidates) console.log(preview(c));
+  if (deferred.length) {
+    console.log("Deferred:");
+    for (const c of deferred) console.log("  defer " + preview(c));
+  }
 
   if (DRY) {
     console.log("(dry run, no posts made)");
