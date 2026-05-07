@@ -29,3 +29,17 @@ Likes: 1 | Reposts: 0 | Replies: 0 | Notes:
 Bookmarks: 0
 Views: 32
 Fetched: 2026-05-04T14:38:10.333Z
+
+## 2026-05-07
+> added 6 free credits for first-time visitors on roadtosf.com.
+> 
+> mechanic: check if user_balance row exists for the anon cookie. if not, grant 6.
+> 
+> skips logged-in users (balance on email row) and repeat anons.
+> 
+> users can play end-to-end before the paywall.
+
+URL: https://x.com/i/web/status/2052430616340152818
+Project: 6 free credits for first-time anon users
+Variant: original
+Likes: — | Reposts: — | Replies: — | Notes:
