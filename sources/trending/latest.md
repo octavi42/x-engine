@@ -8,6 +8,14 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-07
+
+- Anthropic doubled Claude Code 5-hour rate limits for Pro/Max/Team plans, removed the peak-hour throttle on Pro/Max, and bumped Tier 1 API limits by +1500% input / +900% output. Announced 2026-05-06 at the Code with Claude SF dev day; backed by the SpaceX Colossus 1 compute deal (220k GPUs, +300MW within the month). 9to5Google, Engadget, PCWorld, Anthropic blog.
+- Anthropic shipped "Dreams" / dreaming for Claude Managed Agents — async background process reviews up to 100 prior sessions + the existing memory store, extracts patterns, and reorganizes the memory file. Beta on Opus 4.7 and Sonnet 4.6. SiliconANGLE, Digital Trends, 9to5Mac, Anthropic API docs.
+- Pragmatic Engineer + Faros + The New Stack converging take: hybrid AI coding stack is now the norm. Cursor (inline edits) + Claude Code (terminal refactors) + Codex (subagent) compose into one toolchain nobody planned. Codex already at ~60% of Cursor's usage despite recent launch. Each tool calls the others; consolidation around 3-4 tools, not the predicted single winner.
+- Anthropic deepened Wall Street push (5/5 carryover into 5/7 coverage cycle): 10 new finance agents, full Microsoft 365 integration, Moody's data partnership. Already deployed at Goldman, Visa, Citi, AIG. Financial services is now Anthropic's #2 revenue segment behind tech. Fortune.
+- HN: 2026-05-06 front page covered "DNSSEC disruption affecting .de domains" and a "Red Squares" thread on GitHub outages affecting contribution graphs. Show HN posts skewed local-AI tooling.
+
 ## 2026-05-06
 
 - Anthropic signed a compute deal with Elon Musk's SpaceX to use the full Colossus 1 facility in Memphis (220K Nvidia GPUs, +300 MW within a month). Bloomberg + Al Jazeera. Lands while Musk is still suing OpenAI/Altman — compute now reads as a fungible commodity nobody can afford to be picky about.
