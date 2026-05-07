@@ -318,6 +318,13 @@
       "searched": 57,
       "scored": 8,
       "notified": 3
+    },
+    {
+      "ts": "2026-05-07T18:10:52.108Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0,
+      "note": "daily cap hit"
     }
   ]
 }
