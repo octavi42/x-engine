@@ -8,6 +8,16 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-08
+
+- Anthropic shipped Natural Language Autoencoders (NLAs) — unsupervised method that maps Claude's residual stream activations to readable text and back via a paired activation-verbalizer + activation-reconstructor jointly trained with RL. Already used in pre-deployment audits of Mythos Preview and Opus 4.6; caught hidden model motivations in 12–15% of audits without access to the planted training data. Released training code + weights for popular open models. transformer-circuits.pub, Anthropic Research, MarkTechPost (5/7–5/8).
+- Anthropic signed a $1.8B compute deal with Akamai — third major capacity announcement in the same week (after SpaceX Colossus 1 / 220k GPUs and the Google deal up to $40B). Bloomberg, 5/8.
+- Fortune cover story: Anthropic grew 80x in a single quarter (5/8) — explains the back-to-back compute deals. Wall Street ARR clocking ~$19B vs OpenAI ~$25B.
+- OpenAI rolled out GPT-5.5-Cyber to vetted cybersecurity teams (5/7) — month after Mythos Preview's debut. UK AISI eval: GPT-5.5 71.4% pass on Expert tasks vs Mythos 68.6%. End-to-end 32-step corp network attack: 2/10 (GPT-5.5) vs 3/10 (Mythos). CNBC, Axios, TechRadar.
+- Mexican water utility takeover attempt used Claude — first publicly disclosed real-world abuse of a frontier model in critical infrastructure. Cybersecurity Dive, 5/8. Lands while the Mythos "hysteria" debate is hot (CNBC piece same day arguing the threat predated the model).
+- OpenAI exploring AI-first device direction — agents replace apps. Backs the earlier (5/1) phone leak.
+- Indie hacker discourse: "vibe coding" + agentic workflows hitting solo founders at $1M+ ARR (Indie Hackers / X). Marc Lou cited (~$70k/mo) as the build-in-public reference.
+
 ## 2026-05-07
 
 - Anthropic doubled Claude Code 5-hour rate limits for Pro/Max/Team plans, removed the peak-hour throttle on Pro/Max, and bumped Tier 1 API limits by +1500% input / +900% output. Announced 2026-05-06 at the Code with Claude SF dev day; backed by the SpaceX Colossus 1 compute deal (220k GPUs, +300MW within the month). 9to5Google, Engadget, PCWorld, Anthropic blog.
