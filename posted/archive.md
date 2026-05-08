@@ -42,4 +42,7 @@ Fetched: 2026-05-04T14:38:10.333Z
 URL: https://x.com/i/web/status/2052430616340152818
 Project: 6 free credits for first-time anon users
 Variant: original
-Likes: — | Reposts: — | Replies: — | Notes:
+Likes: 5 | Reposts: 1 | Replies: 0 | Notes:
+Bookmarks: 0
+Views: 71
+Fetched: 2026-05-08T15:03:22.380Z
