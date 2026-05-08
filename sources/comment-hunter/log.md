@@ -116,3 +116,37 @@ Searched: **57** unique · Scored: **8** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-05-08 15:47 UTC
+
+Searched: **42** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@AIFrontliner** · 280.5× · 110❤ 9💬 in 45m · vel 2.83/min vs author median 0.01 → 280.5×
+  - URL: https://x.com/AIFrontliner/status/2052765511448969249
+  - Tweet: The creator of Claude Code teaches more about vibe-coding in 30 minutes than most tutorials do in hours. Save this — it'll change how you build forever. https://t.co/x9jgGL1ApT
+  - Suggestion: claude code writes confidently wrong types. without reading the output, you won't catch it until runtime.
+  - Reasoning: Shape B counter — anchors the vibe-coding hype with a concrete failure mode (type errors) and a mechanism (confident-but-wrong output you miss by not reading), no AI tells stacked, sounds like an engineer who's been burned.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@XenBH** · 122.5× · 82❤ 27💬 in 39m · vel 3.45/min vs author median 0.03 → 122.5× · controversy 0.33 (replies/likes)
+  - URL: https://x.com/XenBH/status/2052766975944806785
+  - Tweet: AI agents will need to pay for things. API calls, compute, data, other agents' services. They can't pull out a credit card. They need payment rails that work without a person in the loop. x402 is a protocol for this. Base processes the majority of x402 agentic payment transactions. The Foundation behind it includes Cloudflare, AWS, Google, Stripe, Visa and Mastercard. I think the vast majority of 
+  - Suggestion: what's the spending limit model? agent with open-ended payment authority + untrusted tool calls = prompt injection with a credit card.
+  - Reasoning: Shape C — points to the unsolved authorization layer that x402 doesn't address, with a concrete attack vector (prompt injection + uncapped spend) that a real agent-builder would immediately worry about.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@YumaGroup** · 103.7× · 68❤ 9💬 in 52m · vel 1.65/min vs author median 0.02 → 103.7×
+  - URL: https://x.com/YumaGroup/status/2052763807953375540
+  - Tweet: Check out TaonSquare, where builders can explore all the AI tools powered by Bittensor. Review subnet capabilities, pricing, API details and more, or let your agents do it via MCP. https://t.co/C03ZdoHdua
+  - Suggestion: how does pricing come through in the MCP tool response — structured enough for an agent to compare options without extra parsing?
+  - Reasoning: Shape C pointed question targeting the specific unsolved technical detail: whether the MCP schema exposes pricing in a machine-readable form or forces downstream parsing — the exact thing a builder integrating this would need to know before committing.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Rejected (top 1 scored)
+
+- @eng_khairallah1 · 2.6× · 27❤ 16💬 in 54m · vel 1.09/min vs author median 0.42 → 2.6× · controversy 0.59 (replies/likes)
+  - The Head of Claude Code at Anthropic said he hasn’t written code by hand in months. In 2 days he shipped 49 full features. All written 100% by AI. He just dropped a 30 min talk on exactly how he does 
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+---

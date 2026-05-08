@@ -242,6 +242,87 @@
       "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2052765511448969249": {
+      "suggestedAt": "2026-05-08T15:46:17.495Z",
+      "author": "AIFrontliner",
+      "url": "https://x.com/AIFrontliner/status/2052765511448969249",
+      "tweetText": "The creator of Claude Code teaches more about vibe-coding in 30 minutes than most tutorials do in hours.\n\nSave this — it'll change how you build forever. https://t.co/x9jgGL1ApT",
+      "metrics": {
+        "likes": 110,
+        "replies": 9,
+        "retweets": 59,
+        "bookmarks": 85,
+        "views": 4138,
+        "ageMinutes": 45.2846
+      },
+      "scoreDetails": {
+        "ratio": 280.4546105887358,
+        "candidateVelocity": 2.826567972334966,
+        "authorMedianVelocity": 0.010078522033926913,
+        "authorSampleSize": 19,
+        "controversy": 0.08181818181818182
+      },
+      "score": 280.4546105887358,
+      "comment": "claude code writes confidently wrong types. without reading the output, you won't catch it until runtime.",
+      "reasoning": "Shape B counter — anchors the vibe-coding hype with a concrete failure mode (type errors) and a mechanism (confident-but-wrong output you miss by not reading), no AI tells stacked, sounds like an engineer who's been burned.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2052766975944806785": {
+      "suggestedAt": "2026-05-08T15:46:52.615Z",
+      "author": "XenBH",
+      "url": "https://x.com/XenBH/status/2052766975944806785",
+      "tweetText": "AI agents will need to pay for things. API calls, compute, data, other agents' services. They can't pull out a credit card. They need payment rails that work without a person in the loop.\n\nx402 is a protocol for this. Base processes the majority of x402 agentic payment transactions. The Foundation behind it includes Cloudflare, AWS, Google, Stripe, Visa and Mastercard.\n\nI think the vast majority of payments in the future will be machine to machine. And right now most of them are on Base.",
+      "metrics": {
+        "likes": 82,
+        "replies": 27,
+        "retweets": 12,
+        "bookmarks": 2,
+        "views": 2908,
+        "ageMinutes": 39.467933333333335
+      },
+      "scoreDetails": {
+        "ratio": 122.52145476867987,
+        "candidateVelocity": 3.445835353257243,
+        "authorMedianVelocity": 0.028124342465268386,
+        "authorSampleSize": 19,
+        "controversy": 0.32926829268292684
+      },
+      "score": 122.52145476867987,
+      "comment": "what's the spending limit model? agent with open-ended payment authority + untrusted tool calls = prompt injection with a credit card.",
+      "reasoning": "Shape C — points to the unsolved authorization layer that x402 doesn't address, with a concrete attack vector (prompt injection + uncapped spend) that a real agent-builder would immediately worry about.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2052763807953375540": {
+      "suggestedAt": "2026-05-08T15:47:21.693Z",
+      "author": "YumaGroup",
+      "url": "https://x.com/YumaGroup/status/2052763807953375540",
+      "tweetText": "Check out TaonSquare, where builders can explore all the AI tools powered by Bittensor. Review subnet capabilities, pricing, API details and more, or let your agents do it via MCP. https://t.co/C03ZdoHdua",
+      "metrics": {
+        "likes": 68,
+        "replies": 9,
+        "retweets": 17,
+        "bookmarks": 9,
+        "views": 8344,
+        "ageMinutes": 52.067933333333336
+      },
+      "scoreDetails": {
+        "ratio": 103.71913387384966,
+        "candidateVelocity": 1.6516883712176016,
+        "authorMedianVelocity": 0.01592462556837872,
+        "authorSampleSize": 19,
+        "controversy": 0.1323529411764706
+      },
+      "score": 103.71913387384966,
+      "comment": "how does pricing come through in the MCP tool response — structured enough for an agent to compare options without extra parsing?",
+      "reasoning": "Shape C pointed question targeting the specific unsolved technical detail: whether the MCP schema exposes pricing in a machine-readable form or forces downstream parsing — the exact thing a builder integrating this would need to know before committing.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
@@ -339,6 +420,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-05-08T15:47:21.693Z",
+      "searched": 42,
+      "scored": 9,
+      "notified": 3
     }
   ]
 }
