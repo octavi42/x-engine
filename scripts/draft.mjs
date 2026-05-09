@@ -134,9 +134,11 @@ ${ctx.archive.trim() || '_(empty archive)_'}
 - NO em dashes (—) or en dashes (–) in any body or refined line. They read as
   AI rhetorical setup-and-reveal. Replace with period, comma, colon, or newline.
   Hyphens only in compound modifiers ("launch-day", "self-hosted").
-- NO trailing period on the last sentence or fragment of any body or refined
-  line. Internal periods are fine; the final one reads formal and AI-typed.
-  Question marks, exclamation points, arrows, code/numbers are unaffected.
+- NO trailing period at the end of any paragraph in a body, refined line, or
+  thread post. A paragraph is any chunk separated by a blank line. Periods
+  inside a paragraph between consecutive sentences are fine; the period at
+  the END of a paragraph is the AI tell. Question marks, exclamation points,
+  arrows, colons, and code/numbers at paragraph end are unaffected.
 - Use newlines INSIDE bodies for X readability — write each line of the post
   on its own line in the body string. Common patterns:
   · Hook line. blank. body. blank. closer.
@@ -234,13 +236,17 @@ async function main() {
   const result = await callDraftAgent({ ctx, date, count: args.count, model });
 
   // Warn (non-blocking) if any draft body slipped through with em/en dashes
-  // or a trailing period. Voice rule bans both as AI tells.
+  // or paragraph-end periods. Voice rule bans both as AI tells.
   for (const d of result.drafts) {
     const bodies = d.body ? [d.body] : (d.thread_posts || []).map((p) => p.body);
     for (const b of bodies) {
-      const hits = (b.match(/[—–]/g) || []).length;
-      if (hits > 0) console.warn(`draft: WARNING #${d.title || ''} contains ${hits} em/en dash(es), voice.md bans these`);
-      if (/[.][\s]*$/.test(b)) console.warn(`draft: WARNING #${d.title || ''} ends with a period, voice.md bans trailing periods`);
+      const dashHits = (b.match(/[—–]/g) || []).length;
+      if (dashHits > 0) console.warn(`draft: WARNING #${d.title || ''} contains ${dashHits} em/en dash(es), voice.md bans these`);
+      // Split on blank lines to get paragraphs; check each paragraph's
+      // trailing char. Single-line bodies count as one paragraph.
+      const paragraphs = b.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+      const periodEnds = paragraphs.filter((p) => /\.$/.test(p)).length;
+      if (periodEnds > 0) console.warn(`draft: WARNING #${d.title || ''} has ${periodEnds} paragraph(s) ending with a period, voice.md bans trailing periods at paragraph end`);
     }
   }
 
