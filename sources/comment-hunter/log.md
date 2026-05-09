@@ -150,3 +150,37 @@ Searched: **42** unique · Scored: **9** · Notified: **3**
   - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
 
 ---
+## 2026-05-09 15:04 UTC
+
+Searched: **32** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@orangie100x** · 342.3× · 65❤ 17💬 in 90m · vel 1.10/min vs author median 0.00 → 342.3×
+  - URL: https://x.com/orangie100x/status/2053106098031272423
+  - Tweet: This vibe coder told Orangie that he made 47,000$ in just 45 days through vibe coding https://t.co/u2oe3OY8VR
+  - Suggestion: what's the actual product? $47k gross in 45 days with no churn context is impossible to evaluate
+  - Reasoning: Shape C — one pointed question that exposes the missing mechanic (churn/recurring vs. one-time), sounds like an engineer stress-testing a claim rather than hyping or dunking it.
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+- **@Build4ai** · 173.5× · 135❤ 22💬 in 62m · vel 2.88/min vs author median 0.02 → 173.5×
+  - URL: https://x.com/Build4ai/status/2053113042536374313
+  - Tweet: BNBChain is ABSOLUTELY DOMINATING AI Agent adoption! Just look at NfaScan: • 142K AI agents on @BNBCHAIN → 66.6% market share 🔥 While others talk, BNBCHAIN delivers. The AI agent revolution is happening on the fastest, cheapest, and most scalable chain. #BNBChain #AIAgents
+  - Suggestion: 142K deployed isn't 142K running. what's the 30-day active count, wallets that actually fired a tx?
+  - Reasoning: Shape C question that cuts the vanity metric with a concrete mechanism — deployed count vs. active tx count is the real signal engineers care about, and it exposes the hype without being a hot take.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@reppo** · 45.6× · 39❤ 5💬 in 41m · vel 1.21/min vs author median 0.03 → 45.6×
+  - URL: https://x.com/reppo/status/2053118458146197960
+  - Tweet: Reppo CLI is shipped 🚀 After 🚢 the Reppo Agent natively on https://t.co/X6MDpwugNx, we are now releasing a non-interactive CLI built so agents like Hermes, OpenClaw, Claude Code, and others can interact with @Reppo directly: mint pods, vote, lock REPPO, query balances, manage datanet access, and more. This is a big step toward making Reppo programmable, agent-native, and easier to build on. Try 
+  - Suggestion: curious how auth works when Claude Code shells out to this. wallet key in env vars, or does the agent need to sign each tx separately?
+  - Reasoning: Shape C — points to the real unsolved question for anyone wiring an agent to this CLI: key management for non-interactive signing, with a concrete split (env vars vs per-tx signing) that engineers actually debate.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Rejected (top 1 scored)
+
+- @RoundtableSpace · 2.6× · 97❤ 15💬 in 78m · vel 1.62/min vs author median 0.62 → 2.6×
+  - CLAUDE CODE CAN NOW PULL LIVE DATA FROM 17,000+ STOCKS, CRYPTO PRICES, AND FINANCIAL STATEMENTS IN SECONDS. https://t.co/lLtS2I0IGA
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+---
