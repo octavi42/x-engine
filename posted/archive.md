@@ -58,3 +58,15 @@ URL: https://x.com/i/web/status/2053095437498814874
 Project: offline beat recovery
 Variant: original
 Likes: — | Reposts: — | Replies: — | Notes:
+
+## 2026-05-09
+> roadtosf grounds stories in real SF tech news
+> 
+> Haiku 4.5 scrapes siliconmania.tv/weekly → structured JSON. Jaccard(player tags ∩ item tags) ranks. top 4 go into the prompt as name-verbatim constraints
+> 
+> names are real. lines are model-written
+
+URL: https://x.com/i/web/status/2053153003985834414
+Project: Silicon Mania real-news grounding
+Variant: original
+Likes: — | Reposts: — | Replies: — | Notes:
