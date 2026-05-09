@@ -185,7 +185,6 @@ Auto-populated during each draft run with trending dev/AI/startup topics found v
 - EU AI Act hiring rules enforcement in 105 days (August 2, 2026) — mandatory annual third-party bias audits for any AI hiring tool, €15M or 3% global turnover penalties. Certified auditors already filling up
 - TechCrunch published "The 12-month window" and "OpenAI's existential questions" on April 19
 - Public opinion souring on AI and data centers as both Anthropic and OpenAI look toward IPOs per CNBC
-- Public opinion souring on AI and data centers as both Anthropic and OpenAI look toward IPOs per CNBC
 
 ## 2026-04-17
 
@@ -199,7 +198,9 @@ Auto-populated during each draft run with trending dev/AI/startup topics found v
 
 ## 2026-04-16
 
-- Anthropic launched Claude Opus 4.7 — incremental upgrade over 4.6, same $5/$25 pricing. New features: task budgets (token target for full agentic loop), xhigh effort level, /ultrareview in Claude Code, 3.75MP hi-res vision (up from 1.15MP). Narrowly retakes lead over GPT-5.4 and Gemini 3.1 Pro on agentic coding, tool use, and threat threat. Anthropic says it adjusted default reasoning level in Claude Code, denies compute constraints
+- Anthropic launched Claude Opus 4.7 — incremental upgrade over 4.6, same $5/$25 pricing. New features: task budgets (token target for full agentic loop), xhigh effort level, /ultrareview in Claude Code, 3.75MP hi-res vision (up from 1.15MP). Narrowly retakes lead over GPT-5.4 and Gemini 3.1 Pro on agentic coding, tool use, and financial analysis benchmarks
+- Anthropic now requires government-issued photo ID and real-time selfie to access Claude — aimed at preventing misuse and enforcing usage policies. Identity-gated AI access is now live
+- Anthropic facing user backlash over Claude performance decline — Axios ran "Anthropic's AI downgrade stings power users", Fortune covered developer complaints about regression. Anthropic says it adjusted default reasoning level in Claude Code, denies compute constraints
 - OpenAI unveiled a drug discovery AI model in partnership with Novo Nordisk — integrating AI across Novo Nordisk's global operations for therapy discovery
 - American Express acquired Hyper, an AI expense management startup backed by Sam Altman — expanding automation for commercial clients
 - Meta built a pre-compute engine with 50+ specialized AI agents to map tribal knowledge in large-scale data pipelines — produced 59 context files covering 100% of code modules, reduced AI agent tool calls by 40%
