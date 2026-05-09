@@ -50,3 +50,13 @@ Replace with: period, comma, colon, or a newline. Examples:
 Hyphens (-) are allowed ONLY inside compound modifiers ("launch-day", "self-hosted", "open-source", "build-time"). Never as a rhetorical pause connector.
 
 Arrows (→), colons, and newlines are the preferred connectors.
+
+## No trailing period
+Drop the final period on the last sentence or fragment of every post body, refined line, and thread post. Internal sentence-breaking periods are fine. The terminal period reads formal and AI-typed; X convention is to leave it off.
+
+Examples:
+- "users can play end-to-end before the paywall." → "users can play end-to-end before the paywall"
+- "fix: on mount, re-fire fireBeat for the pending beat index." → "fix: on mount, re-fire fireBeat for the pending beat index"
+- "names are real. lines are model-written." → "names are real. lines are model-written"
+
+Question marks (?), exclamation points (!), arrows (→), and code/numbers ending the post (e.g. `$0/video`, `Sonnet 4.6`) are unaffected.
