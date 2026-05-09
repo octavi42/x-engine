@@ -1,0 +1,14 @@
+{
+  "name": "codex-sessions",
+  "type": "codex-sessions",
+  "description": "Recent Codex CLI rollouts (~/.codex/sessions) summarized into one blurb per session, scoped to projects in config/projects/.",
+  "enabled": true,
+  "params": {
+    "sessionsDir": "~/.codex/sessions",
+    "sinceDays": 7,
+    "maxSessions": 30,
+    "projectFilter": true,
+    "model": "claude-sonnet-4-6",
+    "minUserChars": 40
+  }
+}
