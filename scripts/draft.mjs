@@ -131,6 +131,9 @@ ${ctx.archive.trim() || '_(empty archive)_'}
 
 # Voice match
 - Lowercase starts ok, fragments ok, terse, no hype.
+- NO em dashes (—) or en dashes (–) in any body or refined line. They read as
+  AI rhetorical setup-and-reveal. Replace with period, comma, colon, or newline.
+  Hyphens only in compound modifiers ("launch-day", "self-hosted").
 - Use newlines INSIDE bodies for X readability — write each line of the post
   on its own line in the body string. Common patterns:
   · Hook line. blank. body. blank. closer.
@@ -226,6 +229,16 @@ async function main() {
 
   const model = process.env.DRAFT_MODEL ?? DEFAULT_MODEL;
   const result = await callDraftAgent({ ctx, date, count: args.count, model });
+
+  // Warn (non-blocking) if any draft body slipped through with em/en dashes.
+  // Voice rule bans them as AI rhetorical setup-and-reveal tells.
+  for (const d of result.drafts) {
+    const bodies = d.body ? [d.body] : (d.thread_posts || []).map((p) => p.body);
+    for (const b of bodies) {
+      const hits = (b.match(/[—–]/g) || []).length;
+      if (hits > 0) console.warn(`draft: WARNING #${d.title || ''} contains ${hits} em/en dash(es) — voice.md bans these`);
+    }
+  }
 
   await mkdir(DRAFTS_DIR, { recursive: true });
   const content = buildDraftFile({ date, intro: result.intro, drafts: result.drafts });
