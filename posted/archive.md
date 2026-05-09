@@ -46,3 +46,15 @@ Likes: 5 | Reposts: 1 | Replies: 0 | Notes:
 Bookmarks: 0
 Views: 71
 Fetched: 2026-05-08T15:03:22.380Z
+
+## 2026-05-09
+> player picks a choice, network dies mid-stream
+> 
+> sessionStorage rehydrates with choiceMade=true but the beat slot is empty. ChoicePanel stays disabled forever
+> 
+> fix: on mount, detect that state and re-fire fireBeat for the pending beat index
+
+URL: https://x.com/i/web/status/2053095437498814874
+Project: offline beat recovery
+Variant: original
+Likes: — | Reposts: — | Replies: — | Notes:
