@@ -3,9 +3,9 @@
     "levelsio": {
       "handle": "levelsio",
       "status": "active",
-      "last_pulled": "2026-05-04",
-      "score_sum": 4,
-      "score_n": 1
+      "last_pulled": "2026-05-10",
+      "score_sum": 8,
+      "score_n": 2
     },
     "swyx": {
       "handle": "swyx",
@@ -17,9 +17,9 @@
     "simonw": {
       "handle": "simonw",
       "status": "active",
-      "last_pulled": "2026-05-04",
-      "score_sum": 3,
-      "score_n": 1
+      "last_pulled": "2026-05-10",
+      "score_sum": 6,
+      "score_n": 2
     },
     "theo": {
       "handle": "theo",
@@ -38,9 +38,9 @@
     "nutlope": {
       "handle": "nutlope",
       "status": "active",
-      "last_pulled": "2026-05-04",
-      "score_sum": 4,
-      "score_n": 1
+      "last_pulled": "2026-05-10",
+      "score_sum": 8,
+      "score_n": 2
     },
     "sama": {
       "handle": "sama",
@@ -52,16 +52,16 @@
     "karpathy": {
       "handle": "karpathy",
       "status": "active",
-      "last_pulled": "2026-05-04",
-      "score_sum": 3,
-      "score_n": 1
+      "last_pulled": "2026-05-10",
+      "score_sum": 6,
+      "score_n": 2
     },
     "bedriyan0": {
       "handle": "bedriyan0",
       "status": "active",
-      "last_pulled": "2026-05-04",
-      "score_sum": 5,
-      "score_n": 1,
+      "last_pulled": "2026-05-10",
+      "score_sum": 9,
+      "score_n": 2,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Won Claude hackathon with voice-first AI clinic — ElevenLabs STT/TTS, 5K likes, exactly in Octavi's voice AI + hackathon lane"
     },
@@ -122,9 +122,9 @@
     "prajwaltomar_": {
       "handle": "PrajwalTomar_",
       "status": "active",
-      "last_pulled": "2026-05-07",
-      "score_sum": 5,
-      "score_n": 2,
+      "last_pulled": "2026-05-10",
+      "score_sum": 7,
+      "score_n": 3,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
     },
@@ -160,9 +160,9 @@
     "aidenybai": {
       "handle": "aidenybai",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0,
+      "last_pulled": "2026-05-10",
+      "score_sum": 5,
+      "score_n": 1,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche"
     }
@@ -269,10 +269,10 @@
     "aidenybai": {
       "handle": "aidenybai",
       "first_seen": "2026-05-09",
-      "last_seen": "2026-05-09",
-      "score": 4,
-      "reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche"
+      "last_seen": "2026-05-10",
+      "score": 5,
+      "reason": "Developer tool builder — React Doctor v2 (4932 likes, 5905 bookmarks), Claude Doctor (2558 likes, 3694 bookmarks). Short \"i built X / npx install\" format with no hype. Exact voice and niche match for Octavi's builder content."
     }
   },
-  "last_run": "2026-05-09T08:10:48.282Z"
+  "last_run": "2026-05-10T08:21:40.256Z"
 }
