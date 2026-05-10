@@ -57,7 +57,10 @@ Fetched: 2026-05-08T15:03:22.380Z
 URL: https://x.com/i/web/status/2053095437498814874
 Project: offline beat recovery
 Variant: original
-Likes: — | Reposts: — | Replies: — | Notes:
+Likes: 2 | Reposts: 0 | Replies: 0 | Notes:
+Bookmarks: 0
+Views: 86
+Fetched: 2026-05-10T14:33:25.480Z
 
 ## 2026-05-09
 > roadtosf grounds stories in real SF tech news
@@ -69,4 +72,7 @@ Likes: — | Reposts: — | Replies: — | Notes:
 URL: https://x.com/i/web/status/2053153003985834414
 Project: Silicon Mania real-news grounding
 Variant: original
-Likes: — | Reposts: — | Replies: — | Notes:
+Likes: 4 | Reposts: 0 | Replies: 0 | Notes:
+Bookmarks: 0
+Views: 69
+Fetched: 2026-05-10T14:33:25.480Z

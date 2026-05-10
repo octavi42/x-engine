@@ -95,20 +95,20 @@ In trending news (5/3 → 5/4): the standout AI signal is the Harvard study on O
 
 ## Top performing
 <!-- auto-feedback:start -->
-Generated 2026-05-09 — top 3 by engagement score (likes + 2·replies + 3·bookmarks + 1.5·reposts).
+Generated 2026-05-10 — top 3 by engagement score (likes + 2·replies + 3·bookmarks + 1.5·reposts).
 
 1. **2026-05-07** · score 6.5 · Likes 5 · Replies 0 · Reposts 1 · Bookmarks 0 · Views 71
    > added 6 free credits for first-time visitors on roadtosf.com. mechanic: check if user_balance row exists for the anon cookie. if not, grant 6. skips logged-in users (balance on email row) and repeat anons. users can play end-to-end befor…
    - https://x.com/i/web/status/2052430616340152818
    - Project: 6 free credits for first-time anon users · Variant: original
 
-2. **2026-05-03** · score 2.0 · Likes 2 · Replies 0 · Reposts 0 · Bookmarks 0 · Views 58
+2. **2026-05-09** · score 4.0 · Likes 4 · Replies 0 · Reposts 0 · Bookmarks 0 · Views 69
+   > roadtosf grounds stories in real SF tech news Haiku 4.5 scrapes siliconmania.tv/weekly → structured JSON. Jaccard(player tags ∩ item tags) ranks. top 4 go into the prompt as name-verbatim constraints names are real. lines are model-written
+   - https://x.com/i/web/status/2053153003985834414
+   - Project: Silicon Mania real-news grounding · Variant: original
+
+3. **2026-05-03** · score 2.0 · Likes 2 · Replies 0 · Reposts 0 · Bookmarks 0 · Views 58
    > every page refresh on my ai game was regenerating images server-side. cause: base64 dataUrls in sessionStorage, partialize stripped the field on persist. ~$0.30 and ~30s wasted per reload. fix: upload each image to vercel blob, store the…
    - https://x.com/i/web/status/2050969731155349933
-   - Project: Road to SF
-
-3. **2026-05-03** · score 1.0 · Likes 1 · Replies 0 · Reposts 0 · Bookmarks 0 · Views 32
-   > prod fresh tabs froze on dialogue. cause: browser blocked audio.play() with no user gesture. fix: on rejection, attach one-shot pointerdown/keydown listeners and retry on first input. 6s safety timer falls back to fixed cadence so the ty…
-   - https://x.com/i/web/status/2051036972710261187
    - Project: Road to SF
 <!-- auto-feedback:end -->
