@@ -184,3 +184,41 @@ Searched: **32** unique · Scored: **9** · Notified: **3**
   - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
 
 ---
+## 2026-05-10 15:06 UTC
+
+Searched: **32** unique · Scored: **8** · Notified: **3**
+
+### Notified
+
+- **@Investanswers** · 46.3× · 77❤ 13💬 in 21m · vel 4.93/min vs author median 0.11 → 46.3×
+  - URL: https://x.com/Investanswers/status/2053486054825717862
+  - Tweet: $SOL Alpenglow is now live - rem in the AGE of AGI FINALITY IS THE PRODUCT - SOL is 5000 to 6000 times faster than ETH... AI Agents will not hang around for 15 mins... to see if a Tx has finalized. #Solana $ETH https://t.co/bZYBIA1dQ7
+  - Suggestion: 15min is economic finality, not pre-confirm. ETH slot is 12s. 30x slower than solana, not 5000x
+  - Reasoning: Shape B correction — calls out the apples-to-oranges comparison (economic finality vs slot time) with three concrete numbers, no hype language, reads like an engineer who actually knows the spec.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@The_CoDEFi** · 42.7× · 42❤ 31💬 in 62m · vel 1.69/min vs author median 0.04 → 42.7× · controversy 0.74 (replies/likes)
+  - URL: https://x.com/The_CoDEFi/status/2053475784208355753
+  - Tweet: Manual research is slowly becoming outdated (( @heyaura is building an AI agent that: • studies your onchain activity • tracks market opportunities • suggests yields & airdrops • helps optimize portfolio moves • works across EVM chains Already: ▫️17K+ users ▫️$500M+ wallet volume analyzed ▫️$ADX listed on major exchanges Web3 moves fast. Your wallet probably needs an AI copilot now
+  - Suggestion: what does it consume per chain: raw RPC calls or an indexer? that gap matters a lot for data freshness across EVM at scale
+  - Reasoning: Shape C — a pointed technical question targeting the real unsolved part (data layer architecture), with specific terms (RPC, indexer, freshness) that signal genuine engineering curiosity rather than hype engagement.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@DeFiDecoder_** · 31.5× · 32❤ 20💬 in 72m · vel 1.01/min vs author median 0.03 → 31.5× · controversy 0.63 (replies/likes)
+  - URL: https://x.com/DeFiDecoder_/status/2053473310890193293
+  - Tweet: Keeping on the streak of being the most dev-friendly blockchain, @Polkadot $DOT is now fully LLM-friendly as well Lots of great tools for AI agents and devs to make life easier to developing with AI
+  - Suggestion: what does LLM-friendly mean concretely here: predictable JSON-RPC schemas, on-chain data formatting, or just docs rewritten with AI prompts?
+  - Reasoning: Shape C pointed question — the tweet makes a vague "LLM-friendly" claim with zero specifics, so a real engineer's natural move is to ask exactly what changed; naming three concrete candidate mechanisms (JSON-RPC schemas, data formatting, docs) shows domain knowledge without sounding like a marketer.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Rejected (top 2 scored)
+
+- @cyrilXBT · 2.8× · 47❤ 10💬 in 58m · vel 1.15/min vs author median 0.41 → 2.8×
+  - Obsidian + Claude Code = 24/7 personal operating system. Works while you sleep. Every note you have ever written becomes searchable intelligence. Every project updates itself automatically. Every morn
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @Av1dlive · 2.1× · 31❤ 11💬 in 61m · vel 0.87/min vs author median 0.40 → 2.1× · controversy 0.35 (replies/likes)
+  - In 17 minutes, Andrej Karpathy will teach you more about building ai agents than most people figure out in a year. Bookmark &amp; watch, no matter what. It'll be the most productive thing you do this 
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---
