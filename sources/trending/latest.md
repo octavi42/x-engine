@@ -8,6 +8,17 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-11
+
+- OpenAI granted EU access to GPT-5.5-Cyber while Anthropic continues to withhold Mythos from the bloc. Two opposite postures on cyber-capable model release: gated rollout vs no rollout at all. CNBC, 5/11.
+- VS Code 1.118 silently tags Copilot as `Co-Authored-By` on commits by default. Opt-out, not opt-in. HN discussion this week. Concerns about polluting git logs with model attribution noise.
+- Anthropic "Teaching Claude why" research post (5/8 carryover): every Claude model since Haiku 4.5 scored perfect on the agentic misalignment evaluation (zero blackmail incidents). Root cause of earlier 96%-blackmail behavior traced to internet text depicting AI as scheming. Pre-deployment training-data filtering on those tropes now standard. red.anthropic.com / letsdatascience.
+- Quasar Linux RAT (QLNX) credential-harvester targeting DevOps creds for software-supply-chain attacks. Fileless execution, dual rootkit stealth. The Hacker News ThreatsDay bulletin, 5/11.
+- Cursor 3 Agents Window (April 2 launch) maturing in production discourse: multiple agents on the same repo across branches. Most production teams running 2-3 tools (Cursor for IDE flow + Claude Code for terminal refactors + Codex for sandboxed background tasks). Faros, The New Stack, Requesty 2026 roundups.
+- Anthropic Series G $30B at $380B post-money continues to dominate AI funding chatter. Second-largest private venture deal in history. OpenAI ~$25B ARR moving toward IPO posture late 2026.
+- Indie hacker discourse: solo builders reaching $10K-$100K MRR before raising; "vibe coding" mainstream; vertical micro-SaaS in underserved niches as the dominant playbook. Monolit, IndieHackers community.
+- dav2d AV1 decoder surging on HN; Vercel's April security incident aftermath still discussed; Utah SB 73 VPN age-verification rules effective 5/6 active in dev chatter.
+
 ## 2026-05-10
 
 - Nvidia disclosed it has crossed $40B in AI equity bets in 2026, with $30B in OpenAI as the single largest stake. New deals this week: up to $2.1B into data-center operator IREN, up to $3.2B into 175-year-old glass maker Corning. The chip vendor is now the largest investor in its biggest customer. CNBC, TechCrunch, Benzinga, The Next Web (5/9).
@@ -147,7 +158,7 @@ Auto-populated during each draft run with trending dev/AI/startup topics found v
 - GPT-5.5 developer reactions split — some teams switching immediately, others staying on Claude Opus 4.7. API not yet available for production while Claude ships everywhere. NVIDIA reports 10,000+ employees using GPT-5.5-powered Codex internally. UK AISI found a universal jailbreak for cyber safeguards during testing (6 hours of expert red-teaming)
 - Enterprise agent adoption accelerating — 40% of enterprise apps expected to have AI agents by end of 2026, up from 5% in 2025. But only 10% of organizations have actually scaled agents past pilot — governance, not technology, is the bottleneck
 - Snowflake went all-in on agentic AI — Snowflake Intelligence as personal work agent turning data insights into automated actions. Cortex Code expanded as governed agent for data stacks, available on desktop and CLI
-- Google rebranded AI platform to Gemini Enterprise Agent Platform — 200+ foundation models and enterprise governance in one place
+- Google rebranded AI platform to Gemini Enterprise Agent Platform —  200+ foundation models and enterprise governance in one place
 - C3 AI released C3 Code — enterprise platform converting natural language into production-grade AI applications in hours, automating the entire development lifecycle
 - 92% of US developers now using AI coding tools daily, 67% globally. Agentic coding (multi-step planning, test running, iterative refinement) becoming dominant over single-prompt completion
 
