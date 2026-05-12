@@ -250,3 +250,37 @@ Searched: **57** unique · Scored: **10** · Notified: **3**
   - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
 
 ---
+## 2026-05-12 16:29 UTC
+
+Searched: **58** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@alexshander03** · 999.0× · 129❤ 49💬 in 24m · vel 9.53/min vs author median 0.00 → 999.0× · controversy 0.38 (replies/likes)
+  - URL: https://x.com/alexshander03/status/2054231176555196524
+  - Tweet: We’re launching @JudgmentLabs today and announcing $32M in funding. As AI agents take on more of the work that creates economic value, they generate massive amounts of production data: the clearest record of how they behave with users, software, and the real world. Judgment builds infrastructure for improving AI agents from production data.
+  - Suggestion: labeling agent traces is the hard part. user didn't complain, but tool_call[3] was still wrong. no signal for that
+  - Reasoning: Shape B counter with mechanism — surfaces the core unsolved problem in agent improvement from production data (sparse labels without explicit user feedback), grounded in a specific concrete artifact (tool_call[3]) that reads like a real builder's observation.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@pranathiperii** · 698.6× · 70❤ 7💬 in 54m · vel 1.54/min vs author median 0.00 → 698.6×
+  - URL: https://x.com/pranathiperii/status/2054223481504485707
+  - Tweet: it's been lovely to do some work on the claude code mobile app recently!! it's only going to get better - let me know if you have feedback :")
+  - Suggestion: main friction: reviewing diffs on a 390px screen before I can tap approve. if confirm didn't require scrolling the full output first, that'd fix 80% of the mobile ux for me
+  - Reasoning: Shape A lived-experience feedback with a specific detail (390px screen width) that signals a real user, responding directly to the ask for feedback with a concrete UX pain point rather than generic praise.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@ArashSeyf** · 69.3× · 43❤ 27💬 in 66m · vel 1.48/min vs author median 0.02 → 69.3× · controversy 0.63 (replies/likes)
+  - URL: https://x.com/ArashSeyf/status/2054220666250092958
+  - Tweet: Most “health apps” just track your data and leave you with another useless dashboard. @sleepagotchi is turning sleep data into an actual AI-powered ecosystem. > Your sleep → feeds AI agents > Your AI agents → optimize meals, wellness, shopping & routines > Your data → stays monetizable And somehow they wrapped all of this into a gamified app with: • 50k daily active users • top-grossing Telegram m
+  - Suggestion: sleep stages alone can't drive meal optimization. without calorie logs or CGM data in the same pipeline the recommendations are just vibes
+  - Reasoning: Shape B counter with a concrete mechanism — names the missing data types (calorie logs, CGM) that would actually make the agent useful, which is the exact technical gap the hype glosses over.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Rejected (top 1 scored)
+
+- @CoinMarketCap · 0.7× · 62❤ 24💬 in 72m · vel 1.53/min vs author median 2.09 → 0.7× · controversy 0.39 (replies/likes)
+  - The CMC Altcoin Season Index rebounded to ~50/100 this week. Are we finally getting into an altseason? What matters is who is outperforming BTC over the last 90 days: • AI/agent coins dominate (SKAI, 
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---
