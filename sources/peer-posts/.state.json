@@ -10,9 +10,9 @@
     "swyx": {
       "handle": "swyx",
       "status": "active",
-      "last_pulled": "2026-05-05",
-      "score_sum": 3,
-      "score_n": 1
+      "last_pulled": "2026-05-12",
+      "score_sum": 6,
+      "score_n": 2
     },
     "simonw": {
       "handle": "simonw",
@@ -24,16 +24,16 @@
     "theo": {
       "handle": "theo",
       "status": "active",
-      "last_pulled": "2026-05-05",
-      "score_sum": 4,
-      "score_n": 1
+      "last_pulled": "2026-05-12",
+      "score_sum": 8,
+      "score_n": 2
     },
     "jxnlco": {
       "handle": "jxnlco",
       "status": "active",
-      "last_pulled": "2026-05-05",
-      "score_sum": 3,
-      "score_n": 1
+      "last_pulled": "2026-05-12",
+      "score_sum": 5,
+      "score_n": 2
     },
     "nutlope": {
       "handle": "nutlope",
@@ -45,9 +45,9 @@
     "sama": {
       "handle": "sama",
       "status": "active",
-      "last_pulled": "2026-05-05",
-      "score_sum": 3,
-      "score_n": 1
+      "last_pulled": "2026-05-12",
+      "score_sum": 5,
+      "score_n": 2
     },
     "karpathy": {
       "handle": "karpathy",
@@ -165,6 +165,15 @@
       "score_n": 2,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche"
+    },
+    "antirez": {
+      "handle": "antirez",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-05-12",
+      "promoted_reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
     }
   },
   "discovered": {
@@ -272,7 +281,14 @@
       "last_seen": "2026-05-10",
       "score": 5,
       "reason": "Developer tool builder — React Doctor v2 (4932 likes, 5905 bookmarks), Claude Doctor (2558 likes, 3694 bookmarks). Short \"i built X / npx install\" format with no hype. Exact voice and niche match for Octavi's builder content."
+    },
+    "antirez": {
+      "handle": "antirez",
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-12",
+      "score": 4,
+      "reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
     }
   },
-  "last_run": "2026-05-11T09:59:29.663Z"
+  "last_run": "2026-05-12T09:12:50.126Z"
 }
