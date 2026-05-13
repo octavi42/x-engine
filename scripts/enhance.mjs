@@ -247,8 +247,8 @@ developer/indie-hacker timeline, using the user's voice and the engagement
 patterns in this context. Pick a winner.
 
 # Output protocol
-Call mcp__improve__submit_verdict EXACTLY ONCE with ranking, winner,
-reasoning, and the winner's score. Do not call any other tool. End your turn.
+Call mcp__improve__submit_verdict EXACTLY ONCE with ranking, winner, and
+reasoning. Do not call any other tool. End your turn.
 
 ${contextBlock}
 
@@ -264,9 +264,6 @@ ${contextBlock}
 - BEAT-ORIGINAL GATE: if no variant meaningfully beats the original on these
   criteria, return winner="original". The user prefers shipping the original
   over a refine-for-refining's-sake rewrite.
-
-# Scoring rubric (winner only, each 1-5)
-- specificity, hook, length, pattern_match — same definitions as the writer.
 
 # Reasoning style
 1-2 sentences. Name the lever the winner pulls (or, for "original", why the
@@ -431,7 +428,7 @@ async function main() {
       console.error(`  #${d.index}: JUDGE ERROR ${err.message}`);
       continue;
     }
-    const { winner, ranking, reasoning, winner_score } = judgeEntry;
+    const { winner, ranking, reasoning } = judgeEntry;
 
     const winnerVariant = winner === 'original' ? null : variants.find((v) => v.label === winner);
     if (winner !== 'original' && !winnerVariant) {
@@ -439,8 +436,11 @@ async function main() {
       continue;
     }
 
+    // Score comes from the writer's per-variant score, not the judge — the
+    // first live run showed the judge inflates winner_score to 5/5/5/5 even
+    // when writer scores show real 3-5 variance. When winner=original we
+    // have no per-variant score, so skip the Score stamp entirely.
     const updates = {
-      Score: formatScore(winner_score),
       Critique: critique.replace(/\n+/g, ' ').trim(),
       Variants: formatVariantsSummary(variants, winner),
       Winner: winner,
@@ -448,13 +448,15 @@ async function main() {
       Ranking: ranking.join(' > '),
     };
     if (winnerVariant) {
+      updates.Score = formatScore(winnerVariant.score);
       updates.Refined = winnerVariant.text;
       const refinedIssues = runRules(winnerVariant.text);
       if (refinedIssues.length) updates.RefinedIssues = refinedIssues.join('; ');
     }
 
     await stampDraft({ filePath: file, draftIndex: d.index, updates });
-    console.log(`  #${d.index}: winner=${winner} · ${formatScore(winner_score)}`);
+    const scoreSummary = winnerVariant ? ` · ${formatScore(winnerVariant.score)}` : '';
+    console.log(`  #${d.index}: winner=${winner}${scoreSummary}`);
     console.log(`     ${reasoning.slice(0, 100)}${reasoning.length > 100 ? '…' : ''}`);
     if (winnerVariant) {
       console.log(`     refined (${winnerVariant.text.length}c, ${winnerVariant.archetype}): ${compactPreview(winnerVariant.text, 80)}`);

@@ -77,6 +77,10 @@ server.registerTool(
   }
 );
 
+// Live runs showed the judge inflated `winner_score` to 5/5/5/5 even when
+// the writer's per-variant scores showed real 3-5 variance — the absolute
+// score is decoration with self-justification bias. We rely on pairwise
+// ranking instead and reuse the writer's score for the winner downstream.
 server.registerTool(
   'submit_verdict',
   {
@@ -86,6 +90,9 @@ server.registerTool(
       ranking: z
         .array(z.enum(['A', 'B', 'C', 'original']))
         .length(4)
+        .refine((arr) => new Set(arr).size === 4, {
+          message: 'ranking must contain each of {A, B, C, original} exactly once',
+        })
         .describe('Best-first ordering of {A, B, C, original}. All four must appear exactly once.'),
       winner: z
         .enum(['A', 'B', 'C', 'original'])
@@ -93,11 +100,13 @@ server.registerTool(
       reasoning: z
         .string()
         .describe('1-2 sentences explaining what made the winner win (or why no variant beat the original).'),
-      winner_score: scoreSchema,
     },
   },
-  async ({ ranking, winner, reasoning, winner_score }) => {
-    const count = await appendResult({ kind: 'verdict', ranking, winner, reasoning, winner_score });
+  async ({ ranking, winner, reasoning }) => {
+    if (winner !== ranking[0]) {
+      throw new Error(`winner "${winner}" must equal ranking[0] "${ranking[0]}"`);
+    }
+    const count = await appendResult({ kind: 'verdict', ranking, winner, reasoning });
     return {
       content: [{ type: 'text', text: JSON.stringify({ received: true, count }) }],
     };
