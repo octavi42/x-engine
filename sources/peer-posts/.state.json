@@ -3,9 +3,9 @@
     "levelsio": {
       "handle": "levelsio",
       "status": "active",
-      "last_pulled": "2026-05-10",
-      "score_sum": 8,
-      "score_n": 2
+      "last_pulled": "2026-05-13",
+      "score_sum": 12,
+      "score_n": 3
     },
     "swyx": {
       "handle": "swyx",
@@ -103,12 +103,14 @@
     },
     "rbayuokt": {
       "handle": "rbayuokt",
-      "status": "active",
+      "status": "blacklisted",
       "last_pulled": "2026-05-06",
       "score_sum": 2,
       "score_n": 1,
       "promoted_at": "2026-05-04",
-      "promoted_reason": "React Native / Expo library builder posting specific on-device ML work (OCR via mlkit), clean \"today I built\" format, 209 likes / 156 bookmarks"
+      "promoted_reason": "React Native / Expo library builder posting specific on-device ML work (OCR via mlkit), clean \"today I built\" format, 209 likes / 156 bookmarks",
+      "blacklist_reason": "Content is entirely in Indonesian, covering local transit, viral videos, and lifestyle topics — no developer/AI/builder overlap with Octavi's niche",
+      "blacklisted_at": "2026-05-13"
     },
     "mayfer": {
       "handle": "mayfer",
@@ -160,18 +162,18 @@
     "aidenybai": {
       "handle": "aidenybai",
       "status": "active",
-      "last_pulled": "2026-05-11",
-      "score_sum": 10,
-      "score_n": 2,
+      "last_pulled": "2026-05-13",
+      "score_sum": 15,
+      "score_n": 3,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche"
     },
     "antirez": {
       "handle": "antirez",
       "status": "active",
-      "last_pulled": null,
-      "score_sum": 0,
-      "score_n": 0,
+      "last_pulled": "2026-05-13",
+      "score_sum": 4,
+      "score_n": 1,
       "promoted_at": "2026-05-12",
       "promoted_reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
     }
@@ -288,7 +290,14 @@
       "last_seen": "2026-05-12",
       "score": 4,
       "reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
+    },
+    "makeitanimated": {
+      "handle": "makeitanimated",
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-13",
+      "score": 3,
+      "reason": "React Native + Expo animation builder posting specific technical details (UI thread, component-level animation) — relevant to Octavi's mobile dev stack; moderate engagement (252L/217B)"
     }
   },
-  "last_run": "2026-05-12T09:12:50.126Z"
+  "last_run": "2026-05-13T09:19:16.860Z"
 }
