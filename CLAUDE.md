@@ -211,6 +211,16 @@ Every non-dry run writes two things, both committed back to main with `[skip ci]
 
 To stamp an outcome on a past suggestion, edit `.state.json` directly: set `entries["<id>"].outcome` to `posted` / `edited` / `skipped`, optionally `outcomeNotes` for context. The future `feedback-replies.mjs` (v3.0.2) will populate these automatically by reading your reply history.
 
+## Image-post rendering (Phase 3a)
+
+`scripts/render-image.mjs` renders synthesis-screenshot image posts from a strict markdown subset (1 `# title` + 3–5 `## sections` × 2–5 `- bullets` each). Uses Satori (HTML/JSX → SVG, no Chromium) + `@resvg/resvg-js` (SVG → PNG). Inter font loaded from `node_modules/@fontsource/inter/files/*.woff` (note: WOFF, not WOFF2 — Satori rejects WOFF2 despite docs).
+
+- **Output:** 800×1200 portrait PNG, dark background, indigo section accents. One template only for v1.
+- **Validation:** strict — rejects on missing title, wrong section count, oversized bullets, unexpected content. No silent fallbacks.
+- **Preview a markdown file:** `npm run render-image -- --markdown=<path> [--out=<basename>]` → `./out/<basename>.png`.
+- **Demo:** `npm run render-image:demo` renders the bundled sample.
+- **Library:** `scripts/lib/render-image.mjs` exports `parseImageMarkdown`, `buildElement`, `renderToPng`, `renderMarkdownToPng`, `RenderImageError`, `LIMITS`. Phase 3c will wire `scripts/post.mjs` to call `renderMarkdownToPng` on approved image-post drafts and upload via the X API media endpoint.
+
 ## Banned phrases (from voice.md)
 Never use any of these:
 - "game-changer"
