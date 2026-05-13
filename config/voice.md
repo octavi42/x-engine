@@ -22,7 +22,31 @@
 - Every post needs a specific technical detail. Never vague.
 
 ## Posts I liked
-<!-- Add links to posts that felt like "me". Use these as reference for tone and structure. -->
+
+Reference posts grouped by format archetype. The drafting agent should treat these as concrete templates for shape, not for topic.
+
+### Synthesis screenshot (image post — the highest-leverage format)
+- **Ben Lang (@benln) — "Jack Dorsey on how every company can now be a mini-AGI" (2026-05-13)** — 451 likes / 31K views / 50 RTs in 3 hours. Format: long synthesis posted as an image, bold title + H3 sections + bullets, escapes the 280-char limit, gets quoted/screenshot-shared because the takeaway IS the post. Use for Velocity weekly leaderboards, manifesto posts, distilled takeaways from podcasts/talks.
+- TODO: paste 2–3 more @benln synthesis-screenshot URLs from his recent feed
+
+### Data leaderboard / outlier exposé
+- Format: specific named subject + counter-intuitive data point + one-line analysis. Best with a chart or table image.
+- Pattern: lead with the surprise, name the entity (handle/company), give the number, give the one-line why.
+- TODO: paste 3 URLs of posts that worked in this shape (e.g., revenue charts, growth charts, ranking lists from accounts in the founder/indie-hacker lane)
+
+### Build-in-public weekend ship
+- Format: "shipped X in a weekend. [3-bullet stack list]. [link to repo or live URL]." Single tweet, no preamble.
+- Lead with the verb + thing shipped. Stack list with arrow connectors (`→`). Always link the repo or the demo.
+- TODO: paste 3 URLs of weekend-ship posts that landed (from levelsio, theo, simonw, swyx, or peers)
+
+### Bug-fix / stack-reveal (existing format — keep using)
+- Already covered by the current peer-posts seed pool. Pattern: cause → symptom → fix, named technical detail, no rhetorical setup.
+- Reference: my own #2 and #3 by likes (see `posted/archive.md`). Both opened with the failure state labeled `cause:`.
+
+### Contrarian-take-with-data
+- Format: "everyone says X. data says Y." Requires a real dataset (Velocity, paid-creator economics, Romanian dev market, etc).
+- Don't post contrarian takes without a chart or named source — they read as posturing.
+- TODO: paste 2 URLs where contrarian-with-data landed in the founder/dev lane
 
 ## Posts that felt off
 <!-- Add links to posts that didn't land. Use these as a feedback loop to refine voice. -->
