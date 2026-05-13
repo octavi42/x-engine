@@ -994,6 +994,13 @@
       "searched": 51,
       "scored": 9,
       "notified": 3
+    },
+    {
+      "ts": "2026-05-13T18:25:45.523Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0,
+      "note": "daily cap hit"
     }
   ]
 }
