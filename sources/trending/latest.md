@@ -8,6 +8,17 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-13
+
+- Anthropic in talks to raise $30B-$50B at up to $950B valuation. Would surpass OpenAI as the world's most valuable AI startup. Dario Amodei told Code with Claude conference Anthropic at $30B annual revenue run rate. Bloomberg reports IPO consideration as soon as October. Sherwood News, BanklessTimes, SiliconRepublic, tbreak (5/13).
+- Anthropic launched Claude for Legal: 20+ legal MCP connectors, 12 practice-area plugins, integration with Thomson Reuters CoCounsel. Built around Claude models and the "Cowork" agentic environment. Legal IT Insider (5/13).
+- OpenAI launched DeployCo on 5/11. $4B+ initial investment, standalone enterprise consulting unit. Acquired Tomoro (~150 forward-deployed engineers) to staff from day one. Axios, TechCrunch, magicshot.ai.
+- Anthropic + Goldman Sachs + Blackstone + Hellman & Friedman launched $1.5B enterprise venture last week to deploy Claude inside enterprises. CNBC (5/4). Read-through with DeployCo: both labs added forward-deployed-engineering arms in the same week. AI labs are now consultancies.
+- UK chip startup Fractile raised $220M Series B led by Factorial Funds, Accel, Founders Fund. AI inference accelerator targeting datacenter workloads.
+- Anduril raised $5B at $61B valuation. Defense + AI continues to be the highest-valuation private vertical outside the foundation model labs.
+- Linux "CopyFail 2 / Dirty Frag" disclosed. 13 advisories in Next.js this week. 70+ CVEs in active dev-tool discussion.
+- X added a "Threads"-style trending topic feature in the For You feed. X also integrating its Hotshot text-to-video tool natively in the platform.
+
 ## 2026-05-12
 
 - OpenAI launched Daybreak on 5/11, a cybersecurity initiative positioned as the counter to Anthropic's Project Glasswing / Claude Mythos cyber-tuning posture. Uses GPT-5.5 + Codex security agent; thesis is "defense built into software from the start," not vulnerability triage. Engadget, MobileSyrup, The Hacker News (5/11-12).
