@@ -1,10 +1,55 @@
 #!/usr/bin/env node
 import { existsSync } from 'node:fs';
-import { join } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { join, dirname, resolve } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { spawn } from 'node:child_process';
 import { listSources, writeLatest } from './lib/source-loader.mjs';
 
+const here = dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = resolve(here, '..');
+
 const startedAt = Date.now();
+
+// Pre-sync discovery hook: regenerate config/projects/*.md from the Obsidian
+// vault before any source plugin runs (so github-commits / codex-sessions
+// pick up the freshly-discovered project slugs). Disable via
+// DISABLED_DISCOVERIES=projects on CI where the vault isn't mounted.
+const disabledDiscoveries = new Set(
+  (process.env.DISABLED_DISCOVERIES ?? '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+);
+const knownDiscoveries = ['projects'];
+for (const name of disabledDiscoveries) {
+  if (!knownDiscoveries.includes(name)) {
+    console.warn(`DISABLED_DISCOVERIES: unknown discovery "${name}" — known: ${knownDiscoveries.join(', ')}`);
+  }
+}
+
+if (!disabledDiscoveries.has('projects')) {
+  await runDiscovery();
+} else {
+  console.log('discover-projects: skipped (DISABLED_DISCOVERIES)');
+}
+
+async function runDiscovery() {
+  const scriptPath = join(REPO_ROOT, 'scripts', 'discover-projects.mjs');
+  await new Promise((resolveFn) => {
+    const child = spawn(process.execPath, [scriptPath], { stdio: 'inherit', env: process.env });
+    child.on('exit', (code) => {
+      if (code !== 0) {
+        console.warn(`discover-projects exited ${code} — continuing sync with existing config/projects/`);
+      }
+      resolveFn();
+    });
+    child.on('error', (err) => {
+      console.warn(`discover-projects failed to spawn: ${err.message} — continuing sync`);
+      resolveFn();
+    });
+  });
+}
+
 const sources = await listSources();
 
 // Comma-separated list of source names to skip on this run, set via env.

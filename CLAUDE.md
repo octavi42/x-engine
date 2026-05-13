@@ -10,13 +10,33 @@ This repo generates daily X/Twitter post drafts for @octavicristea.
 
 ## Before writing any content
 1. Always read `config/voice.md` for tone, style, and constraints.
-2. Always read every file in `config/projects/` to know what to write about.
-3. Run `npm run sync` to refresh fetched sources, then read every `sources/*/latest.md` for context (recent posts, content gaps, manual ideas, trending topics, vault notes).
+2. Always read `config/format-references.md` to pick a format archetype (single-tweet, image-post, thread). Stamp the chosen format as `**Format:** <name>` on each draft. Never draft a format marked `NYI`.
+3. Always read every file in `config/projects/` to know what to write about.
+4. Run `npm run sync` to refresh fetched sources, then read every `sources/*/latest.md` for context (recent posts, content gaps, manual ideas, trending topics, vault notes, scored Northstar ideas).
 
 ## Project structure
 - Each project is a separate `.md` file in `config/projects/`.
 - Each project file defines: repo URL, description, stack, status, and content angles.
-- To add a new project, drop a new `.md` file in `config/projects/` — the engine picks it up automatically.
+- `config/projects/*.md` is **auto-generated** from the Obsidian vault by `scripts/discover-projects.mjs` (see "Project discovery" below). Hand-edits survive *only until* the next `npm run sync` overwrites them — make permanent changes in the vault, not here.
+- To add a new project: create a folder under `~/Documents/Obsidian Vault/1-Projects/<slug>/` with a primary `.md` file (README.md preferred), add `x-engine: discoverable` to its frontmatter, then run `npm run discover:projects` or wait for the next `npm run sync`.
+
+## Project discovery
+`scripts/discover-projects.mjs` walks the Obsidian vault and regenerates `config/projects/<slug>.md` for every opt-in project. Runs as the first step of `npm run sync`.
+
+- **Vault root:** `$OBSIDIAN_VAULT_PATH` or `~/Documents/Obsidian Vault` (default).
+- **Projects dir:** `<vault>/1-Projects/`.
+- **Opt-in:** the project's primary md file must have `x-engine: discoverable` in its frontmatter. Projects without the flag are skipped (lets you keep sensitive/early projects out of public posting).
+- **Primary file heuristic:** `README.md` → folder-name-cased `.md` (e.g., `clio/Clio.md`) → largest `.md` in the folder.
+- **Idempotent:** writes `<!-- _source_hash: ... -->` footer on each generated file. Skips rewriting if the vault content hasn't changed. Use `--force` to override.
+- **Disabled in CI:** `DISABLED_DISCOVERIES=projects` env var skips the step (vault isn't mounted). The committed `config/projects/*.md` stays authoritative for the morning draft run.
+- **Audit:** every run writes `sources/_audit/discover-projects.md` listing processed/skipped/errored projects.
+
+Flags:
+- `npm run discover:projects` — full run
+- `npm run discover:projects:dry` — report only, no writes, no LLM calls
+- `node scripts/discover-projects.mjs --force` — rewrite all, ignore content hash
+- `node scripts/discover-projects.mjs --slug=<slug>` — limit to one project
+- `node scripts/discover-projects.mjs --vault=<path>` — override vault root
 
 ## Sources
 Sources are pluggable. Each source lives at `sources/<name>/` and contains:
@@ -33,6 +53,7 @@ Current sources:
 - `sources/rss-trending/` — rss. Recent items from configured AI/dev/startup news feeds (HN, TechCrunch AI, The Verge AI by default). Edit `params.feeds` in the config to add or remove sources.
 - `sources/peer-posts/` — peer-posts. Autoresearch agent driven by `claude -p` headless mode (bills against my Claude Pro/Max subscription, not the API). The CLI launches `mcp-servers/peer-posts/server.mjs` over stdio, which exposes 9 tools the agent uses: rotate seeds, fetch tweets via twitterapi.io, score relevance, curate a pool, blacklist drift, promote discoveries, submit_patterns. Long-lived rotation state lives in `sources/peer-posts/.state.json`; per-run pool/cache lives in `sources/peer-posts/.run.json` (both gitignored). Requires `TWITTERAPI_IO_KEY` and `CLAUDE_CODE_OAUTH_TOKEN` in `.env.local`. Edit `params.seedHandles` to curate the seed pool.
 - `sources/codex-sessions/` — codex-sessions. Recent Codex CLI rollouts from `~/.codex/sessions/rollout-*.json` summarized into one 2-3 bullet blurb per session via `claude -p` (Pro/Max billing). Per-session summaries are cached at `sources/codex-sessions/.cache/<id>.md` (gitignored, immutable once written) so re-runs are free. With `params.projectFilter: true` (default), only sessions whose `workdir` basename matches a project slug or repo name from `config/projects/*.md` are kept. Disable in CI via `DISABLED_SOURCES=codex-sessions` (the sessions dir is local-only).
+- `sources/northstar-ideas/` — northstar-ideas. Top-scored ideas from recent Northstar runs, pulled directly from the SQLite DB at `~/.northstar/northstar.sqlite` via the `sqlite3` CLI binary (avoids native build dep). Filters: most recent N completed runs, score ≥ `minScore`, non-rejected only, sorted by score desc. Disable in CI via `DISABLED_SOURCES=northstar-ideas` (DB is local-only).
 
 To add a new source: create `sources/<name>/source.config.json` (and optionally `fetch.mjs`). No changes needed elsewhere — the orchestrator and drafting agent discover it automatically. By convention, fetched sources gitignore their `latest.md` (it's regenerated each sync) — drop a `.gitignore` containing `latest.md` next to the `fetch.mjs`.
 

@@ -1,0 +1,12 @@
+{
+  "name": "northstar-ideas",
+  "type": "northstar-ideas",
+  "description": "Top-scored ideas from recent Northstar runs. Local-only (reads ~/northstar/.northstar/northstar.sqlite via the sqlite3 CLI). Disable on CI via DISABLED_SOURCES.",
+  "enabled": true,
+  "params": {
+    "dbPath": "~/northstar/.northstar/northstar.sqlite",
+    "runsToScan": 5,
+    "minScore": 75,
+    "maxIdeas": 10
+  }
+}
