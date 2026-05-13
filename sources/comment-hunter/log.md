@@ -284,3 +284,37 @@ Searched: **58** unique · Scored: **9** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-05-13 16:31 UTC
+
+Searched: **51** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@KaiBGR** · 218.7× · 25❤ 29💬 in 64m · vel 1.30/min vs author median 0.01 → 218.7× · controversy 1.16 (replies/likes)
+  - URL: https://x.com/KaiBGR/status/2054583886827655332
+  - Tweet: If ANIMA can connect to any public/private MCP server, that means the AI ​​agent is no longer limited to the project's fixed toolset. @TheARCTERMINAL makes it accessible to: • private databases • internal workflows • custom infrastructure • proprietary tools of each user or enterprise This is a huge difference between an AI chatbot and an AI operating layer.
+  - Suggestion: connecting to any MCP server also means the agent inherits whatever creds that server exposes. no cross-server permission model in the spec yet
+  - Reasoning: Shape B counter — names the concrete mechanism (cred inheritance) and a real spec gap (no cross-server permission model), which is what an engineer actually thinks when reading "connect to any private infra."
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@Baconbrix** · 49.3× · 125❤ 8💬 in 48m · vel 2.96/min vs author median 0.06 → 49.3×
+  - URL: https://x.com/Baconbrix/status/2054587962516820214
+  - Tweet: Just open-sourced a new template for building AI chatbot apps like Claude with Expo Router! ⬦ Runs on iOS, Android, and web ⬦ Stream any model with AI SDK ⬦ Tailwind styles for theming ⬦ Smooth keyboard handling ⬦ Liquid Glass and iOS 18 Link below ↓ https://t.co/pDEWOahxnX
+  - Suggestion: building a gps audio narrator on expo right now. spent 2 days on keyboard avoidance for the android input. would've saved that with something like this.
+  - Reasoning: Shape A lived experience — anchors to HistorAI (real Expo project), names a concrete pain point (android keyboard avoidance, 2 days) that the template directly addresses, zero AI tells, no hype.
+  - Query: `("React Native" OR "Expo Go" OR "Expo SDK" OR "Expo Router" OR "mobile dev") -airdrop -token -$`
+
+- **@gregisenberg** · 33.9× · 221❤ 41💬 in 62m · vel 4.87/min vs author median 0.14 → 33.9×
+  - URL: https://x.com/gregisenberg/status/2054584280848769413
+  - Tweet: My 30+ observations on the greatest opportunities in AI agents right now: And some ideas that are keeping me up at night. 1. The new buyer on the internet is an AI agent. Imagine billions of new customers showing up with money to spend but they only shop via MCP. That's what's happening. No MCP server means you're invisible to the fastest growing buyer on the internet. 2. Every franchise system in
+  - Suggestion: are any of those 'pattern-forming' agents actually stateful across runs, or is it low-temp determinism making it look that way?
+  - Reasoning: Shape C question targeting Greg's most technically ambiguous claim (#6 — agents developing preferences) by drawing a precise line between real statefulness and deterministic-output illusion, sounds like a builder who's hit this confusion firsthand.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Rejected (top 1 scored)
+
+- @ameliahazelai · 1.1× · 54❤ 24💬 in 88m · vel 1.16/min vs author median 1.04 → 1.1× · controversy 0.44 (replies/likes)
+  - You don't need a $500 Claude course. 52 free resources, sorted into 4 modules: CLAUDE CODE 1. https://t.co/lyczr1ol8F 4-hour build + sell course 2. https://t.co/wrz0HA24sQ full Code tutorial 3. https:
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+---
