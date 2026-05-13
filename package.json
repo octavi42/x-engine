@@ -17,6 +17,8 @@
     "discover:projects": "node --env-file=.env.local scripts/discover-projects.mjs",
     "discover:projects:dry": "node --env-file=.env.local scripts/discover-projects.mjs --dry-run",
     "discover:projects:ci": "node scripts/discover-projects.mjs",
+    "render-image": "node scripts/render-image.mjs",
+    "render-image:demo": "node scripts/render-image.mjs --demo",
     "draft": "node --env-file=.env.local scripts/draft.mjs",
     "draft:ci": "node scripts/draft.mjs",
     "enhance": "node --env-file=.env.local scripts/enhance.mjs",
@@ -45,8 +47,11 @@
     "node": ">=20.6.0"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
     "@modelcontextprotocol/sdk": "^1.29.0",
+    "@resvg/resvg-js": "^2.6.2",
     "fast-xml-parser": "^5.7.2",
+    "satori": "^0.26.0",
     "twitter-api-v2": "^1.29.0",
     "zod": "^4.4.3"
   }
