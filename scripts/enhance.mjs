@@ -32,11 +32,13 @@ import { parseDraftFile } from './lib/parse-drafts.mjs';
 import { stampDraft } from './lib/stamp-draft.mjs';
 import { runClaude, probeClaudeAuth } from './lib/run-claude.mjs';
 import { parseArchive, topPerformers } from './lib/archive.mjs';
+import { loadArchetypes, selectArchetypesForDraft } from './lib/archetypes.mjs';
 
 const here = fileURLToPath(import.meta.url);
 const ROOT = process.cwd();
 const DRAFTS_DIR = path.join(ROOT, 'drafts');
 const VOICE_PATH = path.join(ROOT, 'config/voice.md');
+const ARCHETYPES_PATH = path.join(ROOT, 'config/archetypes.md');
 const PEER_POSTS_PATH = path.join(ROOT, 'sources/peer-posts/latest.md');
 const ARCHIVE_PATH = path.join(ROOT, 'posted/archive.md');
 const MCP_SERVER_PATH = path.resolve(here, '..', '..', 'mcp-servers/improve/server.mjs');
@@ -165,18 +167,43 @@ ${ownTop}
 ${recent}`;
 }
 
-function buildWriterSystem(contextBlock) {
+function formatArchetypeForPrompt(arch) {
+  const exemplars = arch.exemplars.length
+    ? arch.exemplars.map(e => `  - ${e}`).join('\n')
+    : '  - (no curated exemplars yet)';
+  return `## ${arch.name}
+**Mechanic:** ${arch.mechanic}
+**Structure template:**
+\`\`\`
+${arch.structure}
+\`\`\`
+**Exemplars:**
+${exemplars}`;
+}
+
+function buildWriterSystem(contextBlock, archetypes) {
+  const archetypeBlock = archetypes.map(formatArchetypeForPrompt).join('\n\n');
+  const archetypeNames = archetypes.map(a => `"${a.name}"`).join(', ');
+
   return `You are a tweet-rewrite agent for an X content engine.
 
 For the draft you're given, write THREE candidate rewrites (labeled A, B, C),
-each pulling a different scroll-stop lever, plus a shared critique of the
-original.
+each instantiating a DIFFERENT archetype from the bank below, plus a shared
+critique of the original.
 
 # Output protocol
 Call mcp__improve__submit_variants EXACTLY ONCE with the structured payload.
 Do not call any other tool. Do not output additional text after the tool call.
 
 ${contextBlock}
+
+# Archetype bank (retrieved for this draft's type)
+
+You MUST use these archetypes — one per variant. The "archetype" field in
+each variant must exactly match one of: ${archetypeNames}. Do not invent
+archetype names; do not stamp the surface form without honoring the mechanic.
+
+${archetypeBlock}
 
 # Hard rules (apply to every variant)
 - ≤ ${CHAR_LIMIT} chars total, INCLUDING newlines (each \\n counts as 1 char).
@@ -199,23 +226,16 @@ The "text" field in each variant MUST preserve real \\n characters where the
 post needs a line break. Do NOT collapse to one line.
 
 # Variant differentiation
-The three variants must pull DIFFERENT scroll-stop levers, not be paraphrases
-of one rewrite. Examples of archetypes:
-- "introducing-X"           (lowercase noun alone on line 1; pipeline body; outcome at end)
-- "cause/fix"               (failure state in line 1; cause: + fix: labeled in body)
-- "I just replaced X with Y"(specific swap; before/after metric)
-- "numbered gotchas"        (Tool A: ... / Tool B: ... bare-list scannability)
-- "outlier-data"            (counter-intuitive number on line 1; one-line why)
-- "shipped-X-in-a-weekend"  (verb + thing on line 1; 3-bullet stack with arrows; link)
-For each variant: name the archetype and, in "mechanic", explain in one
-sentence WHY that archetype's lever fits THIS draft. Mechanic-aware mimicry,
-not template stamping.
+Each of A/B/C must instantiate a DIFFERENT archetype from the bank. In the
+"mechanic" field of each variant, restate in one sentence WHY that archetype's
+lever fits THIS draft (the bank's mechanic is generic; yours must be
+draft-specific). Mechanic-aware transfer, not template stamping.
 
 # Scoring rubric (each 1-5, per variant)
 - specificity: concrete number/name/mechanism vs vague claim
 - hook: does line 1 grab a scroller?
 - length: every word earning its place at the chosen length
-- pattern_match: does it execute a hook archetype that's working in the niche?
+- pattern_match: does it execute the archetype's structure faithfully?
 
 # Critique style
 2-3 sentences max. Be direct. Name the failure mode the rewrites address.`;
@@ -371,16 +391,19 @@ async function main() {
   ]);
   const recentPosts = await lastPostedTexts(7);
   const ownTopPerformers = await loadOwnTopPerformers();
+  const archetypes = await loadArchetypes(ARCHETYPES_PATH);
+  if (!archetypes.length) {
+    throw new Error(`no archetypes loaded from ${ARCHETYPES_PATH} — bank is empty`);
+  }
 
   const authProbe = await probeClaudeAuth();
   if (!authProbe.ok) throw new Error(`auth check failed: ${authProbe.reason}`);
 
   const model = process.env.IMPROVE_MODEL ?? DEFAULT_MODEL;
   const contextBlock = buildContextBlock({ voice, peerPosts, recentPosts, ownTopPerformers });
-  const writerSystem = buildWriterSystem(contextBlock);
   const judgeSystem = buildJudgeSystem(contextBlock);
 
-  console.log(`model: ${model} · ${candidates.length} draft(s) · peer-posts: ${peerPosts ? 'loaded' : 'missing'} · own top: ${ownTopPerformers.length}\n`);
+  console.log(`model: ${model} · ${candidates.length} draft(s) · peer-posts: ${peerPosts ? 'loaded' : 'missing'} · own top: ${ownTopPerformers.length} · archetypes: ${archetypes.length}\n`);
 
   const runDir = path.join(tmpdir(), `x-engine-improve-${randomBytes(4).toString('hex')}`);
   await mkdir(runDir, { recursive: true });
@@ -388,6 +411,14 @@ async function main() {
   for (const d of candidates) {
     const violations = runRules(d.body);
     if (violations.length) console.log(`  #${d.index}: rule check — ${violations.length} violation(s)`);
+
+    // Retrieve archetype bank entries that fit this draft's type. The
+    // writer prompt is per-draft so different draft types pull different
+    // archetypes (e.g. trending-reaction → outlier-data; technical-tip →
+    // cause/fix + I-just-replaced-X-with-Y + numbered-gotchas).
+    const selectedArchetypes = selectArchetypesForDraft(archetypes, d.type, 3);
+    const writerSystem = buildWriterSystem(contextBlock, selectedArchetypes);
+    console.log(`  #${d.index}: archetypes → ${selectedArchetypes.map(a => a.name).join(', ')}`);
 
     // Pass 1: writer produces 3 variants + shared critique.
     let writerEntry;
@@ -411,6 +442,17 @@ async function main() {
     if (dirty.length) {
       for (const { label, issues } of dirty) {
         console.warn(`  #${d.index}: variant ${label} has ${issues.length} rule issue(s): ${issues.join('; ')}`);
+      }
+    }
+
+    // Soft check: warn when a variant's archetype isn't one of the retrieved
+    // bank names. The prompt instructs the writer to pick from the list, but
+    // the MCP schema accepts any string — drift here means the writer is
+    // inventing rather than instantiating.
+    const allowedArchetypes = new Set(selectedArchetypes.map((a) => a.name));
+    for (const v of variants) {
+      if (!allowedArchetypes.has(v.archetype)) {
+        console.warn(`  #${d.index}: variant ${v.label} used archetype "${v.archetype}" not in retrieved bank {${[...allowedArchetypes].join(', ')}}`);
       }
     }
 
