@@ -2,7 +2,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
-import { join, isAbsolute } from 'node:path';
+import { join, resolve } from 'node:path';
 
 const execFileAsync = promisify(execFile);
 
@@ -110,7 +110,11 @@ export async function fetch(source) {
 function expandHome(p) {
   if (p.startsWith('~/')) return join(homedir(), p.slice(2));
   if (p === '~') return homedir();
-  return isAbsolute(p) ? p : p;
+  // Absolute paths pass through; relative paths resolve against CWD at call
+  // time. The shipped config sets an absolute-after-expansion path, so this
+  // branch is rarely exercised — but if a fork uses a relative dbPath, it
+  // resolves predictably.
+  return resolve(p);
 }
 
 function safeJson(s) {
