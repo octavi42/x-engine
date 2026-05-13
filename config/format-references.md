@@ -42,20 +42,22 @@ Hand-curated. Updated when a new format proves itself on `posted/archive.md` eng
 
 ---
 
-## Image-post formats (NYI — image renderer not yet built)
+## Image-post formats
 
-These formats are visible to the agent for *planning* (e.g., reserving a Monday-morning slot for the weekly leaderboard) but must NOT be drafted as outputs until the Satori renderer ships in Phase 3.
-
-### synthesis-screenshot — `requires: image-renderer (NYI)`
-- **Shape:** bold title → 3–5 H3 sections with bullets, rendered as a card-on-dark-bg PNG.
-- **Caption:** 1–2 lines, ends with a hook to "see image."
+### synthesis-screenshot — `renderer: ready · draft-pipeline: phase-3c`
+- **Status:** the Satori renderer ships in Phase 3a. Drafting agent can author this format but the draft → post pipeline doesn't yet upload media to X (Phase 3c).
+- **Markdown spec (enforced):** exactly 1 `# title`, 3–5 `## sections`, 2–5 `- bullets` per section. Limits: title ≤80 chars, bullet ≤140 chars, section heading ≤70 chars.
+- **Preview locally:** `npm run render-image -- --markdown=<path> --out=<basename>` → `./out/<basename>.png`.
+- **Demo:** `npm run render-image:demo` renders `assets/demos/synthesis-screenshot-sample.md`.
+- **Caption:** 1–2 lines, ends with a hook to "see image." Single tweet, ≤280 chars.
 - **Reference:** @benln "Jack Dorsey on how every company can now be a mini-AGI" (2026-05-13) — 451 likes / 31K views / 50 RTs in 3 hours.
-- **Use for:** Velocity weekly leaderboard summaries, autonomous-company-tool manifestos, distilled podcast/talk takeaways.
+- **Use for:** Velocity weekly leaderboard summaries, autonomous-company-tool manifestos, distilled podcast/talk takeaways, system-of-tools manifesto posts.
 
-### data-leaderboard — `requires: image-renderer (NYI)`
+### data-leaderboard — `requires: velocity-data + renderer (phase-3b)`
 - **Shape:** title + ranked table/list of 5–10 items with delta column, rendered as PNG.
 - **Caption:** 1 line naming the dataset window ("week ending YYYY-MM-DD · 3,011 YC startups").
 - **Use for:** Velocity weekly drops once `sources/velocity-data/` ships.
+- **Note:** the synthesis-screenshot renderer can substitute for this format today (render the leaderboard as `## Top 5 movers` + 5 bullets). Native ranked-table layout comes with Phase 3b.
 
 ---
 
