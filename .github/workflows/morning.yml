@@ -105,9 +105,13 @@ jobs:
       - name: Sync sources
         if: steps.gate.outputs.should_run == 'true'
         env:
-          # Skip the obsidian-personal source — it needs a local vault that
-          # doesn't exist on the CI runner.
-          DISABLED_SOURCES: obsidian-personal
+          # Skip sources that need local-machine state (Obsidian vault,
+          # Northstar SQLite DB). Neither exists on the CI runner.
+          DISABLED_SOURCES: obsidian-personal,northstar-ideas
+          # Skip the discover-projects pre-sync step — vault not mounted in CI.
+          # config/projects/*.md is the checked-in snapshot and stays authoritative
+          # for the morning draft run.
+          DISABLED_DISCOVERIES: projects
           # Don't fail the workflow if a single source (e.g. a flaky RSS feed)
           # errors — downstream steps run with the partial data we have.
           SYNC_TOLERATE_ERRORS: "1"

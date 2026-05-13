@@ -1,14 +1,23 @@
-# Autonomous Company Tool
+# Autonomous-Company Tool
 
-- **Repo:** none yet (sketch stage)
-- **Description:** A tool that sits inside a company, observes how work actually flows (tools used, handoffs, repeated interactions), builds a graph of that work, and proposes incremental autonomy upgrades per node. Turns a company into a fully autonomous org one flow at a time.
-- **Stack:** TBD — likely calendar + Slack OAuth as the observation surface, graph backend TBD
-- **Status:** sketch — five scoping questions open (observation surface, graph schema, autonomy-readiness score, day-1 wedge, ICP for design partner #1)
+- **Repo:** none
+- **Description:** A tool that observes how work flows inside a company, maps it as a graph, and proposes incremental autonomy upgrades node by node.
+- **Stack:** calendar OAuth, Slack OAuth, graph schema, autonomy-readiness scoring, Claude agents
+- **Status:** sketch
 - **Content angles:**
-  - The observation-layer thesis — "agent vendors are commoditizing automation. nobody knows what to automate first in your specific company. the wedge is the map, not the agent"
-  - Process-mining-for-autonomy — how this differs from Celonis (compliance) and UiPath (RPA): same instrument, different output, different buyer
-  - Day-1 wedge candidate posts — pick one company flow (support triage / expense reports / sales follow-up notes / weekly metrics roll-up) and show the readiness score
-  - Calendar + Slack as the cheapest observation surface — why metadata beats screen recording for the wedge
-  - Looking for design partner #1 — direct ICP outreach post (50–200 person post-Series-A, COO or founder)
-  - Adjacent risks worth naming publicly — Celonis Process Copilot, RPA convergence, GDPR for employee monitoring
-  - Sketch-stage discipline — "5 questions before any code. here they are." (the README itself is a content piece)
+  - The agent vendors are commoditizing automation — nobody is mapping what to automate first in your specific company.
+  - Why the wedge for autonomous orgs is the observation layer, not the agent layer.
+  - Process mining (Celonis, UiPath) sells maps for compliance — the same shape sold for autonomy is a different product.
+  - Cheapest path to a company-flow graph: calendar + Slack metadata, not screen recording.
+  - What a node and an edge should mean in an org graph: person, tool, action, recurring meeting — handoff, dependency, repetition.
+  - An autonomy-readiness score per node: repetition rate, decision-surface size, API-available inputs, regulatory exposure.
+  - Why screen recording dies on GDPR — the Sneek / Time Doctor wall and how to stay metadata-only.
+  - Ranking day-1 wedges: support triage vs expense reports vs recruiting scheduling vs metrics roll-ups.
+  - The ICP for design partner #1 is the COO of a 50–200 person post-Series-A ops-heavy company, not IT.
+  - Solo-founder version vs enterprise version — same graph problem at different N.
+  - Adjacent risk: Celonis Process Copilot already exists, but their wedge is audit, not founder-facing autonomy.
+
+
+<!-- _source_hash: 118cd3365d3dde29 -->
+<!-- _source_path: ~/Documents/Obsidian Vault/1-Projects/autonomous-company-tool/README.md -->
+<!-- _discovered_at: 2026-05-13T18:29:51.173Z -->
