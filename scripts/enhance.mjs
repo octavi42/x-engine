@@ -1,13 +1,19 @@
 #!/usr/bin/env node
-// Autoimprove agent — reads a draft file, scores each draft against the
-// patterns distilled in sources/peer-posts/latest.md and the voice in
-// config/voice.md, and emits a critique + refined rewrite per draft.
+// Autoimprove agent — reads a draft file, for each draft runs a two-pass
+// pipeline against the patterns in sources/peer-posts/latest.md and the voice
+// in config/voice.md:
 //
-// Powered by `claude -p` headless mode (Pro/Max subscription billing).
-// The improve MCP server (mcp-servers/improve/server.mjs) exposes a single
-// tool, submit_critique, which Claude is instructed to call exactly once.
-// Results are persisted to a per-draft JSON file the parent reads after
-// `claude -p` exits.
+//   1. WRITER  → produces 3 candidate rewrites (A, B, C) + shared critique.
+//                Each variant names its archetype + the mechanic it uses.
+//                Newlines are preserved (real tweets use line breaks).
+//   2. JUDGE   → ranks {original, A, B, C} pairwise and picks a winner.
+//                If no variant beats the original, returns "original" and
+//                we ship the draft as-is (beat-original gate).
+//
+// Powered by `claude -p` headless mode (Pro/Max subscription billing). The
+// improve MCP server (mcp-servers/improve/server.mjs) exposes submit_variants
+// and submit_verdict; the writer pass and judge pass each spawn their own
+// claude -p with their own result file.
 //
 // Usage:
 //   npm run enhance                      # enhances today's draft file
@@ -37,8 +43,8 @@ const MCP_SERVER_PATH = path.resolve(here, '..', '..', 'mcp-servers/improve/serv
 
 const CHAR_LIMIT = 280;
 const DEFAULT_MODEL = 'claude-sonnet-4-6';
-// 3 turns: think → call submit_critique → end. We retry once at the
-// caller layer (not inside the loop) if the first try doesn't emit.
+// Writer needs: think → call submit_variants → end. Judge needs the same.
+// 3 turns each, with one retry at the caller layer if the tool wasn't called.
 const MAX_TURNS = 3;
 
 const BANNED_PHRASES = [
@@ -121,31 +127,24 @@ async function lastPostedTexts(daysBack = 7) {
   return out.map((s) => s.trim()).filter(Boolean);
 }
 
-function buildSystemPrompt({ voice, peerPosts, recentPosts, ownTopPerformers }) {
+function buildContextBlock({ voice, peerPosts, recentPosts, ownTopPerformers }) {
   const recent = recentPosts.length
     ? recentPosts.map((p, i) => `${i + 1}. ${p.slice(0, 200)}${p.length > 200 ? '…' : ''}`).join('\n')
     : '(no recent posts in archive)';
 
+  // Full body (no 240-char truncation) so the model can see the line-break
+  // structure that made these posts work. Normalize triple+ newlines to
+  // doubles so a single fenced block stays compact.
   const ownTop = ownTopPerformers.length
     ? ownTopPerformers.map((p, i) => {
         const m = p.metrics;
         const stats = `likes=${m.likes ?? '—'} replies=${m.replies ?? '—'} reposts=${m.reposts ?? '—'}${m.bookmarks != null ? ` bookmarks=${m.bookmarks}` : ''}`;
-        return `${i + 1}. (${p.date} · ${stats}) ${p.body.replace(/\s+/g, ' ').slice(0, 240)}`;
-      }).join('\n')
+        const body = p.body.replace(/\n{3,}/g, '\n\n');
+        return `${i + 1}. (${p.date} · ${stats})\n\`\`\`\n${body}\n\`\`\``;
+      }).join('\n\n')
     : '_(no engagement data yet — feedback loop will populate this once posts have aged 24h+)_';
 
-  return `You are a tweet-improvement agent for an X content engine.
-
-For each draft you're given, score it on four axes against the user's voice
-and the engagement patterns observed this week, then produce one refined
-rewrite.
-
-# Output protocol
-Call the mcp__improve__submit_critique tool EXACTLY ONCE with the structured
-result. Do not call any other tool. Do not output additional text after the
-tool call — end your turn.
-
-# Voice (user's tone, audience, banned phrases)
+  return `# Voice (user's tone, audience, banned phrases)
 
 ${voice.trim()}
 
@@ -153,39 +152,76 @@ ${voice.trim()}
 
 ${peerPosts.trim() || '_(no peer-posts data yet — score against voice + general principles)_'}
 
-# User's own top-performing posts
+# User's own top-performing posts (full body, line breaks preserved)
 
 These are the user's posts with the highest engagement to date. Mirror what's
-working for THEIR audience (hook, structure, specificity) — peer patterns are
-secondary signal.
+working for THEIR audience — hook, structure, line-break placement, specificity.
+Peer patterns are a secondary signal.
 
 ${ownTop}
 
 # Posts the user already published in the last 7 days
 
-${recent}
-
-# Hard rules
-- Refined tweet must be ≤ ${CHAR_LIMIT} chars.
-- Refined must not use any banned phrase from the voice file.
-- Refined must contain a specific technical detail (number, name, mechanism)
-  unless the original is a question/engagement post — then a sharp question is ok.
-- Don't repeat a topic the user posted in the last 7 days. If the draft
-  duplicates one, say so in the critique and refine to a different angle.
-- 0 or 1 hashtag max. No external links unless the original explicitly needs it.
-- Match the user's voice (lowercase starts ok, fragments ok, terse, no hype).
-
-# Scoring rubric (each 1-5)
-- specificity: concrete number/name/mechanism vs vague claim
-- hook: does the first line grab someone scrolling?
-- length: every word earning its place at the chosen length
-- pattern_match: does it use a hook archetype that's working in the niche?
-
-# Critique style
-2-3 sentences max. Be direct. Reference the patterns when possible.`;
+${recent}`;
 }
 
-function buildUserPrompt(draft, ruleViolations) {
+function buildWriterSystem(contextBlock) {
+  return `You are a tweet-rewrite agent for an X content engine.
+
+For the draft you're given, write THREE candidate rewrites (labeled A, B, C),
+each pulling a different scroll-stop lever, plus a shared critique of the
+original.
+
+# Output protocol
+Call mcp__improve__submit_variants EXACTLY ONCE with the structured payload.
+Do not call any other tool. Do not output additional text after the tool call.
+
+${contextBlock}
+
+# Hard rules (apply to every variant)
+- ≤ ${CHAR_LIMIT} chars total, INCLUDING newlines (each \\n counts as 1 char).
+- No banned phrase from the voice file.
+- Specific technical detail (number, name, mechanism) — unless original is a
+  pure engagement/question post, then a sharp question is ok.
+- 0 or 1 hashtag max. No external links unless the original explicitly needs one.
+- Voice match: lowercase starts ok, fragments ok, terse, no hype. Respect the
+  voice file's punctuation rules (no em/en dashes, no trailing periods at
+  paragraph end, arrows/colons/newlines as connectors).
+
+# Formatting — line breaks are part of the post
+Every high-engagement reference post in the context uses line breaks
+deliberately. Real tweets are NOT walls of text. Use them:
+- Hook on its own line (often a fragment, ≤ ~60 chars). Blank line below.
+- Body in 1-3 short paragraphs separated by blank lines.
+- Numbered lists, pipeline arrows, and cause/fix labels each go on their own
+  line when present.
+The "text" field in each variant MUST preserve real \\n characters where the
+post needs a line break. Do NOT collapse to one line.
+
+# Variant differentiation
+The three variants must pull DIFFERENT scroll-stop levers, not be paraphrases
+of one rewrite. Examples of archetypes:
+- "introducing-X"           (lowercase noun alone on line 1; pipeline body; outcome at end)
+- "cause/fix"               (failure state in line 1; cause: + fix: labeled in body)
+- "I just replaced X with Y"(specific swap; before/after metric)
+- "numbered gotchas"        (Tool A: ... / Tool B: ... bare-list scannability)
+- "outlier-data"            (counter-intuitive number on line 1; one-line why)
+- "shipped-X-in-a-weekend"  (verb + thing on line 1; 3-bullet stack with arrows; link)
+For each variant: name the archetype and, in "mechanic", explain in one
+sentence WHY that archetype's lever fits THIS draft. Mechanic-aware mimicry,
+not template stamping.
+
+# Scoring rubric (each 1-5, per variant)
+- specificity: concrete number/name/mechanism vs vague claim
+- hook: does line 1 grab a scroller?
+- length: every word earning its place at the chosen length
+- pattern_match: does it execute a hook archetype that's working in the niche?
+
+# Critique style
+2-3 sentences max. Be direct. Name the failure mode the rewrites address.`;
+}
+
+function buildWriterUserPrompt(draft, ruleViolations) {
   const projectLine = draft.project ? `Project: ${draft.project}` : 'Project: general';
   const ruleBlock = ruleViolations.length
     ? `Deterministic rule violations to fix:\n${ruleViolations.map((v) => '- ' + v).join('\n')}`
@@ -193,18 +229,71 @@ function buildUserPrompt(draft, ruleViolations) {
   return `${projectLine}
 Title: ${draft.title}
 Body (${draft.body.length} chars):
+\`\`\`
 ${draft.body}
+\`\`\`
 
 ${ruleBlock}
 
-Score, critique, and rewrite via submit_critique.`;
+Produce critique + 3 variants via submit_variants.`;
 }
 
-async function critiqueOne({ draft, system, model, resultFile }) {
-  // Wipe any previous result for this draft.
-  if (existsSync(resultFile)) await unlink(resultFile);
+function buildJudgeSystem(contextBlock) {
+  return `You are a tweet-ranking judge for an X content engine.
 
-  const baseUserPrompt = buildUserPrompt(draft, runRules(draft.body));
+You will be given an original draft and 3 candidate rewrites (A, B, C).
+Rank all four (original + A + B + C) best-first by likely engagement on a
+developer/indie-hacker timeline, using the user's voice and the engagement
+patterns in this context. Pick a winner.
+
+# Output protocol
+Call mcp__improve__submit_verdict EXACTLY ONCE with ranking, winner, and
+reasoning. Do not call any other tool. End your turn.
+
+${contextBlock}
+
+# Judging principles
+- Pairwise compare hook strength FIRST. A weak line-1 is a dead post regardless
+  of body quality.
+- Specificity beats vibes. A named tool / number / mechanism wins over a
+  generic claim every time.
+- Line-break execution matters: a multi-paragraph layout with a tight hook
+  beats the same content as a wall of text.
+- Variant differentiation is a bonus, not a tiebreaker. If two variants land
+  the same lever and one does it better, the better one wins.
+- BEAT-ORIGINAL GATE: if no variant meaningfully beats the original on these
+  criteria, return winner="original". The user prefers shipping the original
+  over a refine-for-refining's-sake rewrite.
+
+# Reasoning style
+1-2 sentences. Name the lever the winner pulls (or, for "original", why the
+candidates failed to beat it).`;
+}
+
+function buildJudgeUserPrompt(draft, variants) {
+  const variantBlock = variants.map((v) => {
+    return `[${v.label}] archetype: ${v.archetype}
+mechanic: ${v.mechanic}
+text (${v.text.length} chars):
+\`\`\`
+${v.text}
+\`\`\``;
+  }).join('\n\n');
+  return `Project: ${draft.project || 'general'}
+Title: ${draft.title}
+
+[original] (${draft.body.length} chars):
+\`\`\`
+${draft.body}
+\`\`\`
+
+${variantBlock}
+
+Rank all four and pick a winner via submit_verdict.`;
+}
+
+async function runMcpCall({ prompt, system, model, resultFile, role }) {
+  if (existsSync(resultFile)) await unlink(resultFile);
 
   const mcpServers = {
     improve: {
@@ -214,16 +303,14 @@ async function critiqueOne({ draft, system, model, resultFile }) {
     },
   };
 
-  // Try once normally; if Claude didn't call submit_critique, re-prompt with
-  // a stricter instruction. The result file is the source of truth.
   const attempts = [
-    baseUserPrompt,
-    baseUserPrompt + '\n\nREQUIRED: respond by calling mcp__improve__submit_critique exactly once. No prose. No other tools.',
+    prompt,
+    prompt + `\n\nREQUIRED: respond by calling the appropriate mcp__improve__* tool exactly once. No prose. No other tools.`,
   ];
 
-  for (const prompt of attempts) {
+  for (const attempt of attempts) {
     await runClaude({
-      prompt,
+      prompt: attempt,
       systemPrompt: system,
       model,
       mcpServers,
@@ -234,11 +321,24 @@ async function critiqueOne({ draft, system, model, resultFile }) {
       if (entries.length) return entries.at(-1);
     }
   }
-  throw new Error('model did not call submit_critique after retry');
+  throw new Error(`${role} did not emit a result after retry`);
 }
 
 function formatScore(s) {
   return `specificity ${s.specificity}/5 · hook ${s.hook}/5 · length ${s.length}/5 · pattern ${s.pattern_match}/5`;
+}
+
+function compactPreview(text, max = 64) {
+  const flat = text.replace(/\s+/g, ' ').trim();
+  return flat.length > max ? flat.slice(0, max - 1) + '…' : flat;
+}
+
+function formatVariantsSummary(variants, winnerLabel) {
+  return variants.map((v) => {
+    const marker = v.label === winnerLabel ? '★' : ' ';
+    const score = `spec ${v.score.specificity} · hook ${v.score.hook} · len ${v.score.length} · pat ${v.score.pattern_match}`;
+    return `${marker} ${v.label} (${v.archetype}) — ${score} — ${compactPreview(v.text)}`;
+  }).join('\n');
 }
 
 async function main() {
@@ -276,46 +376,93 @@ async function main() {
   if (!authProbe.ok) throw new Error(`auth check failed: ${authProbe.reason}`);
 
   const model = process.env.IMPROVE_MODEL ?? DEFAULT_MODEL;
-  const system = buildSystemPrompt({ voice, peerPosts, recentPosts, ownTopPerformers });
+  const contextBlock = buildContextBlock({ voice, peerPosts, recentPosts, ownTopPerformers });
+  const writerSystem = buildWriterSystem(contextBlock);
+  const judgeSystem = buildJudgeSystem(contextBlock);
 
   console.log(`model: ${model} · ${candidates.length} draft(s) · peer-posts: ${peerPosts ? 'loaded' : 'missing'} · own top: ${ownTopPerformers.length}\n`);
 
-  // Per-run temp dir for result files.
   const runDir = path.join(tmpdir(), `x-engine-improve-${randomBytes(4).toString('hex')}`);
   await mkdir(runDir, { recursive: true });
 
   for (const d of candidates) {
     const violations = runRules(d.body);
     if (violations.length) console.log(`  #${d.index}: rule check — ${violations.length} violation(s)`);
-    let entry;
+
+    // Pass 1: writer produces 3 variants + shared critique.
+    let writerEntry;
     try {
-      entry = await critiqueOne({
-        draft: d,
-        system,
+      writerEntry = await runMcpCall({
+        prompt: buildWriterUserPrompt(d, violations),
+        system: writerSystem,
         model,
-        resultFile: path.join(runDir, `draft-${d.index}.json`),
+        resultFile: path.join(runDir, `draft-${d.index}-variants.json`),
+        role: 'writer',
       });
     } catch (err) {
-      console.error(`  #${d.index}: ERROR ${err.message}`);
+      console.error(`  #${d.index}: WRITER ERROR ${err.message}`);
+      continue;
+    }
+    const { critique, variants } = writerEntry;
+
+    // Validate every variant against hard rules before we pay for a judge call.
+    const variantIssues = variants.map((v) => ({ label: v.label, issues: runRules(v.text) }));
+    const dirty = variantIssues.filter((vi) => vi.issues.length);
+    if (dirty.length) {
+      for (const { label, issues } of dirty) {
+        console.warn(`  #${d.index}: variant ${label} has ${issues.length} rule issue(s): ${issues.join('; ')}`);
+      }
+    }
+
+    // Pass 2: judge ranks {original, A, B, C} and picks winner.
+    let judgeEntry;
+    try {
+      judgeEntry = await runMcpCall({
+        prompt: buildJudgeUserPrompt(d, variants),
+        system: judgeSystem,
+        model,
+        resultFile: path.join(runDir, `draft-${d.index}-verdict.json`),
+        role: 'judge',
+      });
+    } catch (err) {
+      console.error(`  #${d.index}: JUDGE ERROR ${err.message}`);
+      continue;
+    }
+    const { winner, ranking, reasoning } = judgeEntry;
+
+    const winnerVariant = winner === 'original' ? null : variants.find((v) => v.label === winner);
+    if (winner !== 'original' && !winnerVariant) {
+      console.error(`  #${d.index}: judge picked unknown label "${winner}", skipping stamp`);
       continue;
     }
 
-    const refined = String(entry.refined ?? '').replace(/\n+/g, ' ').trim();
-    const refinedChars = refined.length;
-    const refinedIssues = runRules(refined);
-    if (refinedIssues.length) {
-      console.warn(`  #${d.index}: refined has ${refinedIssues.length} rule issue(s): ${refinedIssues.join('; ')}`);
+    // Score comes from the writer's per-variant score, not the judge — the
+    // first live run showed the judge inflates winner_score to 5/5/5/5 even
+    // when writer scores show real 3-5 variance. When winner=original we
+    // have no per-variant score, so skip the Score stamp entirely.
+    const updates = {
+      Critique: critique.replace(/\n+/g, ' ').trim(),
+      Variants: formatVariantsSummary(variants, winner),
+      Winner: winner,
+      Verdict: reasoning.replace(/\n+/g, ' ').trim(),
+      Ranking: ranking.join(' > '),
+    };
+    if (winnerVariant) {
+      updates.Score = formatScore(winnerVariant.score);
+      updates.Refined = winnerVariant.text;
+      const refinedIssues = runRules(winnerVariant.text);
+      if (refinedIssues.length) updates.RefinedIssues = refinedIssues.join('; ');
     }
 
-    const updates = {
-      Score: formatScore(entry.score),
-      Critique: String(entry.critique ?? '').replace(/\n+/g, ' ').trim(),
-      Refined: refined,
-    };
-    if (refinedIssues.length) updates.RefinedIssues = refinedIssues.join('; ');
     await stampDraft({ filePath: file, draftIndex: d.index, updates });
-    console.log(`  #${d.index}: ${formatScore(entry.score)}`);
-    console.log(`     ${refined.slice(0, 70)}${refinedChars > 70 ? '…' : ''} (${refinedChars}c)`);
+    const scoreSummary = winnerVariant ? ` · ${formatScore(winnerVariant.score)}` : '';
+    console.log(`  #${d.index}: winner=${winner}${scoreSummary}`);
+    console.log(`     ${reasoning.slice(0, 100)}${reasoning.length > 100 ? '…' : ''}`);
+    if (winnerVariant) {
+      console.log(`     refined (${winnerVariant.text.length}c, ${winnerVariant.archetype}): ${compactPreview(winnerVariant.text, 80)}`);
+    } else {
+      console.log(`     [beat-original gate] keeping original — no variant beat it`);
+    }
   }
 
   console.log(`\ndone. ${candidates.length} draft(s) enhanced.`);

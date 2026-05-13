@@ -34,7 +34,30 @@ export async function parseDraftFile(filePath) {
       const cur = lines[i];
       if (cur.startsWith("## ") || cur.trim() === "---") break;
       const fm = cur.match(/^\*\*([^:*]+):\*\*\s*(.*?)\s*$/);
-      if (fm) metadata[fm[1].toLowerCase().trim()] = fm[2].trim();
+      if (fm) {
+        const key = fm[1].toLowerCase().trim();
+        const inline = fm[2].trim();
+        // Multi-line block form: `**Field:**` alone on its line, followed
+        // (optionally after blank lines) by `> `-prefixed lines, which
+        // we collect as the field value joined by \n (preserving blank
+        // lines as empty strings). Used for Refined when the rewrite has
+        // line breaks. Legacy single-line `**Field:** value` still works.
+        if (inline === "") {
+          let j = i + 1;
+          while (j < lines.length && lines[j].trim() === "") j++;
+          if (j < lines.length && lines[j].startsWith("> ")) {
+            const collected = [];
+            while (j < lines.length && lines[j].startsWith(">")) {
+              collected.push(lines[j].startsWith("> ") ? lines[j].slice(2) : lines[j].slice(1));
+              j++;
+            }
+            metadata[key] = collected.join("\n").replace(/\n+$/, "");
+            i = j;
+            continue;
+          }
+        }
+        metadata[key] = inline;
+      }
       i++;
     }
 
