@@ -115,9 +115,9 @@
     "mayfer": {
       "handle": "mayfer",
       "status": "active",
-      "last_pulled": "2026-05-11",
-      "score_sum": 18,
-      "score_n": 4,
+      "last_pulled": "2026-05-14",
+      "score_sum": 23,
+      "score_n": 5,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Local AI pipeline builder (whisper+qwen+moondream offline) — massive engagement, maps directly to Octavi's UGC discovery pipeline with local models"
     },
@@ -176,6 +176,27 @@
       "score_n": 1,
       "promoted_at": "2026-05-12",
       "promoted_reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
+    },
+    "benln": {
+      "handle": "benln",
+      "status": "active",
+      "last_pulled": "2026-05-14",
+      "score_sum": 4,
+      "score_n": 1
+    },
+    "garrytan": {
+      "handle": "garrytan",
+      "status": "active",
+      "last_pulled": "2026-05-14",
+      "score_sum": 3,
+      "score_n": 1
+    },
+    "natfriedman": {
+      "handle": "natfriedman",
+      "status": "active",
+      "last_pulled": "2026-05-14",
+      "score_sum": 2,
+      "score_n": 1
     }
   },
   "discovered": {
@@ -299,5 +320,5 @@
       "reason": "React Native + Expo animation builder posting specific technical details (UI thread, component-level animation) — relevant to Octavi's mobile dev stack; moderate engagement (252L/217B)"
     }
   },
-  "last_run": "2026-05-13T09:19:16.860Z"
+  "last_run": "2026-05-14T08:50:28.147Z"
 }
