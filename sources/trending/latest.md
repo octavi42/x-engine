@@ -8,6 +8,16 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-14
+
+- OpenAI 7th acquisition of 2026 this week: Hiro's personal-finance agent team. Combined with DeployCo ($4B + Tomoro forward-deployed eng, 5/11) and the Codex security agent, OpenAI is operating as a holding company across coding, security, dev tools, personal-agent surfaces. Wrapper-layer M&A thesis hardening.
+- Cohere (last valued $6.8B) merged with Germany's Aleph Alpha. Blessed by the Canadian and German governments. First major sovereign-AI consolidation play.
+- Profluent (frontier AI for bio) announced $2.25B partnership with Eli Lilly for large-gene insertion therapeutics. Sereact (embodied AI) closed $110M Series B.
+- Martha Stewart launched Hint, an AI home-management startup. $10M seed led by Slow Ventures (5/13 Fortune scoop). Vertical agent for "manage your home before things break."
+- Cursor 3.2 shipped `/multitask` for parallel subagents (not serialized). Claude Code subagents GA'd in late April. Both major IDE/CLI agents are betting on multi-agent over single-loop. The New Stack: Claude Code, Cursor, Codex are "merging into one AI coding stack nobody planned."
+- GitHub Copilot raised the premium-request multiplier on Opus to 15x. A further bump to 27x is already scheduled alongside usage-based billing. Anthropic Max plan now the clean direct-to-customer route for heavy Claude Code users.
+- llm-stats / dev.to: Claude Code is ranked alone at the top of the agentic coding scorecard for the first time in 2026. Anthropic ARR ~$19B, OpenAI ARR ~$25B+ heading toward IPOs late 2026.
+
 ## 2026-05-13
 
 - Anthropic in talks to raise $30B-$50B at up to $950B valuation. Would surpass OpenAI as the world's most valuable AI startup. Dario Amodei told Code with Claude conference Anthropic at $30B annual revenue run rate. Bloomberg reports IPO consideration as soon as October. Sherwood News, BanklessTimes, SiliconRepublic, tbreak (5/13).
