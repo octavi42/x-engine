@@ -318,3 +318,37 @@ Searched: **51** unique · Scored: **9** · Notified: **3**
   - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
 
 ---
+## 2026-05-14 16:16 UTC
+
+Searched: **61** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@Manu_Sisti** · 206.5× · 98❤ 81💬 in 88m · vel 2.97/min vs author median 0.01 → 206.5× · controversy 0.83 (replies/likes)
+  - URL: https://x.com/Manu_Sisti/status/2054936548097839407
+  - Tweet: The highest ROI AI business model in 2026 is: - Not AI agents - Not AI dropshipping - Not AI SaaS and software It’s something almost no one is talking about. But I’ve QUIETLY made $65,000 last month doing this. If you start today, you can make $3,000 by the end of June 2026. All you need: ChatGPT, Claude, and 1 hour a day. • Like this post • Comment “ROI” I’ll send you the entire training for FREE
+  - Suggestion: the model is: manufacture curiosity → bait comments → build a list → sell a course. it's not AI, it's 2015 facebook marketing with a chatgpt wrapper
+  - Reasoning: Shape B counter with mechanism — names the actual funnel steps specifically rather than just calling it a scam, which is more credible and more likely to get engagement from engineers who recognize the pattern.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@realhyderabad86** · 62.4× · 85❤ 17💬 in 77m · vel 1.55/min vs author median 0.02 → 62.4×
+  - URL: https://x.com/realhyderabad86/status/2054939319492558874
+  - Tweet: My son saw me building a website for calories tracking in 2 hours using Claude Code He was excited and asked if I can give him claude code credits for game development I'm thinking of giving 20 USD to start with Is that a good idea? Pros and cons? Are anyone giving such tools for kids as young as in 7th grade?
+  - Suggestion: what engine? pygame output is readable at that age. unity c# at 7th grade turns into cargo-cult clicking by scene 2 — he'll ship things without knowing why they work.
+  - Reasoning: Shape C — one pointed question that unlocks the real variable (engine choice determines whether the kid learns or just vibes), with a concrete technical mechanism rather than generic pros/cons advice.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@NEARProtocol** · 33.1× · 192❤ 1💬 in 51m · vel 3.80/min vs author median 0.11 → 33.1×
+  - URL: https://x.com/NEARProtocol/status/2054945737427865782
+  - Tweet: USDC is now live in the NEAR AI Agent Market, with confidential execution through Confidential Intents. Private stablecoin settlement is foundational infrastructure for the AI economy and now live on NEAR to power the next wave of agentic commerce and autonomous businesses.
+  - Suggestion: curious what "confidential" means in practice here: TEE isolation, ZK proofs, or MPC?
+  - Reasoning: Shape C — one pointed question that surfaces the unsolved technical detail; names three concrete mechanisms a real engineer would want to distinguish before trusting a payment rail with agent funds.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Rejected (top 1 scored)
+
+- @RoundtableSpace · 2.6× · 64❤ 15💬 in 90m · vel 1.05/min vs author median 0.41 → 2.6×
+  - Codex builds it. Claude Code reviews it. Hermes orchestrates the handoff. Three agents. One Kanban board. Nobody waiting on a human. https://t.co/nUZlTd4IkA
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+---

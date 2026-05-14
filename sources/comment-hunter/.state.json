@@ -728,6 +728,87 @@
       "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2054936548097839407": {
+      "suggestedAt": "2026-05-14T16:15:04.390Z",
+      "author": "Manu_Sisti",
+      "url": "https://x.com/Manu_Sisti/status/2054936548097839407",
+      "tweetText": "The highest ROI AI business model in 2026 is:\n\n- Not AI agents\n- Not AI dropshipping\n- Not AI SaaS and software\n\nIt’s something almost no one is talking about.\n\nBut I’ve QUIETLY made $65,000 last month doing this.\n\nIf you start today, you can make $3,000 by the end of June 2026.\n\nAll you need: ChatGPT, Claude, and 1 hour a day.\n\n• Like this post\n• Comment “ROI”\n\nI’ll send you the entire training for FREE.\n\nIncluding all my AI prompts, workflows, and systems.\n\n(Only sending it to the first 500 people.)",
+      "metrics": {
+        "likes": 98,
+        "replies": 81,
+        "retweets": 32,
+        "bookmarks": 33,
+        "views": 7855,
+        "ageMinutes": 87.54573333333333
+      },
+      "scoreDetails": {
+        "ratio": 206.4672916419344,
+        "candidateVelocity": 2.969876316074037,
+        "authorMedianVelocity": 0.014384246010377957,
+        "authorSampleSize": 19,
+        "controversy": 0.826530612244898
+      },
+      "score": 206.4672916419344,
+      "comment": "the model is: manufacture curiosity → bait comments → build a list → sell a course. it's not AI, it's 2015 facebook marketing with a chatgpt wrapper",
+      "reasoning": "Shape B counter with mechanism — names the actual funnel steps specifically rather than just calling it a scam, which is more credible and more likely to get engagement from engineers who recognize the pattern.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2054939319492558874": {
+      "suggestedAt": "2026-05-14T16:15:48.165Z",
+      "author": "realhyderabad86",
+      "url": "https://x.com/realhyderabad86/status/2054939319492558874",
+      "tweetText": "My son saw me building a website for calories tracking in 2 hours using Claude Code \n\nHe was excited and asked if I can give him claude code credits for game development\n\nI'm thinking of giving 20 USD to start with\n\nIs that a good idea? \n\nPros and cons? Are anyone giving such tools for kids as young as in 7th grade?",
+      "metrics": {
+        "likes": 85,
+        "replies": 17,
+        "retweets": 0,
+        "bookmarks": 47,
+        "views": 14174,
+        "ageMinutes": 76.52906666666667
+      },
+      "scoreDetails": {
+        "ratio": 62.36033295119821,
+        "candidateVelocity": 1.5549647367100605,
+        "authorMedianVelocity": 0.024935157705571278,
+        "authorSampleSize": 19,
+        "controversy": 0.2
+      },
+      "score": 62.36033295119821,
+      "comment": "what engine? pygame output is readable at that age. unity c# at 7th grade turns into cargo-cult clicking by scene 2 — he'll ship things without knowing why they work.",
+      "reasoning": "Shape C — one pointed question that unlocks the real variable (engine choice determines whether the kid learns or just vibes), with a concrete technical mechanism rather than generic pros/cons advice.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2054945737427865782": {
+      "suggestedAt": "2026-05-14T16:16:18.095Z",
+      "author": "NEARProtocol",
+      "url": "https://x.com/NEARProtocol/status/2054945737427865782",
+      "tweetText": "USDC is now live in the NEAR AI Agent Market, with confidential execution through Confidential Intents.\n\nPrivate stablecoin settlement is foundational infrastructure for the AI economy and now live on NEAR to power the next wave of agentic commerce and autonomous businesses.",
+      "metrics": {
+        "likes": 192,
+        "replies": 1,
+        "retweets": 31,
+        "bookmarks": 2,
+        "views": 62456,
+        "ageMinutes": 51.029066666666665
+      },
+      "scoreDetails": {
+        "ratio": 33.137320370817605,
+        "candidateVelocity": 3.8017548168625463,
+        "authorMedianVelocity": 0.1147272855595941,
+        "authorSampleSize": 19,
+        "controversy": 0.005208333333333333
+      },
+      "score": 33.137320370817605,
+      "comment": "curious what \"confidential\" means in practice here: TEE isolation, ZK proofs, or MPC?",
+      "reasoning": "Shape C — one pointed question that surfaces the unsolved technical detail; names three concrete mechanisms a real engineer would want to distinguish before trusting a payment rail with agent funds.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
@@ -1015,6 +1096,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-05-14T16:16:18.096Z",
+      "searched": 61,
+      "scored": 9,
+      "notified": 3
     }
   ]
 }
