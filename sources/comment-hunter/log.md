@@ -352,3 +352,31 @@ Searched: **61** unique · Scored: **9** · Notified: **3**
   - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
 
 ---
+## 2026-05-15 16:10 UTC
+
+Searched: **45** unique · Scored: **10** · Notified: **3**
+
+### Notified
+
+- **@Mho_23** · 539.4× · 14❤ 27💬 in 14m · vel 4.79/min vs author median 0.01 → 539.4× · controversy 1.93 (replies/likes)
+  - URL: https://x.com/Mho_23/status/2055316066935722245
+  - Tweet: TikTok Shop + Seedance 2 + Claude Code is f*cking cracked i just built a tool that scrapes the top-selling TikTok Shop products in your niche, pulls every creator video selling them, and lets you recreate any one as an on-brand video for your own product using AI. if you're a DTC brand or ecom operator and you're still paying creators $500 per video or briefing an agency every week, this replaces 
+  - Suggestion: building something adjacent. whisper on noisy tiktok audio gives garbage hooks unless you run demucs first to isolate vocals
+  - Reasoning: Shape A lived experience — drops a concrete technical fix (Demucs vocal isolation before Whisper) from my actual UGC discovery pipeline, making it credible and useful to anyone building in this space without pitching anything.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@Kingrawr_1** · 138.4× · 46❤ 26💬 in 89m · vel 1.10/min vs author median 0.01 → 138.4× · controversy 0.57 (replies/likes)
+  - URL: https://x.com/Kingrawr_1/status/2055297160111894587
+  - Tweet: AI agents will soon be able to handle transactions in addition to processing information. Agent-powered micropayments are already beginning to take shape, as evidenced by x402 reaching 75M+ transactions in just 30 days. Because of this, @TheARCTERMINAL distinguishes itself by combining AI and on-chain execution into a single layer. Agents' autonomous coordination Digital economies that are quicker
+  - Suggestion: transaction count without avg value is a vanity metric. 75M sub-cent ops ≠ economic activity
+  - Reasoning: Shape B counter with mechanism — calls out the specific misleading stat (tx count vs tx value) that the tweet relies on, sounds like an engineer who's seen this pattern before, no AI tells, no hype mirroring.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@trythreews** · 125.5× · 30❤ 8💬 in 48m · vel 0.95/min vs author median 0.01 → 125.5×
+  - URL: https://x.com/trythreews/status/2055307440921702738
+  - Tweet: 3D AI Agent on any website. 30 seconds. One line of HTML. The embed editor is live → https://t.co/LHNIT0ttJL https://t.co/Id9iXOWIef
+  - Suggestion: 3D on mobile is where these usually choke. what's the WebGL fallback?
+  - Reasoning: Shape C pointed question targeting a real deployment pain point (WebGL performance on mid-range Android) that any engineer shipping an embed would have already hit — sounds like genuine curiosity, not engagement bait.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---

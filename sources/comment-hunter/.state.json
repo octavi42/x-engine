@@ -809,6 +809,87 @@
       "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2055316066935722245": {
+      "suggestedAt": "2026-05-15T16:10:00.785Z",
+      "author": "Mho_23",
+      "url": "https://x.com/Mho_23/status/2055316066935722245",
+      "tweetText": "TikTok Shop + Seedance 2 + Claude Code is f*cking cracked\n\ni just built a tool that scrapes the top-selling TikTok Shop products in your niche, pulls every creator video selling them, and lets you recreate any one as an on-brand video for your own product using AI.\n\nif you're a DTC brand or ecom operator and you're still paying creators $500 per video or briefing an agency every week, this replaces that entire workflow.\n\nhere's how it works:\n> drop in your brand info and 1-3 product photos search your niche on TikTok Shop like \"gut health supplements\" or \"skincare\" or whatever you're selling\n> browse the top-selling products and every creator video promoting them pick a viral video that's already proven to convert\n> the AI analyzes the hook, structure, and pacing\n> one click and Seedance 2 generates a new version built around your product\n\nwhy test from scratch when you can just recreate what's already working?\n\nRT + reply \"VIRAL\" and i'll send you the full app + setup guide (must follow so i can dm)",
+      "metrics": {
+        "likes": 14,
+        "replies": 27,
+        "retweets": 10,
+        "bookmarks": 10,
+        "views": 348,
+        "ageMinutes": 14.1838
+      },
+      "scoreDetails": {
+        "ratio": 539.3652627175603,
+        "candidateVelocity": 4.794201835897291,
+        "authorMedianVelocity": 0.008888599558195471,
+        "authorSampleSize": 19,
+        "controversy": 1.9285714285714286
+      },
+      "score": 539.3652627175603,
+      "comment": "building something adjacent. whisper on noisy tiktok audio gives garbage hooks unless you run demucs first to isolate vocals",
+      "reasoning": "Shape A lived experience — drops a concrete technical fix (Demucs vocal isolation before Whisper) from my actual UGC discovery pipeline, making it credible and useful to anyone building in this space without pitching anything.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2055297160111894587": {
+      "suggestedAt": "2026-05-15T16:10:28.774Z",
+      "author": "Kingrawr_1",
+      "url": "https://x.com/Kingrawr_1/status/2055297160111894587",
+      "tweetText": "AI agents will soon be able to handle transactions in addition to processing information.\n\nAgent-powered micropayments are already beginning to take shape, as evidenced by x402 reaching 75M+ transactions in just 30 days.\n\nBecause of this, @TheARCTERMINAL distinguishes itself by combining AI and on-chain execution into a single layer.\n\nAgents' autonomous coordination\n\nDigital economies that are quicker and more fluid\n\nThis change is happening much more quickly than most people anticipate..\n\nToday on @wallchain I earned 45.78 quacks in just 24 hours",
+      "metrics": {
+        "likes": 46,
+        "replies": 26,
+        "retweets": 0,
+        "bookmarks": 0,
+        "views": 1720,
+        "ageMinutes": 89.30046666666667
+      },
+      "scoreDetails": {
+        "ratio": 138.4368516048133,
+        "candidateVelocity": 1.0974186771700334,
+        "authorMedianVelocity": 0.00792721493192263,
+        "authorSampleSize": 19,
+        "controversy": 0.5652173913043478
+      },
+      "score": 138.4368516048133,
+      "comment": "transaction count without avg value is a vanity metric. 75M sub-cent ops ≠ economic activity",
+      "reasoning": "Shape B counter with mechanism — calls out the specific misleading stat (tx count vs tx value) that the tweet relies on, sounds like an engineer who's seen this pattern before, no AI tells, no hype mirroring.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2055307440921702738": {
+      "suggestedAt": "2026-05-15T16:10:57.388Z",
+      "author": "trythreews",
+      "url": "https://x.com/trythreews/status/2055307440921702738",
+      "tweetText": "3D AI Agent on any website.\n\n30 seconds. One line of HTML.\n\nThe embed editor is live → https://t.co/LHNIT0ttJL https://t.co/Id9iXOWIef",
+      "metrics": {
+        "likes": 30,
+        "replies": 8,
+        "retweets": 12,
+        "bookmarks": 3,
+        "views": 1135,
+        "ageMinutes": 48.450466666666664
+      },
+      "scoreDetails": {
+        "ratio": 125.5349978704965,
+        "candidateVelocity": 0.9494232597690838,
+        "authorMedianVelocity": 0.007563016496391874,
+        "authorSampleSize": 19,
+        "controversy": 0.26666666666666666
+      },
+      "score": 125.5349978704965,
+      "comment": "3D on mobile is where these usually choke. what's the WebGL fallback?",
+      "reasoning": "Shape C pointed question targeting a real deployment pain point (WebGL performance on mid-range Android) that any engineer shipping an embed would have already hit — sounds like genuine curiosity, not engagement bait.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
@@ -1123,6 +1204,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-05-15T16:10:57.388Z",
+      "searched": 45,
+      "scored": 10,
+      "notified": 3
     }
   ]
 }
