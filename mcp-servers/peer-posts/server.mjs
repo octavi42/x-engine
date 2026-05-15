@@ -360,6 +360,56 @@ server.registerTool(
   }
 );
 
+server.registerTool(
+  'deep_study_account',
+  {
+    description:
+      'Fetch 20+ recent tweets from a single account for deep style analysis. Returns FULL tweet text (no truncation) + all metrics. Use for studying an account\'s formatting DNA.',
+    inputSchema: {
+      handle: z.string().describe('The handle to deep-study (without @)'),
+      min_faves: z.number().int().optional().describe('Minimum likes filter (default 10)'),
+    },
+  },
+  async ({ handle, min_faves = 10 }) => {
+    logCall('deep_study_account', { handle, min_faves });
+    await withRun((r) => checkBudget(r));
+
+    const query = `from:${handle} min_faves:${min_faves} -is:reply`;
+    const tweets = await withFetchLock(() =>
+      twitter.searchTweets({ query, queryType: 'Top', max: 30 })
+    );
+
+    await withRun((r) => {
+      r.fetch_calls = (r.fetch_calls ?? 0) + 1;
+      for (const t of tweets) r.tweet_cache[t.id] = t;
+    });
+
+    const fullTweets = tweets.map((t) => ({
+      id: t.id,
+      handle: t.handle,
+      created_at: t.created_at,
+      text: t.text,
+      likes: t.likes,
+      replies: t.replies,
+      retweets: t.retweets,
+      bookmarks: t.bookmarks,
+      views: t.views,
+      score: Number(engagementScore(t).toFixed(5)),
+      url: t.url,
+      char_count: t.text.length,
+      line_count: t.text.split('\n').length,
+    }));
+
+    return ok({
+      handle,
+      tweet_count: fullTweets.length,
+      avg_chars: Math.round(fullTweets.reduce((s, t) => s + t.char_count, 0) / (fullTweets.length || 1)),
+      avg_lines: +(fullTweets.reduce((s, t) => s + t.line_count, 0) / (fullTweets.length || 1)).toFixed(1),
+      tweets: fullTweets,
+    });
+  }
+);
+
 // Roll up: applied at end of MCP process lifetime, but also reachable via
 // tool call so the agent can trigger it explicitly. Most cleanly handled by
 // the parent script reading state directly after `claude -p` exits, but we

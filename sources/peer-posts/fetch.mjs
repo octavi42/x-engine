@@ -129,7 +129,29 @@ export async function fetch(source, env) {
     run.patterns_md?.trim() || claudeResult.finalText || '_(agent did not emit a patterns analysis this run)_'
   );
 
-  const items = composeItems({ patternsMd, run });
+  // Deep-study pass: profile one account's style DNA
+  const deepStudyHandles = params.deepStudyHandles ?? [];
+  const deepStudyPerRun = params.deepStudyPerRun ?? 1;
+  let deepStudyMd = null;
+  if (deepStudyHandles.length) {
+    try {
+      deepStudyMd = await runDeepStudy({
+        deepStudyHandles,
+        deepStudyPerRun,
+        stateFile,
+        runFile,
+        apiKey,
+        model,
+        source,
+        niche,
+        fetchBudget,
+      });
+    } catch (err) {
+      console.warn(`peer-posts: deep-study pass failed (${err.message}) — skipping`);
+    }
+  }
+
+  const items = composeItems({ patternsMd, run, deepStudyMd });
 
   const meta = {
     model,
@@ -141,9 +163,130 @@ export async function fetch(source, env) {
     discovered: Object.keys(finalState.discovered ?? {}).length,
     promoted: promoted.length,
     tool_uses: claudeResult.toolUses?.length ?? 0,
+    deep_study: deepStudyMd ? 'completed' : 'skipped',
   };
 
   return { items, meta };
+}
+
+// ----- deep-study pass -----
+
+async function runDeepStudy({ deepStudyHandles, deepStudyPerRun, stateFile, runFile, apiKey, model, source, niche, fetchBudget }) {
+  const state = await loadState(source.dir);
+
+  // Pick stalest deep-study handles (by last_deep_studied timestamp)
+  const sorted = deepStudyHandles
+    .map((h) => ({ handle: h, last: state.handles?.[h]?.last_deep_studied ?? null }))
+    .sort((a, b) => {
+      if (!a.last && !b.last) return 0;
+      if (!a.last) return -1;
+      if (!b.last) return 1;
+      return a.last.localeCompare(b.last);
+    });
+  const picks = sorted.slice(0, deepStudyPerRun).map((s) => s.handle);
+
+  if (!picks.length) return null;
+  const handle = picks[0];
+  console.log(`peer-posts: deep-study → @${handle}`);
+
+  const deepStudySystem = renderDeepStudySystem({ handle, niche });
+  const deepStudyUser = `Deep-study @${handle}. Fetch their tweets via deep_study_account, then call submit_patterns with the style analysis.`;
+
+  const deepRunFile = join(source.dir, '.deep-run.json');
+  if (existsSync(deepRunFile)) await unlink(deepRunFile);
+  await writeFile(deepRunFile, JSON.stringify({ pool: [], tweet_cache: {}, fetch_calls: 0, scores: {}, fetched_handles: [] }, null, 2));
+
+  const mcpServers = {
+    peer_posts: {
+      command: 'node',
+      args: [MCP_SERVER_PATH],
+      env: {
+        TWITTERAPI_IO_KEY: apiKey,
+        PEER_POSTS_STATE_FILE: stateFile,
+        PEER_POSTS_RUN_FILE: deepRunFile,
+        PEER_POSTS_SEED_HANDLES: '',
+        PEER_POSTS_WINDOW_DAYS: '30',
+        PEER_POSTS_FETCH_BUDGET: '3',
+        PEER_POSTS_SEEDS_PER_RUN: '1',
+        PEER_POSTS_POOL_TARGET: '0',
+      },
+    },
+  };
+
+  const result = await runClaude({
+    prompt: deepStudyUser,
+    systemPrompt: deepStudySystem,
+    model,
+    mcpServers,
+    maxTurns: 8,
+  });
+
+  // Stamp last_deep_studied on state
+  const updatedState = await loadState(source.dir);
+  if (!updatedState.handles[handle]) updatedState.handles[handle] = { handle, status: 'active' };
+  updatedState.handles[handle].last_deep_studied = new Date().toISOString().slice(0, 10);
+  await saveState(source.dir, updatedState);
+
+  // Read back patterns
+  const deepRun = existsSync(deepRunFile)
+    ? JSON.parse(await readFile(deepRunFile, 'utf8'))
+    : {};
+  if (existsSync(deepRunFile)) await unlink(deepRunFile);
+
+  const md = deepRun.patterns_md?.trim() || result.finalText || null;
+  if (!md) return null;
+
+  return `## Deep study: @${handle}\n\n${stripLeadingPatternsHeader(md)}`;
+}
+
+function renderDeepStudySystem({ handle, niche }) {
+  return `You are a style-profiling agent. Your job: analyze @${handle}'s tweet formatting, structure, and voice to extract a replicable style fingerprint.
+
+# Output protocol
+Call mcp__peer_posts__submit_patterns EXACTLY ONCE with the style analysis. Do not call any other tool after that.
+
+# Tools available
+- deep_study_account — fetch 20+ tweets from @${handle} (full text, no truncation)
+- submit_patterns — emit your analysis (TERMINAL)
+
+# Strategy
+1. Call deep_study_account for @${handle}
+2. Analyze the returned tweets for style DNA
+3. Call submit_patterns with your analysis
+
+# Analysis format (for submit_patterns)
+Structure your markdown output like this:
+
+### Top 5 tweets (verbatim — use these as formatting templates)
+
+Quote the 5 highest-engagement tweets in full, each in a blockquote with metrics.
+
+### Style fingerprint
+
+- Average character count
+- Line break frequency (how many newlines per tweet on average)
+- Hook patterns (how do they open? fragment? question? statement?)
+- Closing patterns (how do they end? CTA? trailing thought? punchline?)
+- Emoji usage (frequency, placement)
+- Punctuation style (periods? fragments? colons? arrows?)
+- Sentence rhythm (short choppy vs flowing? mixed?)
+
+### "Write like @${handle}" instruction
+
+One paragraph telling a drafting agent exactly how to replicate this style.
+Be concrete: name the sentence lengths, the connector words, the structural
+patterns. Not "be concise" — rather "open with a 4-8 word fragment, no verb.
+Skip a line. 2-3 short sentences with periods. No closing period."
+
+# Context (the user's niche — for relevance)
+
+${niche.voice.slice(0, 500)}
+
+# Hard rules
+- Focus on FORMAT and STRUCTURE, not topics
+- Quote tweets VERBATIM — do not paraphrase
+- The fingerprint must be specific enough to replicate (no vague advice)
+- Keep total output under 2000 chars`;
 }
 
 // ----- finalization (parent-side, runs even if agent crashed) -----
@@ -310,7 +453,7 @@ function stripLeadingPatternsHeader(md) {
   return md.replace(/^\s*##\s+Patterns? observed[^\n]*\n+/i, '').trimStart();
 }
 
-function composeItems({ patternsMd, run }) {
+function composeItems({ patternsMd, run, deepStudyMd }) {
   const items = [];
 
   items.push({
@@ -318,6 +461,14 @@ function composeItems({ patternsMd, run }) {
     body: patternsMd,
     tags: ['patterns'],
   });
+
+  if (deepStudyMd) {
+    items.push({
+      title: 'Deep study (style reference)',
+      body: deepStudyMd,
+      tags: ['deep-study', 'style-reference'],
+    });
+  }
 
   const ranked = run.pool
     .map(({ tweet_id, reason }) => {

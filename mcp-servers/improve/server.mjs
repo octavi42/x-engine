@@ -39,6 +39,7 @@ const scoreSchema = z.object({
   hook: z.number().int().min(1).max(5),
   length: z.number().int().min(1).max(5),
   pattern_match: z.number().int().min(1).max(5),
+  reply_potential: z.number().int().min(1).max(5),
 });
 
 server.registerTool(
@@ -107,6 +108,29 @@ server.registerTool(
       throw new Error(`winner "${winner}" must equal ranking[0] "${ranking[0]}"`);
     }
     const count = await appendResult({ kind: 'verdict', ranking, winner, reasoning });
+    return {
+      content: [{ type: 'text', text: JSON.stringify({ received: true, count }) }],
+    };
+  }
+);
+
+server.registerTool(
+  'submit_humanized',
+  {
+    description:
+      'Humanizer tool. Emit the final de-AI\'d text that matches the user\'s real voice. Call EXACTLY ONCE, then end your turn.',
+    inputSchema: {
+      text: z
+        .string()
+        .max(280)
+        .describe('The humanized tweet text. Must be ≤ 280 chars. Newlines preserved.'),
+      changes_made: z
+        .string()
+        .describe('One sentence summarizing what AI patterns were stripped or rewritten.'),
+    },
+  },
+  async ({ text, changes_made }) => {
+    const count = await appendResult({ kind: 'humanized', text, changes_made });
     return {
       content: [{ type: 'text', text: JSON.stringify({ received: true, count }) }],
     };

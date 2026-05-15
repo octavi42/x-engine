@@ -1,0 +1,7 @@
+{
+  "name": "x-algorithm",
+  "type": "static",
+  "description": "X For You feed algorithm signals. Weight hierarchy, negative signals, and out-of-network reach triggers from xai-org/x-algorithm.",
+  "enabled": true,
+  "params": {}
+}

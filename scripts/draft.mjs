@@ -89,9 +89,19 @@ function buildSystemPrompt(ctx) {
   const projectBlock = ctx.projects
     .map((p) => `### ${p.name}\n\n${p.content.trim()}`)
     .join('\n\n');
-  const sourcesBlock = ctx.sources
+
+  const TIER1_NAMES = new Set(['codex-sessions', 'obsidian-personal', 'github-commits']);
+  const tier1 = ctx.sources.filter((s) => TIER1_NAMES.has(s.name));
+  const tier2 = ctx.sources.filter((s) => !TIER1_NAMES.has(s.name));
+
+  const tier1Block = tier1
     .map((s) => `### sources/${s.name}/latest.md\n\n${s.content.trim()}`)
     .join('\n\n---\n\n');
+  const tier2Block = tier2
+    .map((s) => `### sources/${s.name}/latest.md\n\n${s.content.trim()}`)
+    .join('\n\n---\n\n');
+
+  const hasTier1 = tier1.some((s) => s.content.trim().length > 50);
 
   return `You are a drafting agent for an X/Twitter content engine for @octavicristea.
 
@@ -110,9 +120,16 @@ ${ctx.voice.trim()}
 
 ${projectBlock}
 
-# Sources (today's signal — use these as the raw material)
+# Priority signal — what was actually built/shipped today (anchor drafts here FIRST)
 
-${sourcesBlock || '_(no sources available — draft from voice + projects only)_'}
+These sources contain today's real work: agent sessions, build log entries,
+and fresh commits. ${hasTier1 ? 'At least 2 drafts MUST be grounded in this section.' : 'No fresh activity detected today — use background sources freely.'}
+
+${tier1Block || '_(no fresh activity today)_'}
+
+# Background context — patterns, trends, content gaps, style references
+
+${tier2Block || '_(no background sources available)_'}
 
 # Recently posted (DO NOT repeat any topic from the last 7 days)
 
@@ -121,6 +138,7 @@ ${ctx.archive.trim() || '_(empty archive)_'}
 # Hard rules
 - 4-6 drafts. Mix of types. Aim for: 1-2 building-in-public, 1 technical tip,
   1 trending reaction, 0-1 engagement question, 0-1 thread.
+${hasTier1 ? '- At least 2 drafts MUST come from the Priority signal section (today\'s real work).\n  The remaining drafts can use background context.' : '- No priority signal today — draw from background sources and content gaps.'}
 - Single tweet body ≤ ${CHAR_LIMIT} chars. Thread posts: each ≤ ${CHAR_LIMIT} chars,
   3-7 posts total, the first must stand alone as a hook.
 - Every draft MUST contain a specific technical detail (named tool, model,
@@ -146,6 +164,9 @@ ${ctx.archive.trim() || '_(empty archive)_'}
   · 3-5 short bullet items, newline between each
 - Match the patterns observed in sources/peer-posts/latest.md (completion
   hooks, named stacks, specific time claims, low-ego "Playing with X → made Y").
+- When sources/peer-posts/latest.md contains a "## Deep study: @handle" section,
+  use those quoted tweets as direct formatting templates. Match their sentence
+  rhythm, line break placement, and hook structure — not their topics.
 
 # Schema reminder
 Each draft is { title, type, source, project, gap_addressed?, body? OR thread_posts? }.

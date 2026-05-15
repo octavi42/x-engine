@@ -17,6 +17,12 @@
       "garrytan",
       "natfriedman"
     ],
+    "deepStudyHandles": [
+      "aidenybai",
+      "raaborman",
+      "jxnlco"
+    ],
+    "deepStudyPerRun": 1,
     "windowDays": 14,
     "seedsPerRun": 3,
     "poolTarget": 20,
