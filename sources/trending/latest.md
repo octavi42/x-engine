@@ -8,6 +8,19 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-05-15
+
+- Anthropic surpassed OpenAI in US business AI adoption for the first time per the May 2026 Ramp AI Index: Claude at 34.4% (+3.8% MoM), ChatGPT at 32.3% (-2.9%). Driven by Claude Code adoption inside engineering orgs. VentureBeat, MEXC.
+- Uber's CTO disclosed the company burned its entire 2026 AI budget in 4 months. Individual engineers running $500-$2,000/month on Claude Code + Cursor. Axios cited the figure as a wake-up call on usage-based AI billing. Sam Altman responded on X with 2 months free Codex for new business customers.
+- Claude Code now estimated to author 4% of all GitHub public commits worldwide, double the share from a month prior. Anthropic's fastest-growing product in company history. Multiple May 2026 dev-blog tallies.
+- Anthropic announced Claude for Small Business: ready-to-run workflows for QuickBooks, PayPal, HubSpot, Canva, Docusign, Google Workspace, Microsoft 365. Payroll, invoicing, month-end close as templated agents.
+- Anthropic + Gates Foundation: $200M over 4 years in grants, Claude credits, and technical support for global health, life sciences, education programs. Lands same week Claude beats OpenAI on business adoption.
+- Recursive Superintelligence launched out of stealth with $650M (Richard Socher). Goal: recursively self-improving AI model that identifies its own weaknesses and redesigns itself.
+- Osaurus (TechCrunch, 5/15): open-source Apple-only LLM server, switch between local and cloud models while keeping files/tools on your hardware. Local-first AI tooling trend continuing.
+- Anthropic tightened Claude paid-plan limits, brought back third-party agent tool support but behind a separate credit meter. Cost-control posture as enterprise spend escalates.
+- DeepClaude (open source, 432pts on HN this week): integrates Claude Code's agent loop with DeepSeek V4 Pro. Compose-your-own-coding-stack pattern continues.
+- HN discourse: developer thread "Claude pricing changes cut usable programmatic usage by 25x" sparked subscription-vs-API debate. Concurrent piece in TechCrunch: extortion campaign used Claude Code agentic loop to script malicious code + draft emails against 17 orgs in a month (dual-use surface widening).
+
 ## 2026-05-14
 
 - OpenAI 7th acquisition of 2026 this week: Hiro's personal-finance agent team. Combined with DeployCo ($4B + Tomoro forward-deployed eng, 5/11) and the Codex security agent, OpenAI is operating as a holding company across coding, security, dev tools, personal-agent surfaces. Wrapper-layer M&A thesis hardening.
