@@ -380,3 +380,37 @@ Searched: **45** unique · Scored: **10** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-05-16 15:09 UTC
+
+Searched: **22** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@pokebookAI** · 56.0× · 45❤ 16💬 in 68m · vel 1.13/min vs author median 0.02 → 56.0× · controversy 0.36 (replies/likes)
+  - URL: https://x.com/pokebookAI/status/2055649242262180172
+  - Tweet: Big things are coming 🚀 Excited to announce the collaboration between 🔸️ pCLAW INTEL × 4LPHA. 4LPHA by @4lpha_agent is an AI Agent focused on autonomous trade execution, combining intelligent automation with real-time market strategies. Together, we aim to build smarter AI-powered infrastructure, deeper market intelligence, and next-generation trading experiences across the BNB Chain ecosystem �
+  - Suggestion: what's the actual execution path. does the agent sign txs autonomously or route through a human approval step before on-chain settle?
+  - Reasoning: The tweet is pure hype with zero technical substance — shape C (pointed question) cuts straight to the one unsolved detail that would tell a real engineer whether "autonomous trade execution" is actual autonomy or just a marketing label.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@PenguinWeb3** · 26.5× · 21❤ 9💬 in 67m · vel 0.58/min vs author median 0.02 → 26.5× · controversy 0.43 (replies/likes)
+  - URL: https://x.com/PenguinWeb3/status/2055649658488389913
+  - Tweet: the best AI stack: Design - Claude Design Vibecoding - Cursor + Claude + Codex Deep Research - Gemini 2.5 Pro Copywriting - GPT-5 Coding Assistant - Claude Opus Fast everyday tasks - ChatGPT Presentations - Gamma AI Images - Midjourney Video - Veo 3 Voice AI - ElevenLabs Automation - n8n + AI Startup ideation - o3 Long context work - Gemini Memes & chaos - Grok
+  - Suggestion: gemini 2.5 pro is listed twice under different labels. same model, same context window, two line items
+  - Reasoning: Shape B counter with a specific mechanism — names the exact redundancy (Gemini 2.5 Pro under "deep research" and plain "Gemini" under "long context"), gives a concrete reason it's wrong, sounds like an engineer skimming a PR and catching a duplicate.
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+- **@ItsAlexhere0** · 24.5× · 32❤ 22💬 in 75m · vel 1.01/min vs author median 0.04 → 24.5× · controversy 0.69 (replies/likes)
+  - URL: https://x.com/ItsAlexhere0/status/2055647467518214563
+  - Tweet: Anyone here still using VS Code or has everyone switched to Claude Code or Codex?
+  - Suggestion: both still open. vscode for file tree + git, claude code for every write. ratio is probably 90/10 in terms of what actually ships code
+  - Reasoning: Shape A lived-experience reply with a concrete ratio (90/10) that answers the either/or framing honestly — engineers don't fully abandon tools, they repurpose them, and that nuance drops in naturally without sounding like a take.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Rejected (top 1 scored)
+
+- @captainjack125 · 2.5× · 43❤ 26💬 in 52m · vel 1.83/min vs author median 0.74 → 2.5× · controversy 0.60 (replies/likes)
+  - Vitalik: “ZK payments could become the standard in the AI agent era.” @Concordium somewhere in the background: “Brother, we already brought identity + privacy + compliant payments together 👀 https://
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---
