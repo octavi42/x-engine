@@ -468,3 +468,30 @@ stderr:
 
 
 ---
+## 2026-05-27 22:05 UTC
+
+Searched: **29** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @IGN · 2.1× · 55❤ 25💬 in 64m · vel 1.64/min vs author median 0.77 → 2.1× · controversy 0.45 (replies/likes)
+  - AI audio company ElevenLabs has acquired the rights to Stan Lee's image and voice and intends to license them for further use by other companies, opening the door to the late Marvel comics legend appe
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+- @Dawley777 · 2.3× · 31❤ 19💬 in 59m · vel 1.17/min vs author median 0.51 → 2.3× · controversy 0.61 (replies/likes)
+  - most ai agent projects still feel like toys to me $CVNT actually thinking about what happens when agents run for weeks handle real workflows spend money and coordinate with each other audit trails sig
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2059740184930074758 (@googlegemma): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2059741103998243133 (@brian_armstrong): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2059749686148215210 (@ai_trade_pro): claude -p exited 1
+stderr:
+
+
+---
