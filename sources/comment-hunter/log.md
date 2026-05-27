@@ -445,3 +445,26 @@ stderr:
 
 
 ---
+## 2026-05-27 19:38 UTC
+
+Searched: **38** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @CultureCrave · 1.5× · 2185❤ 322💬 in 88m · vel 32.01/min vs author median 21.19 → 1.5×
+  - Stan Lee's voice and likeness has been sold off to be recreated by AI for ElevenLabs "You know what they never tell you about legends?... They outlive the page" — AI Stan Lee https://t.co/siFYSm413K
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2059702604926525666 (@drippy_eth): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2059713951974236219 (@buildonbase): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2059703178849902748 (@andi_losing): claude -p exited 1
+stderr:
+
+
+---
