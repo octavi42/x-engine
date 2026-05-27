@@ -414,3 +414,34 @@ Searched: **22** unique · Scored: **9** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-05-27 17:28 UTC
+
+Searched: **65** unique · Scored: **6** · Notified: **0**
+
+### Rejected (top 3 scored)
+
+- @Polymarket · 1.0× · 131❤ 59💬 in 29m · vel 8.64/min vs author median 8.82 → 1.0× · controversy 0.45 (replies/likes)
+  - NEW: ElevenLabs has added an AI voice of the late Stan Lee to its platform.
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+- @Variety · 1.9× · 158❤ 41💬 in 83m · vel 2.89/min vs author median 1.50 → 1.9×
+  - Stan Lee will return. ElevenLabs has struck an expansive deal with Stan Lee Universe to add the late Marvel Comics writer’s voice and likeness to its Iconic Marketplace, a collection of celebrity pers
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+- @Variety · 0.6× · 46❤ 21💬 in 87m · vel 1.01/min vs author median 1.61 → 0.6× · controversy 0.46 (replies/likes)
+  - Stan Lee 'Returns' Under AI Pact: ElevenLabs Licenses Marvel Legend’s Voice and Likeness (EXCLUSIVE) https://t.co/n65ogC1ADI
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2059670986513850446 (@callstackio): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2059668042695516628 (@ElevenLabs): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2059667155914813484 (@amitisinvesting): claude -p exited 1
+stderr:
+
+
+---
