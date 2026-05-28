@@ -495,3 +495,26 @@ stderr:
 
 
 ---
+## 2026-05-28 17:38 UTC
+
+Searched: **56** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @Polymarket · 1.1× · 362❤ 101💬 in 44m · vel 12.87/min vs author median 11.64 → 1.1×
+  - NEW: AI startup “Meow” claims its AI agents can form companies, get EINs, open bank accounts, issue cards, and move money from a single prompt.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060041385890439397 (@adocomplete): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060043208277811437 (@ClaudeDevs): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060046822631231810 (@alexalbert__): claude -p exited 1
+stderr:
+
+
+---
