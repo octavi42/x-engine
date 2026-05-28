@@ -541,3 +541,26 @@ stderr:
 
 
 ---
+## 2026-05-28 22:19 UTC
+
+Searched: **21** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @RoundtableSpace · 2.1× · 44❤ 8💬 in 64m · vel 0.93/min vs author median 0.45 → 2.1×
+  - KARPATHY BUILT A SECOND BRAIN, THIS GUY MADE IT THINK BACK * Claude Code + Obsidian creates an AI that remembers your goals, context, and patterns * Instead of re-explaining yourself every session, th
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060114203621335523 (@ChromiumDev): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060114790631309363 (@WalrusProtocol): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060109952505831801 (@Baconbrix): claude -p exited 1
+stderr:
+
+
+---
