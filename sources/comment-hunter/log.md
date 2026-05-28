@@ -518,3 +518,26 @@ stderr:
 
 
 ---
+## 2026-05-28 20:34 UTC
+
+Searched: **39** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @RoundtableSpace · 2.2× · 69❤ 11💬 in 80m · vel 1.14/min vs author median 0.53 → 2.2×
+  - 12 CLAUDE CODE CONCEPTS YOU NEED TO KNOW BEFORE YOU TOUCH ANYTHING ELSE: - CLAUDE. md - Permissions - Plan Mode - Checkpoints - Skills - Hooks - MCP - Plugins - Context - Slash Commands - Compaction -
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060075719883891162 (@AdaFang_): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060075792957124861 (@aipulseda1ly): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060075601520709737 (@SkaleNetwork): claude -p exited 1
+stderr:
+
+
+---
