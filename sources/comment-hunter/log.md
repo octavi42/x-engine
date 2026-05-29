@@ -591,3 +591,34 @@ stderr:
 
 
 ---
+## 2026-05-29 20:36 UTC
+
+Searched: **31** unique · Scored: **7** · Notified: **0**
+
+### Rejected (top 3 scored)
+
+- @CoinMarketCap · 2.6× · 38❤ 20💬 in 50m · vel 1.57/min vs author median 0.59 → 2.6× · controversy 0.53 (replies/likes)
+  - LATEST: 🤖 CertiK has launched what it calls an "anti-virus for AI agents," a security platform to scan third-party AI skills for risks. https://t.co/kiD991Ia7R
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @cryptogoos · 1.7× · 52❤ 7💬 in 79m · vel 0.84/min vs author median 0.50 → 1.7×
+  - 🚨 COMPANIES ARE FINALLY REALIZING AI IS NOT FREE. The AI boom is still pushing stocks higher, but the companies using AI are starting to pull back because the bills are exploding. Uber rolled out Cla
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @litcapital · 1.3× · 54❤ 4💬 in 89m · vel 0.70/min vs author median 0.54 → 1.3×
+  - Sales &amp; Trading Interns are simply Claude Code but for getting traders coffees
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060440154448314823 (@ken__bush): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060443240902627388 (@vercel_dev): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060442895593697758 (@MultichainZ_): claude -p exited 1
+stderr:
+
+
+---
