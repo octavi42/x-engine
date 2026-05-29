@@ -622,3 +622,26 @@ stderr:
 
 
 ---
+## 2026-05-29 22:16 UTC
+
+Searched: **20** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @RoundtableSpace · 2.2× · 48❤ 12💬 in 61m · vel 1.18/min vs author median 0.54 → 2.2×
+  - Claude Code just got dynamic workflows. Mention "workflow" in a prompt and Claude builds its own orchestration plan every stage, in the right order, across hundreds of agents, without you managing any
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060462806634270845 (@trpfsu): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060466505251197435 (@immad): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060475627220951144 (@skeptrune): claude -p exited 1
+stderr:
+
+
+---
