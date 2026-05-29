@@ -564,3 +564,30 @@ stderr:
 
 
 ---
+## 2026-05-29 17:43 UTC
+
+Searched: **45** unique · Scored: **7** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @ego_agent · 882.2× · 59❤ 25💬 in 39m · thin author baseline (4/5) · controversy 0.42 (replies/likes)
+  - Browsers were never built for agents. Those Chrome-bridging solutions, windows flying everywhere, login states breaking at random. Not bugs. Just bridge limits. Same task. 20% to 245% faster. Not magi
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @E_a_s_yyy · 1.9× · 15❤ 15💬 in 47m · vel 0.97/min vs author median 0.52 → 1.9× · controversy 1.00 (replies/likes)
+  - Good evening Guys🌆🌆 AI won't replace you. But the person managing 100 AI Agents will. We are moving from the era of "Chatting with AI" to the era of Directing Agents. The gap is widening daily. Here
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060407496531914900 (@GenLayer): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060400631102198133 (@realcryptomoses): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060404643406950722 (@ZypherHQ): claude -p exited 1
+stderr:
+
+
+---
