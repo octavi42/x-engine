@@ -739,3 +739,20 @@ stderr:
 
 
 ---
+## 2026-05-30 21:11 UTC
+
+Searched: **25** unique · Scored: **10** · Notified: **0**
+
+### Errors
+
+- suggestion-gen failed for 2060817060729590157 (@T3tra333): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060812321518240184 (@Skaly__Bull): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060823289090417137 (@teej_dv): claude -p exited 1
+stderr:
+
+
+---
