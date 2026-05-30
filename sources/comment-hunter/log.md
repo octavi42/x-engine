@@ -672,3 +672,30 @@ stderr:
 
 
 ---
+## 2026-05-30 16:36 UTC
+
+Searched: **34** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @MerlijnTrader · 2.0× · 54❤ 13💬 in 66m · vel 1.21/min vs author median 0.60 → 2.0×
+  - THE SMARTEST MONEY IN AI ISN'T BUYING. IT'S CUTTING. 🇺🇸 The macro warning was the setup. This is the evidence. In the last 30 days: Microsoft canceled Claude Code licenses by June 30. Uber exhausted
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @RoundtableSpace · 2.0× · 54❤ 11💬 in 81m · vel 0.94/min vs author median 0.48 → 2.0×
+  - THIS SHOULD BE YOUR FIRST PROMPT WHILE SETTING UP CLAUDE (BOOKMARK THIS): “You are an expert AI Agent Architect. Your role is to help me design, build, and optimize AI agent systems that create measur
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060753186802258181 (@AITECHio): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060744172957823376 (@higgsfield): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060741901892878488 (@TheDeFiAngel): claude -p exited 1
+stderr:
+
+
+---
