@@ -699,3 +699,26 @@ stderr:
 
 
 ---
+## 2026-05-30 17:41 UTC
+
+Searched: **28** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @gippp69 · 2.2× · 18❤ 12💬 in 59m · vel 0.71/min vs author median 0.32 → 2.2× · controversy 0.67 (replies/likes)
+  - THIS CHINESE TRADER BUILT AN AI AGENT IN 2 HOURS AND LET IT TRADE A $70K ACCOUNT FOR 72 HOURS STRAIGHT he opened Bloome, wrote his trading rules in plain English, picked the signals, set risk limits a
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060768781744603267 (@kayladata): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060757162058539383 (@Bilalbinsaqib): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060768258656014353 (@BNBCHAIN): claude -p exited 1
+stderr:
+
+
+---
