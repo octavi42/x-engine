@@ -645,3 +645,30 @@ stderr:
 
 
 ---
+## 2026-05-30 15:18 UTC
+
+Searched: **25** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @captainjack125 · 2.5× · 77❤ 26💬 in 78m · vel 1.66/min vs author median 0.67 → 2.5× · controversy 0.34 (replies/likes)
+  - Let's face the reality today and change our perspective on how AI agents operates, things are changing already. They are executing trades, managing portfolios, interacting with protocols, and making o
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @rakib_md007 · 0.5× · 18❤ 8💬 in 87m · vel 0.39/min vs author median 0.79 → 0.5× · controversy 0.44 (replies/likes)
+  - 99% of AI agent tutorials on YouTube are pure fluff. I’ve built 47 AI agents using n8n + Claude, and most “guides” overcomplicate everything. Here are the 3 prompts that actually work — and make build
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2060731413897646398 (@crypto_ideology): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060734492873048548 (@JEFETRADES): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2060722874546291106 (@adrishaBiswas): claude -p exited 1
+stderr:
+
+
+---
