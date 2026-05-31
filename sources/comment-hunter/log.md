@@ -840,3 +840,20 @@ stderr:
 
 
 ---
+## 2026-05-31 21:11 UTC
+
+Searched: **12** unique · Scored: **10** · Notified: **0**
+
+### Errors
+
+- suggestion-gen failed for 2061180704722149394 (@Bullieonchain): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061182737143198142 (@KalderSystems): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061182463842693614 (@GitForge_io): claude -p exited 1
+stderr:
+
+
+---
