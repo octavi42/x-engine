@@ -773,3 +773,26 @@ stderr:
 
 
 ---
+## 2026-05-31 16:43 UTC
+
+Searched: **21** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @haider1 · 2.5× · 30❤ 2💬 in 43m · vel 0.79/min vs author median 0.32 → 2.5×
+  - codex improved surprisingly fast anthropic leaked the claude code source, then weeks later, openai shipped "codex for almost everything" with many of the same features with better execution now openai
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2061104428988711260 (@Aaravv_x): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061120343922614519 (@mattpocockuk): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061123618516660544 (@TheMoneyApe): claude -p exited 1
+stderr:
+
+
+---
