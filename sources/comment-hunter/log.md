@@ -756,3 +756,20 @@ stderr:
 
 
 ---
+## 2026-05-31 15:23 UTC
+
+Searched: **21** unique · Scored: **10** · Notified: **0**
+
+### Errors
+
+- suggestion-gen failed for 2061093359796597043 (@Golddigerscalls): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061096180818542633 (@PRXVTai): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061085498446131204 (@mati): claude -p exited 1
+stderr:
+
+
+---
