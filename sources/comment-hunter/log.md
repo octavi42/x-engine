@@ -796,3 +796,30 @@ stderr:
 
 
 ---
+## 2026-05-31 18:11 UTC
+
+Searched: **27** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @RoundtableSpace · 2.3× · 56❤ 16💬 in 87m · vel 1.02/min vs author median 0.45 → 2.3×
+  - LONGCAT JUST DROPPED AN OPEN SOURCE TALKING-AVATAR MODEL &gt; Feed it an image + audio clip &amp; it generates a lip-synced video &gt; MIT licensed &gt; AI tutors with a face, NPC dialogue, dubbed cod
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @chadscabal · 2.8× · 18❤ 9💬 in 51m · vel 0.71/min vs author median 0.25 → 2.8× · controversy 0.50 (replies/likes)
+  - Binance founder CZ says AI agents will make 1000x more transactions than humans. And AI will use crypto. Maybe that's the catalyst everyone is missing. AI + Crypto = next bull run? 🧐
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2061130061215047789 (@100xgemfinder): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061135404942974982 (@rauchg): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061145716047872030 (@TradexWhisperer): claude -p exited 1
+stderr:
+
+
+---
