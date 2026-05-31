@@ -823,3 +823,20 @@ stderr:
 
 
 ---
+## 2026-05-31 19:50 UTC
+
+Searched: **16** unique · Scored: **10** · Notified: **0**
+
+### Errors
+
+- suggestion-gen failed for 2061162194973139143 (@yioo26b): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061165845322006573 (@dukedotsol): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061158636311958005 (@simonw): claude -p exited 1
+stderr:
+
+
+---
