@@ -885,3 +885,30 @@ stderr:
 
 
 ---
+## 2026-06-01 22:23 UTC
+
+Searched: **20** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @RoundtableSpace · 2.7× · 31❤ 9💬 in 39m · vel 1.27/min vs author median 0.46 → 2.7×
+  - THIS RESEARCHER DOES IN 6 MINUTES WHAT USED TO TAKE HIM 3 HOURS. HE DROPS A TOPIC INTO CLAUDE CODE AND GETS A FULL STRUCTURED ANALYSIS SAVED TO HIS VAULT. It finds 10 YouTube sources automatically, se
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @badlogicgames · 1.9× · 22❤ 4💬 in 28m · vel 1.09/min vs author median 0.57 → 1.9×
+  - with all their model, infra, eval and massive talent might, i do wonder what the test regime before a claude code release looks like, that has things like this fly under the radar. not meant in a mean
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2061561533558128985 (@WCovenant): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061571081756893368 (@cepryl): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061559695953768523 (@Kellycryptos): claude -p exited 1
+stderr:
+
+
+---
