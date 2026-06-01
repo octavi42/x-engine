@@ -857,3 +857,31 @@ stderr:
 
 
 ---
+## 2026-06-01 19:24 UTC
+
+Searched: **43** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @NVIDIARTXSpark · 0.7× · 268❤ 10💬 in 79m · vel 3.64/min vs author median 4.94 → 0.7×
+  - RTX Spark, early preview 👀 Personal AI agents. Faster creator workflows. RTX ON gaming. NVIDIA’s Jacob Freeman walks through how one Superchip brings it all together in a new class of slim laptops. �
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @ns123abc · 1.2× · 47❤ 13💬 in 64m · vel 1.15/min vs author median 0.97 → 1.2×
+  - HAPPENING: Grok Build CLI starts being compared seriously with Claude Code by elite developers
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- search failed for "("React Native" OR "Expo Go" OR "Expo SD…": The operation was aborted due to timeout
+- suggestion-gen failed for 2061514431134335202 (@JayminSOfficial): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061515630424326371 (@OffChainSol): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061515210603765947 (@GhostOfTanzCho): claude -p exited 1
+stderr:
+
+
+---
