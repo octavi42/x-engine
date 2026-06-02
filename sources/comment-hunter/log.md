@@ -912,3 +912,30 @@ stderr:
 
 
 ---
+## 2026-06-02 18:09 UTC
+
+Searched: **50** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @tomwarren · 2.0× · 112❤ 5💬 in 29m · vel 4.17/min vs author median 2.06 → 2.0×
+  - will be interesting to see where Microsoft goes with Project Solara. It has tried and failed to build platforms for many devices in the past - Band, Cortana devices, Windows Phone, the list goes on. T
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @tomwarren · 1.2× · 87❤ 5💬 in 38m · vel 2.54/min vs author median 2.06 → 1.2×
+  - Microsoft’s Project Solara is an OS for AI agent gadgets. The company showed off two devices at Build: a desk concept and a badge concept. Details 👇 https://t.co/Z60ceUnbZh
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2061854581512978749 (@gabriell_lab): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061858899481760244 (@mvcinvesting): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061860277088407665 (@margelo_com): claude -p exited 1
+stderr:
+
+
+---
