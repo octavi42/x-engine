@@ -939,3 +939,30 @@ stderr:
 
 
 ---
+## 2026-06-02 21:34 UTC
+
+Searched: **36** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @Mr_Derivatives · 0.5× · 34❤ 14💬 in 86m · vel 0.72/min vs author median 1.55 → 0.5× · controversy 0.41 (replies/likes)
+  - These AI agents are becoming cheaper and more efficient. Eeesh.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @RoundtableSpace · 2.8× · 40❤ 7💬 in 50m · vel 1.09/min vs author median 0.39 → 2.8×
+  - ANTHROPIC JUST MADE AI AGENTS DEPLOYABLE INFRASTRUCTURE • New “ant” CLI lets developers define, version, and sync Claude agents directly from Git repositories • AI agents can now be managed like softw
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2061903432009777472 (@Team1USA_): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061907538741006796 (@trq212): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2061903182192947381 (@akrWeb3): claude -p exited 1
+stderr:
+
+
+---
