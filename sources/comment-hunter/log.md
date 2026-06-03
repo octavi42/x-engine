@@ -983,3 +983,35 @@ stderr:
 
 
 ---
+## 2026-06-03 21:37 UTC
+
+Searched: **27** unique · Scored: **7** · Notified: **0**
+
+### Rejected (top 3 scored)
+
+- @CoinMarketCap · 2.4× · 38❤ 23💬 in 46m · vel 1.81/min vs author median 0.77 → 2.4× · controversy 0.61 (replies/likes)
+  - LATEST: 🤖 AI agents have now processed over 100M payments on Base. https://t.co/8PaQsHBR86
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @Cointelegraph · 1.7× · 43❤ 17💬 in 37m · vel 2.07/min vs author median 1.24 → 1.7× · controversy 0.40 (replies/likes)
+  - 🔥 UPDATE: Solana’s x402 ecosystem surpassed $50 million in total volume in May, with agent-active senders jumping 645% to nearly 192,000 as AI agent payments continued to accelerate. https://t.co/1TS
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @Cointelegraph · 1.2× · 36❤ 14💬 in 43m · vel 1.50/min vs author median 1.24 → 1.2× · controversy 0.39 (replies/likes)
+  - ⚡️ NEW: Walrus has launched Walrus Memory, a portable memory layer that enables AI agents to retain context across applications. https://t.co/7OxmM1SkLw
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- search failed for "("AI coding" OR "vibe coding" OR "AI eng…": The operation was aborted due to timeout
+- suggestion-gen failed for 2062270545496772918 (@vamsibatchuk): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062274882524819835 (@tutufly_yy): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062267009430094139 (@ElevenLabs): claude -p exited 1
+stderr:
+
+
+---
