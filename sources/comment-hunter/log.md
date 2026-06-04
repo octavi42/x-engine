@@ -1039,3 +1039,30 @@ stderr:
 
 
 ---
+## 2026-06-04 19:39 UTC
+
+Searched: **64** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @AndrewCurran_ · 2.7× · 113❤ 23💬 in 89m · vel 1.79/min vs author median 0.65 → 2.7×
+  - Canada launched its national AI strategy this morning, and if you live in Canada the federal government may fund, provide compute to, and possibly even take a stake in your idea. They also plan to pro
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @jxnlco · 1.5× · 64❤ 9💬 in 84m · vel 0.98/min vs author median 0.66 → 1.5×
+  - LETS GOOO poke is the only ai agent that I've been a daily active user in since they've launched.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2062598516544061537 (@0xpunnk): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062607081010864364 (@higgsfield_ai): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062601122372522127 (@ogi_eth): claude -p exited 1
+stderr:
+
+
+---
