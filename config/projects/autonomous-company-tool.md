@@ -1,23 +1,24 @@
 # Autonomous-Company Tool
 
 - **Repo:** none
-- **Description:** A tool that observes how work flows inside a company, maps it as a graph, and proposes incremental autonomy upgrades node by node.
-- **Stack:** calendar OAuth, Slack OAuth, graph schema, autonomy-readiness scoring, Claude agents
+- **Description:** Observes how a company actually operates via metadata signals and produces a ranked map of automation zones tight enough to justify deeper telemetry on the top 1–3 flows.
+- **Stack:** Google Calendar API, Slack/Teams audit APIs, Google Workspace audit logs, Notion API, Bill.com/Ramp/Coupa/NetSuite APIs, graph schema (action nodes, handoff edges)
 - **Status:** sketch
 - **Content angles:**
-  - The agent vendors are commoditizing automation — nobody is mapping what to automate first in your specific company.
-  - Why the wedge for autonomous orgs is the observation layer, not the agent layer.
-  - Process mining (Celonis, UiPath) sells maps for compliance — the same shape sold for autonomy is a different product.
-  - Cheapest path to a company-flow graph: calendar + Slack metadata, not screen recording.
-  - What a node and an edge should mean in an org graph: person, tool, action, recurring meeting — handoff, dependency, repetition.
-  - An autonomy-readiness score per node: repetition rate, decision-surface size, API-available inputs, regulatory exposure.
-  - Why screen recording dies on GDPR — the Sneek / Time Doctor wall and how to stay metadata-only.
-  - Ranking day-1 wedges: support triage vs expense reports vs recruiting scheduling vs metrics roll-ups.
-  - The ICP for design partner #1 is the COO of a 50–200 person post-Series-A ops-heavy company, not IT.
-  - Solo-founder version vs enterprise version — same graph problem at different N.
-  - Adjacent risk: Celonis Process Copilot already exists, but their wedge is audit, not founder-facing autonomy.
+  - Why mapping the org graph before automating it is the missing step everyone selling AI agents skips
+  - Metadata-only observation: the four signals (calendar, messaging, doc edits, SaaS audit logs) that capture graph shape without touching content
+  - Why screen recording and keystroke logging fail the "needed for ranking, not proving" test
+  - Defining a node as `(actor, verb, object, t)` in 5-minute windows — and why granularity decisions break process maps
+  - Handoff edges need a causality proxy (artifact reference), not bare temporal correlation — the honesty tax on graph builders
+  - Three-bucket autonomy-readiness (A/B/C) instead of 0–1 floats: why fake precision dies in the falsifier
+  - The 50-instance historical-replay falsifier: how to ship a rubric only after one round survives
+  - Invoice-approval routing as the wedge: explicit handoffs, CFO-legible ROI, no causality inference needed
+  - GDPR reality check: metadata is still personal data — DPIA + purpose limitation on day one, not as a retrofit
+  - Why Celonis-style process mining sells to compliance and leaves the autonomy-planning wedge open for founders
+  - The ICP shape for design partner #1: 100–400 FTE, post-Series-B, finance as cost center, no automation team
+  - Selling the ranked map, not the automation — flipping the Sierra/Decagon/Cognition pitch
 
 
-<!-- _source_hash: 118cd3365d3dde29 -->
+<!-- _source_hash: 90758ce852dcfa9e -->
 <!-- _source_path: ~/Documents/Obsidian Vault/1-Projects/autonomous-company-tool/README.md -->
-<!-- _discovered_at: 2026-05-13T18:29:51.173Z -->
+<!-- _discovered_at: 2026-05-15T16:13:58.905Z -->
