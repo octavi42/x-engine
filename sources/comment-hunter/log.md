@@ -1015,3 +1015,27 @@ stderr:
 
 
 ---
+## 2026-06-04 17:17 UTC
+
+Searched: **43** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @edzitron · 2.8× · 134❤ 7💬 in 51m · vel 2.90/min vs author median 1.05 → 2.8×
+  - It's kind of crazy that Google demoed this "ai agent that could return a pair of sneakers" in 2024, got it written up all over the tech and business media, then never released it or anything even simi
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- search failed for "("claude code" OR claude-code OR mcp) -a…": The operation was aborted due to timeout
+- suggestion-gen failed for 2062572653840314760 (@100xCryptoGems_): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062570371946074427 (@itsEmZee_): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062572228810776897 (@expo): claude -p exited 1
+stderr:
+
+
+---
