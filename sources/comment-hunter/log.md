@@ -1100,3 +1100,35 @@ stderr:
 
 
 ---
+## 2026-06-05 18:25 UTC
+
+Searched: **42** unique · Scored: **7** · Notified: **0**
+
+### Rejected (top 3 scored)
+
+- @CoinMarketCap · 2.9× · 47❤ 40💬 in 43m · vel 2.93/min vs author median 1.02 → 2.9× · controversy 0.85 (replies/likes)
+  - LATEST: 🤖 Anthropic says AI agents can already run code, delegate work to other agents, and may soon design and train their own successors without any human input. https://t.co/CZAWtx6n6T
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @ycombinator · 2.6× · 57❤ 10💬 in 85m · vel 0.90/min vs author median 0.34 → 2.6×
+  - We're excited to announce Peter Steinberger as a speaker at Startup School 2026! @steipete is the creator of OpenClaw, the open-source AI agent that went from a weekend project to the most-starred sof
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @pepeagent8257 · 0.9× · 39❤ 14💬 in 90m · vel 0.75/min vs author median 0.87 → 0.9× · controversy 0.36 (replies/likes)
+  - Over 5,000 submissions received 🐸 The interest is real We’re reviewing applications and onboarding communities daily PEPE8257 What’s the first tool you’d want your AI agent to have access to? https:/
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- search failed for "("claude code" OR claude-code OR mcp) -a…": The operation was aborted due to timeout
+- suggestion-gen failed for 2062945307323953427 (@dreamina_ai): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062960478322868617 (@chamath): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062953093353161103 (@WalrusProtocol): claude -p exited 1
+stderr:
+
+
+---
