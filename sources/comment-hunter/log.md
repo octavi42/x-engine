@@ -1083,3 +1083,20 @@ stderr:
 
 
 ---
+## 2026-06-05 16:34 UTC
+
+Searched: **54** unique · Scored: **9** · Notified: **0**
+
+### Errors
+
+- suggestion-gen failed for 2062927430289920272 (@FlutterDev): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062932523618115710 (@deg_ape): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062930815579722024 (@brookeleblanc): claude -p exited 1
+stderr:
+
+
+---
