@@ -1155,3 +1155,30 @@ stderr:
 
 
 ---
+## 2026-06-05 22:02 UTC
+
+Searched: **20** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @kimmonismus · 1.9× · 68❤ 18💬 in 83m · vel 1.25/min vs author median 0.64 → 1.9×
+  - Reports claim Claude’s API may have returned another user’s inference output during today’s outage. Anthropic’s status page confirms elevated errors affecting Claude API, Claude Code, Claude. ai and C
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @DataChaz · 2.2× · 18❤ 4💬 in 90m · vel 0.29/min vs author median 0.13 → 2.2×
+  - 🚨 Dario confirmed that Claude is currently designing the next version of itself. To test this, the company asks its new models to optimize the training code for smaller AIs. While Claude Opus 4 achie
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2063002245726359756 (@EstebanSuarez): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2063000337078686042 (@magsimich): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2063002928072237563 (@ivanburazin): claude -p exited 1
+stderr:
+
+
+---
