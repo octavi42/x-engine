@@ -1132,3 +1132,26 @@ stderr:
 
 
 ---
+## 2026-06-05 20:30 UTC
+
+Searched: **32** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @sumonrazamd17 · 2.5× · 33❤ 31💬 in 88m · vel 1.08/min vs author median 0.43 → 2.5× · controversy 0.94 (replies/likes)
+  - Good night my bros 🥱😴 Bros, imagine your crypto actually ready for tomorrow’s threats while staying super easy for daily use. That’s the fresh energy I’m seeing lately. Post-quantum armor with quant
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2062989509680337310 (@ProtocolVouch): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062973067354419656 (@zendadddy): claude -p exited 1
+stderr:
+
+- suggestion-gen failed for 2062980527133696086 (@freddier): claude -p exited 1
+stderr:
+
+
+---
