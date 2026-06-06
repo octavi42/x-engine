@@ -1182,3 +1182,29 @@ stderr:
 
 
 ---
+## 2026-06-06 15:22 UTC
+
+Searched: **45** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @E_a_s_yyy · 2.1× · 26❤ 27💬 in 73m · vel 1.10/min vs author median 0.53 → 2.1× · controversy 1.04 (replies/likes)
+  - Hey Guys ⛅️⛅️ I got into the @TheARCTERMINAL discord yesterday I did confuse the discord for @arc at one time 😂. Arc Terminal is the most underrated build in the agentic Web3 space right now A true s
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2063271072431214999 (@Arkdefaicmo): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063270700924961264 (@thelastjoyboy33): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063270403058069727 (@arkv3official): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
