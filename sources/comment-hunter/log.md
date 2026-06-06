@@ -1234,3 +1234,23 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-06 18:16 UTC
+
+Searched: **43** unique · Scored: **10** · Notified: **0**
+
+### Errors
+
+- suggestion-gen failed for 2063305743965835599 (@DSCVR1): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063305138048028963 (@Defifundamental): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063304654432477427 (@DimkatG): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
