@@ -1208,3 +1208,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-06 16:43 UTC
+
+Searched: **33** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @Dreamsgrowth · 1.7× · 27❤ 24💬 in 56m · vel 1.35/min vs author median 0.82 → 1.7× · controversy 0.89 (replies/likes)
+  - Good night X family💪🌱 AI agents can move faster than humans, but speed means little if users cannot verify their actions. That is why I am watching @TheARCTERMINAL from a trust, privacy, and verific
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2063279137351995904 (@SignaTrading): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063292688535814334 (@L3KKRL): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063286038827561098 (@XenBH): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
