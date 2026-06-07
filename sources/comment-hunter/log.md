@@ -1400,3 +1400,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-07 21:47 UTC
+
+Searched: **22** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @REHANH0SSAIN · 2.3× · 12❤ 11💬 in 38m · vel 0.89/min vs author median 0.38 → 2.3× · controversy 0.92 (replies/likes)
+  - Gn my lovely fam members 😴 Most AI accounts today still rely on passwords, seed phrases or secrets stored somewhere on a server. @TheARCTERMINAL is taking a different path. Your ARC account starts fr
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2063717055178903998 (@bryce): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063727820891709931 (@_0xpainn): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063731388533354736 (@anzceel): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
