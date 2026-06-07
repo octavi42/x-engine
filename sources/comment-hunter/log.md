@@ -1314,3 +1314,33 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-07 17:36 UTC
+
+Searched: **39** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @cryptogoos · 1.6× · 58❤ 12💬 in 64m · vel 1.28/min vs author median 0.79 → 1.6×
+  - ANTHROPIC JUST ISSUED ONE OF ITS STRONGEST AI WARNINGS YET And the reason has nothing to do with AI replacing jobs 👇 Anthropic says AI is advancing so fast that we may soon reach a point where AI sys
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @farzyness · 1.2× · 33❤ 13💬 in 68m · vel 0.87/min vs author median 0.75 → 1.2× · controversy 0.39 (replies/likes)
+  - The growth of the economy is heavily bound by humanity's will and desire to bring the future forward. The more humans we have who have a will or desire - for whatever reason - to make things faster, c
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2063658061286592513 (@kirat_tw): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063658599105143149 (@vorpal_onchain): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063654910995145209 (@virtuals_io): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
