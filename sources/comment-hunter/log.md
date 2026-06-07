@@ -1344,3 +1344,33 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-07 18:52 UTC
+
+Searched: **30** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @evrendag1284 · 2.2× · 60❤ 36💬 in 52m · vel 2.52/min vs author median 1.14 → 2.2× · controversy 0.60 (replies/likes)
+  - Two AI agents walk into a bar... “Do humans use AI to tell the truth?” “No, they use it to make their excuses sound emotionally intelligent.” The bartender laughs harder than anyone else. One AI turns
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @randombankguy · cold · 24❤ 7💬 in 69m · thin author baseline (0/5)
+  - I got to spend the last 3+ years at Mercury doing what I loved - making sure Mercury became the go-to home for some of crypto's top companies. We believed in the folks building real companies in crypt
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2063683121581580404 (@Defifundamental): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063690208961314996 (@iam_elias1): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063687179449012680 (@Atenov_D): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
