@@ -1374,3 +1374,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-07 20:21 UTC
+
+Searched: **20** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @getmpplayer · 2.6× · 12❤ 10💬 in 50m · vel 0.64/min vs author median 0.24 → 2.6× · controversy 0.83 (replies/likes)
+  - Development Update: Expanding the MPP Layer Ecosystem Over the past week, our primary focus has been building the core foundations of the MPP Layer ecosystem from payment infrastructure and escrow sys
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2063710266316173405 (@ENIMinds): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063697800022426071 (@0xTrackmind): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2063695562004967777 (@TheOCcryptobro): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
