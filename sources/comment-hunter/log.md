@@ -1472,3 +1472,41 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-08 21:58 UTC
+
+Searched: **28** unique · Scored: **6** · Notified: **0**
+
+### Rejected (top 4 scored)
+
+- @0xileri · 2.3× · 85❤ 39💬 in 85m · vel 1.92/min vs author median 0.85 → 2.3× · controversy 0.46 (replies/likes)
+  - you can just build stuffs (w AI) just shipped my personal website with claude code kek check my bio for the link https://t.co/Wn912DtTjU
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @RoundtableSpace · 2.3× · 64❤ 11💬 in 73m · vel 1.18/min vs author median 0.51 → 2.3×
+  - ANTHROPIC JUST GAVE CONNECTOR DEVELOPERS X-RAY VISION •⁠ ⁠New observability dashboards let MCP connector builders monitor usage, errors, and performance in real time •⁠ ⁠Makes it easier to debug, opti
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @MacRumors · 1.5× · 65❤ 4💬 in 57m · vel 1.28/min vs author median 0.87 → 1.5×
+  - Apple's Most Powerful On-Device AI Now Requires iPhone 17 Pro or iPhone Air https://t.co/vU1lXJYocX https://t.co/WI6TPUiAf0
+  - Query: `("local LLM" OR Ollama OR "on-device AI") -token -$`
+
+- @CryptoWendyO · 2.1× · 30❤ 5💬 in 58m · vel 0.69/min vs author median 0.33 → 2.1×
+  - Charles basically said: "Stop staring at the price chart during a bear market." The real battle is OPEN vs CLOSED systems. @MidnightNtwrk is betting that privacy + interoperability + AI agents + selec
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2064091161980268976 (@orca_build): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064089854208524618 (@itsEmZee_): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064088355705659667 (@MeetAminX): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
