@@ -1446,3 +1446,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-08 19:41 UTC
+
+Searched: **50** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @9to5mac · 1.5× · 145❤ 10💬 in 83m · vel 1.99/min vs author median 1.35 → 1.5×
+  - iOS 27’s most powerful on-device AI requires iPhone 17 Pro, iPhone Air https://t.co/KNkGMf0jA9 by @iryantldr
+  - Query: `("local LLM" OR Ollama OR "on-device AI") -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2064052011780423712 (@wendrtwin): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064058360790716507 (@BlockRunAI): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064052110283403579 (@CryptoCoinShow): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
