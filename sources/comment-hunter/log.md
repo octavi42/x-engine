@@ -1510,3 +1510,33 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-09 16:36 UTC
+
+Searched: **66** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @Polymarket · 1.4× · 176❤ 39💬 in 33m · vel 7.70/min vs author median 5.67 → 1.4×
+  - JUST IN: Asia’s largest outsourcer TCS announces it will slow hiring as the company moves toward having as many AI agents as employees.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @Forbes · 1.4× · 48❤ 10💬 in 66m · vel 1.04/min vs author median 0.76 → 1.4×
+  - Elon Musk’s rocket and AI company is expected to acquire the buzzy AI coding startup shortly after it goes public. https://t.co/mPCODet4vO (Photo: Samuel Boivin/NurPhoto via Getty Images) https://t.co
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2064370681081655308 (@Victusglobal): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064384173146612066 (@synthwavedd): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064370722701791563 (@GuarEmperor): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
