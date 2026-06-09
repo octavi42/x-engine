@@ -975,20 +975,6 @@
   },
   "runs": [
     {
-      "ts": "2026-05-10T17:07:46.052Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0,
-      "note": "daily cap hit"
-    },
-    {
-      "ts": "2026-05-10T18:34:00.348Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0,
-      "note": "daily cap hit"
-    },
-    {
       "ts": "2026-05-10T19:42:22.324Z",
       "searched": 0,
       "scored": 0,
@@ -1691,6 +1677,12 @@
       "ts": "2026-06-09T16:36:41.274Z",
       "searched": 66,
       "scored": 8,
+      "notified": 0
+    },
+    {
+      "ts": "2026-06-09T18:35:23.773Z",
+      "searched": 59,
+      "scored": 9,
       "notified": 0
     }
   ]
