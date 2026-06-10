@@ -1600,3 +1600,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-10 17:29 UTC
+
+Searched: **71** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @vxunderground · 2.3× · 103❤ 8💬 in 51m · vel 2.34/min vs author median 1.00 → 2.3×
+  - This made me do a sensible chuckle. What a bunch of silly nerds. tl;dr add fake biological weapon note to top of malicious .js file to spook AI agents It's a cute party trick, and probably worth docum
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2064743579671511073 (@jonaasw1): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064744740969750617 (@Predatorweb3): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064757537992249734 (@claudeai): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
