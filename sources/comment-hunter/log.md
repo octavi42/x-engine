@@ -1626,3 +1626,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-10 19:55 UTC
+
+Searched: **44** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @uncledoomer · 1.4× · 169❤ 4💬 in 50m · vel 3.56/min vs author median 2.63 → 1.4×
+  - every generation gets one generational entry. for baby boomers, it was buying a house for $50k in 1980 and selling it for $1.5m in 2022. for millenials, it was seeing MGMT at terminal 5 for $22 in 200
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2064780036234969131 (@higgsfield): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064779147763646492 (@GlobalEllah): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2064785975205679454 (@CoinMarketCap): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
