@@ -1698,3 +1698,25 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-11 20:32 UTC
+
+Searched: **9** unique · Scored: **9** · Notified: **0**
+
+### Errors
+
+- search failed for "("claude code" OR claude-code OR mcp) -a…": The operation was aborted due to timeout
+- search failed for "("AI agents" OR "AI agent") -airdrop -pr…": The operation was aborted due to timeout
+- suggestion-gen failed for 2065160742165213358 (@margelo_com): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065162342447407112 (@adnansahinovich): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065150724649181507 (@Pallab_dev): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
