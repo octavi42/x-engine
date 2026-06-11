@@ -1720,3 +1720,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-11 22:24 UTC
+
+Searched: **27** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @PolymarketMoney · 1.3× · 24❤ 7💬 in 88m · vel 0.43/min vs author median 0.34 → 1.3×
+  - JUST IN: $COIN now lets AI agents autonomously trade crypto. https://t.co/Jp0Is9o4Xc
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2065190501612192040 (@zjearbear): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065193489063645187 (@Bookof_Eth): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065189234273640478 (@theaiportfolios): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
