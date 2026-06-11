@@ -1672,3 +1672,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-11 17:41 UTC
+
+Searched: **66** unique · Scored: **6** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @shakibmunsi0 · 0.9× · 79❤ 76💬 in 86m · vel 2.69/min vs author median 3.05 → 0.9× · controversy 0.96 (replies/likes)
+  - Good Night 🐝🌙 @RiverdotInc is basically building a chain abstraction stablecoin system that allows us to tie multiple chains together to connect assets, liquidity and yield ​Real world money that ju
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2065106304041943082 (@ConstructerSOL): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065117709835137079 (@brian_armstrong): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065116986678624419 (@rauchg): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
