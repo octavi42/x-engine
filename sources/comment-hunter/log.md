@@ -1792,3 +1792,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-12 21:17 UTC
+
+Searched: **25** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @theo · 1.0× · 80❤ 18💬 in 53m · vel 2.19/min vs author median 2.25 → 1.0×
+  - We have Mythos in our Claude Code subs for 10 more days. I made a video about tokemaxxing so we can get the most out of it. https://t.co/nnFXYgOzEr
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2065533666441277641 (@orithellama): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065522939949101213 (@chillypnl): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065524502767813013 (@fermah_xyz): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
