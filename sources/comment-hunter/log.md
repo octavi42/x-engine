@@ -1746,3 +1746,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-12 16:53 UTC
+
+Searched: **56** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @Musty_hasheedu · 0.6× · 26❤ 25💬 in 62m · vel 1.23/min vs author median 2.05 → 0.6× · controversy 0.96 (replies/likes)
+  - Good Evening CT Many AI tools help you complete tasks, but few let you verify how those tasks were done. @TheARCTERMINAL is building an AI-powered operating system that runs in your browser and focuse
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2065463190087930188 (@AspisProtocol): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065461640401682689 (@delba_oliveira): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065462899666022486 (@nabu_lines): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
