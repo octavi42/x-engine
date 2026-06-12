@@ -1772,3 +1772,23 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-12 19:18 UTC
+
+Searched: **38** unique · Scored: **10** · Notified: **0**
+
+### Errors
+
+- suggestion-gen failed for 2065491608598872156 (@ammaar): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065504582319346128 (@zillionokoye): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065492873555100098 (@vercel_dev): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
