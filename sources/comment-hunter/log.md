@@ -1838,3 +1838,30 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-13 17:41 UTC
+
+Searched: **18** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @tec_aryan · 1.9× · 20❤ 12💬 in 36m · vel 1.22/min vs author median 0.66 → 1.9× · controversy 0.60 (replies/likes)
+  - 25 AI tools you can’t ignore in 2026: 1. https://t.co/nFCRDKh5qS – solves anything 2. https://t.co/dJ00sHCMto – rank higher on Google, ChatGPT, Claude, Etc! 3. https://t.co/XV4E0aUvQl - create viral A
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- search failed for "("AI agents" OR "AI agent") -airdrop -pr…": The operation was aborted due to timeout
+- suggestion-gen failed for 2065847603968036922 (@_xjdr): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065837322873028698 (@yellowbrickmoon): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2065837001186910386 (@kingwilliam_): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
