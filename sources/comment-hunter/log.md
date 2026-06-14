@@ -1905,3 +1905,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-14 15:54 UTC
+
+Searched: **36** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @Tech_Arish · 1.2× · 24❤ 12💬 in 53m · vel 0.90/min vs author median 0.76 → 1.2× · controversy 0.50 (replies/likes)
+  - 100+ AI Tools to replace your tedious work: 1. Research - @ChatGPTapp - YouChat - @abacusai - @perplexity_ai - Copilot - Gemini 2. Image - @higgsfield_ai Soul - GPT-4o - Midjourney - Grok 3. Productiv
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2066174320314069454 (@MatrixOnBNB): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2066171605584167208 (@insoblokai): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2066171168986644821 (@virtuals_io): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
