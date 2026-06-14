@@ -1977,3 +1977,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-14 21:23 UTC
+
+Searched: **17** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @0xakalumi · 0.5× · 10❤ 6💬 in 67m · thin author baseline (2/5) · controversy 0.60 (replies/likes)
+  - Great weekend mates Right in the middle of World Cup fever, I discovered on @base @LeagueofAgentz ⚽️ Blockchain AI agents league Still very early follow them
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2066250098347032953 (@devin_oldenburg): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2066252021280518598 (@VannDough): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2066258764362076516 (@spectnfa): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
