@@ -1931,3 +1931,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-14 17:39 UTC
+
+Searched: **24** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @Jeremybtc · 2.6× · 79❤ 48💬 in 72m · vel 2.43/min vs author median 0.92 → 2.6× · controversy 0.61 (replies/likes)
+  - Since the release of AI coding assistance from late 2025 till now onchain exploits have resulted in a estimated loss of $15 BILLION https://t.co/2XbsqmBaus
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2066198768836612327 (@Xianbao_QIAN): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2066195756738908503 (@Trader_XO): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2066195572512755718 (@alexcooldev): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
