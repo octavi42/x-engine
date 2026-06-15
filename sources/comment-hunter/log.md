@@ -2023,3 +2023,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-15 21:48 UTC
+
+Searched: **26** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @DataChaz · 1.1× · 14❤ 10💬 in 88m · vel 0.38/min vs author median 0.34 → 1.1× · controversy 0.71 (replies/likes)
+  - My friend @Saboo_Shubham_, @AddyOsmani and the team at Google just published a 50-page breakdown on the shift from vibe coding to agentic engineering. It covers the new Software Development Life Cycle
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2066627155706933311 (@ericzxchen): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2066618260179784181 (@EtherRawl): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2066630604045598905 (@vercel_dev): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
