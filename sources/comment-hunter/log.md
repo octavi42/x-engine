@@ -2049,3 +2049,37 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-06-16 18:39 UTC
+
+Searched: **58** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@dopabees** · 999.0× · 51❤ 7💬 in 35m · vel 1.87/min vs author median 0.00 → 999.0×
+  - URL: https://x.com/dopabees/status/2066944699211083848
+  - Tweet: Very excited to share I’ll be joining @whop After my time cofounding a YC startup with 700k users, dropping out of school, and receiving SWE job offer from Vercel, I’ve decided to go back to design. Now I’m super excited to be building the entire stack for the Global Fortune 5,000,000 businesses, run by people just like us. We’re building something special here. A future where anyone, anywhere, ca
+  - Suggestion: the monetization infra for 5 million sellers is a different problem than 500. which layer are you starting with?
+  - Reasoning: Shape C pointed question — cuts through the announcement hype, grounds the reply in a real engineering distinction (scale of seller infra), and opens the unsolved part without performing enthusiasm.
+  - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
+
+- **@Designarena** · 999.0× · 441❤ 23💬 in 50m · vel 9.65/min vs author median 0.01 → 999.0×
+  - URL: https://x.com/Designarena/status/2066940737011560652
+  - Tweet: BREAKING: GLM-5.2 is now 1st on Design Arena. With an Elo of 1360, GLM-5.2 has jumped ahead of the now unavailable Claude Fable 5. And it's open weights. This is an improvement of 4 positions and 27 Elo points to achieve one of the highest Elo scores in our code categories since Design Arena started. Huge congratulations to the @Zai_org on the release!
+  - Suggestion: what's the vram floor? open weights at h100 scale isn't the same story as open weights on consumer hardware
+  - Reasoning: Shape C — one pointed question that opens the unsolved part: arena Elo on open weights only matters if the inference requirement is reachable, and GLM-5.2's hardware floor is the first thing any engineer self-hosting it needs to know.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@sidyadav** · 652.2× · 45❤ 11💬 in 77m · vel 0.87/min vs author median 0.00 → 652.2×
+  - URL: https://x.com/sidyadav/status/2066934045473231125
+  - Tweet: What if building your dream digital business felt as easy as vibe coding? Starting today, it does. Here's everything we announced at Circle Eclipse 🧵
+  - Suggestion: every platform that ships says this. build time was never the constraint. distribution is
+  - Reasoning: Shape B counter with mechanism — deflates the "easy build" pitch by naming the actual bottleneck (distribution, not build time), which any founder or engineer who's shipped knows is true.
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+### Rejected (top 1 scored)
+
+- @HYPERPEPS · 14.9× · 54❤ 36💬 in 44m · thin author baseline (1/5) · controversy 0.67 (replies/likes)
+  - First Hyperliquid AI Agents coming soon 🧪 Collabs are officially OPEN! Make hyperliquid:native NFTs great again. Last call for GTD FREE mint spot. 💚+🔄 = 🧬 https://t.co/ArTtCszCBq
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---

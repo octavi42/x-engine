@@ -971,27 +971,90 @@
       "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2066944699211083848": {
+      "suggestedAt": "2026-06-16T18:38:36.169Z",
+      "author": "dopabees",
+      "url": "https://x.com/dopabees/status/2066944699211083848",
+      "tweetText": "Very excited to share I’ll be joining @whop\n\nAfter my time cofounding a YC startup with 700k users, dropping out of school, and receiving SWE job offer from Vercel, I’ve decided to go back to design.\n\nNow I’m super excited to be building the entire stack for the Global Fortune 5,000,000 businesses, run by people just like us.\n\nWe’re building something special here. A future where anyone, anywhere, can earn their living on the internet.\n\nTime to 🚀",
+      "metrics": {
+        "likes": 51,
+        "replies": 7,
+        "retweets": 4,
+        "bookmarks": 4,
+        "views": 952,
+        "ageMinutes": 34.746916666666664
+      },
+      "scoreDetails": {
+        "ratio": 4274.358110511804,
+        "candidateVelocity": 1.87066957979485,
+        "authorMedianVelocity": 0.00043764924029045835,
+        "authorSampleSize": 19,
+        "controversy": 0.13725490196078433
+      },
+      "score": 4274.358110511804,
+      "comment": "the monetization infra for 5 million sellers is a different problem than 500. which layer are you starting with?",
+      "reasoning": "Shape C pointed question — cuts through the announcement hype, grounds the reply in a real engineering distinction (scale of seller infra), and opens the unsolved part without performing enthusiasm.",
+      "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2066940737011560652": {
+      "suggestedAt": "2026-06-16T18:39:21.562Z",
+      "author": "Designarena",
+      "url": "https://x.com/Designarena/status/2066940737011560652",
+      "tweetText": "BREAKING: GLM-5.2 is now 1st on Design Arena.\n\nWith an Elo of 1360, GLM-5.2 has jumped ahead of the now unavailable Claude Fable 5. \n\nAnd it's open weights.\n\nThis is an improvement of 4 positions and 27 Elo points to achieve one of the highest Elo scores in our code categories since Design Arena started.\n\nHuge congratulations to the @Zai_org on the release!",
+      "metrics": {
+        "likes": 441,
+        "replies": 23,
+        "retweets": 62,
+        "bookmarks": 91,
+        "views": 32020,
+        "ageMinutes": 50.48025
+      },
+      "scoreDetails": {
+        "ratio": 1021.4838689073986,
+        "candidateVelocity": 9.647337324993439,
+        "authorMedianVelocity": 0.009444434335818187,
+        "authorSampleSize": 19,
+        "controversy": 0.05215419501133787
+      },
+      "score": 1021.4838689073986,
+      "comment": "what's the vram floor? open weights at h100 scale isn't the same story as open weights on consumer hardware",
+      "reasoning": "Shape C — one pointed question that opens the unsolved part: arena Elo on open weights only matters if the inference requirement is reachable, and GLM-5.2's hardware floor is the first thing any engineer self-hosting it needs to know.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2066934045473231125": {
+      "suggestedAt": "2026-06-16T18:39:52.890Z",
+      "author": "sidyadav",
+      "url": "https://x.com/sidyadav/status/2066934045473231125",
+      "tweetText": "What if building your dream digital business felt as easy as vibe coding?\n\nStarting today, it does.\n\nHere's everything we announced at Circle Eclipse 🧵",
+      "metrics": {
+        "likes": 45,
+        "replies": 11,
+        "retweets": 20,
+        "bookmarks": 8,
+        "views": 2454,
+        "ageMinutes": 77.08025
+      },
+      "scoreDetails": {
+        "ratio": 652.2485933749922,
+        "candidateVelocity": 0.869223958147515,
+        "authorMedianVelocity": 0.0013326574667640238,
+        "authorSampleSize": 19,
+        "controversy": 0.24444444444444444
+      },
+      "score": 652.2485933749922,
+      "comment": "every platform that ships says this. build time was never the constraint. distribution is",
+      "reasoning": "Shape B counter with mechanism — deflates the \"easy build\" pitch by naming the actual bottleneck (distribution, not build time), which any founder or engineer who's shipped knows is true.",
+      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
-    {
-      "ts": "2026-05-17T15:07:24.506Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-05-17T16:32:10.977Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-05-17T17:33:55.657Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-05-17T18:38:20.323Z",
       "searched": 0,
@@ -1627,6 +1690,12 @@
       "searched": 26,
       "scored": 9,
       "notified": 0
+    },
+    {
+      "ts": "2026-06-16T18:39:52.890Z",
+      "searched": 58,
+      "scored": 9,
+      "notified": 3
     }
   ]
 }
