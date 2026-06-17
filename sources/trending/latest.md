@@ -8,6 +8,16 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-06-17
+
+- Anthropic joined Frontier (carbon removal coalition) — first pure-AI company to do so. New $915M tranche pushes total Frontier pledges to $1.8B. Google was already a founding member. TechCrunch, 2026-06-17. Lands while AI labs are on a multi-gigawatt energy buying spree (Colossus 1, Akamai $1.8B, Google $40B).
+- Fortune long-read 2026-06-15 ("Fix this code") traces the 3 words that triggered the Trump-admin export-control order against Fable 5 and Mythos 5. Pivotal artifact: red-teamer Katie Moussouris published an open letter detailing the jailbreak; Trump-admin advisor David Sacks (Tom's Hardware) claims a Chinese group accessed the model and Anthropic refused to fix before controls landed. Anthropic suspended both models worldwide (not just for foreign nationals) at 5:21pm ET on 2026-06-12. Opus 4.8 unaffected. Direct quote in the order: "any foreign national, whether inside or outside the United States, including foreign national Anthropic employees."
+- Coding-agent leaderboard reshuffle: Codex CLI + GPT-5.5 holds #1 on public Terminal-Bench 2.1 at 83.4%, Claude Code + Opus 4.8 at #2 with 78.9%, Gemini CLI + Gemini 3.1 Pro at 70.7%. Claude Code itself grew 6x in the last comparison cycle. Cursor at $2B ARR (up from $1B in Nov 2025 → $2B Feb 2026). GitHub Copilot share dropped 67% → 51%. JetBrains survey: 46% of 10+ year devs picked Claude Code as daily driver vs 9% Copilot. Sources: Morphllm, NewMarketPitch, Lushbinary, NxCode, The New Stack "six months in."
+- GitHub Copilot scrapped premium-request billing on 2026-06-01, fully shifted to usage-based AI credits. Anthropic Max plan remains the cleanest direct-to-customer route for heavy Claude Code users.
+- Jeff Bezos's Prometheus raised $12B (2026-06-11, TechCrunch) to build an "artificial general engineer" for the physical world. Largest single AI capital raise of June. Pairs with the YC W26 batch tilt toward robotics/energy/agriculture noted last week.
+- YC W26 batch: Light Anchor (P26 spinout) building "AI-run consumer brands at the speed of compute" — pitched as escape from hiring/coordinating/sleep-cycle limits. Reinforces the autonomous-company / agentic-org thesis already in the autonomous-company-tool angles.
+- Comment-hunter pattern from this week: dev Twitter still digesting "fix this code" — most-circulated framings are split between "frontier models are now dual-use weapons" (security-leaning) and "engineers in non-US countries are getting locked out of their own work" (labor-leaning). Both are open lanes.
+
 ## 2026-06-16
 
 - GLM-5.2 (Zhipu AI / @Zai_org) took #1 on Design Arena at Elo 1360, +27 points over the field, jumping past Claude Fable 5 which is currently marked "unavailable" on the leaderboard. Surfaced by x-engine's own comment-hunter run at 18:39 UTC (@Designarena tweet, 441 likes / 23 replies in 50 minutes). Open-weights model topping a closed-weights frontier on a coding-leaning arena. Largest single-jump in Elo since the leaderboard launched.
