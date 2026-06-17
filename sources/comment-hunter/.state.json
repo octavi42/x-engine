@@ -1052,15 +1052,90 @@
       "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2067286892786454855": {
+      "suggestedAt": "2026-06-17T17:15:55.310Z",
+      "author": "dexhorthy",
+      "url": "https://x.com/dexhorthy/status/2067286892786454855",
+      "tweetText": "At HumanLayer, we’re on a mission to solve the AI slop code problem.\n\nIn 2025 we open-sourced our Research, Plan, Implement framework, now deployed inside fortune 500s like Block and Uber - places where shipping slop is just not an option\n\nAnd that was just the beginning.\n\nToday, we’re opening access to  HumanLayer - an Agentic IDE, collaboration platform, and building blocks for your software factory.\n\nHumanLayer enables engineers solving hard problems in complex codebases to:\n\n> move 2-3x faster across the entire SDLC (not just coding)\n\n> maintain rigorous standards for system architecture and program design\n\nHundreds of engineers at companies of all sizes are already using HumanLayer to ship fast without sacrificing quality.\n\nI'm excited to invite you to try humanlayer today at https://t.co/cQ648EkrnG, and I'm even more excited to see what you build.\n\n@0xblacklight and I are deeply grateful to our team, our customers who give us so much incredible energy and feedback, our investors who have always been in our corner, and our friends and family who have supported us along this crazy journey\n\nif you're a staff or principal engineer trying to make AI coding work at scale for your team, we'd love to hear from you \n\nas @swyx likes to say - let's make this the year of no more slop",
+      "metrics": {
+        "likes": 94,
+        "replies": 23,
+        "retweets": 18,
+        "bookmarks": 36,
+        "views": 4894,
+        "ageMinutes": 32.371583333333334
+      },
+      "scoreDetails": {
+        "ratio": 238.5339397833123,
+        "candidateVelocity": 4.32478073619095,
+        "authorMedianVelocity": 0.018130672474196516,
+        "authorSampleSize": 19,
+        "controversy": 0.24468085106382978
+      },
+      "score": 238.5339397833123,
+      "comment": "what does the plan → implement handoff actually look like? is the architect LLM producing something the coding agent is hard-constrained by, or is it still advisory?",
+      "reasoning": "Shape C — opens the genuinely unsolved mechanism (advisory vs. enforcement) without pitching or flattering, landing as a real engineer's first question before evaluating the tool.",
+      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2067280098357854440": {
+      "suggestedAt": "2026-06-17T17:16:33.173Z",
+      "author": "lennysan",
+      "url": "https://x.com/lennysan/status/2067280098357854440",
+      "tweetText": "Upcoming podcast guests\n\n+ Jeff Dean, Chief Scientist at Google DeepMind\n+ Andrew Ambrosino, Head of PM and Eng for Codex\n+ Fiona Fung, Head of Eng for Claude Code/Cowork\n+ Tara Seshan, Head of ChatGPT, Productivity at OpenAI\n+ Dianne Penn, Head of Product, Research at Anthropic\n+ Elizabeth Stone, CPTO at Netflix",
+      "metrics": {
+        "likes": 157,
+        "replies": 18,
+        "retweets": 4,
+        "bookmarks": 31,
+        "views": 6660,
+        "ageMinutes": 59.371583333333334
+      },
+      "scoreDetails": {
+        "ratio": 179.11489887943128,
+        "candidateVelocity": 3.2507133743836487,
+        "authorMedianVelocity": 0.018148760347244042,
+        "authorSampleSize": 19,
+        "controversy": 0.11464968152866242
+      },
+      "score": 179.11489887943128,
+      "comment": "curious what andrew and fiona's different answers are to the same question: what does the human actually need to stay in the loop for",
+      "reasoning": "Shape C — pointed question surfacing the unsolved autonomy boundary problem, using both guests' first names to signal the reply is from someone who actually builds with these tools, not a fan-post.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2067276090545193081": {
+      "suggestedAt": "2026-06-17T17:17:11.609Z",
+      "author": "inference_labs",
+      "url": "https://x.com/inference_labs/status/2067276090545193081",
+      "tweetText": "1/ AI agents are learning to take actions.\n\nMost organizations still struggle to verify outcomes.\n\nThose are very different problems.",
+      "metrics": {
+        "likes": 222,
+        "replies": 20,
+        "retweets": 16,
+        "bookmarks": 0,
+        "views": 666,
+        "ageMinutes": 75.30491666666667
+      },
+      "scoreDetails": {
+        "ratio": 114.35946477547998,
+        "candidateVelocity": 3.4791884992015794,
+        "authorMedianVelocity": 0.03042326672332904,
+        "authorSampleSize": 19,
+        "controversy": 0.09009009009009009
+      },
+      "score": 114.35946477547998,
+      "comment": "built a falsifier for this: replay 50 historical instances, compare predicted vs actual handoff. without ground truth, 'outcome verified' is just vibes",
+      "reasoning": "Shape A lived experience — anchors to the autonomous-company-tool's 50-instance historical-replay falsifier, gives a concrete number and mechanism, and lands a punchy non-vague close that answers the \"verifying outcomes\" gap the OP names.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
-    {
-      "ts": "2026-05-18T16:51:49.364Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-05-18T18:58:09.632Z",
       "searched": 0,
@@ -1685,6 +1760,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-06-17T17:17:11.609Z",
+      "searched": 67,
+      "scored": 8,
+      "notified": 3
     }
   ]
 }

@@ -2083,3 +2083,41 @@ Searched: **58** unique · Scored: **9** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-06-17 17:17 UTC
+
+Searched: **67** unique · Scored: **8** · Notified: **3**
+
+### Notified
+
+- **@dexhorthy** · 238.5× · 94❤ 23💬 in 32m · vel 4.32/min vs author median 0.02 → 238.5×
+  - URL: https://x.com/dexhorthy/status/2067286892786454855
+  - Tweet: At HumanLayer, we’re on a mission to solve the AI slop code problem. In 2025 we open-sourced our Research, Plan, Implement framework, now deployed inside fortune 500s like Block and Uber - places where shipping slop is just not an option And that was just the beginning. Today, we’re opening access to HumanLayer - an Agentic IDE, collaboration platform, and building blocks for your software factory
+  - Suggestion: what does the plan → implement handoff actually look like? is the architect LLM producing something the coding agent is hard-constrained by, or is it still advisory?
+  - Reasoning: Shape C — opens the genuinely unsolved mechanism (advisory vs. enforcement) without pitching or flattering, landing as a real engineer's first question before evaluating the tool.
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+- **@lennysan** · 179.1× · 157❤ 18💬 in 59m · vel 3.25/min vs author median 0.02 → 179.1×
+  - URL: https://x.com/lennysan/status/2067280098357854440
+  - Tweet: Upcoming podcast guests + Jeff Dean, Chief Scientist at Google DeepMind + Andrew Ambrosino, Head of PM and Eng for Codex + Fiona Fung, Head of Eng for Claude Code/Cowork + Tara Seshan, Head of ChatGPT, Productivity at OpenAI + Dianne Penn, Head of Product, Research at Anthropic + Elizabeth Stone, CPTO at Netflix
+  - Suggestion: curious what andrew and fiona's different answers are to the same question: what does the human actually need to stay in the loop for
+  - Reasoning: Shape C — pointed question surfacing the unsolved autonomy boundary problem, using both guests' first names to signal the reply is from someone who actually builds with these tools, not a fan-post.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@inference_labs** · 114.4× · 222❤ 20💬 in 75m · vel 3.48/min vs author median 0.03 → 114.4×
+  - URL: https://x.com/inference_labs/status/2067276090545193081
+  - Tweet: 1/ AI agents are learning to take actions. Most organizations still struggle to verify outcomes. Those are very different problems.
+  - Suggestion: built a falsifier for this: replay 50 historical instances, compare predicted vs actual handoff. without ground truth, 'outcome verified' is just vibes
+  - Reasoning: Shape A lived experience — anchors to the autonomous-company-tool's 50-instance historical-replay falsifier, gives a concrete number and mechanism, and lands a punchy non-vague close that answers the "verifying outcomes" gap the OP names.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Rejected (top 2 scored)
+
+- @uncledoomer · 1.1× · 130❤ 11💬 in 88m · vel 1.73/min vs author median 1.52 → 1.1×
+  - "i use claude code to build analytics dashboards that provide actionable insights" https://t.co/RcnUF1LhCQ
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @StockSavvyShay · 2.0× · 88❤ 15💬 in 39m · vel 3.03/min vs author median 1.51 → 2.0×
+  - $RBRK plans to integrate Agent Cloud with $AMZN Bedrock AgentCore to strengthen security and governance for AI agents. The integration will add agent discovery, risk visibility and the ability to reve
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---
