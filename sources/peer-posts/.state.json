@@ -3,16 +3,16 @@
     "levelsio": {
       "handle": "levelsio",
       "status": "active",
-      "last_pulled": "2026-05-13",
-      "score_sum": 12,
-      "score_n": 3
+      "last_pulled": "2026-06-18",
+      "score_sum": 15,
+      "score_n": 4
     },
     "swyx": {
       "handle": "swyx",
       "status": "active",
-      "last_pulled": "2026-05-12",
-      "score_sum": 6,
-      "score_n": 2
+      "last_pulled": "2026-06-18",
+      "score_sum": 10,
+      "score_n": 3
     },
     "simonw": {
       "handle": "simonw",
@@ -38,9 +38,9 @@
     "nutlope": {
       "handle": "nutlope",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 13,
-      "score_n": 3
+      "last_pulled": "2026-06-18",
+      "score_sum": 17,
+      "score_n": 4
     },
     "sama": {
       "handle": "sama",
@@ -95,9 +95,9 @@
     "_meer_habib": {
       "handle": "_meer_habib",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 20,
-      "score_n": 4,
+      "last_pulled": "2026-06-18",
+      "score_sum": 22,
+      "score_n": 5,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Expo/React Native builder posting specific lib stack (expo-liquid-glass, Reanimated, keyboard-controller), 582 likes / 584 bookmarks — exact niche match for Octavi's mobile AI work"
     },
@@ -133,9 +133,9 @@
     "alexcooldev": {
       "handle": "alexcooldev",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 17,
-      "score_n": 4,
+      "last_pulled": "2026-06-18",
+      "score_sum": 22,
+      "score_n": 5,
       "promoted_at": "2026-05-05",
       "promoted_reason": "Solo founder building with React Native/Expo, posts specific revenue+stack breakdowns ($18K-24K/month), 3286-4382 bookmarks per post — exact niche match for Octavi's mobile AI work and SF startup aspirations"
     },
@@ -153,18 +153,18 @@
     "m2fauzaan": {
       "handle": "M2Fauzaan",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 20,
-      "score_n": 4,
+      "last_pulled": "2026-06-18",
+      "score_sum": 23,
+      "score_n": 5,
       "promoted_at": "2026-05-06",
       "promoted_reason": "Native app builder, \"Anyway I fixed it / I built\" hook format, 1738 likes + 2022 bookmarks — high engagement on specific problem-solving builds"
     },
     "aidenybai": {
       "handle": "aidenybai",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 20,
-      "score_n": 4,
+      "last_pulled": "2026-06-18",
+      "score_sum": 25,
+      "score_n": 5,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
       "last_deep_studied": "2026-05-15"
@@ -172,9 +172,9 @@
     "antirez": {
       "handle": "antirez",
       "status": "active",
-      "last_pulled": "2026-05-13",
-      "score_sum": 4,
-      "score_n": 1,
+      "last_pulled": "2026-06-18",
+      "score_sum": 9,
+      "score_n": 2,
       "promoted_at": "2026-05-12",
       "promoted_reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
     },
@@ -198,6 +198,20 @@
       "last_pulled": "2026-05-14",
       "score_sum": 2,
       "score_n": 1
+    },
+    "divyansht91162": {
+      "handle": "DivyanshT91162",
+      "status": "active",
+      "last_pulled": null,
+      "score_sum": 0,
+      "score_n": 0,
+      "promoted_at": "2026-06-18",
+      "promoted_reason": "Voice-Pro pipeline post (Demucs vocal isolation + Whisper transcription + Translate, 539 likes, 757 bookmarks) maps directly to Octavi's UGC discovery pipeline stack — specific local AI toolchain reveal format with high save rate"
+    },
+    "raaborman": {
+      "handle": "raaborman",
+      "status": "active",
+      "last_deep_studied": "2026-06-18"
     }
   },
   "discovered": {
@@ -319,7 +333,21 @@
       "last_seen": "2026-05-13",
       "score": 3,
       "reason": "React Native + Expo animation builder posting specific technical details (UI thread, component-level animation) — relevant to Octavi's mobile dev stack; moderate engagement (252L/217B)"
+    },
+    "divyansht91162": {
+      "handle": "DivyanshT91162",
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18",
+      "score": 4,
+      "reason": "Voice-Pro pipeline post (Demucs vocal isolation + Whisper transcription + Translate, 539 likes, 757 bookmarks) maps directly to Octavi's UGC discovery pipeline stack — specific local AI toolchain reveal format with high save rate"
+    },
+    "jonoringer": {
+      "handle": "jonoringer",
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18",
+      "score": 3,
+      "reason": "Posts founder data narratives with named companies + monthly revenue progressions (1.75K likes, 2.6K bookmarks) — useful format reference for Velocity leaderboard content even if not a builder himself"
     }
   },
-  "last_run": "2026-05-15T16:13:59.010Z"
+  "last_run": "2026-06-18T11:17:44.585Z"
 }
