@@ -2121,3 +2121,41 @@ Searched: **67** unique · Scored: **8** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-06-18 17:23 UTC
+
+Searched: **75** unique · Scored: **8** · Notified: **3**
+
+### Notified
+
+- **@HeyGen** · 371.3× · 56❤ 47💬 in 22m · vel 6.95/min vs author median 0.02 → 371.3× · controversy 0.84 (replies/likes)
+  - URL: https://x.com/HeyGen/status/2067653661346636237
+  - Tweet: Your coding agent does more than write code. It ships the launch video. Drop HeyGen's MCP server into @cursor_ai, point it at your README, and it builds a finished product video from one prompt - pulling your features and pricing straight from the repo. No filming, no editing. https://t.co/ISauwhQ88i
+  - Suggestion: most readmes describe implementation, not buyer pain. the video will be technically accurate and completely unmemorable
+  - Reasoning: Shape B counter with mechanism: the real gap is that README content maps to how-it-works, not why-anyone-should-care, so the output is correct but ineffective — a concrete, falsifiable claim an engineer would drop without fanfare, matching the high controversy ratio in the thread.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@trycua** · 213.5× · 77❤ 12💬 in 79m · vel 1.29/min vs author median 0.01 → 213.5×
+  - URL: https://x.com/trycua/status/2067639336703775037
+  - Tweet: 1/ Today we're bringing Cua Driver to Linux: background computer-use for any agent. Hermes, Claude Code, Codex, or your own loop can drive real Linux desktop apps (X and Wayland in preview) through CLI or MCP while your desktop stays usable https://t.co/TyRNz4NBC9
+  - Suggestion: on wayland, how are you handling input injection without a compositor plugin? xdg-desktop-portal only covers a subset of what screen capture + pointer emulation needs
+  - Reasoning: Shape C — pointed unsolved-part question; names a specific protocol gap (xdg-desktop-portal vs full pointer/input injection on Wayland) that any engineer shipping this would have had to wrestle with, making it sound like genuine curiosity from someone who hit the same wall.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@teneo_protocol** · 115.7× · 253❤ 186💬 in 42m · vel 15.06/min vs author median 0.13 → 115.7× · controversy 0.74 (replies/likes)
+  - URL: https://x.com/teneo_protocol/status/2067648649820012738
+  - Tweet: The Teneo CLI installs from wherever you already work. There are now setup guides for seven of them. AI coding agents: - Claude Code: https://t.co/0CXaQdNc9N - Codex: https://t.co/K9vZ8wuyt1 - Manus: https://t.co/JVCAyP38A6 IDEs: - Cursor: https://t.co/JWOAmPEHwE - Antigravity: https://t.co/e8vMwuuLUg -VS Code: https://t.co/7xnxHXDZHQ Agent platforms Hermes: https://t.co/g9A5HG89S3 Each guide walk
+  - Suggestion: if the agent retries a failed tool call on x402, is there an idempotency key or does it double-charge?
+  - Reasoning: Shape C — surfaces the concrete unsolved problem with per-call USDC settlement in agentic retry loops, using a specific mechanism (idempotency key) that signals real payment-API experience without pitching anything.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Rejected (top 2 scored)
+
+- @Still_learner · 0.9× · 30❤ 46💬 in 85m · vel 1.44/min vs author median 1.68 → 0.9× · controversy 1.53 (replies/likes)
+  - Let's see how many creators are building in public. Connect with everyone @mpho__d33p @dangerousfunnyy @99QlR @Percy_Nkatlo @necodayi_ @baban_afnan @DrMFarhanAslam @Dre2kul @joaquincrRM @Sadik_of_web3
+  - Query: `("building in public" OR buildinpublic OR "shipped today") -airdrop -giveaway -$`
+
+- @XFreeze · 2.0× · 61❤ 16💬 in 76m · vel 1.22/min vs author median 0.62 → 2.0×
+  - Grok is now available on Databricks Agent Bricks This gives enterprises another way to build AI agents with Grok directly where their data already lives Databricks provides the data and governance lay
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---
