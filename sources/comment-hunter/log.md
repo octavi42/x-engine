@@ -2159,3 +2159,31 @@ Searched: **75** unique · Scored: **8** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-06-19 16:39 UTC
+
+Searched: **50** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@thedailyblock** · 387.3× · 75❤ 36💬 in 14m · vel 10.42/min vs author median 0.03 → 387.3× · controversy 0.48 (replies/likes)
+  - URL: https://x.com/thedailyblock/status/2068006627400380469
+  - Tweet: 🚨 AI STARTUP SHIFT The next evolution after vibe coding could be vibe companies. Polsia is exploring a new startup model where one founder can use AI agents to help build, operate, and scale a company instead of relying on a traditional large team. The future of startups may be defined by how effectively humans direct AI systems.
+  - Suggestion: mapping which flows are agent-ready is the step everyone skips. four signals cover it: calendar, messaging, doc edits, SaaS audit logs. no content access needed
+  - Reasoning: Shape A — lived experience from building the autonomous-company-tool; names four concrete metadata signals to ground the abstract "vibe company" claim, sounds like an engineer who's actually done the org-graph mapping work.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@Amor_Web3** · 128.5× · 20❤ 21💬 in 64m · vel 0.97/min vs author median 0.01 → 128.5× · controversy 1.05 (replies/likes)
+  - URL: https://x.com/Amor_Web3/status/2067994077178859796
+  - Tweet: Been thinking about @sleepagotchi and its approach to health data. Most apps stop at tracking and charts, but Sleepagotchi is pushing toward action. It uses four AI agents covering sleep, behavior & mood, meal planning, and budget-aware recommendations for food and supplements to turn daily data into practical decisions. Starting with sleep makes sense, but the bigger vision is a personalized heal
+  - Suggestion: four specialized agents is still just four recommendation pipelines. behavior change needs a commitment device or an interrupt, not a better chart
+  - Reasoning: Shape B counter with a concrete mechanism — "commitment device or interrupt" is a specific product/behavioral-science term that signals engineering credibility and challenges the tweet's core "action not tracking" claim without being dismissive.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@sonofalli** · 60.1× · 59❤ 7💬 in 43m · vel 1.69/min vs author median 0.03 → 60.1×
+  - URL: https://x.com/sonofalli/status/2067999315541291288
+  - Tweet: some of the amazing marketing team behind @vercel ship!!! 🚢 so lucky to work with this squad next: Ship Berlin 🇩🇪 then Ship NYC 🗽 https://t.co/TVuDWyxJCS
+  - Suggestion: berlin headliner: v0 or infra?
+  - Reasoning: Shape C — one pointed question from a developer's perspective, names a real Vercel product (v0) to signal genuine interest in the technical announcements rather than the team photo, zero AI tells, well under 200 chars.
+  - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
+
+---
