@@ -8,6 +8,14 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-06-19
+
+- SpaceX acquisition of Cursor closed (the $60B "talks" reported by Amjad Masad on StrictlyVC on 2026-05-01 is now done). Cursor sits at ~$4B ARR, 700 employees, 64% of Fortune 500 on the platform. Strategic rationale per coverage: pair the Cursor IDE/agent surface with xAI compute to reverse a market-share slide from 41% to ~26% as Claude Code and Codex grew. First major IDE owned by a rocket/foundation-model conglomerate. eu.36kr.com, Bloomberg, TechCrunch.
+- Claude Fable 5 access restored on 2026-06-18 after six days of US-government-forced shutdown (the export-control suspension that landed 2026-06-12). Anthropic worked with the administration to satisfy the cybersecurity-jailbreak concerns Katie Moussouris flagged. First time a frontier model has come back online from a government-directed pull. Medium (Adi Insights), Greenberg Traurig, Snyk, Simon Willison, Tom's Hardware, Fortune, Axios.
+- Coding agent leaderboard reshuffle reaffirmed (Morphllm 2026-06): Codex CLI + GPT-5.5 holds #1 on Terminal-Bench 2.1 at 83.4%, Claude Code + Opus 4.8 at #2 with 78.9%, Gemini CLI + Gemini 3.1 Pro at 70.7%. Cursor at $2B → $4B ARR jump in four months. JetBrains: 46% of 10+ year devs picked Claude Code as daily driver vs 9% Copilot.
+- Comment-hunter pattern this week: dev Twitter splitting on the Cursor/SpaceX acquisition — "the IDE is now a defense-adjacent surface" (security framing) vs "compute consolidation makes a Cursor fork inevitable" (open-tooling framing). Both lanes open.
+- June 2026 model-flood chatter: rumors of GPT-5.6, Gemini 3.5 Pro, Claude Opus 4.8 successor all landing in the same 4-week window (YouTube long-form roundups, Essa Mamdani write-up). Builders bracing for a third quarter of "swap your default model every two weeks" churn.
+
 ## 2026-06-17
 
 - Anthropic joined Frontier (carbon removal coalition) — first pure-AI company to do so. New $915M tranche pushes total Frontier pledges to $1.8B. Google was already a founding member. TechCrunch, 2026-06-17. Lands while AI labs are on a multi-gigawatt energy buying spree (Colossus 1, Akamai $1.8B, Google $40B).
