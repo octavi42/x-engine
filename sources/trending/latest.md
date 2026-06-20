@@ -8,6 +8,14 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-06-20
+
+- Carry-forward from 2026-06-19. Web search unavailable this run; entry distilled from the rolling rss-trending + comment-hunter context already in this log, not from fresh web findings. Treat as continuation themes, not new events.
+- Post-Fable-5-restoration recovery still dominant: builders who wired Fable 5 into customer paths during the 2026-06-12 → 2026-06-18 outage are now writing fallback-model patterns. SLA framing ("usage-policy outage no SLA covers") emerging as the lane. Read-through: any single-frontier-model dependency is now a dependency risk, not just a cost risk.
+- Model-flood window still open: GPT-5.6, Gemini 3.5 Pro, Opus 4.8 successor rumored in same 4-week window. Builder fatigue framing ("swap-tax") is the open lane — most active builders are picking one and ignoring the next two launches rather than restacking every two weeks.
+- Cursor/SpaceX consummation effects bleeding into IDE-neutrality discourse from 2026-06-19. Open-tooling lane (fork-the-IDE) and security-framing lane (defense-adjacent surface) both still open for comment-hunter targeting.
+- Coding agent leaderboard reshuffle holds: Codex CLI + GPT-5.5 #1 on Terminal-Bench 2.1 at 83.4%, Claude Code + Opus 4.8 #2 at 78.9%, Gemini CLI + Gemini 3.1 Pro #3 at 70.7%. Cursor at ~$4B ARR. Read-through: the "which tool owns which slice" framing from 2026-05-10 is now the default frame, not the contrarian one.
+
 ## 2026-06-19
 
 - SpaceX acquisition of Cursor closed (the $60B "talks" reported by Amjad Masad on StrictlyVC on 2026-05-01 is now done). Cursor sits at ~$4B ARR, 700 employees, 64% of Fortune 500 on the platform. Strategic rationale per coverage: pair the Cursor IDE/agent surface with xAI compute to reverse a market-share slide from 41% to ~26% as Claude Code and Codex grew. First major IDE owned by a rocket/foundation-model conglomerate. eu.36kr.com, Bloomberg, TechCrunch.
