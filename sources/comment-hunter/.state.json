@@ -1295,15 +1295,90 @@
       "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2068357221344247918": {
+      "suggestedAt": "2026-06-20T15:51:27.154Z",
+      "author": "0xPulsss",
+      "url": "https://x.com/0xPulsss/status/2068357221344247918",
+      "tweetText": "one of the best ways to simplify your repetitive work is just leveraging what's already on github\n\nspent some time looking around and found these free open source repos that basically handle the boring stuff for you\n\njust look up these:\n\n> CrewAI\nhttps://t.co/uhNgruVXn0\n\n> Aider\nhttps://t.co/NLIs6f8tNi\n\n> n8n\nhttps://t.co/grGXquW49i\n\n> OpenHands\nhttps://t.co/GNjBqZDeQh\n\n> Browser Use\nhttps://t.co/fqizI11C9Z\n\n> Claude-task-master\nhttps://t.co/lFWrrhqywt\n\n> Awesome-mcp-servers\nhttps://t.co/nF10d8Bo36\n\n> LangGraph\nhttps://t.co/hSCXCKcrpC\n\n> Hermes Agent\nhttps://t.co/Who2SMh6Ha\n\n> Cloudflare Agentic Inbox\nhttps://t.co/ke9QJhTAvn",
+      "metrics": {
+        "likes": 31,
+        "replies": 18,
+        "retweets": 0,
+        "bookmarks": 3,
+        "views": 134,
+        "ageMinutes": 14.44775
+      },
+      "scoreDetails": {
+        "ratio": 128.10858615865587,
+        "candidateVelocity": 4.637400287241959,
+        "authorMedianVelocity": 0.03619898108545806,
+        "authorSampleSize": 18,
+        "controversy": 0.5806451612903226
+      },
+      "score": 128.10858615865587,
+      "comment": "n8n solves in 10 minutes what langgraph takes 3 days to configure correctly. different tools for different problem sizes, not a list of interchangeable alternatives",
+      "reasoning": "Shape B counter with a mechanism — the list conflates drag-and-drop flow builders with stateful graph orchestration frameworks, and the concrete time gap (10 min vs 3 days) makes the cost of picking wrong tangible without being preachy.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2068339583754833935": {
+      "suggestedAt": "2026-06-20T15:52:09.301Z",
+      "author": "LunarResearcher",
+      "url": "https://x.com/LunarResearcher/status/2068339583754833935",
+      "tweetText": "My barber stopped cutting for ten seconds.\n\nHe always cuts. Six years, same chair, same mirror, same silence.\n\n\"Why are you smiling at your phone?\"\n\n\"Polymarket bot.\"\n\nHe lifted the clippers. \"You built a gambling bot?\"\n\n\"No. That's the point. I didn't even write it.\"\n\nHe looked at me in the mirror.\n\n\"I put in $300. Bot ran it up to $14k.\"\n\nHe laughed once.\n\nThen stopped laughing.\n\n\"Say that again.\"\n\n\"Three hundred dollars in. Fourteen thousand out. Open-source code from GitHub, two hours in Claude Code cleaning it up, hit run.\"\n\nHe put the clippers down.\n\n\"That's from a script?\"\n\nExactly.\n\nThen I showed him the repos. All free. All public.\n\nFirst: https://t.co/klxt0tuTYF\n\n86M+ trades on Polymarket. Every outcome since day one. Free to download.\n\nSecond: https://t.co/AWw01fTNaT\n\nMarket making bot. Both sides of the book. Gas optimized. Google Sheets execution.\n\nThird: https://t.co/LSuNmp4LQE\n\nML + heuristics. Feed it wallets, find traders with high winrates, mirror them with delay.\n\nHe went quiet for a long time.\n\nThen: \"I cut hair 9 hours a day. You're telling me someone put this on GitHub for free?\"\n\n\"Yeah.\"\n\n\"Why?\"\n\n\"Because open-source people are insane.\"\n\nHe finished the cut. Took the cape off. Walked me to the register.\n\nThen: \"Send me the links. Before you tip.\"\n\nTry to trade:\nhttps://t.co/mh3pQbPkof\n\nBarbers don't ask if AI is real.\n\nThey ask for the GitHub before you tip.",
+      "metrics": {
+        "likes": 29,
+        "replies": 11,
+        "retweets": 0,
+        "bookmarks": 15,
+        "views": 920,
+        "ageMinutes": 84.53108333333333
+      },
+      "scoreDetails": {
+        "ratio": 35.38703190017618,
+        "candidateVelocity": 0.603328361460725,
+        "authorMedianVelocity": 0.017049419775093406,
+        "authorSampleSize": 19,
+        "controversy": 0.3793103448275862
+      },
+      "score": 35.38703190017618,
+      "comment": "what delay did you run on the mirror bot? that's the one param that collapses as soon as a few hundred people clone the same repo and target the same wallets",
+      "reasoning": "Shape C — one pointed question that opens the unsolved technical problem (edge saturation via delay-parameter crowding), sounds like an engineer who's thought about this rather than a hype reply.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2068338927308836977": {
+      "suggestedAt": "2026-06-20T15:52:52.908Z",
+      "author": "Bhavani_00007",
+      "url": "https://x.com/Bhavani_00007/status/2068338927308836977",
+      "tweetText": "which team are you on?\n\n- Claude Code\n- Codex\n- Cursor",
+      "metrics": {
+        "likes": 24,
+        "replies": 27,
+        "retweets": 0,
+        "bookmarks": 0,
+        "views": 555,
+        "ageMinutes": 87.14775
+      },
+      "scoreDetails": {
+        "ratio": 30.48015452639806,
+        "candidateVelocity": 0.8950317133833059,
+        "authorMedianVelocity": 0.029364408655085474,
+        "authorSampleSize": 19,
+        "controversy": 1.125
+      },
+      "score": 30.48015452639806,
+      "comment": "claude code. wrote a custom mcp server for it in an afternoon, plugged into my whole content pipeline. cursor has no equivalent hook",
+      "reasoning": "Shape A lived experience: names a concrete action (custom MCP server, afternoon build) tied to a real project, gives a specific technical differentiator over Cursor, no AI tells, no hype.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
-    {
-      "ts": "2026-05-20T22:03:02.414Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-05-21T16:43:34.045Z",
       "searched": 0,
@@ -1947,6 +2022,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-06-20T15:52:52.908Z",
+      "searched": 43,
+      "scored": 9,
+      "notified": 3
     }
   ]
 }

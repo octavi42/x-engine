@@ -2187,3 +2187,37 @@ Searched: **50** unique · Scored: **9** · Notified: **3**
   - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
 
 ---
+## 2026-06-20 15:52 UTC
+
+Searched: **43** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@0xPulsss** · 128.1× · 31❤ 18💬 in 14m · vel 4.64/min vs author median 0.04 → 128.1× · controversy 0.58 (replies/likes)
+  - URL: https://x.com/0xPulsss/status/2068357221344247918
+  - Tweet: one of the best ways to simplify your repetitive work is just leveraging what's already on github spent some time looking around and found these free open source repos that basically handle the boring stuff for you just look up these: > CrewAI https://t.co/uhNgruVXn0 > Aider https://t.co/NLIs6f8tNi > n8n https://t.co/grGXquW49i > OpenHands https://t.co/GNjBqZDeQh > Browser Use https://t.co/fqizI11
+  - Suggestion: n8n solves in 10 minutes what langgraph takes 3 days to configure correctly. different tools for different problem sizes, not a list of interchangeable alternatives
+  - Reasoning: Shape B counter with a mechanism — the list conflates drag-and-drop flow builders with stateful graph orchestration frameworks, and the concrete time gap (10 min vs 3 days) makes the cost of picking wrong tangible without being preachy.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@LunarResearcher** · 35.4× · 29❤ 11💬 in 85m · vel 0.60/min vs author median 0.02 → 35.4× · controversy 0.38 (replies/likes)
+  - URL: https://x.com/LunarResearcher/status/2068339583754833935
+  - Tweet: My barber stopped cutting for ten seconds. He always cuts. Six years, same chair, same mirror, same silence. "Why are you smiling at your phone?" "Polymarket bot." He lifted the clippers. "You built a gambling bot?" "No. That's the point. I didn't even write it." He looked at me in the mirror. "I put in $300. Bot ran it up to $14k." He laughed once. Then stopped laughing. "Say that again." "Three 
+  - Suggestion: what delay did you run on the mirror bot? that's the one param that collapses as soon as a few hundred people clone the same repo and target the same wallets
+  - Reasoning: Shape C — one pointed question that opens the unsolved technical problem (edge saturation via delay-parameter crowding), sounds like an engineer who's thought about this rather than a hype reply.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@Bhavani_00007** · 30.5× · 24❤ 27💬 in 87m · vel 0.90/min vs author median 0.03 → 30.5× · controversy 1.13 (replies/likes)
+  - URL: https://x.com/Bhavani_00007/status/2068338927308836977
+  - Tweet: which team are you on? - Claude Code - Codex - Cursor
+  - Suggestion: claude code. wrote a custom mcp server for it in an afternoon, plugged into my whole content pipeline. cursor has no equivalent hook
+  - Reasoning: Shape A lived experience: names a concrete action (custom MCP server, afternoon build) tied to a real project, gives a specific technical differentiator over Cursor, no AI tells, no hype.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Rejected (top 1 scored)
+
+- @Ziven_Coder · 1.2× · 26❤ 15💬 in 84m · vel 0.66/min vs author median 0.54 → 1.2× · controversy 0.58 (replies/likes)
+  - 🚀 10 Claude Connectors to Boost Your Productivity Tired of switching between apps? Claude can connect with your favorite tools so you can work from one place and get more done. ✅ Gmail — Draft emails
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+---
