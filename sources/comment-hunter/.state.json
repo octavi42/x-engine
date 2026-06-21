@@ -1376,6 +1376,87 @@
       "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2068710847418167475": {
+      "suggestedAt": "2026-06-21T16:04:08.230Z",
+      "author": "ANTON_AIFI",
+      "url": "https://x.com/ANTON_AIFI/status/2068710847418167475",
+      "tweetText": "AI agents no longer operate in isolation.\n\n- Analyze.\n- Collaborate.\n- Execute.\n- Optimize.\nThrough continuous learning and real-time feedback, intelligent agents can dynamically adapt to changing markets, uncover opportunities across multidimensional data, and turn complex decisions into efficient execution.\n\nThe future of finance won't be powered by a single agent.\nIt will be driven by a network of countless agents working together. 🤖\n#ANTON #AIFI #AI #Agent #DeFi #Web4",
+      "metrics": {
+        "likes": 112,
+        "replies": 1,
+        "retweets": 0,
+        "bookmarks": 0,
+        "views": 3422,
+        "ageMinutes": 62.26845
+      },
+      "scoreDetails": {
+        "ratio": 252.1786416778419,
+        "candidateVelocity": 1.8307826836865218,
+        "authorMedianVelocity": 0.007259864164171943,
+        "authorSampleSize": 19,
+        "controversy": 0.008928571428571428
+      },
+      "score": 252.1786416778419,
+      "comment": "what's the conflict resolution model when two agents reach opposite signals on the same position at the same timestamp?",
+      "reasoning": "Shape C — one pointed question that surfaces the genuinely unsolved coordination problem the OP's hype framing glosses over, with a concrete technical scenario (opposing signals, same position, same timestamp) instead of abstract pushback.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2068706530535575728": {
+      "suggestedAt": "2026-06-21T16:04:37.875Z",
+      "author": "gizmocloud_ark",
+      "url": "https://x.com/gizmocloud_ark/status/2068706530535575728",
+      "tweetText": "Not every user starts with all the answers.\n\nThat is exactly why Arkie AI App matters.\n\nWith AI Agents, ARK users can ask better questions, organize ideas, create content, and turn uncertainty into clear next steps inside Web3. https://t.co/U86pZhPxL0",
+      "metrics": {
+        "likes": 201,
+        "replies": 23,
+        "retweets": 194,
+        "bookmarks": 0,
+        "views": 10063,
+        "ageMinutes": 79.41843333333334
+      },
+      "scoreDetails": {
+        "ratio": 195.30574789105052,
+        "candidateVelocity": 3.1101091979905586,
+        "authorMedianVelocity": 0.015924309609799625,
+        "authorSampleSize": 19,
+        "controversy": 0.11442786069651742
+      },
+      "score": 195.30574789105052,
+      "comment": "what's the actual web3 integration here — does the agent have wallet/onchain context or is it just a general LLM with a web3 skin?",
+      "reasoning": "Shape C pointed question targeting the missing technical detail — the tweet is pure marketing copy with zero mechanism, so asking whether the agent has real onchain context vs. a rebranded chatbot is exactly what a skeptical engineer drops in to ask.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2068706184652296234": {
+      "suggestedAt": "2026-06-21T16:05:17.485Z",
+      "author": "Arkdefaicmo",
+      "url": "https://x.com/Arkdefaicmo/status/2068706184652296234",
+      "tweetText": "Build the engine.\nFocus the signal.\nDeliver the result.\nArkie AI App is designed to help ARK users turn complex Web3 intent into clear execution through AI Agents.\nFrom data understanding to task routing, from workflow planning to real action https://t.co/sHX6NTP9kO",
+      "metrics": {
+        "likes": 201,
+        "replies": 23,
+        "retweets": 199,
+        "bookmarks": 0,
+        "views": 10105,
+        "ageMinutes": 80.80178333333333
+      },
+      "scoreDetails": {
+        "ratio": 192.79363745770448,
+        "candidateVelocity": 3.0568632251722168,
+        "authorMedianVelocity": 0.015855622962883505,
+        "authorSampleSize": 19,
+        "controversy": 0.11442786069651742
+      },
+      "score": 192.79363745770448,
+      "comment": "what does \"real action\" mean here: is the agent signing transactions, or just composing calldata for the user to approve?",
+      "reasoning": "Shape C — one pointed technical question that surfaces the hardest unsolved part of Web3 agent execution (custodial vs. non-custodial signing), which the tweet's vague \"task routing to real action\" framing deliberately sidesteps.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
@@ -2031,6 +2112,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-06-21T16:05:17.485Z",
+      "searched": 45,
+      "scored": 8,
+      "notified": 3
     }
   ]
 }
