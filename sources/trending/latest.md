@@ -8,6 +8,16 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-06-21
+
+- ChatGPT market share dropped under 50% for the first time in 3.5 years per June 2026 industry roundups. Coincides with Claude Code authoring ~4% of GitHub public commits worldwide (per the 5/15 entry). Source: AIapps, unrot.co, blog.mean.ceo "June 2026 STARTUP EDITION" roundups. Read-through: enterprise-AI default has shifted, and "what do you reach for first" is now a real question, not a rhetorical one.
+- MiniMax M3 multimodal landed this week with three eye-catching efficiency numbers: 1/20th the per-token compute of prior MiniMax models, 9x faster prefilling, 15x faster decoding at 1M token contexts. Open-weights long-context lane heating up. Source: WaveSpeed "June 2026 AI Launch Wave" roundup, blog.mean.ceo June 2026 roundups. Pairs with the model-flood window already noted (GPT-5.6, Gemini 3.5 Pro, Opus 4.8 successor in the same 4-week window).
+- OpenAI acquired Astral to fold into Codex. Continues the wrapper-layer M&A pattern from May (Hiro personal-finance agent, DeployCo/Tomoro $4B, Codex Security). IDE-and-agent-tool acquisitions are running at ~one a month for OpenAI now. Coverage: blog.mean.ceo AI announcements roundup.
+- Anthropic opened a Seoul office on 2026-06-17 with new Korean AI ecosystem partnerships. First publicly named APAC HQ since the 2026-06-01 confidential IPO filing.
+- Claude Managed Agents shipped sandbox-you-control plus private MCP server connect. Tightening the "agent only calls services you own" boundary for regulated enterprise buyers. Source: Anthropic Newsroom June 2026.
+- Model-flood window holding: OpenAI GPT-5.5 Instant, Google Gemini 3.5 Flash, Anthropic Opus 4.8 all setting fresh benchmarks in the same window. WaveSpeed roundup frames June 2026 as the "decision map" month for builders picking a daily driver. Builder-fatigue framing from 2026-06-20 still the live lane.
+- Comment-hunter surface pattern this week: dev Twitter splitting on "ChatGPT-below-50% means search-grounded agents are now the wedge" vs "Claude won enterprise because of Code-the-product, not chat." Both lanes open for ride-along.
+
 ## 2026-06-20
 
 - Carry-forward from 2026-06-19. Web search unavailable this run; entry distilled from the rolling rss-trending + comment-hunter context already in this log, not from fresh web findings. Treat as continuation themes, not new events.
