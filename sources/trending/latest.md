@@ -8,6 +8,15 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-06-22
+
+- Microsoft cancelling Claude Code licenses across the Experiences + Devices division by June 30, 2026. Thousands of engineers being steered to GitHub Copilot CLI instead. Coverage: Windows Central, SpaceDaily June 2026. Pairs with the May 2026 Uber-burned-entire-AI-budget-in-4-months story (Axios) — same root cause (heavy Claude Code spend), opposite response (Uber kept paying, Microsoft killed the line). Read-through: procurement, not the developer, now picks the default coding agent at scale. New lane open for dev Twitter: "what's your fallback if your employer cancels your Claude Code subscription tomorrow."
+- GitHub Copilot full transition to usage-based AI Credits billing as of 2026-06-01: Pro $15/mo credits, Pro+ $70/mo, Max $200/mo. Final death of the flat-rate-per-seat model that Copilot pioneered in 2021. Lands in the same window as Microsoft's internal Claude Code license kill. Source: Developers Digest June 2026 pricing reality check.
+- JetBrains 10+ year-experience dev survey re-confirmed (carried from 2026-06-17): 46% pick Claude Code as daily driver vs 9% Copilot. Cited again in NxCode and Pasquale Pillitteri June 2026 roundups, now framed as the data behind the procurement-vs-preference split. Builders prefer Claude Code; procurement is starting to override that.
+- Anthropic IPO timeline confirmed for late 2026 (likely October listing on Nasdaq or NYSE). $965B valuation from the $65B May raise; ARR ran from $10B end-of-2025 to $47B by May 2026. Source: TradingKey, Fortune coverage carried through June. Pairs with the OpenAI confidential S-1 from 2026-06-08 — both labs racing the same Q4 window.
+- YC S26 (Summer 2026) demo day scheduled for September 10, 2026. W26 batch projected 14 startups crossed $1M ARR pre-demo-day; 60% of W26 batch were AI-native (vs 40% baseline). Source: TechCrunch March 2026 W26 recap, YC events page. Relevant anchor for any "skip YC for creator-led launch" / "indie-vs-batch" framing this week.
+- Comment-hunter surface pattern this week: dev Twitter splitting two ways on the Microsoft license kill — "this is the moment Copilot CLI becomes the corporate default whether devs like it or not" (procurement framing) vs "Claude Code is now a personal-dev-budget line item, not an enterprise one" (consumer-of-one framing). Both lanes open for ride-along.
+
 ## 2026-06-21
 
 - ChatGPT market share dropped under 50% for the first time in 3.5 years per June 2026 industry roundups. Coincides with Claude Code authoring ~4% of GitHub public commits worldwide (per the 5/15 entry). Source: AIapps, unrot.co, blog.mean.ceo "June 2026 STARTUP EDITION" roundups. Read-through: enterprise-AI default has shifted, and "what do you reach for first" is now a real question, not a rhetorical one.
