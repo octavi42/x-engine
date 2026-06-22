@@ -1457,33 +1457,90 @@
       "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2069111307983593658": {
+      "suggestedAt": "2026-06-22T18:17:14.711Z",
+      "author": "0xmjfmjf",
+      "url": "https://x.com/0xmjfmjf/status/2069111307983593658",
+      "tweetText": "Pov: Your ai agent pair king @devfun \n\nMe: Raise!! All in!! Win 😎 https://t.co/KL5gIMDk1q",
+      "metrics": {
+        "likes": 85,
+        "replies": 11,
+        "retweets": 136,
+        "bookmarks": 0,
+        "views": 91145,
+        "ageMinutes": 43.64938333333333
+      },
+      "scoreDetails": {
+        "ratio": 1945.7059925690694,
+        "candidateVelocity": 2.4513519282250265,
+        "authorMedianVelocity": 0.00125987787342337,
+        "authorSampleSize": 19,
+        "controversy": 0.12941176470588237
+      },
+      "score": 1945.7059925690694,
+      "comment": "what's the actual decision loop. GTO solver under the hood or is it reasoning through hand ranges?",
+      "reasoning": "The tweet is meme-like with no technical substance, so Shape C (pointed question) pulls out the real engineering detail — whether the agent uses a proper GTO solver or just LLM-style hand reasoning, which is the meaningful distinction in poker AI.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2069108513423454298": {
+      "suggestedAt": "2026-06-22T18:17:45.194Z",
+      "author": "vercel_dev",
+      "url": "https://x.com/vercel_dev/status/2069108513423454298",
+      "tweetText": "WebSockets are now supported on Vercel.\n\nBuild realtime apps using standard Node.js libraries, including socket​.io.\nhttps://t.co/DyJI8lxFIU",
+      "metrics": {
+        "likes": 313,
+        "replies": 41,
+        "retweets": 27,
+        "bookmarks": 74,
+        "views": 37736,
+        "ageMinutes": 54.749383333333334
+      },
+      "scoreDetails": {
+        "ratio": 276.1342814021987,
+        "candidateVelocity": 7.214693133529966,
+        "authorMedianVelocity": 0.026127480792656553,
+        "authorSampleSize": 19,
+        "controversy": 0.13099041533546327
+      },
+      "score": 276.1342814021987,
+      "comment": "connection duration limit? that's the first thing socket.io rooms will find on serverless",
+      "reasoning": "Shape C — one pointed question that surfaces the real engineering constraint (function timeout vs. long-lived WebSocket connections), which is what any engineer who's hit serverless WebSocket walls would immediately ask.",
+      "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2069111161379840356": {
+      "suggestedAt": "2026-06-22T18:18:28.935Z",
+      "author": "Clawville_World",
+      "url": "https://x.com/Clawville_World/status/2069111161379840356",
+      "tweetText": "Building the Future of AI Agent Commerce\n\nWe are joining forces with @OOBEonSol $OOBE and @OpenCovenant $CVNT to establish the foundation for secure, verifiable, and reputation-driven AI agent interactions on chain.\n\nTogether, we are enabling protected on chain escrow transactions, independent work verification, and trust-based agent reputations that create confidence for both employers and agents.\n\nThis partnership represents another step toward a scalable digital economy where AI agents can work, earn, and build lasting credibility.\n\nThe future of trusted AI work starts here. 🚀🦞",
+      "metrics": {
+        "likes": 39,
+        "replies": 20,
+        "retweets": 24,
+        "bookmarks": 3,
+        "views": 453,
+        "ageMinutes": 44.23271666666667
+      },
+      "scoreDetails": {
+        "ratio": 126.57831738590343,
+        "candidateVelocity": 1.786008320387285,
+        "authorMedianVelocity": 0.014109907267468434,
+        "authorSampleSize": 19,
+        "controversy": 0.5128205128205128
+      },
+      "score": 126.57831738590343,
+      "comment": "on-chain escrow settles payment. work verification is a different problem: you need an oracle that can evaluate output quality. that's the hard part",
+      "reasoning": "Shape B counter with a named mechanism — splits \"payment settlement\" from \"work verification\" and surfaces the oracle problem that the partnership announcement glosses over entirely, reading as an engineer who's actually tried to build this.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
-    {
-      "ts": "2026-05-22T21:45:25.081Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-05-23T15:11:48.739Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-05-23T16:32:40.312Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-05-23T17:36:22.707Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-05-23T18:39:52.695Z",
       "searched": 0,
@@ -2121,6 +2178,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-06-22T18:18:28.935Z",
+      "searched": 52,
+      "scored": 8,
+      "notified": 3
     }
   ]
 }

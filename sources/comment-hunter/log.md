@@ -2259,3 +2259,41 @@ Searched: **45** unique · Scored: **8** · Notified: **3**
   - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
 
 ---
+## 2026-06-22 18:18 UTC
+
+Searched: **52** unique · Scored: **8** · Notified: **3**
+
+### Notified
+
+- **@0xmjfmjf** · 999.0× · 85❤ 11💬 in 44m · vel 2.45/min vs author median 0.00 → 999.0×
+  - URL: https://x.com/0xmjfmjf/status/2069111307983593658
+  - Tweet: Pov: Your ai agent pair king @devfun Me: Raise!! All in!! Win 😎 https://t.co/KL5gIMDk1q
+  - Suggestion: what's the actual decision loop. GTO solver under the hood or is it reasoning through hand ranges?
+  - Reasoning: The tweet is meme-like with no technical substance, so Shape C (pointed question) pulls out the real engineering detail — whether the agent uses a proper GTO solver or just LLM-style hand reasoning, which is the meaningful distinction in poker AI.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@vercel_dev** · 276.1× · 313❤ 41💬 in 55m · vel 7.21/min vs author median 0.03 → 276.1×
+  - URL: https://x.com/vercel_dev/status/2069108513423454298
+  - Tweet: WebSockets are now supported on Vercel. Build realtime apps using standard Node.js libraries, including socket​.io. https://t.co/DyJI8lxFIU
+  - Suggestion: connection duration limit? that's the first thing socket.io rooms will find on serverless
+  - Reasoning: Shape C — one pointed question that surfaces the real engineering constraint (function timeout vs. long-lived WebSocket connections), which is what any engineer who's hit serverless WebSocket walls would immediately ask.
+  - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
+
+- **@Clawville_World** · 126.6× · 39❤ 20💬 in 44m · vel 1.79/min vs author median 0.01 → 126.6× · controversy 0.51 (replies/likes)
+  - URL: https://x.com/Clawville_World/status/2069111161379840356
+  - Tweet: Building the Future of AI Agent Commerce We are joining forces with @OOBEonSol $OOBE and @OpenCovenant $CVNT to establish the foundation for secure, verifiable, and reputation-driven AI agent interactions on chain. Together, we are enabling protected on chain escrow transactions, independent work verification, and trust-based agent reputations that create confidence for both employers and agents. 
+  - Suggestion: on-chain escrow settles payment. work verification is a different problem: you need an oracle that can evaluate output quality. that's the hard part
+  - Reasoning: Shape B counter with a named mechanism — splits "payment settlement" from "work verification" and surfaces the oracle problem that the partnership announcement glosses over entirely, reading as an engineer who's actually tried to build this.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Rejected (top 2 scored)
+
+- @TheJoinCare · 999.0× · 30❤ 35💬 in 24m · thin author baseline (4/5) · controversy 1.17 (replies/likes)
+  - AI agents are not just for trading bots. In DeSci, they can help organize research materials, track project progress, surface risks, and make complex biomedical ideas easier for communities to underst
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @maheshnani122 · 2.1× · 23❤ 14💬 in 69m · vel 0.74/min vs author median 0.35 → 2.1× · controversy 0.61 (replies/likes)
+  - If claude code launched in 2010: https://t.co/HDHMfXrzvb
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+---
