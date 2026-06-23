@@ -2297,3 +2297,31 @@ Searched: **52** unique · Scored: **8** · Notified: **3**
   - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
 
 ---
+## 2026-06-23 16:34 UTC
+
+Searched: **62** unique · Scored: **10** · Notified: **3**
+
+### Notified
+
+- **@ritualfnd** · 999.0× · 99❤ 54💬 in 16m · vel 13.29/min vs author median 0.01 → 999.0× · controversy 0.55 (replies/likes)
+  - URL: https://x.com/ritualfnd/status/2069454654275260721
+  - Tweet: Ritual Chain public testnet is live. It's a chain built specifically for AI agents — on-chain inference, composable precompiles, native scheduling. Not "AI-adjacent." Actually AI-native. Here's what that means if you're building 👇🏻
+  - Suggestion: curious what 'on-chain inference' means in practice here. precompile wrapping an oracle call, or actually running weights on validators?
+  - Reasoning: Shape C — opens the unsolved crux: "on-chain inference" is a loaded claim that's usually an oracle wrapper in disguise, and asking the specific technical distinction (precompile vs. actual weight execution on validators) is exactly what a builder evaluating the chain would need to know.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@Moefire_** · 214.9× · 27❤ 25💬 in 79m · vel 0.98/min vs author median 0.00 → 214.9× · controversy 0.93 (replies/likes)
+  - URL: https://x.com/Moefire_/status/2069438775537602897
+  - Tweet: People often compare $CCD to Worldcoin or ICP. I think that comparison misses the bigger picture. @worldnetwork focuses on proving personhood. @dfinity provides the infrastructure layer for AI applications. @Concordium is tackling a different challenge: creating a trust layer for AI agents. Through zero knowledge proofs (ZKPs), support across ETH, SOL, and CCD, and verifiable identities, agents ca
+  - Suggestion: if the human behind an agent is accountable, how does the system know which of the agent's 200 API calls they actually authorized vs the agent decided autonomously?
+  - Reasoning: Shape C — points to the real unsolved gap (action-level authorization vs identity attestation) that ZKPs alone don't close, the kind of question an engineer building autonomous agent flows would genuinely ask.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@openart_ai** · 133.4× · 49❤ 7💬 in 66m · vel 0.96/min vs author median 0.01 → 133.4×
+  - URL: https://x.com/openart_ai/status/2069442038777397578
+  - Tweet: The way videos are made is about to change. Introducing OpenArt Director - and a new way to create: VIBE DIRECTING. The same way vibe coding changed how software gets built, Vibe Directing changes how videos are made. All you need is an idea in your head and a conversation to see it come to life. Describe what you want. Chat it into perfection. Walk away with something only you could have imagined
+  - Suggestion: the feedback loop is the whole game. code runs in ms. video gen is 2-5 min per round. 'vibe directing' assumes you'll keep chatting through 10+ waiting periods per scene
+  - Reasoning: Shape B counter with mechanism — pins the vibe-coding analogy's specific failure point (feedback loop latency) with concrete numbers (ms vs 2-5 min) rather than a vague critique, landing as an engineer noticing the gap the marketing copy skips.
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+---
