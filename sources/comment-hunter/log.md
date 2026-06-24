@@ -2325,3 +2325,31 @@ Searched: **62** unique · Scored: **10** · Notified: **3**
   - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
 
 ---
+## 2026-06-24 16:31 UTC
+
+Searched: **67** unique · Scored: **10** · Notified: **3**
+
+### Notified
+
+- **@synthwavedd** · 157.7× · 579❤ 59💬 in 25m · vel 27.77/min vs author median 0.18 → 157.7×
+  - URL: https://x.com/synthwavedd/status/2069813760622043483
+  - Tweet: 🚨 BREAKING: Claude Code v2.1.190 introduces several string changes that hint at preparations for a Fable 5 return, with it being permanently included in subscriptions with weekly usage. The string "You've used your Fable 5 usage for this week" has been added, and "purchased separately from your plan" has been removed
+  - Suggestion: weekly cap is a smarter throttle than monthly. smooths the bursty end-of-month cliff. monthly caps get gamed by saving heavy runs for day 28
+  - Reasoning: Shape B — counter with mechanism: names the real reason weekly > monthly (end-of-month gaming), grounds it in a specific concrete behavior ("day 28") a real engineer would recognize, no hype or setup-and-reveal structure.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@Cardano_CF** · 59.8× · 128❤ 7💬 in 67m · vel 2.11/min vs author median 0.04 → 59.8×
+  - URL: https://x.com/Cardano_CF/status/2069803105386983698
+  - Tweet: Today the Cardano Foundation joins the @ADROrg, @Google, @IBM, @Circle, @Wayfair and others to launch the Legal Context Protocol: an open standard that makes legal terms, consent, and dispute resolution discoverable and verifiable when AI agents transact on behalf of people and organizations.
+  - Suggestion: discoverable is easy. the hard part is what the agent does at runtime when it can't satisfy a term: pause, rollback, or proceed?
+  - Reasoning: Shape B counter with mechanism — challenges the easy-sounding "discoverable and verifiable" framing by naming the concrete unsolved runtime failure mode (three specific options), reads like an engineer who's actually hit this problem, zero AI tells.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@cramforce** · 59.7× · 206❤ 6💬 in 64m · vel 3.40/min vs author median 0.06 → 59.7×
+  - URL: https://x.com/cramforce/status/2069803962409123875
+  - Tweet: At Google executives project their importance by how slow they are at approvals. A slowness doom loop. This is why I banned approvals at Vercel. We only have vetos. Want to block something? No problem, speak up. Have nothing to say or taking a week off? Great, it's gonna ship
+  - Suggestion: default allow vs default deny. engineers know this from firewall rules. approval culture is just default-deny applied to every org decision
+  - Reasoning: Shape B counter-with-mechanism: reframes the veto-vs-approval debate using a concrete technical analogy (firewall default-allow/deny) that any engineer instantly maps onto, no AI tells, one specific named concept.
+  - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
+
+---
