@@ -201,12 +201,14 @@
     },
     "divyansht91162": {
       "handle": "DivyanshT91162",
-      "status": "active",
+      "status": "blacklisted",
       "last_pulled": null,
       "score_sum": 0,
       "score_n": 0,
       "promoted_at": "2026-06-18",
-      "promoted_reason": "Voice-Pro pipeline post (Demucs vocal isolation + Whisper transcription + Translate, 539 likes, 757 bookmarks) maps directly to Octavi's UGC discovery pipeline stack — specific local AI toolchain reveal format with high save rate"
+      "promoted_reason": "Voice-Pro pipeline post (Demucs vocal isolation + Whisper transcription + Translate, 539 likes, 757 bookmarks) maps directly to Octavi's UGC discovery pipeline stack — specific local AI toolchain reveal format with high save rate",
+      "blacklist_reason": "Engagement-bait account — \"follow + RT + comment to get free courses\" format, list posts of 107 AI tools, giveaway farming. No authentic technical builder signal. Completely off-niche for Octavi's developer/indie-hacker voice.",
+      "blacklisted_at": "2026-06-25"
     },
     "raaborman": {
       "handle": "raaborman",
@@ -349,5 +351,5 @@
       "reason": "Posts founder data narratives with named companies + monthly revenue progressions (1.75K likes, 2.6K bookmarks) — useful format reference for Velocity leaderboard content even if not a builder himself"
     }
   },
-  "last_run": "2026-06-18T11:17:44.585Z"
+  "last_run": "2026-06-25T09:43:09.037Z"
 }
