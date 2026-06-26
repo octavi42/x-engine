@@ -33,7 +33,8 @@
       "status": "active",
       "last_pulled": "2026-05-12",
       "score_sum": 5,
-      "score_n": 2
+      "score_n": 2,
+      "last_deep_studied": "2026-06-26"
     },
     "nutlope": {
       "handle": "nutlope",
@@ -351,5 +352,5 @@
       "reason": "Posts founder data narratives with named companies + monthly revenue progressions (1.75K likes, 2.6K bookmarks) — useful format reference for Velocity leaderboard content even if not a builder himself"
     }
   },
-  "last_run": "2026-06-25T09:43:09.037Z"
+  "last_run": "2026-06-26T09:51:03.969Z"
 }
