@@ -8,6 +8,14 @@ description: Rolling log of trending dev/AI/startup topics. Append a new ## YYYY
 
 Auto-populated during each draft run with trending dev/AI/startup topics found via web search.
 
+## 2026-06-28
+
+- Carry-forward distillation run. Web search for fresh dev-Twitter signal returned generic 2026-roundup roll-ups (pasqualepillitteri "36 AI accounts to follow," blog.mean.ceo "AI Startup Trends June 2026 STARTUP EDITION," wellows "85 Hottest AI Startups") rather than dated events. The 2026-06-26 entries on Opus 4.8 dynamic workflows, Claude Tag on Slack, NVIDIA Cosmos 3, and Nadella's "token capital" framing are still the live lanes.
+- Continuing surface pattern this week: two-agent stack convergence (65% of working engineers running TWO coding agents daily — Claude Code + Cursor most-named, from 2026-06-23 entry) is the most-shared engineering data point on dev Twitter. Lane open: "what's your two-agent stack and what does each do that the other can't" — direct question framing performs against the convergence narrative.
+- Token-capital rebrand from Nadella's keynote (carried from 2026-06-26) is the most quotable founder-Twitter framing this week. Indie-dev translation: prompt libraries + harness scripts + self-hosted agent nets ARE the moat, even at solo scale. The reframe from rationing to capital is the procurement playbook this quarter.
+- Comment-hunter surface pattern (4 daily peak runs over the past 48h): dev Twitter splitting on the "is the agent moving to Slack/CLI the product, or is it the model" framing (carried from 2026-06-26 Claude Tag on Slack entry). Surface lane intact for ride-along.
+- Note: the rss-trending feed sources (HN, TechCrunch AI, The Verge AI) appear to have produced no Twitter-quotable AI events in the 48h window between 2026-06-26 and 2026-06-28 strong enough to displace the live lanes above.
+
 ## 2026-06-26
 
 - Claude Opus 4.8 released with stronger coding, agentic skills, reasoning, and "dynamic workflows" inside Claude Code that can tackle very large-scale problems. Anthropic also doubled Claude Code rate limits and raised API limits on Opus the same week. Claude Platform on AWS (AWS billing, IAM, native API access) shipped alongside. Sources: Anthropic newsroom + Releasebot Claude Code/Developer Platform feeds, June 2026. Read-through: agentic-orchestration moved from a Workflow tool surface to the in-product CLI surface. Open lane for dev Twitter: "I switched my [x] from a hand-rolled queue to Claude Code dynamic workflows. here's what broke and what didn't" — concrete migration anecdote.
