@@ -1704,18 +1704,6 @@
   },
   "runs": [
     {
-      "ts": "2026-05-31T16:43:17.079Z",
-      "searched": 21,
-      "scored": 8,
-      "notified": 0
-    },
-    {
-      "ts": "2026-05-31T18:11:36.386Z",
-      "searched": 27,
-      "scored": 8,
-      "notified": 0
-    },
-    {
       "ts": "2026-05-31T19:50:56.076Z",
       "searched": 16,
       "scored": 10,
@@ -2343,6 +2331,12 @@
     },
     {
       "ts": "2026-06-30T16:26:51.049Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-06-30T18:20:07.277Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
