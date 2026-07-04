@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2051698665652412919": {
-      "suggestedAt": "2026-05-05T17:33:01.863Z",
-      "author": "OfficialLoganK",
-      "url": "https://x.com/OfficialLoganK/status/2051698665652412919",
-      "tweetText": "Today we are rolling out edit mode in AI Studio Vibe Coding ✏️, select components to quickly edit them, annotate right on the UI with a pen, and select image assets to change them with Nano Banana + upload content! https://t.co/Ct9H98o3iT",
-      "metrics": {
-        "likes": 324,
-        "replies": 57,
-        "retweets": 21,
-        "bookmarks": 58,
-        "views": 23725,
-        "ageMinutes": 71.61378333333333
-      },
-      "scoreDetails": {
-        "ratio": 58.473529269471314,
-        "candidateVelocity": 6.116141050128386,
-        "authorMedianVelocity": 0.10459674876032474,
-        "authorSampleSize": 19,
-        "controversy": 0.17592592592592593
-      },
-      "score": 58.473529269471314,
-      "comment": "annotation-on-UI beats text descriptions for grounding — coords collapse component ambiguity fast. what does the model see: full page screenshot with overlay, or just the selected region crop?",
-      "reasoning": "Picks up the specific annotation feature, adds the missing technical mechanism (spatial grounding vs text, full-frame vs crop context window), and ends with a sharp implementation question that pulls OP into answering.",
-      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2051695810702717052": {
-      "suggestedAt": "2026-05-05T17:33:32.417Z",
-      "author": "zodchiii",
-      "url": "https://x.com/zodchiii/status/2051695810702717052",
-      "tweetText": "> start a new project\n> open Claude Code\n> no CLAUDE.md\n> Claude doesn't know your stack\n> \"can I edit this file?\" yes\n> click Allow 30 times\n> realize .env was read 5 minutes ago\n> spend 2 hours configuring everything\n> start next project\n> do it all over again from scratch\n> there's a starter kit that does all of this in 5 minutes",
-      "metrics": {
-        "likes": 258,
-        "replies": 7,
-        "retweets": 4,
-        "bookmarks": 25,
-        "views": 3535,
-        "ageMinutes": 82.96378333333334
-      },
-      "scoreDetails": {
-        "ratio": 20.60383640333494,
-        "candidateVelocity": 3.278539009089709,
-        "authorMedianVelocity": 0.15912274514852215,
-        "authorSampleSize": 19,
-        "controversy": 0.027131782945736434
-      },
-      "score": 20.60383640333494,
-      "comment": "the .env read is the real one — ~/.claude/CLAUDE.md as global template + deny rules in ~/.claude/settings.json means every new project inherits them, zero re-clicks",
-      "reasoning": "Pins on the sharpest concrete pain point (silent .env read), then adds a specific mechanism OP didn't mention (global ~/.claude/ layer) that partially invalidates the \"start from scratch\" premise — inviting OP and others to push back or confirm.",
-      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2051712261647978735": {
-      "suggestedAt": "2026-05-05T17:33:58.714Z",
-      "author": "willmenaker",
-      "url": "https://x.com/willmenaker/status/2051712261647978735",
-      "tweetText": "\"A spokesperson for New York City Mayor Zohran Mamdani declined to comment on the Israeli real estate expo\"",
-      "metrics": {
-        "likes": 147,
-        "replies": 5,
-        "retweets": 20,
-        "bookmarks": 5,
-        "views": 8344,
-        "ageMinutes": 17.59711666666667
-      },
-      "scoreDetails": {
-        "ratio": 7.162113591186439,
-        "candidateVelocity": 8.921916185132602,
-        "authorMedianVelocity": 1.2457099530104832,
-        "authorSampleSize": 19,
-        "controversy": 0.034013605442176874
-      },
-      "score": 7.162113591186439,
-      "comment": "no comment from a mayor's office isn't neutral — it's a signal. costs nothing diplomatically, signals disapproval to the base, and keeps deniability if the optics shift.",
-      "reasoning": "Adds a political-comms mechanism the OP left implicit (strategic silence as low-cost signaling), which invites the OP and readers to agree or push back on the framing — high reply bait.",
-      "matchedQuery": "(\"React Native\" OR Expo OR \"mobile dev\") -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2051990196904673281": {
       "suggestedAt": "2026-05-06T12:55:34.188Z",
       "author": "HeartyFgs",
@@ -1704,12 +1623,6 @@
   },
   "runs": [
     {
-      "ts": "2026-06-04T17:17:38.631Z",
-      "searched": 43,
-      "scored": 9,
-      "notified": 0
-    },
-    {
       "ts": "2026-06-04T19:39:04.338Z",
       "searched": 64,
       "scored": 8,
@@ -2385,6 +2298,12 @@
     },
     {
       "ts": "2026-07-04T16:34:05.678Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-07-04T17:37:24.111Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
