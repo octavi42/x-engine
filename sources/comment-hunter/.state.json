@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2051990196904673281": {
-      "suggestedAt": "2026-05-06T12:55:34.188Z",
-      "author": "HeartyFgs",
-      "url": "https://x.com/HeartyFgs/status/2051990196904673281",
-      "tweetText": "here are the Arcs we’ve had so far this year. \n\n- Ai Arc\n\n- Reply Guy Arc \n\n- Lists Arc \n\n- Rug / Drains Arc \n\n- Trends Arc \n\n- vibe-coding Arc \n\n- Unemployment Arc \n\nWhich of these did you participate in? https://t.co/ANWp4Ku4WO",
-      "metrics": {
-        "likes": 51,
-        "replies": 36,
-        "retweets": 0,
-        "bookmarks": 0,
-        "views": 378,
-        "ageMinutes": 75.82861666666666
-      },
-      "scoreDetails": {
-        "ratio": 44.200536308965255,
-        "candidateVelocity": 1.6220789117213226,
-        "authorMedianVelocity": 0.036698172628107095,
-        "authorSampleSize": 18,
-        "controversy": 0.7058823529411765
-      },
-      "score": 44.200536308965255,
-      "comment": "vibe-coding is the only arc here that left artifacts outside X. the rest are engagement behaviors. one produced repos, the others produced impressions.",
-      "reasoning": "Draws a sharp technical distinction between production arcs and social arcs — a counter-angle the OP didn't name — which gives developers something concrete to agree with or push back on, pulling both OP and replies into the thread.",
-      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2051996501245575254": {
-      "suggestedAt": "2026-05-06T12:56:09.006Z",
-      "author": "unclebobmartin",
-      "url": "https://x.com/unclebobmartin/status/2051996501245575254",
-      "tweetText": "In this letter, the CEO of Coinbase talks about non-technical teams shipping production code. Honestly, I don’t think he knows what he’s talking about.\n\nUsing AI agents makes it possible for teams who are not deeply technical in the syntax of a language to ship production code. But that team had better be very deeply technical in managing the structure and quality of the code that is produced.\n\nWhat the agents give us is the ability to disengage from deep syntax. But they do not give us the ability to disengage from modular design and architecture. You still need to be deeply technical in those topics in order to produce good production quality code.",
-      "metrics": {
-        "likes": 110,
-        "replies": 16,
-        "retweets": 12,
-        "bookmarks": 23,
-        "views": 4968,
-        "ageMinutes": 50.7786
-      },
-      "scoreDetails": {
-        "ratio": 34.96689404477227,
-        "candidateVelocity": 2.7964536241645104,
-        "authorMedianVelocity": 0.07997432144198677,
-        "authorSampleSize": 19,
-        "controversy": 0.14545454545454545
-      },
-      "score": 34.96689404477227,
-      "comment": "syntax is learnable in days. spotting a god class or tight coupling takes years of pattern-matching — and AI will generate both without complaint when the prompter can't reject them.",
-      "reasoning": "Mirrors Uncle Bob's own Clean Code vocabulary (god class) to signal genuine fluency, then adds the specific failure mechanism he omitted: AI produces architectural antipatterns silently, so the bottleneck is recognition, not generation — provocative enough to pull a reply from him.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2052000140165251263": {
-      "suggestedAt": "2026-05-06T12:56:29.125Z",
-      "author": "YellowMedia_HQ",
-      "url": "https://x.com/YellowMedia_HQ/status/2052000140165251263",
-      "tweetText": "Google Cloud Taps Solana to Enable Stablecoin Payments for AI Agents\n\nhttps://t.co/gByqsTdpyl",
-      "metrics": {
-        "likes": 70,
-        "replies": 15,
-        "retweets": 12,
-        "bookmarks": 10,
-        "views": 5031,
-        "ageMinutes": 36.31195
-      },
-      "scoreDetails": {
-        "ratio": 18.941728115107853,
-        "candidateVelocity": 2.7539143450021273,
-        "authorMedianVelocity": 0.14538875905444,
-        "authorSampleSize": 19,
-        "controversy": 0.21428571428571427
-      },
-      "score": 18.941728115107853,
-      "comment": "solana finality (~400ms, $0.00025/tx) makes agent micropayments viable, but the real blocker is key custody — who holds the private key when the agent is a stateless lambda?",
-      "reasoning": "Acknowledges the Solana-specific technical choice, then surfaces the unsolved problem (key custody for stateless agents) that practitioners will debate, driving replies from infra engineers and founders thinking through the same architecture.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2052415200981115172": {
       "suggestedAt": "2026-05-07T16:12:23.547Z",
       "author": "brian_armstrong",
@@ -1623,12 +1542,6 @@
   },
   "runs": [
     {
-      "ts": "2026-06-04T21:50:35.021Z",
-      "searched": 28,
-      "scored": 10,
-      "notified": 0
-    },
-    {
       "ts": "2026-06-05T16:34:57.505Z",
       "searched": 54,
       "scored": 9,
@@ -2316,6 +2229,12 @@
     },
     {
       "ts": "2026-07-04T21:31:13.120Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-07-05T15:20:34.959Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
