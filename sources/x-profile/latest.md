@@ -95,7 +95,7 @@ In trending news (5/3 → 5/4): the standout AI signal is the Harvard study on O
 
 ## Top performing
 <!-- auto-feedback:start -->
-Generated 2026-07-06 — top 3 by engagement score (likes + 2·replies + 3·bookmarks + 1.5·reposts).
+Generated 2026-07-07 — top 3 by engagement score (likes + 2·replies + 3·bookmarks + 1.5·reposts).
 
 1. **2026-05-07** · score 6.5 · Likes 5 · Replies 0 · Reposts 1 · Bookmarks 0 · Views 71
    > added 6 free credits for first-time visitors on roadtosf.com. mechanic: check if user_balance row exists for the anon cookie. if not, grant 6. skips logged-in users (balance on email row) and repeat anons. users can play end-to-end befor…
