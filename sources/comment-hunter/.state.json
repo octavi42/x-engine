@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2053106098031272423": {
-      "suggestedAt": "2026-05-09T15:03:55.060Z",
-      "author": "orangie100x",
-      "url": "https://x.com/orangie100x/status/2053106098031272423",
-      "tweetText": "This vibe coder told Orangie that he made 47,000$ in just 45 days through vibe coding https://t.co/u2oe3OY8VR",
-      "metrics": {
-        "likes": 65,
-        "replies": 17,
-        "retweets": 2,
-        "bookmarks": 22,
-        "views": 6579,
-        "ageMinutes": 89.62975
-      },
-      "scoreDetails": {
-        "ratio": 342.30129930352365,
-        "candidateVelocity": 1.1045439711702867,
-        "authorMedianVelocity": 0.0032268179332584743,
-        "authorSampleSize": 19,
-        "controversy": 0.26153846153846155
-      },
-      "score": 342.30129930352365,
-      "comment": "what's the actual product? $47k gross in 45 days with no churn context is impossible to evaluate",
-      "reasoning": "Shape C — one pointed question that exposes the missing mechanic (churn/recurring vs. one-time), sounds like an engineer stress-testing a claim rather than hyping or dunking it.",
-      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2053113042536374313": {
-      "suggestedAt": "2026-05-09T15:04:19.175Z",
-      "author": "Build4ai",
-      "url": "https://x.com/Build4ai/status/2053113042536374313",
-      "tweetText": "BNBChain is ABSOLUTELY DOMINATING AI Agent adoption!\n\nJust look at NfaScan: • 142K AI agents on @BNBCHAIN → 66.6% market share 🔥 \nWhile others talk, BNBCHAIN delivers. \n\nThe AI agent revolution is happening on the fastest, cheapest, and most scalable chain.\n\n#BNBChain #AIAgents",
-      "metrics": {
-        "likes": 135,
-        "replies": 22,
-        "retweets": 106,
-        "bookmarks": 9,
-        "views": 558,
-        "ageMinutes": 62.046416666666666
-      },
-      "scoreDetails": {
-        "ratio": 173.54470040123763,
-        "candidateVelocity": 2.884936949085161,
-        "authorMedianVelocity": 0.016623595779157466,
-        "authorSampleSize": 19,
-        "controversy": 0.16296296296296298
-      },
-      "score": 173.54470040123763,
-      "comment": "142K deployed isn't 142K running. what's the 30-day active count, wallets that actually fired a tx?",
-      "reasoning": "Shape C question that cuts the vanity metric with a concrete mechanism — deployed count vs. active tx count is the real signal engineers care about, and it exposes the hype without being a hot take.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2053118458146197960": {
-      "suggestedAt": "2026-05-09T15:04:52.808Z",
-      "author": "reppo",
-      "url": "https://x.com/reppo/status/2053118458146197960",
-      "tweetText": "Reppo CLI is shipped 🚀\n\nAfter 🚢 the Reppo Agent natively on https://t.co/X6MDpwugNx, we are now releasing \na non-interactive CLI built so agents like Hermes, OpenClaw, Claude Code, and others can interact with @Reppo directly: mint pods, vote, lock REPPO, query balances, manage datanet access, and more.\n\nThis is a big step toward making Reppo programmable, agent-native, and easier to build on.\n\nTry it here:\nhttps://t.co/cmGSMBAFhH\n\nAgents need rails. Reppo CLI is one of them. 🧠⚡",
-      "metrics": {
-        "likes": 39,
-        "replies": 5,
-        "retweets": 10,
-        "bookmarks": 1,
-        "views": 810,
-        "ageMinutes": 40.513083333333334
-      },
-      "scoreDetails": {
-        "ratio": 45.588766571891924,
-        "candidateVelocity": 1.2094858245381637,
-        "authorMedianVelocity": 0.026530347616026108,
-        "authorSampleSize": 19,
-        "controversy": 0.1282051282051282
-      },
-      "score": 45.588766571891924,
-      "comment": "curious how auth works when Claude Code shells out to this. wallet key in env vars, or does the agent need to sign each tx separately?",
-      "reasoning": "Shape C — points to the real unsolved question for anyone wiring an agent to this CLI: key management for non-interactive signing, with a concrete split (env vars vs per-tx signing) that engineers actually debate.",
-      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2053486054825717862": {
       "suggestedAt": "2026-05-10T15:05:06.865Z",
       "author": "Investanswers",
@@ -1380,12 +1299,6 @@
   },
   "runs": [
     {
-      "ts": "2026-06-07T21:47:45.472Z",
-      "searched": 22,
-      "scored": 9,
-      "notified": 0
-    },
-    {
       "ts": "2026-06-08T17:26:57.094Z",
       "searched": 63,
       "scored": 10,
@@ -2055,6 +1968,12 @@
     },
     {
       "ts": "2026-07-07T21:08:39.836Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-07-08T16:06:15.288Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
