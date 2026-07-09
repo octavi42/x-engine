@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2053486054825717862": {
-      "suggestedAt": "2026-05-10T15:05:06.865Z",
-      "author": "Investanswers",
-      "url": "https://x.com/Investanswers/status/2053486054825717862",
-      "tweetText": "$SOL Alpenglow is now live - rem in the AGE of AGI FINALITY IS THE PRODUCT - SOL is 5000 to 6000 times faster than ETH... AI Agents will not hang around for 15 mins... to see if a Tx has finalized. #Solana $ETH https://t.co/bZYBIA1dQ7",
-      "metrics": {
-        "likes": 77,
-        "replies": 13,
-        "retweets": 10,
-        "bookmarks": 0,
-        "views": 1905,
-        "ageMinutes": 20.894516666666668
-      },
-      "scoreDetails": {
-        "ratio": 46.28815144504133,
-        "candidateVelocity": 4.929522976921377,
-        "authorMedianVelocity": 0.10649643208963053,
-        "authorSampleSize": 19,
-        "controversy": 0.16883116883116883
-      },
-      "score": 46.28815144504133,
-      "comment": "15min is economic finality, not pre-confirm. ETH slot is 12s. 30x slower than solana, not 5000x",
-      "reasoning": "Shape B correction — calls out the apples-to-oranges comparison (economic finality vs slot time) with three concrete numbers, no hype language, reads like an engineer who actually knows the spec.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2053475784208355753": {
-      "suggestedAt": "2026-05-10T15:05:46.679Z",
-      "author": "The_CoDEFi",
-      "url": "https://x.com/The_CoDEFi/status/2053475784208355753",
-      "tweetText": "Manual  research is slowly becoming outdated ((\n\n@heyaura is building an AI agent that:\n\n• studies your onchain activity\n• tracks market opportunities\n• suggests yields & airdrops\n• helps optimize portfolio moves\n• works across EVM chains\n\nAlready:\n\n▫️17K+ users\n▫️$500M+ wallet volume analyzed\n▫️$ADX listed on major exchanges\n\nWeb3 moves fast.\nYour wallet probably needs an AI copilot now",
-      "metrics": {
-        "likes": 42,
-        "replies": 31,
-        "retweets": 1,
-        "bookmarks": 2,
-        "views": 376,
-        "ageMinutes": 61.71118333333333
-      },
-      "scoreDetails": {
-        "ratio": 42.732278439359796,
-        "candidateVelocity": 1.6852699038072787,
-        "authorMedianVelocity": 0.03943786676853187,
-        "authorSampleSize": 19,
-        "controversy": 0.7380952380952381
-      },
-      "score": 42.732278439359796,
-      "comment": "what does it consume per chain: raw RPC calls or an indexer? that gap matters a lot for data freshness across EVM at scale",
-      "reasoning": "Shape C — a pointed technical question targeting the real unsolved part (data layer architecture), with specific terms (RPC, indexer, freshness) that signal genuine engineering curiosity rather than hype engagement.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2053473310890193293": {
-      "suggestedAt": "2026-05-10T15:06:18.931Z",
-      "author": "DeFiDecoder_",
-      "url": "https://x.com/DeFiDecoder_/status/2053473310890193293",
-      "tweetText": "Keeping on the streak of being the most dev-friendly blockchain, @Polkadot\n\n$DOT is now fully LLM-friendly as well\n\nLots of great tools for AI agents and devs to make life easier to developing with AI",
-      "metrics": {
-        "likes": 32,
-        "replies": 20,
-        "retweets": 2,
-        "bookmarks": 1,
-        "views": 2155,
-        "ageMinutes": 71.54451666666667
-      },
-      "scoreDetails": {
-        "ratio": 31.49146614201721,
-        "candidateVelocity": 1.006366432461281,
-        "authorMedianVelocity": 0.031956798325072124,
-        "authorSampleSize": 19,
-        "controversy": 0.625
-      },
-      "score": 31.49146614201721,
-      "comment": "what does LLM-friendly mean concretely here: predictable JSON-RPC schemas, on-chain data formatting, or just docs rewritten with AI prompts?",
-      "reasoning": "Shape C pointed question — the tweet makes a vague \"LLM-friendly\" claim with zero specifics, so a real engineer's natural move is to ask exactly what changed; naming three concrete candidate mechanisms (JSON-RPC schemas, data formatting, docs) shows domain knowledge without sounding like a marketer.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2053876179476639815": {
       "suggestedAt": "2026-05-11T16:38:37.687Z",
       "author": "CJRodriguez1919",
@@ -1299,12 +1218,6 @@
   },
   "runs": [
     {
-      "ts": "2026-06-08T21:58:05.509Z",
-      "searched": 28,
-      "scored": 6,
-      "notified": 0
-    },
-    {
       "ts": "2026-06-09T16:36:41.274Z",
       "searched": 66,
       "scored": 8,
@@ -1980,6 +1893,12 @@
     },
     {
       "ts": "2026-07-08T21:18:43.955Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-07-09T16:32:22.939Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
