@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2053876179476639815": {
-      "suggestedAt": "2026-05-11T16:38:37.687Z",
-      "author": "CJRodriguez1919",
-      "url": "https://x.com/CJRodriguez1919/status/2053876179476639815",
-      "tweetText": "I shipped GoblinOS.\n\na full personality operating system for AI agents. it has moods, it collects things it finds interesting, and it occasionally does things you didn't ask for. there's a dashboard to watch it all happen in real time.\n\nbuilt on top of Hermes Agent. compatible with OpenRouter, Anthropic, and OpenAI out of the box. new models drop, GoblinOS runs them day one.\n\nopenai created goblin behavior by accident and I turned it into an architecture.\n\nthis is just v0.1. what's coming next is worse.\n\nhttps://t.co/PC1XSKTq0I",
-      "metrics": {
-        "likes": 2464,
-        "replies": 0,
-        "retweets": 371,
-        "bookmarks": 0,
-        "views": 63665,
-        "ageMinutes": 4.595416666666667
-      },
-      "scoreDetails": {
-        "ratio": 536186417.6262581,
-        "candidateVelocity": 536.186417626258,
-        "authorMedianVelocity": 7.683801670170712e-8,
-        "authorSampleSize": 18,
-        "controversy": 0
-      },
-      "score": 536186417.6262581,
-      "comment": "curious how mood state actually persists. is it a handful of floats in context, a separate DB row, or just system prompt drift?",
-      "reasoning": "Shape C — targets the concrete unsolved engineering question (mood persistence mechanism) that any builder would immediately wonder about, without pitching or performing enthusiasm.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2053868202443100265": {
-      "suggestedAt": "2026-05-11T16:39:12.120Z",
-      "author": "VitalikButerin",
-      "url": "https://x.com/VitalikButerin/status/2053868202443100265",
-      "tweetText": "Getting increasingly bullish on just vibe-coding the important things in Lean.\n\neg. see:\n\nhttps://t.co/YOdVyJMNAv\n\nhttps://t.co/XbDCD0BCEu",
-      "metrics": {
-        "likes": 355,
-        "replies": 123,
-        "retweets": 33,
-        "bookmarks": 72,
-        "views": 30248,
-        "ageMinutes": 36.29541666666667
-      },
-      "scoreDetails": {
-        "ratio": 633.7098815177171,
-        "candidateVelocity": 16.558564557049213,
-        "authorMedianVelocity": 0.026129566604503503,
-        "authorSampleSize": 19,
-        "controversy": 0.3464788732394366
-      },
-      "score": 633.7098815177171,
-      "comment": "lean's kernel is the real filter. bad proof = compile error. you can't ship a hallucination past the type checker.",
-      "reasoning": "Shape B counter with mechanism — points out why vibe-coding in Lean has a fundamentally different risk profile than in Python: the type checker is ground truth and rejects incorrect proofs, so the model's hallucinations can't make it to production.",
-      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2053874566460752191": {
-      "suggestedAt": "2026-05-11T16:39:46.691Z",
-      "author": "Lovable",
-      "url": "https://x.com/Lovable/status/2053874566460752191",
-      "tweetText": "Introducing the Lovable aesthetics update, a new level of design in vibe coding.\n\nAsk for typography, layout, and color preferences. Preview design concepts before building, and create bolder landing pages, apps, and blogs. https://t.co/Jx8VxyM3C9",
-      "metrics": {
-        "likes": 82,
-        "replies": 7,
-        "retweets": 15,
-        "bookmarks": 15,
-        "views": 1661,
-        "ageMinutes": 11.012083333333333
-      },
-      "scoreDetails": {
-        "ratio": 267.22848619086847,
-        "candidateVelocity": 8.717696469786977,
-        "authorMedianVelocity": 0.03262263164399452,
-        "authorSampleSize": 19,
-        "controversy": 0.08536585365853659
-      },
-      "score": 267.22848619086847,
-      "comment": "what does the preview generate: actual component code or a static mockup? gap between those two is where vibe coding usually falls apart",
-      "reasoning": "Shape C — one pointed question targeting the real engineering seam (preview-vs-build fidelity), specific enough to read as someone who's hit this problem, no hype, no AI tells.",
-      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2054231176555196524": {
       "suggestedAt": "2026-05-12T16:28:32.104Z",
       "author": "alexshander03",
@@ -1218,12 +1137,6 @@
   },
   "runs": [
     {
-      "ts": "2026-06-10T17:29:20.261Z",
-      "searched": 71,
-      "scored": 9,
-      "notified": 0
-    },
-    {
       "ts": "2026-06-10T19:55:49.289Z",
       "searched": 44,
       "scored": 9,
@@ -1899,6 +1812,12 @@
     },
     {
       "ts": "2026-07-10T16:29:48.697Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-07-10T18:09:26.807Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
