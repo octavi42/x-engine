@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2054231176555196524": {
-      "suggestedAt": "2026-05-12T16:28:32.104Z",
-      "author": "alexshander03",
-      "url": "https://x.com/alexshander03/status/2054231176555196524",
-      "tweetText": "We’re launching @JudgmentLabs today and announcing $32M in funding.\n\nAs AI agents take on more of the work that creates economic value, they generate massive amounts of production data: the clearest record of how they behave with users, software, and the real world.\n\nJudgment builds infrastructure for improving AI agents from production data.",
-      "metrics": {
-        "likes": 129,
-        "replies": 49,
-        "retweets": 33,
-        "bookmarks": 10,
-        "views": 3175,
-        "ageMinutes": 23.80901666666667
-      },
-      "scoreDetails": {
-        "ratio": 116492.88598671652,
-        "candidateVelocity": 9.534203078525572,
-        "authorMedianVelocity": 0.00008184365077548805,
-        "authorSampleSize": 15,
-        "controversy": 0.3798449612403101
-      },
-      "score": 116492.88598671652,
-      "comment": "labeling agent traces is the hard part. user didn't complain, but tool_call[3] was still wrong. no signal for that",
-      "reasoning": "Shape B counter with mechanism — surfaces the core unsolved problem in agent improvement from production data (sparse labels without explicit user feedback), grounded in a specific concrete artifact (tool_call[3]) that reads like a real builder's observation.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2054223481504485707": {
-      "suggestedAt": "2026-05-12T16:29:06.199Z",
-      "author": "pranathiperii",
-      "url": "https://x.com/pranathiperii/status/2054223481504485707",
-      "tweetText": "it's been lovely to do some work on the claude code mobile app recently!! it's only going to get better - let me know if you have feedback :\")",
-      "metrics": {
-        "likes": 70,
-        "replies": 7,
-        "retweets": 0,
-        "bookmarks": 12,
-        "views": 5260,
-        "ageMinutes": 54.375683333333335
-      },
-      "scoreDetails": {
-        "ratio": 698.636495687505,
-        "candidateVelocity": 1.544808172525648,
-        "authorMedianVelocity": 0.0022111758862603556,
-        "authorSampleSize": 19,
-        "controversy": 0.1
-      },
-      "score": 698.636495687505,
-      "comment": "main friction: reviewing diffs on a 390px screen before I can tap approve. if confirm didn't require scrolling the full output first, that'd fix 80% of the mobile ux for me",
-      "reasoning": "Shape A lived-experience feedback with a specific detail (390px screen width) that signals a real user, responding directly to the ask for feedback with a concrete UX pain point rather than generic praise.",
-      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2054220666250092958": {
-      "suggestedAt": "2026-05-12T16:29:33.330Z",
-      "author": "ArashSeyf",
-      "url": "https://x.com/ArashSeyf/status/2054220666250092958",
-      "tweetText": "Most “health apps” just track your data and leave you with another useless dashboard.\n\n@sleepagotchi is turning sleep data into an actual AI-powered ecosystem.\n\n> Your sleep → feeds AI agents\n> Your AI agents → optimize meals, wellness, shopping & routines\n> Your data → stays monetizable\n\nAnd somehow they wrapped all of this into a gamified app with:\n\n• 50k daily active users\n• top-grossing Telegram mini app\n• partnerships with Pixels, Sony, BONK & Square Enix\n• backed by 6th Man Ventures + 1kx\n\nThis isn’t just “sleep tracking”.\n\nIt feels like the start of AI agents managing your entire health stack while you farm $SLEEP in the background 😭",
-      "metrics": {
-        "likes": 43,
-        "replies": 27,
-        "retweets": 0,
-        "bookmarks": 0,
-        "views": 264,
-        "ageMinutes": 65.55901666666666
-      },
-      "scoreDetails": {
-        "ratio": 69.2837048995476,
-        "candidateVelocity": 1.4795828999875684,
-        "authorMedianVelocity": 0.02135542408034865,
-        "authorSampleSize": 19,
-        "controversy": 0.627906976744186
-      },
-      "score": 69.2837048995476,
-      "comment": "sleep stages alone can't drive meal optimization. without calorie logs or CGM data in the same pipeline the recommendations are just vibes",
-      "reasoning": "Shape B counter with a concrete mechanism — names the missing data types (calorie logs, CGM) that would actually make the agent useful, which is the exact technical gap the hype glosses over.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2054583886827655332": {
       "suggestedAt": "2026-05-13T16:30:01.937Z",
       "author": "KaiBGR",
@@ -1830,6 +1749,12 @@
     },
     {
       "ts": "2026-07-11T16:05:20.630Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-07-11T17:10:18.411Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
