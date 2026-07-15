@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2055649242262180172": {
-      "suggestedAt": "2026-05-16T15:07:55.022Z",
-      "author": "pokebookAI",
-      "url": "https://x.com/pokebookAI/status/2055649242262180172",
-      "tweetText": "Big things are coming 🚀\n\nExcited to announce the collaboration between \n\n🔸️ pCLAW INTEL × 4LPHA.\n\n4LPHA by @4lpha_agent is an AI Agent focused on autonomous trade execution, combining intelligent automation with real-time market strategies.\n\nTogether, we aim to build smarter AI-powered infrastructure, deeper market intelligence, and next-generation trading experiences across the BNB Chain ecosystem 🔶\n\n$intCLAW just getting started",
-      "metrics": {
-        "likes": 45,
-        "replies": 16,
-        "retweets": 11,
-        "bookmarks": 3,
-        "views": 617,
-        "ageMinutes": 68.4303
-      },
-      "scoreDetails": {
-        "ratio": 56.02162644349162,
-        "candidateVelocity": 1.1252325358795738,
-        "authorMedianVelocity": 0.02008568132191919,
-        "authorSampleSize": 19,
-        "controversy": 0.35555555555555557
-      },
-      "score": 56.02162644349162,
-      "comment": "what's the actual execution path. does the agent sign txs autonomously or route through a human approval step before on-chain settle?",
-      "reasoning": "The tweet is pure hype with zero technical substance — shape C (pointed question) cuts straight to the one unsolved detail that would tell a real engineer whether \"autonomous trade execution\" is actual autonomy or just a marketing label.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2055649658488389913": {
-      "suggestedAt": "2026-05-16T15:08:34.811Z",
-      "author": "PenguinWeb3",
-      "url": "https://x.com/PenguinWeb3/status/2055649658488389913",
-      "tweetText": "the best AI stack:\n\nDesign - Claude Design\nVibecoding - Cursor + Claude + Codex\nDeep Research - Gemini 2.5 Pro\nCopywriting - GPT-5\nCoding Assistant - Claude Opus\nFast everyday tasks - ChatGPT\nPresentations - Gamma AI\nImages - Midjourney\nVideo - Veo 3\nVoice AI - ElevenLabs\nAutomation - n8n + AI\nStartup ideation - o3\nLong context work - Gemini\nMemes & chaos - Grok",
-      "metrics": {
-        "likes": 21,
-        "replies": 9,
-        "retweets": 0,
-        "bookmarks": 6,
-        "views": 208,
-        "ageMinutes": 66.7803
-      },
-      "scoreDetails": {
-        "ratio": 26.521402194958693,
-        "candidateVelocity": 0.5840045642202866,
-        "authorMedianVelocity": 0.022020123971095946,
-        "authorSampleSize": 19,
-        "controversy": 0.42857142857142855
-      },
-      "score": 26.521402194958693,
-      "comment": "gemini 2.5 pro is listed twice under different labels. same model, same context window, two line items",
-      "reasoning": "Shape B counter with a specific mechanism — names the exact redundancy (Gemini 2.5 Pro under \"deep research\" and plain \"Gemini\" under \"long context\"), gives a concrete reason it's wrong, sounds like an engineer skimming a PR and catching a duplicate.",
-      "matchedQuery": "(ElevenLabs OR \"voice AI\" OR \"voice agent\") -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2055647467518214563": {
-      "suggestedAt": "2026-05-16T15:09:09.402Z",
-      "author": "ItsAlexhere0",
-      "url": "https://x.com/ItsAlexhere0/status/2055647467518214563",
-      "tweetText": "Anyone here still using VS Code or has everyone switched to Claude Code or Codex?",
-      "metrics": {
-        "likes": 32,
-        "replies": 22,
-        "retweets": 1,
-        "bookmarks": 1,
-        "views": 337,
-        "ageMinutes": 75.49696666666667
-      },
-      "scoreDetails": {
-        "ratio": 24.469070118637593,
-        "candidateVelocity": 1.006662960851849,
-        "authorMedianVelocity": 0.04114022134764714,
-        "authorSampleSize": 19,
-        "controversy": 0.6875
-      },
-      "score": 24.469070118637593,
-      "comment": "both still open. vscode for file tree + git, claude code for every write. ratio is probably 90/10 in terms of what actually ships code",
-      "reasoning": "Shape A lived-experience reply with a concrete ratio (90/10) that answers the either/or framing honestly — engineers don't fully abandon tools, they repurpose them, and that nuance drops in naturally without sounding like a take.",
-      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2066944699211083848": {
       "suggestedAt": "2026-06-16T18:38:36.169Z",
       "author": "dopabees",
@@ -813,12 +732,6 @@
   },
   "runs": [
     {
-      "ts": "2026-06-14T21:23:29.948Z",
-      "searched": 17,
-      "scored": 9,
-      "notified": 0
-    },
-    {
       "ts": "2026-06-15T18:45:29.184Z",
       "searched": 55,
       "scored": 8,
@@ -1542,6 +1455,12 @@
     },
     {
       "ts": "2026-07-14T21:08:36.703Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-07-15T15:40:34.144Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
