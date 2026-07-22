@@ -732,13 +732,6 @@
   },
   "runs": [
     {
-      "ts": "2026-06-22T21:21:14.954Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0,
-      "note": "daily cap hit"
-    },
-    {
       "ts": "2026-06-23T16:34:45.634Z",
       "searched": 62,
       "scored": 10,
@@ -1537,6 +1530,12 @@
     },
     {
       "ts": "2026-07-22T20:17:29.785Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-07-22T21:39:12.473Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
