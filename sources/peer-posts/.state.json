@@ -214,7 +214,7 @@
     "raaborman": {
       "handle": "raaborman",
       "status": "active",
-      "last_deep_studied": "2026-08-14"
+      "last_deep_studied": "2026-08-17"
     }
   },
   "discovered": {
@@ -352,5 +352,5 @@
       "reason": "Posts founder data narratives with named companies + monthly revenue progressions (1.75K likes, 2.6K bookmarks) — useful format reference for Velocity leaderboard content even if not a builder himself"
     }
   },
-  "last_run": "2026-08-16T06:57:38.101Z"
+  "last_run": "2026-08-17T07:59:19.448Z"
 }
