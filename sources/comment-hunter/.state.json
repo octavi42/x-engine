@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2067653661346636237": {
-      "suggestedAt": "2026-06-18T17:22:39.700Z",
-      "author": "HeyGen",
-      "url": "https://x.com/HeyGen/status/2067653661346636237",
-      "tweetText": "Your coding agent does more than write code. It ships the launch video.\n\nDrop HeyGen's MCP server into @cursor_ai, point it at your README, and it builds a finished product video from one prompt - pulling your features and pricing straight from the repo.\n\nNo filming, no editing. https://t.co/ISauwhQ88i",
-      "metrics": {
-        "likes": 56,
-        "replies": 47,
-        "retweets": 40,
-        "bookmarks": 43,
-        "views": 51702,
-        "ageMinutes": 21.58791666666667
-      },
-      "scoreDetails": {
-        "ratio": 371.2830407635444,
-        "candidateVelocity": 6.948331435409468,
-        "authorMedianVelocity": 0.018714378715279343,
-        "authorSampleSize": 19,
-        "controversy": 0.8392857142857143
-      },
-      "score": 371.2830407635444,
-      "comment": "most readmes describe implementation, not buyer pain. the video will be technically accurate and completely unmemorable",
-      "reasoning": "Shape B counter with mechanism: the real gap is that README content maps to how-it-works, not why-anyone-should-care, so the output is correct but ineffective — a concrete, falsifiable claim an engineer would drop without fanfare, matching the high controversy ratio in the thread.",
-      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2067639336703775037": {
-      "suggestedAt": "2026-06-18T17:23:06.800Z",
-      "author": "trycua",
-      "url": "https://x.com/trycua/status/2067639336703775037",
-      "tweetText": "1/ Today we're bringing Cua Driver to Linux: background computer-use for any agent. Hermes, Claude Code, Codex, or your own loop can drive real Linux desktop apps (X and Wayland in preview) through CLI or MCP while your desktop stays usable https://t.co/TyRNz4NBC9",
-      "metrics": {
-        "likes": 77,
-        "replies": 12,
-        "retweets": 13,
-        "bookmarks": 31,
-        "views": 4554,
-        "ageMinutes": 78.50458333333333
-      },
-      "scoreDetails": {
-        "ratio": 213.51678001815182,
-        "candidateVelocity": 1.286549086836756,
-        "authorMedianVelocity": 0.006025517463907904,
-        "authorSampleSize": 19,
-        "controversy": 0.15584415584415584
-      },
-      "score": 213.51678001815182,
-      "comment": "on wayland, how are you handling input injection without a compositor plugin? xdg-desktop-portal only covers a subset of what screen capture + pointer emulation needs",
-      "reasoning": "Shape C — pointed unsolved-part question; names a specific protocol gap (xdg-desktop-portal vs full pointer/input injection on Wayland) that any engineer shipping this would have had to wrestle with, making it sound like genuine curiosity from someone who hit the same wall.",
-      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2067648649820012738": {
-      "suggestedAt": "2026-06-18T17:23:45.141Z",
-      "author": "teneo_protocol",
-      "url": "https://x.com/teneo_protocol/status/2067648649820012738",
-      "tweetText": "The Teneo CLI installs from wherever you already work. There are now setup guides for seven of them.\n\nAI coding agents:\n\n- Claude Code: https://t.co/0CXaQdNc9N\n\n- Codex: https://t.co/K9vZ8wuyt1\n\n- Manus: https://t.co/JVCAyP38A6\n\nIDEs:\n\n- Cursor: https://t.co/JWOAmPEHwE\n\n- Antigravity: https://t.co/e8vMwuuLUg\n\n-VS Code: https://t.co/7xnxHXDZHQ\n\nAgent platforms\n\nHermes: https://t.co/g9A5HG89S3\n\nEach guide walks through installing the CLI, then listing and querying 50+ Teneo agents in plain English: scrape social data, swap and bridge tokens, pull on-chain data. Some agents are free; paid queries settle per call in USDC via x402.\n\nTwo more are in progress: \n\nOpenClaw (managed hosting) and Teneo Father (query agents straight from Telegram).\n\nFull list: https://t.co/bnbIJYAAVk\n\nWhat are we missing? If you'd run the CLI in a tool that isn't here, tell us.",
-      "metrics": {
-        "likes": 253,
-        "replies": 186,
-        "retweets": 188,
-        "bookmarks": 6,
-        "views": 1528,
-        "ageMinutes": 41.504583333333336
-      },
-      "scoreDetails": {
-        "ratio": 115.71667323624747,
-        "candidateVelocity": 15.058577867906154,
-        "authorMedianVelocity": 0.13013317309220013,
-        "authorSampleSize": 19,
-        "controversy": 0.7351778656126482
-      },
-      "score": 115.71667323624747,
-      "comment": "if the agent retries a failed tool call on x402, is there an idempotency key or does it double-charge?",
-      "reasoning": "Shape C — surfaces the concrete unsolved problem with per-call USDC settlement in agentic retry loops, using a specific mechanism (idempotency key) that signals real payment-API experience without pitching anything.",
-      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2068006627400380469": {
       "suggestedAt": "2026-06-19T16:37:49.810Z",
       "author": "thedailyblock",
@@ -569,12 +488,6 @@
     }
   },
   "runs": [
-    {
-      "ts": "2026-07-18T17:08:12.735Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-07-18T18:32:06.843Z",
       "searched": 0,
@@ -1615,6 +1528,12 @@
     },
     {
       "ts": "2026-08-17T16:37:25.047Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-08-17T17:35:14.574Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
