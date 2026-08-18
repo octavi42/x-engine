@@ -1,86 +1,5 @@
 {
   "entries": {
-    "2068006627400380469": {
-      "suggestedAt": "2026-06-19T16:37:49.810Z",
-      "author": "thedailyblock",
-      "url": "https://x.com/thedailyblock/status/2068006627400380469",
-      "tweetText": "🚨 AI STARTUP SHIFT\n\nThe next evolution after vibe coding could be vibe companies.\n\nPolsia is exploring a new startup model where one founder can use AI agents to help build, operate, and scale a company instead of relying on a traditional large team.\n\nThe future of startups may be defined by how effectively humans direct AI systems.",
-      "metrics": {
-        "likes": 75,
-        "replies": 36,
-        "retweets": 6,
-        "bookmarks": 1,
-        "views": 1438,
-        "ageMinutes": 14.11335
-      },
-      "scoreDetails": {
-        "ratio": 387.3377261009375,
-        "candidateVelocity": 10.415670269638321,
-        "authorMedianVelocity": 0.02689041001630724,
-        "authorSampleSize": 19,
-        "controversy": 0.48
-      },
-      "score": 387.3377261009375,
-      "comment": "mapping which flows are agent-ready is the step everyone skips. four signals cover it: calendar, messaging, doc edits, SaaS audit logs. no content access needed",
-      "reasoning": "Shape A — lived experience from building the autonomous-company-tool; names four concrete metadata signals to ground the abstract \"vibe company\" claim, sounds like an engineer who's actually done the org-graph mapping work.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2067994077178859796": {
-      "suggestedAt": "2026-06-19T16:38:31.012Z",
-      "author": "Amor_Web3",
-      "url": "https://x.com/Amor_Web3/status/2067994077178859796",
-      "tweetText": "Been thinking about @sleepagotchi and its approach to health data. Most apps stop at tracking and charts, but Sleepagotchi is pushing toward action.\n\nIt uses four AI agents covering sleep, behavior & mood, meal planning, and budget-aware recommendations for food and supplements to turn daily data into practical decisions.\n\nStarting with sleep makes sense, but the bigger vision is a personalized health copilot that helps users do something with their data instead of just looking at it. With its app, Telegram experience, and the $SLEEP ecosystem, it’s an interesting direction to watch.",
-      "metrics": {
-        "likes": 20,
-        "replies": 21,
-        "retweets": 0,
-        "bookmarks": 0,
-        "views": 103,
-        "ageMinutes": 63.98003333333333
-      },
-      "scoreDetails": {
-        "ratio": 128.54977132188637,
-        "candidateVelocity": 0.9690523241365405,
-        "authorMedianVelocity": 0.0075383434304993864,
-        "authorSampleSize": 19,
-        "controversy": 1.05
-      },
-      "score": 128.54977132188637,
-      "comment": "four specialized agents is still just four recommendation pipelines. behavior change needs a commitment device or an interrupt, not a better chart",
-      "reasoning": "Shape B counter with a concrete mechanism — \"commitment device or interrupt\" is a specific product/behavioral-science term that signals engineering credibility and challenges the tweet's core \"action not tracking\" claim without being dismissive.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2067999315541291288": {
-      "suggestedAt": "2026-06-19T16:39:19.522Z",
-      "author": "sonofalli",
-      "url": "https://x.com/sonofalli/status/2067999315541291288",
-      "tweetText": "some of the amazing marketing team behind @vercel ship!!! 🚢\n\nso lucky to work with this squad \n\nnext: Ship Berlin 🇩🇪 then Ship NYC 🗽 https://t.co/TVuDWyxJCS",
-      "metrics": {
-        "likes": 59,
-        "replies": 7,
-        "retweets": 0,
-        "bookmarks": 3,
-        "views": 5852,
-        "ageMinutes": 43.16335
-      },
-      "scoreDetails": {
-        "ratio": 60.05707515369847,
-        "candidateVelocity": 1.6912496365550866,
-        "authorMedianVelocity": 0.02816070599886573,
-        "authorSampleSize": 19,
-        "controversy": 0.11864406779661017
-      },
-      "score": 60.05707515369847,
-      "comment": "berlin headliner: v0 or infra?",
-      "reasoning": "Shape C — one pointed question from a developer's perspective, names a real Vercel product (v0) to signal genuine interest in the technical announcements rather than the team photo, zero AI tells, well under 200 chars.",
-      "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2068357221344247918": {
       "suggestedAt": "2026-06-20T15:51:27.154Z",
       "author": "0xPulsss",
@@ -488,12 +407,6 @@
     }
   },
   "runs": [
-    {
-      "ts": "2026-07-19T16:05:30.751Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-07-19T17:11:04.405Z",
       "searched": 0,
@@ -1558,6 +1471,12 @@
     },
     {
       "ts": "2026-08-18T15:39:23.682Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-08-18T16:40:56.689Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
