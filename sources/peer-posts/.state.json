@@ -30,11 +30,13 @@
     },
     "jxnlco": {
       "handle": "jxnlco",
-      "status": "active",
+      "status": "blacklisted",
       "last_pulled": "2026-05-12",
       "score_sum": 5,
       "score_n": 2,
-      "last_deep_studied": "2026-08-18"
+      "last_deep_studied": "2026-08-18",
+      "blacklist_reason": "Avg score 2.5 (n=2) — consultancy/framework posts, not build-in-public shipping content that matches Octavi's voice.",
+      "blacklisted_at": "2026-08-21"
     },
     "nutlope": {
       "handle": "nutlope",
@@ -45,10 +47,12 @@
     },
     "sama": {
       "handle": "sama",
-      "status": "active",
+      "status": "blacklisted",
       "last_pulled": "2026-05-12",
       "score_sum": 5,
-      "score_n": 2
+      "score_n": 2,
+      "blacklist_reason": "Avg score 2.5 (n=2) — macro AI commentary from CEO POV, not technical builder/indie-hacker content that Octavi can pattern from.",
+      "blacklisted_at": "2026-08-21"
     },
     "karpathy": {
       "handle": "karpathy",
@@ -124,12 +128,14 @@
     },
     "prajwaltomar_": {
       "handle": "PrajwalTomar_",
-      "status": "active",
+      "status": "blacklisted",
       "last_pulled": "2026-05-15",
       "score_sum": 10,
       "score_n": 4,
       "promoted_at": "2026-05-04",
-      "promoted_reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche"
+      "promoted_reason": "Built ElevenLabs AI storytelling app in 20 min, specific feature list, 449 bookmarks — voice AI builder posting specific tools in Octavi's niche",
+      "blacklist_reason": "Avg score 2.5 (n=4) — consistently produces listicle/tool-roundup content rather than first-person technical shipping posts.",
+      "blacklisted_at": "2026-08-21"
     },
     "alexcooldev": {
       "handle": "alexcooldev",
@@ -168,7 +174,7 @@
       "score_n": 5,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
-      "last_deep_studied": "2026-08-16"
+      "last_deep_studied": "2026-08-21"
     },
     "antirez": {
       "handle": "antirez",
@@ -195,10 +201,12 @@
     },
     "natfriedman": {
       "handle": "natfriedman",
-      "status": "active",
+      "status": "blacklisted",
       "last_pulled": "2026-05-14",
       "score_sum": 2,
-      "score_n": 1
+      "score_n": 1,
+      "blacklist_reason": "Avg score 2.0 (n=1) — posts are broad tech commentary, no builder/shipping signal relevant to Octavi's technical niche.",
+      "blacklisted_at": "2026-08-21"
     },
     "divyansht91162": {
       "handle": "DivyanshT91162",
@@ -249,9 +257,9 @@
     "betomoedano": {
       "handle": "betomoedano",
       "first_seen": "2026-05-04",
-      "last_seen": "2026-05-04",
+      "last_seen": "2026-08-21",
       "score": 3,
-      "reason": "React Native AI app dev, specific migration posts, Claude Code usage — relevant to Octavi's mobile dev niche"
+      "reason": "React Native AI app dev posting specific migration posts and Claude Code usage — relevant to Octavi's mobile AI stack."
     },
     "_meer_habib": {
       "handle": "_meer_habib",
@@ -298,9 +306,9 @@
     "donvito": {
       "handle": "donvito",
       "first_seen": "2026-05-05",
-      "last_seen": "2026-05-05",
+      "last_seen": "2026-08-21",
       "score": 3,
-      "reason": "React Native + AI mobile dev with Cursor/Expo, publishes build logs and code — relevant to Octavi's mobile stack but older content cadence"
+      "reason": "React Native + AI mobile dev with Cursor/Expo, publishes build logs and code — relevant to Octavi's mobile stack."
     },
     "m2fauzaan": {
       "handle": "M2Fauzaan",
@@ -312,9 +320,9 @@
     "tomilola_ng": {
       "handle": "tomilola_ng",
       "first_seen": "2026-05-06",
-      "last_seen": "2026-05-06",
+      "last_seen": "2026-08-21",
       "score": 3,
-      "reason": "React Native + Expo + FastAPI builder posting specific stack breakdowns — relevant to Octavi's mobile AI work"
+      "reason": "React Native + Expo + FastAPI builder posting specific stack breakdowns — directly overlaps Octavi's mobile AI project stack."
     },
     "aidenybai": {
       "handle": "aidenybai",
@@ -333,9 +341,9 @@
     "makeitanimated": {
       "handle": "makeitanimated",
       "first_seen": "2026-05-13",
-      "last_seen": "2026-05-13",
+      "last_seen": "2026-08-21",
       "score": 3,
-      "reason": "React Native + Expo animation builder posting specific technical details (UI thread, component-level animation) — relevant to Octavi's mobile dev stack; moderate engagement (252L/217B)"
+      "reason": "React Native + Expo animation builder posting specific technical details (UI thread, component-level animation) — relevant mobile dev stack overlap."
     },
     "divyansht91162": {
       "handle": "DivyanshT91162",
@@ -347,10 +355,10 @@
     "jonoringer": {
       "handle": "jonoringer",
       "first_seen": "2026-06-18",
-      "last_seen": "2026-06-18",
+      "last_seen": "2026-08-21",
       "score": 3,
-      "reason": "Posts founder data narratives with named companies + monthly revenue progressions (1.75K likes, 2.6K bookmarks) — useful format reference for Velocity leaderboard content even if not a builder himself"
+      "reason": "Posts founder data narratives with named companies and monthly revenue progressions — useful format reference for Velocity leaderboard content."
     }
   },
-  "last_run": "2026-08-18T07:02:50.441Z"
+  "last_run": "2026-08-21T07:55:46.679Z"
 }
