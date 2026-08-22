@@ -1,59 +1,5 @@
 {
   "entries": {
-    "2069454654275260721": {
-      "suggestedAt": "2026-06-23T16:33:08.178Z",
-      "author": "ritualfnd",
-      "url": "https://x.com/ritualfnd/status/2069454654275260721",
-      "tweetText": "Ritual Chain public testnet is live.\n\nIt's a chain built specifically for AI agents — on-chain inference, composable precompiles, native scheduling. Not \"AI-adjacent.\" Actually AI-native.\n\nHere's what that means if you're building 👇🏻",
-      "metrics": {
-        "likes": 99,
-        "replies": 54,
-        "retweets": 39,
-        "bookmarks": 6,
-        "views": 1983,
-        "ageMinutes": 15.574133333333334
-      },
-      "scoreDetails": {
-        "ratio": 1895.4624288583784,
-        "candidateVelocity": 13.291269284112117,
-        "authorMedianVelocity": 0.007012151273353036,
-        "authorSampleSize": 19,
-        "controversy": 0.5454545454545454
-      },
-      "score": 1895.4624288583784,
-      "comment": "curious what 'on-chain inference' means in practice here. precompile wrapping an oracle call, or actually running weights on validators?",
-      "reasoning": "Shape C — opens the unsolved crux: \"on-chain inference\" is a loaded claim that's usually an oracle wrapper in disguise, and asking the specific technical distinction (precompile vs. actual weight execution on validators) is exactly what a builder evaluating the chain would need to know.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2069438775537602897": {
-      "suggestedAt": "2026-06-23T16:33:51.121Z",
-      "author": "Moefire_",
-      "url": "https://x.com/Moefire_/status/2069438775537602897",
-      "tweetText": "People often compare $CCD to Worldcoin or ICP.\n\nI think that comparison misses the bigger picture.\n\n@worldnetwork focuses on proving personhood.\n\n@dfinity provides the infrastructure layer for AI applications.\n\n@Concordium is tackling a different challenge: creating a trust layer for AI agents.\n\nThrough zero knowledge proofs (ZKPs), support across ETH, SOL, and CCD, and verifiable identities, agents can prove that a real accountable person or organization stands behind them without exposing their actual identity.\n\nAs AI agents become more widespread, trust, accountability, and verification will be essential.\n\nThat's one of the key reasons I'm very bullish on $CCD.",
-      "metrics": {
-        "likes": 27,
-        "replies": 25,
-        "retweets": 10,
-        "bookmarks": 3,
-        "views": 1246,
-        "ageMinutes": 78.65746666666666
-      },
-      "scoreDetails": {
-        "ratio": 214.87733066334127,
-        "candidateVelocity": 0.9789280441271946,
-        "authorMedianVelocity": 0.004555753001515682,
-        "authorSampleSize": 19,
-        "controversy": 0.9259259259259259
-      },
-      "score": 214.87733066334127,
-      "comment": "if the human behind an agent is accountable, how does the system know which of the agent's 200 API calls they actually authorized vs the agent decided autonomously?",
-      "reasoning": "Shape C — points to the real unsolved gap (action-level authorization vs identity attestation) that ZKPs alone don't close, the kind of question an engineer building autonomous agent flows would genuinely ask.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2069442038777397578": {
       "suggestedAt": "2026-06-23T16:34:45.634Z",
       "author": "openart_ai",
@@ -164,12 +110,6 @@
     }
   },
   "runs": [
-    {
-      "ts": "2026-07-23T15:59:15.753Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-07-23T17:40:56.198Z",
       "searched": 0,
@@ -1354,6 +1294,12 @@
     },
     {
       "ts": "2026-08-22T15:49:46.165Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-08-22T16:34:08.899Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
