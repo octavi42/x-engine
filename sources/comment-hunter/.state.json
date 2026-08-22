@@ -1,32 +1,5 @@
 {
   "entries": {
-    "2069442038777397578": {
-      "suggestedAt": "2026-06-23T16:34:45.634Z",
-      "author": "openart_ai",
-      "url": "https://x.com/openart_ai/status/2069442038777397578",
-      "tweetText": "The way videos are made is about to change.\n\nIntroducing OpenArt Director - and a new way to create: VIBE DIRECTING.\n\nThe same way vibe coding changed how software gets built, Vibe Directing changes how videos are made.\n\nAll you need is an idea in your head and a conversation to see it come to life.\n\nDescribe what you want. Chat it into perfection. Walk away with something only you could have imagined, with the quality only a professional could deliver.\n\nBecause there's a director in all of us. 🎬",
-      "metrics": {
-        "likes": 49,
-        "replies": 7,
-        "retweets": 7,
-        "bookmarks": 31,
-        "views": 5878,
-        "ageMinutes": 65.6908
-      },
-      "scoreDetails": {
-        "ratio": 133.36069873156202,
-        "candidateVelocity": 0.9590384041600956,
-        "authorMedianVelocity": 0.00719131208280872,
-        "authorSampleSize": 19,
-        "controversy": 0.14285714285714285
-      },
-      "score": 133.36069873156202,
-      "comment": "the feedback loop is the whole game. code runs in ms. video gen is 2-5 min per round. 'vibe directing' assumes you'll keep chatting through 10+ waiting periods per scene",
-      "reasoning": "Shape B counter with mechanism — pins the vibe-coding analogy's specific failure point (feedback loop latency) with concrete numbers (ms vs 2-5 min) rather than a vague critique, landing as an engineer noticing the gap the marketing copy skips.",
-      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
     "2069813760622043483": {
       "suggestedAt": "2026-06-24T16:29:34.651Z",
       "author": "synthwavedd",
@@ -1300,6 +1273,12 @@
     },
     {
       "ts": "2026-08-22T16:34:08.899Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-08-22T16:54:14.469Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
