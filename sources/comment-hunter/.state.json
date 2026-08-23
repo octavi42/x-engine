@@ -1,87 +1,5 @@
 {
-  "entries": {
-    "2069813760622043483": {
-      "suggestedAt": "2026-06-24T16:29:34.651Z",
-      "author": "synthwavedd",
-      "url": "https://x.com/synthwavedd/status/2069813760622043483",
-      "tweetText": "🚨 BREAKING: Claude Code v2.1.190 introduces several string changes that hint at preparations for a Fable 5 return, with it being permanently included in subscriptions with weekly usage. \n\nThe string \"You've used your Fable 5 usage for this week\" has been added, and \"purchased separately from your plan\" has been removed",
-      "metrics": {
-        "likes": 579,
-        "replies": 59,
-        "retweets": 58,
-        "bookmarks": 84,
-        "views": 22872,
-        "ageMinutes": 25.097933333333334
-      },
-      "scoreDetails": {
-        "ratio": 157.6910383551329,
-        "candidateVelocity": 27.771210909796025,
-        "authorMedianVelocity": 0.17611153556648557,
-        "authorSampleSize": 19,
-        "controversy": 0.10189982728842832
-      },
-      "score": 157.6910383551329,
-      "comment": "weekly cap is a smarter throttle than monthly. smooths the bursty end-of-month cliff. monthly caps get gamed by saving heavy runs for day 28",
-      "reasoning": "Shape B — counter with mechanism: names the real reason weekly > monthly (end-of-month gaming), grounds it in a specific concrete behavior (\"day 28\") a real engineer would recognize, no hype or setup-and-reveal structure.",
-      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2069803105386983698": {
-      "suggestedAt": "2026-06-24T16:30:19.608Z",
-      "author": "Cardano_CF",
-      "url": "https://x.com/Cardano_CF/status/2069803105386983698",
-      "tweetText": "Today the Cardano Foundation joins the @ADROrg, @Google, @IBM, @Circle, @Wayfair and others to launch the Legal Context Protocol: an open standard that makes legal terms, consent, and dispute resolution discoverable and verifiable when AI agents transact on behalf of people and organizations.",
-      "metrics": {
-        "likes": 128,
-        "replies": 7,
-        "retweets": 27,
-        "bookmarks": 6,
-        "views": 9612,
-        "ageMinutes": 67.43126666666667
-      },
-      "scoreDetails": {
-        "ratio": 59.84905633580599,
-        "candidateVelocity": 2.1058480289559047,
-        "authorMedianVelocity": 0.03518598550894838,
-        "authorSampleSize": 19,
-        "controversy": 0.0546875
-      },
-      "score": 59.84905633580599,
-      "comment": "discoverable is easy. the hard part is what the agent does at runtime when it can't satisfy a term: pause, rollback, or proceed?",
-      "reasoning": "Shape B counter with mechanism — challenges the easy-sounding \"discoverable and verifiable\" framing by naming the concrete unsolved runtime failure mode (three specific options), reads like an engineer who's actually hit this problem, zero AI tells.",
-      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    },
-    "2069803962409123875": {
-      "suggestedAt": "2026-06-24T16:31:06.021Z",
-      "author": "cramforce",
-      "url": "https://x.com/cramforce/status/2069803962409123875",
-      "tweetText": "At Google executives project their importance by how slow they are at approvals. A slowness doom loop.\n\nThis is why I banned approvals at Vercel. We only have vetos. Want to block something? No problem, speak up. Have nothing to say or taking a week off? Great, it's gonna ship",
-      "metrics": {
-        "likes": 206,
-        "replies": 6,
-        "retweets": 6,
-        "bookmarks": 28,
-        "views": 11198,
-        "ageMinutes": 64.03126666666667
-      },
-      "scoreDetails": {
-        "ratio": 59.65094741490498,
-        "candidateVelocity": 3.4045867175307065,
-        "authorMedianVelocity": 0.05707514909779962,
-        "authorSampleSize": 19,
-        "controversy": 0.02912621359223301
-      },
-      "score": 59.65094741490498,
-      "comment": "default allow vs default deny. engineers know this from firewall rules. approval culture is just default-deny applied to every org decision",
-      "reasoning": "Shape B counter-with-mechanism: reframes the veto-vs-approval debate using a concrete technical analogy (firewall default-allow/deny) that any engineer instantly maps onto, no AI tells, one specific named concept.",
-      "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
-      "outcome": null,
-      "outcomeNotes": null
-    }
-  },
+  "entries": {},
   "runs": [
     {
       "ts": "2026-07-24T17:09:27.094Z",
@@ -1321,6 +1239,12 @@
     },
     {
       "ts": "2026-08-23T15:50:53.387Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-08-23T16:35:25.409Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
