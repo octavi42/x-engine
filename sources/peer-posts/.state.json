@@ -34,7 +34,7 @@
       "last_pulled": "2026-05-12",
       "score_sum": 5,
       "score_n": 2,
-      "last_deep_studied": "2026-08-18",
+      "last_deep_studied": "2026-08-26",
       "blacklist_reason": "Avg score 2.5 (n=2) — consultancy/framework posts, not build-in-public shipping content that matches Octavi's voice.",
       "blacklisted_at": "2026-08-21"
     },
@@ -360,5 +360,5 @@
       "reason": "Posts founder data narratives with named companies and monthly revenue progressions — useful format reference for Velocity leaderboard content."
     }
   },
-  "last_run": "2026-08-23T06:59:59.601Z"
+  "last_run": "2026-08-26T07:07:28.866Z"
 }
