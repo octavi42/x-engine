@@ -174,7 +174,7 @@
       "score_n": 5,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
-      "last_deep_studied": "2026-08-21"
+      "last_deep_studied": "2026-08-27"
     },
     "antirez": {
       "handle": "antirez",
@@ -360,5 +360,5 @@
       "reason": "Posts founder data narratives with named companies and monthly revenue progressions — useful format reference for Velocity leaderboard content."
     }
   },
-  "last_run": "2026-08-26T07:07:28.866Z"
+  "last_run": "2026-08-27T17:37:27.642Z"
 }
