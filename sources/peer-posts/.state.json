@@ -222,7 +222,7 @@
     "raaborman": {
       "handle": "raaborman",
       "status": "active",
-      "last_deep_studied": "2026-08-23"
+      "last_deep_studied": "2026-08-28"
     }
   },
   "discovered": {
@@ -360,5 +360,5 @@
       "reason": "Posts founder data narratives with named companies and monthly revenue progressions — useful format reference for Velocity leaderboard content."
     }
   },
-  "last_run": "2026-08-27T17:37:27.642Z"
+  "last_run": "2026-08-28T18:40:32.255Z"
 }
