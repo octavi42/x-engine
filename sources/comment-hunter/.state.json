@@ -2,36 +2,6 @@
   "entries": {},
   "runs": [
     {
-      "ts": "2026-08-17T18:51:20.389Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T19:34:49.305Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T19:54:25.642Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T20:35:50.545Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T20:58:08.703Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
       "ts": "2026-08-18T14:42:27.436Z",
       "searched": 0,
       "scored": 0,
@@ -777,6 +747,12 @@
     },
     {
       "ts": "2026-09-16T18:07:49.486Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-09-16T21:37:45.764Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
