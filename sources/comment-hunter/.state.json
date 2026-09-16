@@ -2,48 +2,6 @@
   "entries": {},
   "runs": [
     {
-      "ts": "2026-08-17T14:36:53.659Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T14:57:28.220Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T15:33:12.350Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T15:52:57.732Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T16:37:25.047Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T17:35:14.574Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-17T17:58:55.731Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
       "ts": "2026-08-17T18:51:20.389Z",
       "searched": 0,
       "scored": 0,
@@ -813,6 +771,12 @@
     },
     {
       "ts": "2026-09-15T21:15:25.825Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-09-16T18:07:49.486Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
