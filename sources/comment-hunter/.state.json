@@ -2,24 +2,6 @@
   "entries": {},
   "runs": [
     {
-      "ts": "2026-08-25T18:50:31.601Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-25T19:38:51.467Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-08-25T20:38:10.378Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
       "ts": "2026-08-26T14:53:07.707Z",
       "searched": 0,
       "scored": 0,
@@ -411,6 +393,12 @@
     },
     {
       "ts": "2026-09-24T18:23:05.585Z",
+      "searched": 0,
+      "scored": 0,
+      "notified": 0
+    },
+    {
+      "ts": "2026-09-24T21:44:16.237Z",
       "searched": 0,
       "scored": 0,
       "notified": 0
