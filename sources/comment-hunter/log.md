@@ -2353,3 +2353,29 @@ Searched: **67** unique · Scored: **10** · Notified: **3**
   - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
 
 ---
+## 2026-10-08 19:49 UTC
+
+Searched: **61** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @iam_islandboi · 2.4× · 149❤ 35💬 in 68m · vel 3.21/min vs author median 1.35 → 2.4×
+  - TermiX + AACP is an interesting combination because interoperability matters if the agent economy is going to scale. Agents shouldn’t exist inside isolated ecosystems. they need ways to communicate, d
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2108266859397283953 (@tomekkorbak): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2108264769807655023 (@usebland): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2108279175559741702 (@SamuelAden57199): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
