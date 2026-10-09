@@ -2379,3 +2379,33 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-09 00:15 UTC
+
+Searched: **34** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @bourglor · 2.7× · 104❤ 0💬 in 69m · vel 1.51/min vs author median 0.55 → 2.7×
+  - Ishowspeed speed elevenlabs dub YOU ARE BEING INSULTING AND DISRESPECTFUL AND I’M TIRED OF YOUR CONSTANT NONSENSE / yelling upset mad angry frustrated telling off scolding insufferable stream misdubbe
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+- @Amenouboy · 2.6× · 22❤ 25💬 in 61m · vel 1.18/min vs author median 0.45 → 2.6× · controversy 1.14 (replies/likes)
+  - Gm gSleep AI Works Better When It Knows Its Job After spending time with @sleepagotchi I started thinking differently about consumer AI. Sleep is something most of us do every day, yet improving it ca
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2108339788701126724 (@axultan): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2108329483619230105 (@OneManLBO): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2108331826796548230 (@nicopreme): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
