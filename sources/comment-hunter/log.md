@@ -2429,3 +2429,33 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-09 23:26 UTC
+
+Searched: **19** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @washingtonpost · 1.5× · 27❤ 10💬 in 56m · vel 0.83/min vs author median 0.55 → 1.5× · controversy 0.37 (replies/likes)
+  - An artificial intelligence system designed by Anthropic, maker of the Claude chatbot, submitted a false homicide tip to the Philadelphia police, the latest incident of AI agents acting in ways that we
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @farzyness · 2.0× · 31❤ 3💬 in 51m · vel 0.73/min vs author median 0.37 → 2.0×
+  - Tesla and SpaceX's Secret AI Agents Project https://t.co/NWo5dKKm05
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2108681422785359995 (@daraa_xD): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2108692403364471129 (@hookitfun): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2108686027963630068 (@SamiraComilla): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
