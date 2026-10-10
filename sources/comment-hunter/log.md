@@ -2485,3 +2485,33 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-10 21:57 UTC
+
+Searched: **33** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @K1ngDavee · 2.0× · 26❤ 27💬 in 78m · vel 1.02/min vs author median 0.52 → 2.0× · controversy 1.04 (replies/likes)
+  - Bro to bro, learn how to use AI. Don’t just watch people build amazing things with it while you scroll past. Learn how to use it to improve your current work, or pick up a skill like AI video creation
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+- @DaveShapi · 2.6× · 21❤ 11💬 in 83m · vel 0.52/min vs author median 0.20 → 2.6× · controversy 0.52 (replies/likes)
+  - Okay I've been going hog wild on Claude Code, ChatGPT Dot (desktop), and Grok Bot the last couple days and yeah my opinion of Grok Bot remains unchanged. It is the derpiest of the lot. For instance, I
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2109024304440488303 (@mintfolio_): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2109019180678676745 (@agentwormhole): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2109037099253170600 (@AlexFinn): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
