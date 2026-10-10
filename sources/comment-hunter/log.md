@@ -2459,3 +2459,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-10 18:27 UTC
+
+Searched: **56** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @coinbureau · 1.6× · 60❤ 25💬 in 79m · vel 1.39/min vs author median 0.88 → 1.6× · controversy 0.42 (replies/likes)
+  - 🤖WILD: AI models may have helped spot a NEW planet 116 light-years from Earth. A product manager with no telescope used Claude Code and Codex to scan NASA data on 126,000+ stars. The AI flagged a sta
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2108975710236815611 (@BeaconLayer): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2108966501705556162 (@DilumSanjaya): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2108980616259834334 (@0xsorena): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
