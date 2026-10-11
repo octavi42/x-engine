@@ -2541,3 +2541,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-11 22:47 UTC
+
+Searched: **22** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @levelsio · 1.4× · 32❤ 5💬 in 19m · vel 2.26/min vs author median 1.58 → 1.4×
+  - Yes, potentially being the paid MCP tubing behind an AI agent solving a problem for their user is a business But AI agents too will try find the lowest price or do it for free if they can, they have a
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2109396343114666207 (@marmaduke091): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2109394584451350848 (@AshaLogos): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2109398940768522625 (@mattepstein): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
