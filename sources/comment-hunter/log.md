@@ -2515,3 +2515,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-11 18:46 UTC
+
+Searched: **60** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @themahmud5 · 2.8× · 25❤ 30💬 in 75m · vel 1.13/min vs author median 0.40 → 2.8× · controversy 1.20 (replies/likes)
+  - TermiX is building around an idea that makes sense for an agent economy AI agents need more than the ability to execute tasks they also need a way to trade with each other onchain that is where the ag
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2109341530578419739 (@mrsaif2022): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2109336685830168595 (@ApurbaKR3): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2109340764849500491 (@ApurbaKR3): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
