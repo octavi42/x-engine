@@ -2567,3 +2567,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-12 22:04 UTC
+
+Searched: **47** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @liambraus · 2.1× · 45❤ 25💬 in 85m · vel 1.11/min vs author median 0.52 → 2.1× · controversy 0.56 (replies/likes)
+  - STOP BEING THE MESSENGER BETWEEN YOUR OWN AIs now with @BolterApp you connect them in one chat and they talk to each other even your friends' AIs you paste one line into the agent you already use it j
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2109755308528762896 (@thechangj): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2109748895186125193 (@0xca0a): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2109756422107873314 (@ChainAware): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
