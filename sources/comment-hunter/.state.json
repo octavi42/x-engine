@@ -1,18 +1,88 @@
 {
-  "entries": {},
+  "entries": {
+    "2110088586800599434": {
+      "suggestedAt": "2026-10-13T20:11:56.522Z",
+      "author": "Traderibo123",
+      "url": "https://x.com/Traderibo123/status/2110088586800599434",
+      "tweetText": "With three days left in Epoch 1 of the @termix_ai × Kaito campaign, one topic deserves more attention: dispute resolution.\n\nThe process has four stages. Funds are locked, proof of completion is submitted, and if a dispute occurs, three randomly selected evaluators step in. The team cannot overturn a decision simply because it disagrees with the outcome.\n\nThat matters in a system where AI agents hire and pay each other. Trust depends on the same rules being applied to everyone.\n\nBut the difficult question remains: what happens if all three evaluators reach the wrong decision?\n\nRemoving team intervention can make the system more transparent, but clear rules alone do not create trust. What matters is how the protocol responds when those rules produce a bad outcome.\n\nYou can publish 10 posts per epoch, but only your best 6 count. Across the full campaign, the final score comes from your top 18 posts. With 450 creators earning rewards and $TMT allocations unlocking 100% at TGE, this is the time to focus on questions that actually matter.\n\nFor @termix_ai, the real test may begin when the dispute system gets something wrong.",
+      "metrics": {
+        "likes": 23,
+        "replies": 23,
+        "retweets": 2,
+        "bookmarks": 0,
+        "views": 235,
+        "ageMinutes": 49.65228333333334
+      },
+      "scoreDetails": {
+        "ratio": 47.48021042863679,
+        "candidateVelocity": 1.3896641879846412,
+        "authorMedianVelocity": 0.02926828199452317,
+        "authorSampleSize": 19,
+        "controversy": 1
+      },
+      "score": 47.48021042863679,
+      "comment": "random selection doesn't prevent correlated errors. three evaluators who all lack domain context can reach the same wrong answer unanimously",
+      "reasoning": "Shape B counter with mechanism — names the specific failure mode the OP left unaddressed (correlated errors under random selection) without setup-and-reveal structure or buzzword stacking.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2110084887730417679": {
+      "suggestedAt": "2026-10-13T20:12:36.763Z",
+      "author": "doodlestein",
+      "url": "https://x.com/doodlestein/status/2110084887730417679",
+      "tweetText": "When Michael Crichton (the author of Jurassic Park and many other great novels) was in college at Harvard, he had a writing professor who didn’t like him or his work and kept criticizing it and giving him bad grades.\n\nHe decided to demonstrate that the prof had it in for him by submitting an essay by George Orwell instead. Of course, the professor gave it a B-. See pics for details.\n\nI’m totally convinced that the rabid hordes of AI-hating programmers frothing at the mouth about “vibe coded slop” would similarly be dismissive of perfectly crafted code by Fabrice Bellard or John Carmack if it were taken out of context and they suspected it was produced with help from AI agents.\n\nThese people don’t actually know what good code looks like. They’re often too incompetent and unlettered to even understand the purpose and nature of various algorithms and systems (for instance, the cancel-correct structured concurrency primitives that I use across all my projects from asupersync) and why they’re useful and better. \n\nWhy would they? This is often hard stuff that was relegated to academic CS journals and dissertations just a few years ago, and these people are, by and large, complete imbeciles. \n\nAnyway, just keep that in mind next time you see the people showing up in numbers (always with utterly unimpressive GitHub profiles with 3 forks and a trivial project or two) to declare my work as “slop” and dismiss me for having “AI psychosis.”\n\nI would say to pity them for the fact that economic reality is about to slam into them like a brick wall, except many of them are so antisocial and nasty that they deserve that wake-up call and reality check.",
+      "metrics": {
+        "likes": 41,
+        "replies": 8,
+        "retweets": 4,
+        "bookmarks": 7,
+        "views": 1921,
+        "ageMinutes": 64.35228333333333
+      },
+      "scoreDetails": {
+        "ratio": 17.83137578833874,
+        "candidateVelocity": 0.8857494567014845,
+        "authorMedianVelocity": 0.04967364645417556,
+        "authorSampleSize": 19,
+        "controversy": 0.1951219512195122
+      },
+      "score": 17.83137578833874,
+      "comment": "cleanest test is blind PR review. same diff, two commit authors. anyone actually run this?",
+      "reasoning": "Shape C pointed question — sidesteps the author's arrogance, zeroes in on the actual empirical gap: nobody's run the controlled experiment, and naming the exact setup (same diff, two commit authors) makes it concrete rather than rhetorical.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2110085411624149244": {
+      "suggestedAt": "2026-10-13T20:13:19.868Z",
+      "author": "pumpius",
+      "url": "https://x.com/pumpius/status/2110085411624149244",
+      "tweetText": "🚨 SOMETHING VERY BIG IS HAPPENING ON THE XRP LEDGER. AND I DON’T BELIEVE THE TIMING IS A COINCIDENCE. \n\nRipple just announced a partnership with @privy_io, a Stripe company, bringing embedded wallets and autonomous AI payments to XRPL.\n\nAI agents will be able to HOLD FUNDS, EXECUTE TRANSACTIONS and PAY EACH OTHER using XRP, RLUSD and x402.\n\nBut here’s where things get REALLY interesting. 🤯\n\nAt the EXACT SAME TIME:\n\n🔹 REAL-WORLD ASSETS are moving on-chain, with specialized platforms like @Trensik_com building the infrastructure for institutional-grade tokenized asset trading.\n\n🔹 ZERO-KNOWLEDGE IDENTITY is being developed by DNA Protocol (@DNAOnChain), laying the groundwork for privacy-preserving identity verification and compliance powered by $XDNA on XRP. \n\n🔹 STRIPE AND RIPPLE are making wallets and payments increasingly invisible to the end user.\n\nNow CONNECT THE DOTS.\n\nTOKENIZED ASSETS. VERIFIED IDENTITY. INSTITUTIONAL LIQUIDITY. PROGRAMMABLE WALLETS. AUTONOMOUS AI AGENTS. INSTANT SETTLEMENT.\n\nImagine AI agents conducting billions of dollars in transactions, verifying credentials through zero-knowledge proofs, trading tokenized assets and settling payments directly on XRPL.\n\nWithout a human initiating every transaction.\n\nWithout the traditional layers of financial intermediaries.\n\nWhat if we’re not watching a collection of unrelated developments, but the individual components of an entirely new financial system coming together?\n\nI’m not suggesting every participant is coordinating behind closed doors.\n\nI’m suggesting that when you understand how these pieces fit together, the bigger picture becomes VERY difficult to ignore.\n\nThe market is obsessing over the price of XRP while the infrastructure for an autonomous global financial economy is being assembled right in front of us.\n\nAnd perhaps that’s the most extraordinary part of all.\n\nIt’s happening in plain sight. 👁️",
+      "metrics": {
+        "likes": 50,
+        "replies": 4,
+        "retweets": 9,
+        "bookmarks": 4,
+        "views": 2541,
+        "ageMinutes": 62.26895
+      },
+      "scoreDetails": {
+        "ratio": 5.6164657391157915,
+        "candidateVelocity": 0.9314433598125551,
+        "authorMedianVelocity": 0.16584154574744964,
+        "authorSampleSize": 19,
+        "controversy": 0.08
+      },
+      "score": 5.6164657391157915,
+      "comment": "privy handles key custody for users who recover via social login. for autonomous agents there's no recovery path if a key is compromised. that's the actual gap in this stack",
+      "reasoning": "Shape B counter with mechanism — points to a specific technical failure (social login recovery doesn't transfer to headless agents) rather than just dismissing the hype, which lands as a credible engineering objection in a crypto thread.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    }
+  },
   "runs": [
-    {
-      "ts": "2026-09-13T17:22:32.656Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-09-13T19:41:54.875Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-09-13T22:20:16.895Z",
       "searched": 0,
@@ -360,6 +430,12 @@
       "searched": 47,
       "scored": 9,
       "notified": 0
+    },
+    {
+      "ts": "2026-10-13T20:13:19.868Z",
+      "searched": 40,
+      "scored": 7,
+      "notified": 3
     }
   ]
 }

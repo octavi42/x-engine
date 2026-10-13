@@ -2593,3 +2593,49 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-13 20:13 UTC
+
+Searched: **40** unique · Scored: **7** · Notified: **3**
+
+### Notified
+
+- **@Traderibo123** · 47.5× · 23❤ 23💬 in 50m · vel 1.39/min vs author median 0.03 → 47.5× · controversy 1.00 (replies/likes)
+  - URL: https://x.com/Traderibo123/status/2110088586800599434
+  - Tweet: With three days left in Epoch 1 of the @termix_ai × Kaito campaign, one topic deserves more attention: dispute resolution. The process has four stages. Funds are locked, proof of completion is submitted, and if a dispute occurs, three randomly selected evaluators step in. The team cannot overturn a decision simply because it disagrees with the outcome. That matters in a system where AI agents hire
+  - Suggestion: random selection doesn't prevent correlated errors. three evaluators who all lack domain context can reach the same wrong answer unanimously
+  - Reasoning: Shape B counter with mechanism — names the specific failure mode the OP left unaddressed (correlated errors under random selection) without setup-and-reveal structure or buzzword stacking.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@doodlestein** · 17.8× · 41❤ 8💬 in 64m · vel 0.89/min vs author median 0.05 → 17.8×
+  - URL: https://x.com/doodlestein/status/2110084887730417679
+  - Tweet: When Michael Crichton (the author of Jurassic Park and many other great novels) was in college at Harvard, he had a writing professor who didn’t like him or his work and kept criticizing it and giving him bad grades. He decided to demonstrate that the prof had it in for him by submitting an essay by George Orwell instead. Of course, the professor gave it a B-. See pics for details. I’m totally con
+  - Suggestion: cleanest test is blind PR review. same diff, two commit authors. anyone actually run this?
+  - Reasoning: Shape C pointed question — sidesteps the author's arrogance, zeroes in on the actual empirical gap: nobody's run the controlled experiment, and naming the exact setup (same diff, two commit authors) makes it concrete rather than rhetorical.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- **@pumpius** · 5.6× · 50❤ 4💬 in 62m · vel 0.93/min vs author median 0.17 → 5.6×
+  - URL: https://x.com/pumpius/status/2110085411624149244
+  - Tweet: 🚨 SOMETHING VERY BIG IS HAPPENING ON THE XRP LEDGER. AND I DON’T BELIEVE THE TIMING IS A COINCIDENCE. Ripple just announced a partnership with @privy_io, a Stripe company, bringing embedded wallets and autonomous AI payments to XRPL. AI agents will be able to HOLD FUNDS, EXECUTE TRANSACTIONS and PAY EACH OTHER using XRP, RLUSD and x402. But here’s where things get REALLY interesting. 🤯 At the EX
+  - Suggestion: privy handles key custody for users who recover via social login. for autonomous agents there's no recovery path if a key is compromised. that's the actual gap in this stack
+  - Reasoning: Shape B counter with mechanism — points to a specific technical failure (social login recovery doesn't transfer to headless agents) rather than just dismissing the hype, which lands as a credible engineering objection in a crypto thread.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Rejected (top 3 scored)
+
+- @ama_protocol · 1.8× · 61❤ 41💬 in 71m · vel 2.03/min vs author median 1.11 → 1.8× · controversy 0.67 (replies/likes)
+  - AMA Hub & Amadeus L1 Now tracked on @DefiLlama AMA Hub dashboard now shows → $21M Cumulative Volume: Perps & DEX Aggregator → 264K Daily Active Wallets: Recent Avg AI Agents trading on all chains like
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @Polymarket · 2.0× · 47❤ 12💬 in 5m · vel 15.37/min vs author median 7.83 → 2.0×
+  - JUST IN: Anthropic warns rogue AI agents could be just months away from infiltrating smart home devices, replicating themselves, &amp; spreading across networks autonomously.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @notjazii · 2.5× · 34❤ 14💬 in 61m · vel 1.01/min vs author median 0.41 → 2.5× · controversy 0.41 (replies/likes)
+  - how many browsers do you use? serein is bringing browsing and ai agents together in one place made by friend @ziwenxu_ you can use claude code, codex, opencode and more right inside browser with your 
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- search failed for "("claude code" OR claude-code OR mcp) -a…": The operation was aborted due to timeout
+
+---
