@@ -24,9 +24,9 @@
     "theo": {
       "handle": "theo",
       "status": "active",
-      "last_pulled": "2026-05-12",
-      "score_sum": 8,
-      "score_n": 2
+      "last_pulled": "2026-10-13",
+      "score_sum": 12,
+      "score_n": 3
     },
     "jxnlco": {
       "handle": "jxnlco",
@@ -91,9 +91,9 @@
     "novorepnoy": {
       "handle": "novorepnoy",
       "status": "active",
-      "last_pulled": "2026-05-04",
-      "score_sum": 4,
-      "score_n": 1,
+      "last_pulled": "2026-10-13",
+      "score_sum": 6,
+      "score_n": 2,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Flutter voice app builder with personal problem framing, 47% engagement ratio — strong match for Octavi's voice app + real-world use angle"
     },
@@ -169,9 +169,9 @@
     "aidenybai": {
       "handle": "aidenybai",
       "status": "active",
-      "last_pulled": "2026-06-18",
-      "score_sum": 25,
-      "score_n": 5,
+      "last_pulled": "2026-10-13",
+      "score_sum": 30,
+      "score_n": 6,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
       "last_deep_studied": "2026-09-11"
@@ -188,9 +188,9 @@
     "benln": {
       "handle": "benln",
       "status": "active",
-      "last_pulled": "2026-05-14",
-      "score_sum": 4,
-      "score_n": 1
+      "last_pulled": "2026-10-13",
+      "score_sum": 7,
+      "score_n": 2
     },
     "garrytan": {
       "handle": "garrytan",
@@ -222,7 +222,10 @@
     "raaborman": {
       "handle": "raaborman",
       "status": "active",
-      "last_deep_studied": "2026-09-12"
+      "last_deep_studied": "2026-09-12",
+      "last_pulled": "2026-10-13",
+      "score_sum": null,
+      "score_n": null
     }
   },
   "discovered": {
@@ -360,5 +363,5 @@
       "reason": "Posts founder data narratives with named companies and monthly revenue progressions — useful format reference for Velocity leaderboard content."
     }
   },
-  "last_run": "2026-09-13T11:49:54.050Z"
+  "last_run": "2026-10-13T15:02:19.797Z"
 }
