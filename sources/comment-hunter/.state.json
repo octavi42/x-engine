@@ -80,6 +80,87 @@
       "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2110416796369207403": {
+      "suggestedAt": "2026-10-14T18:30:18.738Z",
+      "author": "austin_malerba",
+      "url": "https://x.com/austin_malerba/status/2110416796369207403",
+      "tweetText": "Is it time to build the best damn video editor the web has seen?\n\nLocal first, multiplayer, offline support, figma levels of ux, claude design levels of agentic control.\n\nPowered by @ElevenLabs, @editframe, mediabunny, mobx, plus a few homegrown libs https://t.co/udpDJx7dLJ",
+      "metrics": {
+        "likes": 50,
+        "replies": 7,
+        "retweets": 4,
+        "bookmarks": 28,
+        "views": 2234,
+        "ageMinutes": 83.97363333333334
+      },
+      "scoreDetails": {
+        "ratio": 1148.2875204081915,
+        "candidateVelocity": 0.7621439904350928,
+        "authorMedianVelocity": 0.0006637222619681237,
+        "authorSampleSize": 19,
+        "controversy": 0.14
+      },
+      "score": 1148.2875204081915,
+      "comment": "local-first + multiplayer on actual video assets is the unsolved part. CRDTs handle timeline ops fine but how are you syncing the blob layer?",
+      "reasoning": "Shape C pointed question — names the specific technical tension (CRDT timeline ops vs. blob sync) that any engineer actually building this would be wrestling with, opens a real thread without posturing.",
+      "matchedQuery": "(ElevenLabs OR \"voice AI\" OR \"voice agent\") -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2110425949917331565": {
+      "suggestedAt": "2026-10-14T18:30:57.444Z",
+      "author": "legit_api",
+      "url": "https://x.com/legit_api/status/2110425949917331565",
+      "tweetText": "Google doesn't let gemini think for more than single digit minutes\n\nAnthropic makes sure claude overthinks\n\nOpenAI makes sure their model ships the sloppiest code on earth that WILL break after a week or 2 https://t.co/S5cMk59Ewa",
+      "metrics": {
+        "likes": 46,
+        "replies": 7,
+        "retweets": 2,
+        "bookmarks": 1,
+        "views": 2154,
+        "ageMinutes": 47.606966666666665
+      },
+      "scoreDetails": {
+        "ratio": 257.87226528829825,
+        "candidateVelocity": 1.2603197431188293,
+        "authorMedianVelocity": 0.004887379965851722,
+        "authorSampleSize": 19,
+        "controversy": 0.15217391304347827
+      },
+      "score": 257.87226528829825,
+      "comment": "gpt ships the happy path. null checks, cleanup on unmount, async error recovery. all missing, just not immediately obvious",
+      "reasoning": "Shape B counter with mechanism — names the specific failure modes (null checks, unmount cleanup, async error recovery) that explain why OpenAI code breaks on a delay, sounds like an engineer who has debugged this, no AI tells.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2110431451669827652": {
+      "suggestedAt": "2026-10-14T18:31:30.209Z",
+      "author": "BotifydotCloud",
+      "url": "https://x.com/BotifydotCloud/status/2110431451669827652",
+      "tweetText": "Botify is becoming the market intelligence layer for AI Organizations\n\nWe've partnered with @Vanarchain, the on-chain economy of AI Organizations.\n\nTogether, we'll explore how Orgs can plug into The Autonomous Stock Market for real-time signal discovery, tokenized stock narratives, and public reasoning behind every move.\n\nBy 2028, Gartner expects AI agents to make at least 15% of day-to-day work decisions on their own, up from zero in 2024. Meanwhile, tokenized stock trading on @solana crossed $4.4B in September alone.\n\nAs agents make the calls and stocks move on chain, we aim to power the intelligent businesses that detect, decide, launch, and prove every move at machine speed.",
+      "metrics": {
+        "likes": 41,
+        "replies": 42,
+        "retweets": 13,
+        "bookmarks": 1,
+        "views": 871,
+        "ageMinutes": 25.740283333333334
+      },
+      "scoreDetails": {
+        "ratio": 173.41986156053107,
+        "candidateVelocity": 4.856201401564474,
+        "authorMedianVelocity": 0.0280025676290224,
+        "authorSampleSize": 19,
+        "controversy": 1.024390243902439
+      },
+      "score": 173.41986156053107,
+      "comment": "\"public reasoning behind every move\" assumes the reasoning is causal, not post-hoc. most agent traces are reconstructions, not decision logs",
+      "reasoning": "Shape B counter with mechanism — targets the weakest technical claim in the tweet (\"public reasoning\") and names a real AI auditability problem (post-hoc rationalization vs causal decision logs) that any engineer building agents has hit.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
@@ -437,6 +518,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-10-14T18:31:30.209Z",
+      "searched": 83,
+      "scored": 10,
+      "notified": 3
     }
   ]
 }

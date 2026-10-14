@@ -2639,3 +2639,31 @@ Searched: **40** unique · Scored: **7** · Notified: **3**
 - search failed for "("claude code" OR claude-code OR mcp) -a…": The operation was aborted due to timeout
 
 ---
+## 2026-10-14 18:31 UTC
+
+Searched: **83** unique · Scored: **10** · Notified: **3**
+
+### Notified
+
+- **@austin_malerba** · 999.0× · 50❤ 7💬 in 84m · vel 0.76/min vs author median 0.00 → 999.0×
+  - URL: https://x.com/austin_malerba/status/2110416796369207403
+  - Tweet: Is it time to build the best damn video editor the web has seen? Local first, multiplayer, offline support, figma levels of ux, claude design levels of agentic control. Powered by @ElevenLabs, @editframe, mediabunny, mobx, plus a few homegrown libs https://t.co/udpDJx7dLJ
+  - Suggestion: local-first + multiplayer on actual video assets is the unsolved part. CRDTs handle timeline ops fine but how are you syncing the blob layer?
+  - Reasoning: Shape C pointed question — names the specific technical tension (CRDT timeline ops vs. blob sync) that any engineer actually building this would be wrestling with, opens a real thread without posturing.
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+- **@legit_api** · 257.9× · 46❤ 7💬 in 48m · vel 1.26/min vs author median 0.00 → 257.9×
+  - URL: https://x.com/legit_api/status/2110425949917331565
+  - Tweet: Google doesn't let gemini think for more than single digit minutes Anthropic makes sure claude overthinks OpenAI makes sure their model ships the sloppiest code on earth that WILL break after a week or 2 https://t.co/S5cMk59Ewa
+  - Suggestion: gpt ships the happy path. null checks, cleanup on unmount, async error recovery. all missing, just not immediately obvious
+  - Reasoning: Shape B counter with mechanism — names the specific failure modes (null checks, unmount cleanup, async error recovery) that explain why OpenAI code breaks on a delay, sounds like an engineer who has debugged this, no AI tells.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@BotifydotCloud** · 173.4× · 41❤ 42💬 in 26m · vel 4.86/min vs author median 0.03 → 173.4× · controversy 1.02 (replies/likes)
+  - URL: https://x.com/BotifydotCloud/status/2110431451669827652
+  - Tweet: Botify is becoming the market intelligence layer for AI Organizations We've partnered with @Vanarchain, the on-chain economy of AI Organizations. Together, we'll explore how Orgs can plug into The Autonomous Stock Market for real-time signal discovery, tokenized stock narratives, and public reasoning behind every move. By 2028, Gartner expects AI agents to make at least 15% of day-to-day work deci
+  - Suggestion: "public reasoning behind every move" assumes the reasoning is causal, not post-hoc. most agent traces are reconstructions, not decision logs
+  - Reasoning: Shape B counter with mechanism — targets the weakest technical claim in the tweet ("public reasoning") and names a real AI auditability problem (post-hoc rationalization vs causal decision logs) that any engineer building agents has hit.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---
