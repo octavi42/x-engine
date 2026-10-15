@@ -161,21 +161,90 @@
       "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2110781433866555902": {
+      "suggestedAt": "2026-10-15T18:12:46.119Z",
+      "author": "0xaneri",
+      "url": "https://x.com/0xaneri/status/2110781433866555902",
+      "tweetText": "Hiring for some really exciting product roles at @ElevenLabs! \n\nAlongside setting direction and turning big ideas into something we can ship, PMs here do whatever the product needs to succeed. \n\nOn a given week, that might mean building creative evals, setting up pricing and growth experiments, running a launch end-to-end, negotiating with a model partner, or running research so we stay close to our users.\n\nWe’re looking for PMs with strong product judgment and a high bar for quality, who are excited about building AI-native products in a space that changes every week. You’re technical enough to go deep with engineers on tradeoffs and biased toward shipping and learning fast.\n\nYou’d work with product-driven engineers who care about outcomes as much as the code, building agentic products for creators, marketers and some of the largest media and enterprise teams in the world.\n\nDue to volume of requests, I usually can't respond to all messages, so please apply directly. https://t.co/mG0YunKaGe",
+      "metrics": {
+        "likes": 126,
+        "replies": 9,
+        "retweets": 2,
+        "bookmarks": 71,
+        "views": 6932,
+        "ageMinutes": 57.194516666666665
+      },
+      "scoreDetails": {
+        "ratio": 721.4110054357724,
+        "candidateVelocity": 2.5177238727139053,
+        "authorMedianVelocity": 0.0034899992566554483,
+        "authorSampleSize": 19,
+        "controversy": 0.07142857142857142
+      },
+      "score": 721.4110054357724,
+      "comment": "built with elevenlabs voice agents on a tour app. GPS-triggered prompts hallucinate landmarks. still haven't found a cleaner eval for that than manual spot-checks",
+      "reasoning": "Shape A lived experience: anchors to a real shipped project (Clio), names a concrete unsolved problem (hallucination on GPS-triggered prompts), and lands naturally in a PM job post that explicitly calls out \"building creative evals\" as a core responsibility.",
+      "matchedQuery": "(ElevenLabs OR \"voice AI\" OR \"voice agent\") -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2110779750507774240": {
+      "suggestedAt": "2026-10-15T18:13:23.507Z",
+      "author": "drawnbyneha",
+      "url": "https://x.com/drawnbyneha/status/2110779750507774240",
+      "tweetText": "back to vibe coding!",
+      "metrics": {
+        "likes": 142,
+        "replies": 1,
+        "retweets": 4,
+        "bookmarks": 6,
+        "views": 1482,
+        "ageMinutes": 63.87785
+      },
+      "scoreDetails": {
+        "ratio": 313.4536461473643,
+        "candidateVelocity": 2.254302547753251,
+        "authorMedianVelocity": 0.0071918211048450625,
+        "authorSampleSize": 19,
+        "controversy": 0.007042253521126761
+      },
+      "score": 313.4536461473643,
+      "comment": "vibed roadtosf to launch. the base64 sessionStorage bug cost $0.30/refresh and took an actual read-through to find",
+      "reasoning": "Shape A lived experience — drops a concrete shipped project, a specific dollar cost, and a named bug type that any engineer recognizes, landing as a credible \"been there\" without cheerleading or pitching.",
+      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2110786348131258456": {
+      "suggestedAt": "2026-10-15T18:14:36.333Z",
+      "author": "vercel",
+      "url": "https://x.com/vercel/status/2110786348131258456",
+      "tweetText": "Run your backend on Vercel.\n\n• Python is generally available\n• Containers for other runtimes &amp; system libraries\n• Daemons for async jobs &amp; background workers\n\nhttps://t.co/spPCQWUaWc https://t.co/H1lvSQE81d",
+      "metrics": {
+        "likes": 161,
+        "replies": 14,
+        "retweets": 8,
+        "bookmarks": 27,
+        "views": 14108,
+        "ageMinutes": 37.661183333333334
+      },
+      "scoreDetails": {
+        "ratio": 234.02913622256244,
+        "candidateVelocity": 5.01842967405432,
+        "authorMedianVelocity": 0.021443610633514357,
+        "authorSampleSize": 19,
+        "controversy": 0.08695652173913043
+      },
+      "score": 234.02913622256244,
+      "comment": "arc gen on roadtosf hides behind a loading screen because vercel functions time out. daemon workers finally move that out of the request path",
+      "reasoning": "Shape A lived experience — names a real project and a concrete architectural workaround (loading screen to absorb timeout), making the reply land as a dev who actually hit this constraint rather than a commentator summarizing the announcement.",
+      "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
-    {
-      "ts": "2026-09-14T22:42:31.461Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
-    {
-      "ts": "2026-09-15T18:06:11.609Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-09-15T21:15:25.825Z",
       "searched": 0,
@@ -525,6 +594,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-10-15T18:14:36.333Z",
+      "searched": 103,
+      "scored": 10,
+      "notified": 3
     }
   ]
 }

@@ -2667,3 +2667,31 @@ Searched: **83** unique · Scored: **10** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-10-15 18:14 UTC
+
+Searched: **103** unique · Scored: **10** · Notified: **3**
+
+### Notified
+
+- **@0xaneri** · 721.4× · 126❤ 9💬 in 57m · vel 2.52/min vs author median 0.00 → 721.4×
+  - URL: https://x.com/0xaneri/status/2110781433866555902
+  - Tweet: Hiring for some really exciting product roles at @ElevenLabs! Alongside setting direction and turning big ideas into something we can ship, PMs here do whatever the product needs to succeed. On a given week, that might mean building creative evals, setting up pricing and growth experiments, running a launch end-to-end, negotiating with a model partner, or running research so we stay close to our u
+  - Suggestion: built with elevenlabs voice agents on a tour app. GPS-triggered prompts hallucinate landmarks. still haven't found a cleaner eval for that than manual spot-checks
+  - Reasoning: Shape A lived experience: anchors to a real shipped project (Clio), names a concrete unsolved problem (hallucination on GPS-triggered prompts), and lands naturally in a PM job post that explicitly calls out "building creative evals" as a core responsibility.
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+- **@drawnbyneha** · 313.5× · 142❤ 1💬 in 64m · vel 2.25/min vs author median 0.01 → 313.5×
+  - URL: https://x.com/drawnbyneha/status/2110779750507774240
+  - Tweet: back to vibe coding!
+  - Suggestion: vibed roadtosf to launch. the base64 sessionStorage bug cost $0.30/refresh and took an actual read-through to find
+  - Reasoning: Shape A lived experience — drops a concrete shipped project, a specific dollar cost, and a named bug type that any engineer recognizes, landing as a credible "been there" without cheerleading or pitching.
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+- **@vercel** · 234.0× · 161❤ 14💬 in 38m · vel 5.02/min vs author median 0.02 → 234.0×
+  - URL: https://x.com/vercel/status/2110786348131258456
+  - Tweet: Run your backend on Vercel. • Python is generally available • Containers for other runtimes &amp; system libraries • Daemons for async jobs &amp; background workers https://t.co/spPCQWUaWc https://t.co/H1lvSQE81d
+  - Suggestion: arc gen on roadtosf hides behind a loading screen because vercel functions time out. daemon workers finally move that out of the request path
+  - Reasoning: Shape A lived experience — names a real project and a concrete architectural workaround (loading screen to absorb timeout), making the reply land as a dev who actually hit this constraint rather than a commentator summarizing the announcement.
+  - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
+
+---
