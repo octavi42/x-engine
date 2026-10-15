@@ -3,9 +3,9 @@
     "levelsio": {
       "handle": "levelsio",
       "status": "active",
-      "last_pulled": "2026-06-18",
-      "score_sum": 15,
-      "score_n": 4
+      "last_pulled": "2026-10-15",
+      "score_sum": 19,
+      "score_n": 5
     },
     "swyx": {
       "handle": "swyx",
@@ -17,9 +17,9 @@
     "simonw": {
       "handle": "simonw",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 10,
-      "score_n": 3
+      "last_pulled": "2026-10-15",
+      "score_sum": 14,
+      "score_n": 4
     },
     "theo": {
       "handle": "theo",
@@ -57,9 +57,9 @@
     "karpathy": {
       "handle": "karpathy",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 11,
-      "score_n": 3
+      "last_pulled": "2026-10-15",
+      "score_sum": 15,
+      "score_n": 4
     },
     "bedriyan0": {
       "handle": "bedriyan0",
@@ -120,9 +120,9 @@
     "mayfer": {
       "handle": "mayfer",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 25,
-      "score_n": 6,
+      "last_pulled": "2026-10-15",
+      "score_sum": 30,
+      "score_n": 7,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Local AI pipeline builder (whisper+qwen+moondream offline) — massive engagement, maps directly to Octavi's UGC discovery pipeline with local models"
     },
@@ -140,9 +140,9 @@
     "alexcooldev": {
       "handle": "alexcooldev",
       "status": "active",
-      "last_pulled": "2026-06-18",
-      "score_sum": 22,
-      "score_n": 5,
+      "last_pulled": "2026-10-15",
+      "score_sum": 26,
+      "score_n": 6,
       "promoted_at": "2026-05-05",
       "promoted_reason": "Solo founder building with React Native/Expo, posts specific revenue+stack breakdowns ($18K-24K/month), 3286-4382 bookmarks per post — exact niche match for Octavi's mobile AI work and SF startup aspirations"
     },
@@ -169,9 +169,9 @@
     "aidenybai": {
       "handle": "aidenybai",
       "status": "active",
-      "last_pulled": "2026-10-13",
-      "score_sum": 30,
-      "score_n": 6,
+      "last_pulled": "2026-10-15",
+      "score_sum": 35,
+      "score_n": 7,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
       "last_deep_studied": "2026-10-14"
@@ -222,7 +222,7 @@
     "raaborman": {
       "handle": "raaborman",
       "status": "active",
-      "last_deep_studied": "2026-09-12",
+      "last_deep_studied": "2026-10-15",
       "last_pulled": "2026-10-13",
       "score_sum": null,
       "score_n": null
@@ -370,5 +370,5 @@
       "reason": "Data-story format: \"X hacked [growth lever], went from $A to $B ARR in Y months\" — 1,072 likes, 2,548 bookmarks. Useful format reference for Velocity leaderboard reveal posts, though not primary builder voice."
     }
   },
-  "last_run": "2026-10-14T12:51:50.369Z"
+  "last_run": "2026-10-15T11:26:23.175Z"
 }
