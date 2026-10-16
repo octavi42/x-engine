@@ -2695,3 +2695,31 @@ Searched: **103** unique · Scored: **10** · Notified: **3**
   - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
 
 ---
+## 2026-10-16 17:58 UTC
+
+Searched: **69** unique · Scored: **10** · Notified: **3**
+
+### Notified
+
+- **@HeyGenDev** · 999.0× · 53❤ 44💬 in 12m · vel 11.87/min vs author median 0.01 → 999.0× · controversy 0.83 (replies/likes)
+  - URL: https://x.com/HeyGenDev/status/2111151435778039811
+  - Tweet: HeyGen Video 1 is the #1 video model on the @OpenRouter leaderboard, and it's now available in HeyGen MCP. Tell your agent what you want to see, and it's ready in seconds. Read more: https://t.co/d9FIOUyLsb https://t.co/G8I8kD2dyT
+  - Suggestion: what does the MCP tool return while it's generating - job ID you poll, or does it block the agent turn for the full render time?
+  - Reasoning: Shape C pointed question targeting the real async-vs-blocking tradeoff engineers hit first when wiring video gen into an agent loop — specific mechanism, zero fluff.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@nextjs** · 201.8× · 95❤ 9💬 in 68m · vel 1.67/min vs author median 0.01 → 201.8×
+  - URL: https://x.com/nextjs/status/2111137399489405166
+  - Tweet: We used a coding agent with Next.js 16.4's new prefetching controls and Skill to improve v0's navigation experience at no added cost. The loop: • Capture navigation with 𝚒𝚗𝚜𝚝𝚊𝚗𝚝() • Define the target UI in the test • Refactor until it passes https://t.co/xdZ1jrAehM
+  - Suggestion: the agent-driven refactor-until-pass loop is the interesting part. hand-tuning prefetch manually is how we ended up with stale episode data on roadtosf
+  - Reasoning: Shape A lived experience — anchors to a real shipped project (roadtosf on Next.js 16) with a concrete failure mode (stale episode data), making the reply feel like a genuine engineer nodding at the pattern rather than praise or a hot take.
+  - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
+
+- **@bruceradley** · 107.0× · 66❤ 42💬 in 73m · vel 2.04/min vs author median 0.02 → 107.0× · controversy 0.64 (replies/likes)
+  - URL: https://x.com/bruceradley/status/2111135965171396974
+  - Tweet: A single Claude skill just passed 164,000 stars on GitHub. It's called Ponytail. And it makes your agent code like that senior dev who never writes a line more than needed. The one who looks at your 50 lines and replaces them with one. Version 5 just dropped: → 53% less code → 41% less time → 26% lower cost → 45% fewer tokens And the crazy part: It writes half the code, but doesn't skip the testin
+  - Suggestion: 68% → 98% test coverage from a skill file. which model, benchmark, eval harness?
+  - Reasoning: Shape B counter — the test coverage stat is the most falsifiable claim in the post, and asking for the specific methodology (model, benchmark, eval harness) sounds like a real engineer interrogating the numbers rather than a content marketer praising them.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+---

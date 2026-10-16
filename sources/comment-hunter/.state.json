@@ -242,6 +242,87 @@
       "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2111151435778039811": {
+      "suggestedAt": "2026-10-16T17:57:22.849Z",
+      "author": "HeyGenDev",
+      "url": "https://x.com/HeyGenDev/status/2111151435778039811",
+      "tweetText": "HeyGen Video 1 is the #1 video model on the @OpenRouter leaderboard, and it's now available in HeyGen MCP.\n\nTell your agent what you want to see, and it's ready in seconds.\n\nRead more: https://t.co/d9FIOUyLsb https://t.co/G8I8kD2dyT",
+      "metrics": {
+        "likes": 53,
+        "replies": 44,
+        "retweets": 45,
+        "bookmarks": 45,
+        "views": 4466,
+        "ageMinutes": 11.877033333333333
+      },
+      "scoreDetails": {
+        "ratio": 1021.1001509300828,
+        "candidateVelocity": 11.871651450558641,
+        "authorMedianVelocity": 0.011626334047395045,
+        "authorSampleSize": 19,
+        "controversy": 0.8301886792452831
+      },
+      "score": 1021.1001509300828,
+      "comment": "what does the MCP tool return while it's generating - job ID you poll, or does it block the agent turn for the full render time?",
+      "reasoning": "Shape C pointed question targeting the real async-vs-blocking tradeoff engineers hit first when wiring video gen into an agent loop — specific mechanism, zero fluff.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2111137399489405166": {
+      "suggestedAt": "2026-10-16T17:58:14.867Z",
+      "author": "nextjs",
+      "url": "https://x.com/nextjs/status/2111137399489405166",
+      "tweetText": "We used a coding agent with Next.js 16.4's new prefetching controls and Skill to improve v0's navigation experience at no added cost.\n\nThe loop:\n• Capture navigation with 𝚒𝚗𝚜𝚝𝚊𝚗𝚝()\n• Define the target UI in the test\n• Refactor until it passes\n\nhttps://t.co/xdZ1jrAehM",
+      "metrics": {
+        "likes": 95,
+        "replies": 9,
+        "retweets": 10,
+        "bookmarks": 35,
+        "views": 5581,
+        "ageMinutes": 67.66036666666666
+      },
+      "scoreDetails": {
+        "ratio": 201.77532035802633,
+        "candidateVelocity": 1.670106231565402,
+        "authorMedianVelocity": 0.00827705900108099,
+        "authorSampleSize": 19,
+        "controversy": 0.09473684210526316
+      },
+      "score": 201.77532035802633,
+      "comment": "the agent-driven refactor-until-pass loop is the interesting part. hand-tuning prefetch manually is how we ended up with stale episode data on roadtosf",
+      "reasoning": "Shape A lived experience — anchors to a real shipped project (roadtosf on Next.js 16) with a concrete failure mode (stale episode data), making the reply feel like a genuine engineer nodding at the pattern rather than praise or a hot take.",
+      "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2111135965171396974": {
+      "suggestedAt": "2026-10-16T17:58:51.419Z",
+      "author": "bruceradley",
+      "url": "https://x.com/bruceradley/status/2111135965171396974",
+      "tweetText": "A single Claude skill just passed 164,000 stars on GitHub.\n\nIt's called Ponytail.\n\nAnd it makes your agent code like that senior dev who never writes a line more than needed.\n\nThe one who looks at your 50 lines and replaces them with one.\n\nVersion 5 just dropped:\n\n→ 53% less code\n→ 41% less time\n→ 26% lower cost\n→ 45% fewer tokens\n\nAnd the crazy part:\n\nIt writes half the code, but doesn't skip the testing.\n\n98% of critical code ships with a test to make sure it works.\nWithout the skill, only 68%.\n\nReal example:\n\nYou ask it to add a date picker.\n\nWithout the skill → builds one from scratch in 335 lines\nWith Ponytail → uses the browser's built-in one in 10 lines\n\nWhy it matters to you:\n\nIf you code with agents, you pay for every line they write.\nLess code = fewer tokens, fewer bugs and less to maintain.\n\nWorks with Claude Code, Codex, Cursor, Copilot and 15+ other agents.\n\n164K stars. MIT license. Free.\n\nLink below :)",
+      "metrics": {
+        "likes": 66,
+        "replies": 42,
+        "retweets": 8,
+        "bookmarks": 27,
+        "views": 4125,
+        "ageMinutes": 73.36035
+      },
+      "scoreDetails": {
+        "ratio": 107.00375855695964,
+        "candidateVelocity": 2.044701258922565,
+        "authorMedianVelocity": 0.019108686334921042,
+        "authorSampleSize": 19,
+        "controversy": 0.6363636363636364
+      },
+      "score": 107.00375855695964,
+      "comment": "68% → 98% test coverage from a skill file. which model, benchmark, eval harness?",
+      "reasoning": "Shape B counter — the test coverage stat is the most falsifiable claim in the post, and asking for the specific methodology (model, benchmark, eval harness) sounds like a real engineer interrogating the numbers rather than a content marketer praising them.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
@@ -601,6 +682,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-10-16T17:58:51.420Z",
+      "searched": 69,
+      "scored": 10,
+      "notified": 3
     }
   ]
 }
