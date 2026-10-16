@@ -10,9 +10,9 @@
     "swyx": {
       "handle": "swyx",
       "status": "active",
-      "last_pulled": "2026-06-18",
-      "score_sum": 10,
-      "score_n": 3
+      "last_pulled": "2026-10-16",
+      "score_sum": 14,
+      "score_n": 4
     },
     "simonw": {
       "handle": "simonw",
@@ -34,16 +34,16 @@
       "last_pulled": "2026-05-12",
       "score_sum": 5,
       "score_n": 2,
-      "last_deep_studied": "2026-09-13",
+      "last_deep_studied": "2026-10-16",
       "blacklist_reason": "Avg score 2.5 (n=2) — consultancy/framework posts, not build-in-public shipping content that matches Octavi's voice.",
       "blacklisted_at": "2026-08-21"
     },
     "nutlope": {
       "handle": "nutlope",
       "status": "active",
-      "last_pulled": "2026-06-18",
-      "score_sum": 17,
-      "score_n": 4
+      "last_pulled": "2026-10-16",
+      "score_sum": 22,
+      "score_n": 5
     },
     "sama": {
       "handle": "sama",
@@ -169,9 +169,9 @@
     "aidenybai": {
       "handle": "aidenybai",
       "status": "active",
-      "last_pulled": "2026-10-15",
-      "score_sum": 35,
-      "score_n": 7,
+      "last_pulled": "2026-10-16",
+      "score_sum": 40,
+      "score_n": 8,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
       "last_deep_studied": "2026-10-14"
@@ -179,9 +179,9 @@
     "antirez": {
       "handle": "antirez",
       "status": "active",
-      "last_pulled": "2026-06-18",
-      "score_sum": 9,
-      "score_n": 2,
+      "last_pulled": "2026-10-16",
+      "score_sum": 14,
+      "score_n": 3,
       "promoted_at": "2026-05-12",
       "promoted_reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
     },
@@ -195,9 +195,9 @@
     "garrytan": {
       "handle": "garrytan",
       "status": "active",
-      "last_pulled": "2026-05-14",
-      "score_sum": 3,
-      "score_n": 1
+      "last_pulled": "2026-10-16",
+      "score_sum": 6,
+      "score_n": 2
     },
     "natfriedman": {
       "handle": "natfriedman",
@@ -226,6 +226,13 @@
       "last_pulled": "2026-10-13",
       "score_sum": null,
       "score_n": null
+    },
+    "irabukht": {
+      "handle": "irabukht",
+      "status": "active",
+      "last_pulled": "2026-10-16",
+      "score_sum": 4,
+      "score_n": 1
     }
   },
   "discovered": {
@@ -370,5 +377,5 @@
       "reason": "Data-story format: \"X hacked [growth lever], went from $A to $B ARR in Y months\" — 1,072 likes, 2,548 bookmarks. Useful format reference for Velocity leaderboard reveal posts, though not primary builder voice."
     }
   },
-  "last_run": "2026-10-15T11:26:23.175Z"
+  "last_run": "2026-10-16T12:23:31.299Z"
 }
