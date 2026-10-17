@@ -2754,3 +2754,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-17 19:13 UTC
+
+Searched: **58** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @PreacherDefi · 0.9× · 41❤ 27💬 in 60m · vel 1.58/min vs author median 1.75 → 0.9× · controversy 0.66 (replies/likes)
+  - Crypto has aggregators for finding the best swap route. Why shouldn’t AI have the same thing for agents? Not every task needs the most expensive AI model, and using the wrong one can mean wasting toke
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2111521642241474826 (@cettocdx): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111519164040978722 (@0x0Nova): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111529254999724164 (@MasonVersluis): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
