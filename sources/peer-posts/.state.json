@@ -64,20 +64,22 @@
     "bedriyan0": {
       "handle": "bedriyan0",
       "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 11,
-      "score_n": 3,
+      "last_pulled": "2026-10-17",
+      "score_sum": 14,
+      "score_n": 4,
       "promoted_at": "2026-05-04",
       "promoted_reason": "Won Claude hackathon with voice-first AI clinic — ElevenLabs STT/TTS, 5K likes, exactly in Octavi's voice AI + hackathon lane"
     },
     "saboo_shubham_": {
       "handle": "Saboo_Shubham_",
-      "status": "active",
-      "last_pulled": "2026-05-15",
-      "score_sum": 10,
-      "score_n": 3,
+      "status": "blacklisted",
+      "last_pulled": "2026-10-17",
+      "score_sum": 12,
+      "score_n": 4,
       "promoted_at": "2026-05-04",
-      "promoted_reason": "Voice AI agent builder with specific stack posts — 650 likes, open source focus, consistent build-in-public signal"
+      "promoted_reason": "Voice AI agent builder with specific stack posts — 650 likes, open source focus, consistent build-in-public signal",
+      "blacklist_reason": "Avg score 2.67 (n=4) — consistent hype format (\"INSANE\", \"100% free\", \"It's so over\"), tool aggregation and giveaway posts. Not authentic first-person builder voice matching Octavi's niche.",
+      "blacklisted_at": "2026-10-17"
     },
     "pratiik125": {
       "handle": "Pratiik125",
@@ -160,28 +162,28 @@
     "m2fauzaan": {
       "handle": "M2Fauzaan",
       "status": "active",
-      "last_pulled": "2026-10-14",
-      "score_sum": 28,
-      "score_n": 6,
+      "last_pulled": "2026-10-17",
+      "score_sum": 32,
+      "score_n": 7,
       "promoted_at": "2026-05-06",
       "promoted_reason": "Native app builder, \"Anyway I fixed it / I built\" hook format, 1738 likes + 2022 bookmarks — high engagement on specific problem-solving builds"
     },
     "aidenybai": {
       "handle": "aidenybai",
       "status": "active",
-      "last_pulled": "2026-10-16",
-      "score_sum": 40,
-      "score_n": 8,
+      "last_pulled": "2026-10-17",
+      "score_sum": 45,
+      "score_n": 9,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
-      "last_deep_studied": "2026-10-14"
+      "last_deep_studied": "2026-10-17"
     },
     "antirez": {
       "handle": "antirez",
       "status": "active",
-      "last_pulled": "2026-10-16",
-      "score_sum": 14,
-      "score_n": 3,
+      "last_pulled": "2026-10-17",
+      "score_sum": 19,
+      "score_n": 4,
       "promoted_at": "2026-05-12",
       "promoted_reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
     },
@@ -221,11 +223,13 @@
     },
     "raaborman": {
       "handle": "raaborman",
-      "status": "active",
+      "status": "blacklisted",
       "last_deep_studied": "2026-10-15",
-      "last_pulled": "2026-10-13",
-      "score_sum": null,
-      "score_n": null
+      "last_pulled": "2026-10-17",
+      "score_sum": 1,
+      "score_n": 1,
+      "blacklist_reason": "No tweets found above 50 likes — account produces no qualifying signal for curation pool",
+      "blacklisted_at": "2026-10-17"
     },
     "irabukht": {
       "handle": "irabukht",
@@ -375,7 +379,21 @@
       "last_seen": "2026-10-14",
       "score": 3,
       "reason": "Data-story format: \"X hacked [growth lever], went from $A to $B ARR in Y months\" — 1,072 likes, 2,548 bookmarks. Useful format reference for Velocity leaderboard reveal posts, though not primary builder voice."
+    },
+    "niklaslenz_ai": {
+      "handle": "niklaslenz_ai",
+      "first_seen": "2026-10-17",
+      "last_seen": "2026-10-17",
+      "score": 3,
+      "reason": "Local TTS comparison posts (Breeze TTS 2, Fish S2 Pro, Drama 3 Qwen3-TTS) with specific per-model verdicts — relevant to Octavi's voice AI/ElevenLabs work; format is useful as a niche comparison template"
+    },
+    "sermakarevich": {
+      "handle": "sermakarevich",
+      "first_seen": "2026-10-17",
+      "last_seen": "2026-10-17",
+      "score": 3,
+      "reason": "Agentic evals post (672 likes, 1,251 bookmarks) — \"how to know whether an AI agent did the job, and will do it again\" — high bookmark signal, relevant to Octavi's autonomous-company-tool work"
     }
   },
-  "last_run": "2026-10-16T12:23:31.299Z"
+  "last_run": "2026-10-17T10:41:43.418Z"
 }
