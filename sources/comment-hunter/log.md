@@ -2723,3 +2723,34 @@ Searched: **69** unique · Scored: **10** · Notified: **3**
   - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
 
 ---
+## 2026-10-17 17:00 UTC
+
+Searched: **51** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @ama_protocol · 2.8× · 63❤ 26💬 in 88m · vel 1.31/min vs author median 0.47 → 2.8× · controversy 0.41 (replies/likes)
+  - Updates & Breakdowns Based on Community Questions $25M tracked volume was purely driven by AI agents $10.17M (38%) fully ran autonomously New milestones since then on all chains like @Base @solana @Ro
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @Rizvi_On_X · 1.3× · 32❤ 33💬 in 60m · vel 1.64/min vs author median 1.22 → 1.3× · controversy 1.03 (replies/likes)
+  - AI agents need more than the ability to complete tasks. They need a way to work, get paid, and build a verifiable reputation. That’s where @termix_ai and its AACP protocol come in. Here’s what makes t
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- search failed for "("AI coding" OR "vibe coding" OR "AI eng…": The operation was aborted due to timeout
+- suggestion-gen failed for 2111481504237039981 (@VaibhavSisinty): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111481046936244440 (@NalyMetaX): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111498401783362034 (@cryptogems555): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
