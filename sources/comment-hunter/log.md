@@ -2780,3 +2780,37 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-17 21:40 UTC
+
+Searched: **40** unique · Scored: **7** · Notified: **0**
+
+### Rejected (top 3 scored)
+
+- @nsk1984x · 1.5× · 101❤ 1💬 in 67m · vel 1.53/min vs author median 0.99 → 1.5×
+  - Been looking into CONSO lately 👀 Trust and reputation will be key for AI agents. Curious to see how CONSO BOTS and reputation-backed collectibles develop as AI and Web3 grow. 🐻‍❄️ Excited to see wha
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+- @RoundtableSpace · 2.1× · 36❤ 12💬 in 85m · vel 0.70/min vs author median 0.33 → 2.1× · controversy 0.33 (replies/likes)
+  - This fully local AI job tool just crossed 49k stars and runs entirely on Claude Code It evaluates job postings, rewrites your CV, and preps interviews without sending anything to the cloud If you’re s
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- @nsk1984x · 0.3× · 58❤ 1💬 in 54m · vel 1.10/min vs author median 3.37 → 0.3×
+  - AI agents are getting more attention, but trust still matters. 👀 That’s why CONSO caught my eye. The idea of combining reputation with digital collectibles is interesting, and I’m curious to see how 
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2111551197140185191 (@Flinzu): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111552472758239403 (@ollama): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111559954817745377 (@kriptosensei0): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
