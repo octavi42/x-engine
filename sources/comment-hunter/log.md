@@ -2860,3 +2860,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-18 21:48 UTC
+
+Searched: **25** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @StockMKTNewz · 2.2× · 78❤ 29💬 in 75m · vel 1.81/min vs author median 0.83 → 2.2× · controversy 0.37 (replies/likes)
+  - CHARLES SCHWAB $SCHW CEO RICK WURSTER IS SKEPTICAL OF AI AGENTS TRADING STOCKS FOR YOU He says most clients will still want a mix of people and technology, per WSJ. - Schwab blocks outside AI agents f
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2111924940119126286 (@vibelancer): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111921718969176523 (@fanrobinhood): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111925755215040779 (@rileybrown): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
