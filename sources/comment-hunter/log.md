@@ -2814,3 +2814,29 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-18 17:15 UTC
+
+Searched: **58** unique · Scored: **9** · Notified: **0**
+
+### Rejected (top 1 scored)
+
+- @RoundtableSpace · 2.6× · 48❤ 15💬 in 86m · vel 0.91/min vs author median 0.35 → 2.6× · controversy 0.31 (replies/likes)
+  - Hackers infiltrated a widely used AI coding tool - Opencode and exploited individuals’ saved OpenAI and Anthropic keys. AI warfare is getting real. https://t.co/h0sqEo2SbS
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2111848689560060387 (@Zeneca): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111852745913163831 (@MAXdeg0): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2111851682879668429 (@cryptohustler04): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
