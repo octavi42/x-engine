@@ -2886,3 +2886,33 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-19 19:47 UTC
+
+Searched: **69** unique · Scored: **8** · Notified: **0**
+
+### Rejected (top 2 scored)
+
+- @wholemars · 2.6× · 101❤ 22💬 in 35m · vel 4.12/min vs author median 1.56 → 2.6×
+  - Feeling disappointed in myself. I need to be vibe coding shit every day and building businesses, starting projects, doing something. Even with computers writing all the code for you, you still need pe
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+- @StockSavvyShay · 1.4× · 87❤ 21💬 in 52m · vel 2.50/min vs author median 1.79 → 1.4×
+  - You can now launch $SPCX Grok Bot directly from the action button on $AAPL iPhone putting its AI agent just one press away as assistants start to compete for Siri's place in mobile experience. Giving 
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Errors
+
+- suggestion-gen failed for 2112255740308320675 (@anandPa94): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2112261408872083849 (@Younite): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+- suggestion-gen failed for 2112255559156338962 (@BrianDEvans): claude -p exited 1
+stderr:
+Permission deny rule "SlashCommand" matches no known tool — check for typos.
+
+
+---
