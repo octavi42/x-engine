@@ -2936,3 +2936,41 @@ Permission deny rule "SlashCommand" matches no known tool — check for typos.
 
 
 ---
+## 2026-10-20 18:26 UTC
+
+Searched: **79** unique · Scored: **8** · Notified: **3**
+
+### Notified
+
+- **@GuillaumeLample** · 54.4× · 99❤ 8💬 in 80m · vel 1.44/min vs author median 0.03 → 54.4×
+  - URL: https://x.com/GuillaumeLample/status/2112591060052656585
+  - Tweet: 🎙️ Introducing Voxtral 3 ! A new family of SOTA speech models: ASR: Mini & Small for batch transcription, plus real-time streaming TTS: expressive, multilingual speech, batch + streaming Voice agent SDK: low-latency conversations + tool calling Available via API or on your own infrastructure !
+  - Suggestion: building a GPS-triggered voice guide. what's first-audio-chunk time on streaming TTS for a ~20-word sentence?
+  - Reasoning: Shape C (pointed question) anchored to Clio's real latency constraint — GPS ping to first audio chunk is the critical UX metric, giving the reply a concrete technical hook rather than generic praise.
+  - Query: `(ElevenLabs OR "voice AI" OR "voice agent") -airdrop -token -$`
+
+- **@atmoio** · 52.9× · 76❤ 65💬 in 79m · vel 2.61/min vs author median 0.05 → 52.9× · controversy 0.86 (replies/likes)
+  - URL: https://x.com/atmoio/status/2112591319155740980
+  - Tweet: You're working on a huge feature on Max/Ultracode and your 5-hour usage runs out. What do you do? I seriously don't know how people are getting by without using 3rd party agent clients (Enjoy, T3, etc). People using Claude Code just...wait?
+  - Suggestion: claude --resume picks up the session. the actual pain is the 5h limit on overnight agent runs, not the interactive stuff
+  - Reasoning: Shape B counter — corrects the implied premise (you can't continue) with a concrete technical detail, then narrows to the real unsolved case, which is more credible than a full dismissal.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@TheEliteCrypto** · 51.6× · 72❤ 9💬 in 50m · vel 1.79/min vs author median 0.03 → 51.6×
+  - URL: https://x.com/TheEliteCrypto/status/2112598540551921668
+  - Tweet: Everyone is talking about AI agents, but what happens when they can build a reputation, attract capital and grow their own audience? That's the direction @itsaikols is exploring. Trading agents with public track records, dedicated vaults and the potential to develop their own tokenised markets. The bigger play isn't just automating trades. It's building an economy around autonomous agents. Still e
+  - Suggestion: start 10 agents, keep the winner, call it a track record. survivorship bias is the oldest trick in fund marketing, now with smart contracts
+  - Reasoning: Shape B counter with a named mechanism — survivorship bias — that any engineer recognizes, deflating the "public track record" framing without needing to mention the CA or the token.
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+### Rejected (top 2 scored)
+
+- @litcapital · 2.0× · 108❤ 9💬 in 54m · vel 2.33/min vs author median 1.17 → 2.0×
+  - He’s better off using his knowledge and credentials to pick up vibe coding, raise millions from VCs on a solid idea, hire his own engineers, and forge his own path If he’s smart enough to grind out a 
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+- @AIVanta0 · 0.1× · 55❤ 17💬 in 51m · vel 1.75/min vs author median 22.11 → 0.1× · controversy 0.31 (replies/likes)
+  - One thing about AI creative workflows: the ideas never arrive in a neat order. You’re working on a video, then suddenly remember an email to send or something to try in the next edit. SpeakON gives yo
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---

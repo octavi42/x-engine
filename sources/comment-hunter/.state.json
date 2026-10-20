@@ -323,15 +323,90 @@
       "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2112591060052656585": {
+      "suggestedAt": "2026-10-20T18:26:01.714Z",
+      "author": "GuillaumeLample",
+      "url": "https://x.com/GuillaumeLample/status/2112591060052656585",
+      "tweetText": "🎙️ Introducing Voxtral 3 !\n\nA new family of SOTA speech models:\nASR: Mini & Small for batch transcription, plus real-time streaming\nTTS: expressive, multilingual speech, batch + streaming\nVoice agent SDK: low-latency conversations + tool calling\n\nAvailable via API or on your own infrastructure !",
+      "metrics": {
+        "likes": 99,
+        "replies": 8,
+        "retweets": 16,
+        "bookmarks": 8,
+        "views": 3353,
+        "ageMinutes": 80.01741666666666
+      },
+      "scoreDetails": {
+        "ratio": 54.44539495197908,
+        "candidateVelocity": 1.4371871123890738,
+        "authorMedianVelocity": 0.026396853464956495,
+        "authorSampleSize": 19,
+        "controversy": 0.08080808080808081
+      },
+      "score": 54.44539495197908,
+      "comment": "building a GPS-triggered voice guide. what's first-audio-chunk time on streaming TTS for a ~20-word sentence?",
+      "reasoning": "Shape C (pointed question) anchored to Clio's real latency constraint — GPS ping to first audio chunk is the critical UX metric, giving the reply a concrete technical hook rather than generic praise.",
+      "matchedQuery": "(ElevenLabs OR \"voice AI\" OR \"voice agent\") -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2112591319155740980": {
+      "suggestedAt": "2026-10-20T18:26:30.905Z",
+      "author": "atmoio",
+      "url": "https://x.com/atmoio/status/2112591319155740980",
+      "tweetText": "You're working on a huge feature on Max/Ultracode and your 5-hour usage runs out. What do you do?\n\nI seriously don't know how people are getting by without using 3rd party agent clients (Enjoy, T3, etc). People using Claude Code just...wait?",
+      "metrics": {
+        "likes": 76,
+        "replies": 65,
+        "retweets": 1,
+        "bookmarks": 14,
+        "views": 8891,
+        "ageMinutes": 78.98408333333333
+      },
+      "scoreDetails": {
+        "ratio": 52.9108953386178,
+        "candidateVelocity": 2.6081204124459676,
+        "authorMedianVelocity": 0.049292690961938654,
+        "authorSampleSize": 19,
+        "controversy": 0.8552631578947368
+      },
+      "score": 52.9108953386178,
+      "comment": "claude --resume picks up the session. the actual pain is the 5h limit on overnight agent runs, not the interactive stuff",
+      "reasoning": "Shape B counter — corrects the implied premise (you can't continue) with a concrete technical detail, then narrows to the real unsolved case, which is more credible than a full dismissal.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2112598540551921668": {
+      "suggestedAt": "2026-10-20T18:26:54.939Z",
+      "author": "TheEliteCrypto",
+      "url": "https://x.com/TheEliteCrypto/status/2112598540551921668",
+      "tweetText": "Everyone is talking about AI agents, but what happens when they can build a reputation, attract capital and grow their own audience?\n\nThat's the direction @itsaikols is exploring.\n\nTrading agents with public track records, dedicated vaults and the potential to develop their own tokenised markets.\n\nThe bigger play isn't just automating trades. It's building an economy around autonomous agents.\n\nStill early, with mainnet ahead. Let's see how the team executes.\n\nCA: 0xfa838ae8f8f084bef0c40399a2dab801325aa2e0\n\n#NFA",
+      "metrics": {
+        "likes": 72,
+        "replies": 9,
+        "retweets": 3,
+        "bookmarks": 0,
+        "views": 2071,
+        "ageMinutes": 50.30075
+      },
+      "scoreDetails": {
+        "ratio": 51.59954435158494,
+        "candidateVelocity": 1.7892377350238315,
+        "authorMedianVelocity": 0.034675456101559025,
+        "authorSampleSize": 19,
+        "controversy": 0.125
+      },
+      "score": 51.59954435158494,
+      "comment": "start 10 agents, keep the winner, call it a track record. survivorship bias is the oldest trick in fund marketing, now with smart contracts",
+      "reasoning": "Shape B counter with a named mechanism — survivorship bias — that any engineer recognizes, deflating the \"public track record\" framing without needing to mention the CA or the token.",
+      "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
-    {
-      "ts": "2026-09-20T17:24:06.369Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-09-20T19:41:16.374Z",
       "searched": 0,
@@ -689,6 +764,12 @@
       "searched": 34,
       "scored": 10,
       "notified": 0
+    },
+    {
+      "ts": "2026-10-20T18:26:54.939Z",
+      "searched": 79,
+      "scored": 8,
+      "notified": 3
     }
   ]
 }
