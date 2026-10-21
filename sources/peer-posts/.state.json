@@ -24,9 +24,9 @@
     "theo": {
       "handle": "theo",
       "status": "active",
-      "last_pulled": "2026-10-13",
-      "score_sum": 12,
-      "score_n": 3
+      "last_pulled": "2026-10-21",
+      "score_sum": 15,
+      "score_n": 4
     },
     "jxnlco": {
       "handle": "jxnlco",
@@ -162,18 +162,18 @@
     "m2fauzaan": {
       "handle": "M2Fauzaan",
       "status": "active",
-      "last_pulled": "2026-10-17",
-      "score_sum": 32,
-      "score_n": 7,
+      "last_pulled": "2026-10-21",
+      "score_sum": 36,
+      "score_n": 8,
       "promoted_at": "2026-05-06",
       "promoted_reason": "Native app builder, \"Anyway I fixed it / I built\" hook format, 1738 likes + 2022 bookmarks — high engagement on specific problem-solving builds"
     },
     "aidenybai": {
       "handle": "aidenybai",
       "status": "active",
-      "last_pulled": "2026-10-17",
-      "score_sum": 45,
-      "score_n": 9,
+      "last_pulled": "2026-10-21",
+      "score_sum": 50,
+      "score_n": 10,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
       "last_deep_studied": "2026-10-17"
@@ -181,18 +181,20 @@
     "antirez": {
       "handle": "antirez",
       "status": "active",
-      "last_pulled": "2026-10-17",
-      "score_sum": 19,
-      "score_n": 4,
+      "last_pulled": "2026-10-21",
+      "score_sum": 24,
+      "score_n": 5,
       "promoted_at": "2026-05-12",
       "promoted_reason": "Creator of Redis — now posting hands-on local AI benchmarks (Qwen 27B vs DeepSeek v4 2-bit quants). Directly overlaps Octavi's UGC discovery pipeline with local models angle. Technical, first-person, no hype."
     },
     "benln": {
       "handle": "benln",
-      "status": "active",
-      "last_pulled": "2026-10-13",
-      "score_sum": 7,
-      "score_n": 2
+      "status": "blacklisted",
+      "last_pulled": "2026-10-21",
+      "score_sum": 9,
+      "score_n": 3,
+      "blacklist_reason": "Fully drifted from synthesis-screenshot builder content. Current output: SpaceX AI ambassador program promotion, Shabbat bots, @bot feature lists, hiring threads. Avg score dropped to 2 — no technical builder signal remains.",
+      "blacklisted_at": "2026-10-21"
     },
     "garrytan": {
       "handle": "garrytan",
@@ -224,7 +226,7 @@
     "raaborman": {
       "handle": "raaborman",
       "status": "blacklisted",
-      "last_deep_studied": "2026-10-15",
+      "last_deep_studied": "2026-10-21",
       "last_pulled": "2026-10-17",
       "score_sum": 1,
       "score_n": 1,
@@ -393,7 +395,14 @@
       "last_seen": "2026-10-17",
       "score": 3,
       "reason": "Agentic evals post (672 likes, 1,251 bookmarks) — \"how to know whether an AI agent did the job, and will do it again\" — high bookmark signal, relevant to Octavi's autonomous-company-tool work"
+    },
+    "rabi_guha": {
+      "handle": "rabi_guha",
+      "first_seen": "2026-10-21",
+      "last_seen": "2026-10-21",
+      "score": 3,
+      "reason": "Product/UI founder (@openuidev) posting narrative-format tech arguments with 2217L/2261B. \"For 30 years, technology has moved in one direction: turning information into intuitive interfaces\" — good format reference for Octavi's manifesto-style posts about automation mapping or system-of-tools framing."
     }
   },
-  "last_run": "2026-10-17T10:41:43.418Z"
+  "last_run": "2026-10-21T11:46:18.997Z"
 }
