@@ -404,15 +404,90 @@
       "matchedQuery": "(\"AI agents\" OR \"AI agent\") -airdrop -presale -giveaway -$VIRTUAL -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2112962028847476950": {
+      "suggestedAt": "2026-10-21T18:33:21.433Z",
+      "author": "CNC_Kitchen",
+      "url": "https://x.com/CNC_Kitchen/status/2112962028847476950",
+      "tweetText": "My latest free tool, https://t.co/ImLUnr1wRO, can automatically reverse-engineer your 3D Scans! Just tell your AI agent to connect to the ScanRuler MCP give it an stl and tell it to reverse engineer it. A detailed video and a custom skill will be released in the next few days! https://t.co/7nZoBXMbTu",
+      "metrics": {
+        "likes": 182,
+        "replies": 20,
+        "retweets": 10,
+        "bookmarks": 132,
+        "views": 3710,
+        "ageMinutes": 53.2413
+      },
+      "scoreDetails": {
+        "ratio": 1467.907274861873,
+        "candidateVelocity": 4.169695330504702,
+        "authorMedianVelocity": 0.00284057133710783,
+        "authorSampleSize": 19,
+        "controversy": 0.10989010989010989
+      },
+      "score": 1467.907274861873,
+      "comment": "what's the output format — dimension annotations only, or does it attempt to reconstruct parametric features like fillets/chamfers?",
+      "reasoning": "Shape C question that targets the hard unsolved part of mesh-to-CAD reverse engineering, using specific technical terms (parametric features, fillets/chamfers) that signal genuine domain knowledge without spec-dumping.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2112962248218148878": {
+      "suggestedAt": "2026-10-21T18:33:49.684Z",
+      "author": "claudeai",
+      "url": "https://x.com/claudeai/status/2112962248218148878",
+      "tweetText": "Claude Security now keeps up with your code as it changes.\n\nConnect your repositories once. Claude runs a deep first scan, then re-scans as changes land, so findings stay close to the current state of your code.\n\nIn public beta on Claude Enterprise. https://t.co/J5kPSEhWp3",
+      "metrics": {
+        "likes": 2401,
+        "replies": 178,
+        "retweets": 111,
+        "bookmarks": 555,
+        "views": 114740,
+        "ageMinutes": 52.374633333333335
+      },
+      "scoreDetails": {
+        "ratio": 181.08311192971584,
+        "candidateVelocity": 52.63998666020892,
+        "authorMedianVelocity": 0.29069517360978525,
+        "authorSampleSize": 19,
+        "controversy": 0.07413577675968347
+      },
+      "score": 181.08311192971584,
+      "comment": "does it re-scan the diff or walk the call graph from changed functions? a 3-line change can break an auth check 4 layers up",
+      "reasoning": "Shape C — opens the genuinely unsolved part of continuous security scanning (incremental diff vs. full affected call graph), with a concrete failure scenario that any engineer maintaining auth code would recognize immediately.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2112965341387309305": {
+      "suggestedAt": "2026-10-21T18:34:29.294Z",
+      "author": "SymoneBeez",
+      "url": "https://x.com/SymoneBeez/status/2112965341387309305",
+      "tweetText": "Everyone's fighting over \"AI Engineer\" jobs.\n\nMeanwhile, these jobs can get you to six figures, and almost nobody is talking about them.\n\nHere are 6 AI Proof Tech jobs you can start building toward with no experience...\n\nReply “AI” and I’ll DM you my free tech course.",
+      "metrics": {
+        "likes": 62,
+        "replies": 22,
+        "retweets": 7,
+        "bookmarks": 63,
+        "views": 3971,
+        "ageMinutes": 40.07463333333333
+      },
+      "scoreDetails": {
+        "ratio": 108.5306480658172,
+        "candidateVelocity": 2.6450647500205866,
+        "authorMedianVelocity": 0.024371592699018223,
+        "authorSampleSize": 19,
+        "controversy": 0.3548387096774194
+      },
+      "score": 108.5306480658172,
+      "comment": "\"AI proof\" usually just means \"requires physical presence or a licensed human at the liability layer.\" the rest is a timeline question.",
+      "reasoning": "Shape B counter with mechanism — reframes the vague \"AI proof\" claim with a concrete technical criterion (physical presence, licensed liability), which is what a builder thinking about automation boundaries would actually say.",
+      "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
-    {
-      "ts": "2026-09-20T22:21:59.199Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-09-21T19:17:15.124Z",
       "searched": 0,
@@ -771,6 +846,12 @@
       "scored": 0,
       "notified": 0,
       "note": "daily cap hit"
+    },
+    {
+      "ts": "2026-10-21T18:34:29.295Z",
+      "searched": 81,
+      "scored": 8,
+      "notified": 3
     }
   ]
 }

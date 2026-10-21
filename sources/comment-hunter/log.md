@@ -2974,3 +2974,41 @@ Searched: **79** unique · Scored: **8** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-10-21 18:34 UTC
+
+Searched: **81** unique · Scored: **8** · Notified: **3**
+
+### Notified
+
+- **@CNC_Kitchen** · 999.0× · 182❤ 20💬 in 53m · vel 4.17/min vs author median 0.00 → 999.0×
+  - URL: https://x.com/CNC_Kitchen/status/2112962028847476950
+  - Tweet: My latest free tool, https://t.co/ImLUnr1wRO, can automatically reverse-engineer your 3D Scans! Just tell your AI agent to connect to the ScanRuler MCP give it an stl and tell it to reverse engineer it. A detailed video and a custom skill will be released in the next few days! https://t.co/7nZoBXMbTu
+  - Suggestion: what's the output format — dimension annotations only, or does it attempt to reconstruct parametric features like fillets/chamfers?
+  - Reasoning: Shape C question that targets the hard unsolved part of mesh-to-CAD reverse engineering, using specific technical terms (parametric features, fillets/chamfers) that signal genuine domain knowledge without spec-dumping.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@claudeai** · 181.1× · 2401❤ 178💬 in 52m · vel 52.64/min vs author median 0.29 → 181.1×
+  - URL: https://x.com/claudeai/status/2112962248218148878
+  - Tweet: Claude Security now keeps up with your code as it changes. Connect your repositories once. Claude runs a deep first scan, then re-scans as changes land, so findings stay close to the current state of your code. In public beta on Claude Enterprise. https://t.co/J5kPSEhWp3
+  - Suggestion: does it re-scan the diff or walk the call graph from changed functions? a 3-line change can break an auth check 4 layers up
+  - Reasoning: Shape C — opens the genuinely unsolved part of continuous security scanning (incremental diff vs. full affected call graph), with a concrete failure scenario that any engineer maintaining auth code would recognize immediately.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@SymoneBeez** · 108.5× · 62❤ 22💬 in 40m · vel 2.65/min vs author median 0.02 → 108.5× · controversy 0.35 (replies/likes)
+  - URL: https://x.com/SymoneBeez/status/2112965341387309305
+  - Tweet: Everyone's fighting over "AI Engineer" jobs. Meanwhile, these jobs can get you to six figures, and almost nobody is talking about them. Here are 6 AI Proof Tech jobs you can start building toward with no experience... Reply “AI” and I’ll DM you my free tech course.
+  - Suggestion: "AI proof" usually just means "requires physical presence or a licensed human at the liability layer." the rest is a timeline question.
+  - Reasoning: Shape B counter with mechanism — reframes the vague "AI proof" claim with a concrete technical criterion (physical presence, licensed liability), which is what a builder thinking about automation boundaries would actually say.
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+### Rejected (top 2 scored)
+
+- @Sylphie_lyn · 2.3× · 48❤ 45💬 in 39m · vel 3.51/min vs author median 1.53 → 2.3× · controversy 0.94 (replies/likes)
+  - Ever had a video game idea but didn't know where to start building it? @mypipdev is making game creation more accessible with AI powered vibe coding, allowing creators to turn simple prompts into play
+  - Query: `("AI coding" OR "vibe coding" OR "AI engineer") -airdrop -token -$`
+
+- @d3rekson · 2.1× · 62❤ 23💬 in 61m · vel 1.77/min vs author median 0.86 → 2.1× · controversy 0.37 (replies/likes)
+  - There's a big difference between creating an AI agent and building an identity that other agents can actually trust. Think about it. If an agent completes hundreds of successful jobs, where does that 
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---
