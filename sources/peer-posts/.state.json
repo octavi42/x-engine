@@ -34,7 +34,7 @@
       "last_pulled": "2026-05-12",
       "score_sum": 5,
       "score_n": 2,
-      "last_deep_studied": "2026-10-16",
+      "last_deep_studied": "2026-10-23",
       "blacklist_reason": "Avg score 2.5 (n=2) — consultancy/framework posts, not build-in-public shipping content that matches Octavi's voice.",
       "blacklisted_at": "2026-08-21"
     },
@@ -404,5 +404,5 @@
       "reason": "Product/UI founder (@openuidev) posting narrative-format tech arguments with 2217L/2261B. \"For 30 years, technology has moved in one direction: turning information into intuitive interfaces\" — good format reference for Octavi's manifesto-style posts about automation mapping or system-of-tools framing."
     }
   },
-  "last_run": "2026-10-22T11:49:37.452Z"
+  "last_run": "2026-10-23T11:36:08.451Z"
 }
