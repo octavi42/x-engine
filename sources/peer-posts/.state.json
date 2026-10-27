@@ -176,7 +176,7 @@
       "score_n": 10,
       "promoted_at": "2026-05-09",
       "promoted_reason": "React Doctor v2 — developer tool release with CLI install command, 3416 likes / 3957 bookmarks / 277K views; clean short hook format matches Octavi's technical builder niche",
-      "last_deep_studied": "2026-10-24"
+      "last_deep_studied": "2026-10-27"
     },
     "antirez": {
       "handle": "antirez",
@@ -404,5 +404,5 @@
       "reason": "Product/UI founder (@openuidev) posting narrative-format tech arguments with 2217L/2261B. \"For 30 years, technology has moved in one direction: turning information into intuitive interfaces\" — good format reference for Octavi's manifesto-style posts about automation mapping or system-of-tools framing."
     }
   },
-  "last_run": "2026-10-26T12:59:08.865Z"
+  "last_run": "2026-10-27T12:08:39.512Z"
 }
