@@ -226,7 +226,7 @@
     "raaborman": {
       "handle": "raaborman",
       "status": "blacklisted",
-      "last_deep_studied": "2026-10-25",
+      "last_deep_studied": "2026-10-28",
       "last_pulled": "2026-10-17",
       "score_sum": 1,
       "score_n": 1,
@@ -404,5 +404,5 @@
       "reason": "Product/UI founder (@openuidev) posting narrative-format tech arguments with 2217L/2261B. \"For 30 years, technology has moved in one direction: turning information into intuitive interfaces\" — good format reference for Octavi's manifesto-style posts about automation mapping or system-of-tools framing."
     }
   },
-  "last_run": "2026-10-27T12:08:39.512Z"
+  "last_run": "2026-10-28T12:51:36.756Z"
 }
