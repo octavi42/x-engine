@@ -485,15 +485,90 @@
       "matchedQuery": "(\"AI coding\" OR \"vibe coding\" OR \"AI engineer\") -airdrop -token -$",
       "outcome": null,
       "outcomeNotes": null
+    },
+    "2116956030051750180": {
+      "suggestedAt": "2026-11-01T18:52:08.109Z",
+      "author": "EnterpriseRobot",
+      "url": "https://x.com/EnterpriseRobot/status/2116956030051750180",
+      "tweetText": "SOLD !!!\nBulk sale of 6 .si domains completed for $22,500 at Escrow.\n\n(the domains are mentioned in screenshot)\n\nHUGE THANK YOU to the legendary broker who made this deal happen. This will forever be a special sale for me.\n\nSelling https://t.co/y51I5dr8eK and other .com SI, Super intelligence, AI, AGI, ASI and MCP domains 👉https://t.co/6fRvNHoE8a\n\nFollow me for more unreported sales.",
+      "metrics": {
+        "likes": 71,
+        "replies": 22,
+        "retweets": 6,
+        "bookmarks": 7,
+        "views": 778,
+        "ageMinutes": 41.20673333333333
+      },
+      "scoreDetails": {
+        "ratio": 2668.7405310782547,
+        "candidateVelocity": 2.7908060333181797,
+        "authorMedianVelocity": 0.001045738992164445,
+        "authorSampleSize": 19,
+        "controversy": 0.30985915492957744
+      },
+      "score": 2668.7405310782547,
+      "comment": "$3,750/domain average for acronym plays is a bet the terminology doesn't shift. MCP already has a second meaning: Anthropic's protocol",
+      "reasoning": "Shape B counter with a concrete mechanism — the $3,750 average (22500/6) anchors the skepticism, and the MCP naming collision is a real technical detail that complicates valuation without being dismissive.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2116957135661945283": {
+      "suggestedAt": "2026-11-01T18:52:38.014Z",
+      "author": "karpathy",
+      "url": "https://x.com/karpathy/status/2116957135661945283",
+      "tweetText": "Weekend hack: HackerTube. I was annoyed with YouTube's recommendations so I had Claude filter down 43M comments over 20 years of HN to 6,454 videos that keep being recommended. *Significantly* better viewing experience, ~2 hours with Opus 5.5:\nhttps://t.co/JIhXN7OSh1\n\n- Excellent recs without any logins (state is kept in local browser session)\n- Thumbnail is a representative frame from middle of the video instead of the super duper A/B test hyper-optimized user uploads\n- Underlying data from the comment analysis as one zip file, point your Claude at it and ask for your own version\n- HackerTube Longs ✊\n\nA bit more on the process:\nI use Claude Code (desktop app for Mac), Opus 5.5 on Medium effort as my default. I only talk to Claude and have it do everything, the only \"manual work\" I helped with in tandem was in the browser (reminiscent of MenuGen): 1) I had to create some kind of API key from Google Cloud UI to query YouTube for video metadata, 2) I booted up a VPS box for serving and 3) I bought the domain name. Once the box was up I gave Claude the IP and told it update, secure, harden, deploy and optimize the code, and it did the whole thing.\n\nMany awesome projects that would have normally taken weeks/months even can now be few-shotted for breakfast. What else are we not thinking of.",
+      "metrics": {
+        "likes": 3744,
+        "replies": 308,
+        "retweets": 280,
+        "bookmarks": 2476,
+        "views": 132784,
+        "ageMinutes": 36.82338333333333
+      },
+      "scoreDetails": {
+        "ratio": 848.8414104200946,
+        "candidateVelocity": 118.40302561370652,
+        "authorMedianVelocity": 0.13948780556677653,
+        "authorSampleSize": 19,
+        "controversy": 0.08226495726495726
+      },
+      "score": 848.8414104200946,
+      "comment": "how did claude actually process 43m comments: embeddings over chunks, or keyword extraction for youtube.com mentions then a scoring pass?",
+      "reasoning": "Shape C — genuine technical question about the pipeline mechanism at scale that Karpathy didn't explain, targeting the one part every engineer reading this actually wants to know.",
+      "matchedQuery": "(\"claude code\" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$",
+      "outcome": null,
+      "outcomeNotes": null
+    },
+    "2116945207967261176": {
+      "suggestedAt": "2026-11-01T18:53:21.400Z",
+      "author": "ctatedev",
+      "url": "https://x.com/ctatedev/status/2116945207967261176",
+      "tweetText": "What shipped at Vercel Labs in October\n\n95 releases\n730 issues closed\n3,500+ PRs merged\n\nNew: agent-desktop\n→ Computer use for any coding agent\n→ macOS, Windows + Linux\n\nNew: tsc-ts\n→ The TypeScript 7 compiler, written in TypeScript\n→ Compiled to native with scriptc\n\nagent-browser\n→ Safer MCP\n→ 42 browser tools for eve agents\n\nskills\n→ Sync skills across a monorepo\n→ Sync reads optional + peer deps\n→ Faster updates\n\njson-render\n→ Streaming fixes\n→ Form + PDF fixes\n→ json-render-shadcn skill\n\nportless\n→ No more sudo\n→ portless mcp\n\ndeepsec\n→ Kimi K3.1 Pro + DeepSeek V4.1 Flash benchmarks\n\nnative\n→ native test for TS apps\n→ Reusable markup components\n→ Virtual lists\n\nscriptc\n→ Fully native, no JS engine\n→ WebAssembly compiles to native\n→ Profile-guided optimization\n\njust-bash\n→ mktemp + yes\n→ Closer to real bash + jq\n\nfx\n→ Launches 23× faster\n→ 41% fewer tokens\n→ Agents that survive redeploys\n\nwterm\n→ Faster color rendering\n→ Emoji + flags in one cell\n→ Vim matches your page theme\n\nvgpu\n→ Build-time WGSL shaders\n→ Turbopack support\n→ Depth + MSAA on canvas\n\nlat․md\n→ lat ui to browse your knowledge graph\n→ Graph view + static export\n\nemulate\n→ npx emulate mcp\n→ AWS Cognito\n→ Slack interactivity\n\nai-cli\n→ ai mcp\n→ ai decide can judge images\n\nmcp-handler\n→ MCP Events\n\nrun\n→ CPU time limits for agent code",
+      "metrics": {
+        "likes": 127,
+        "replies": 30,
+        "retweets": 5,
+        "bookmarks": 54,
+        "views": 5513,
+        "ageMinutes": 84.20671666666667
+      },
+      "scoreDetails": {
+        "ratio": 136.5842400155219,
+        "candidateVelocity": 2.2207254646947208,
+        "authorMedianVelocity": 0.016259016885420672,
+        "authorSampleSize": 19,
+        "controversy": 0.23622047244094488
+      },
+      "score": 136.5842400155219,
+      "comment": "scriptc: wasm to native via PGO. does it need a separate profile-collection step, or does it instrument the wasm binary directly?",
+      "reasoning": "Shape C — a pointed technical question about PGO's implementation detail (training workload vs. binary instrumentation) that only someone who's worked with native compilers would think to ask, opening the genuinely unsolved part of scriptc's design.",
+      "matchedQuery": "(\"Next.js\" OR \"Cloudflare Workers\" OR Vercel) -airdrop -token -$",
+      "outcome": null,
+      "outcomeNotes": null
     }
   },
   "runs": [
-    {
-      "ts": "2026-10-01T23:23:09.775Z",
-      "searched": 0,
-      "scored": 0,
-      "notified": 0
-    },
     {
       "ts": "2026-10-02T19:09:43.009Z",
       "searched": 0,
@@ -871,6 +946,12 @@
       "searched": 0,
       "scored": 0,
       "notified": 0
+    },
+    {
+      "ts": "2026-11-01T18:53:21.400Z",
+      "searched": 65,
+      "scored": 9,
+      "notified": 3
     }
   ]
 }

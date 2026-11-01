@@ -3012,3 +3012,37 @@ Searched: **81** unique · Scored: **8** · Notified: **3**
   - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
 
 ---
+## 2026-11-01 18:53 UTC
+
+Searched: **65** unique · Scored: **9** · Notified: **3**
+
+### Notified
+
+- **@EnterpriseRobot** · 999.0× · 71❤ 22💬 in 41m · vel 2.79/min vs author median 0.00 → 999.0× · controversy 0.31 (replies/likes)
+  - URL: https://x.com/EnterpriseRobot/status/2116956030051750180
+  - Tweet: SOLD !!! Bulk sale of 6 .si domains completed for $22,500 at Escrow. (the domains are mentioned in screenshot) HUGE THANK YOU to the legendary broker who made this deal happen. This will forever be a special sale for me. Selling https://t.co/y51I5dr8eK and other .com SI, Super intelligence, AI, AGI, ASI and MCP domains 👉https://t.co/6fRvNHoE8a Follow me for more unreported sales.
+  - Suggestion: $3,750/domain average for acronym plays is a bet the terminology doesn't shift. MCP already has a second meaning: Anthropic's protocol
+  - Reasoning: Shape B counter with a concrete mechanism — the $3,750 average (22500/6) anchors the skepticism, and the MCP naming collision is a real technical detail that complicates valuation without being dismissive.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@karpathy** · 848.8× · 3744❤ 308💬 in 37m · vel 118.40/min vs author median 0.14 → 848.8×
+  - URL: https://x.com/karpathy/status/2116957135661945283
+  - Tweet: Weekend hack: HackerTube. I was annoyed with YouTube's recommendations so I had Claude filter down 43M comments over 20 years of HN to 6,454 videos that keep being recommended. *Significantly* better viewing experience, ~2 hours with Opus 5.5: https://t.co/JIhXN7OSh1 - Excellent recs without any logins (state is kept in local browser session) - Thumbnail is a representative frame from middle of th
+  - Suggestion: how did claude actually process 43m comments: embeddings over chunks, or keyword extraction for youtube.com mentions then a scoring pass?
+  - Reasoning: Shape C — genuine technical question about the pipeline mechanism at scale that Karpathy didn't explain, targeting the one part every engineer reading this actually wants to know.
+  - Query: `("claude code" OR claude-code OR mcp) -airdrop -presale -giveaway -token -$`
+
+- **@ctatedev** · 136.6× · 127❤ 30💬 in 84m · vel 2.22/min vs author median 0.02 → 136.6×
+  - URL: https://x.com/ctatedev/status/2116945207967261176
+  - Tweet: What shipped at Vercel Labs in October 95 releases 730 issues closed 3,500+ PRs merged New: agent-desktop → Computer use for any coding agent → macOS, Windows + Linux New: tsc-ts → The TypeScript 7 compiler, written in TypeScript → Compiled to native with scriptc agent-browser → Safer MCP → 42 browser tools for eve agents skills → Sync skills across a monorepo → Sync reads optional + peer deps → F
+  - Suggestion: scriptc: wasm to native via PGO. does it need a separate profile-collection step, or does it instrument the wasm binary directly?
+  - Reasoning: Shape C — a pointed technical question about PGO's implementation detail (training workload vs. binary instrumentation) that only someone who's worked with native compilers would think to ask, opening the genuinely unsolved part of scriptc's design.
+  - Query: `("Next.js" OR "Cloudflare Workers" OR Vercel) -airdrop -token -$`
+
+### Rejected (top 1 scored)
+
+- @Natalia77351991 · 0.5× · 49❤ 20💬 in 38m · vel 2.34/min vs author median 4.89 → 0.5× · controversy 0.41 (replies/likes)
+  - An AI agent says: “I checked the price feed.” Web3 asks: “PROVE IT.” 👀 Blockchains verify transactions—not the offchain API calls behind agent decisions. @primus_labs uses zkTLS to turn HTTPS activit
+  - Query: `("AI agents" OR "AI agent") -airdrop -presale -giveaway -$VIRTUAL -token -$`
+
+---
