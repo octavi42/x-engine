@@ -1,3 +1,6 @@
+# Scratchpad (session-local temp work)
+scratchpad/
+
 # Dependencies
 node_modules/
 .pnp
